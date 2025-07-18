@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Ikonka strony -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+	<link rel="manifest" href="images/fav/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMI</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  
+    <nav class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/hmilogo.webp" alt="Logo" />
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="menu desktop-menu">
+      <a href="en.html">Home</a>
+      <a href="users1.html">Members</a>
+      <a href="achievements1.html">Achievements</a>
+      <a href="media1.html">Social Media</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="flaga-container"><img src="https://flagpedia.net/data/flags/w580/pl.webp" alt="UK flag" class="flaga"></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="menu-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div id="mobile-menu" class="mobile-overlay">
+      <button id="close-btn" class="close-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <a href="en.html">Home</a>
+      <a href="users1.html">Members</a>
+      <a href="achievements1.html">Achievements</a>
+      <a href="media1.html">Social Media</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="flaga-container"><img src="https://flagpedia.net/data/flags/w580/pl.webp" alt="UK flag" class="flaga"></a>
+    </div>
+  </nav>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  </script>
+  
+
+  <main>
+    <section class="onas">
+      <h1>Achievements</h1>
+
+      <div class="newt">
+      <h2><i>„SpaceShield Hack 2025 Winners – Defence Category"</i></h2>
+      </div>
+      <div class="news">
+			<p>Awards received: <b>ECSS Navigator</b> software dedicated to the space industry from <b>Costrum</b>, and 
+			a business session with <b>a Taiwanese company</b> from <b>8FOUNDRY</b>, for the most comprehensive project in the <b>Defence</b> category 
+			during the international <b>SpaceShield Hack</b> hackathon in <b>Stalowa Wola</b> by:
+			<br>&#10148;<b>Gracjan Kochanowski-Ossowski</b>, 
+			<br>&#10148;<b>Kamil Kaczmarek</b>, 
+			<br>&#10148;<b>Magdalena Borowiec</b>, 
+			<br>&#10148;<b>Paweł Jędryczka</b>, 
+			<br>&#10148;<b>Piotr Wieleba</b> 
+			<br>&#10148;<b>Bartosz Korycki</b></br>
+			</p>
+      </div>
+      
+      <div class="newt">
+      <h2><i>„1st Place Winner in the National Competition - Young Innovators 2025"</i></h2>
+      </div>
+      <div class="news">
+			<p>1st place in the competition for the best engineering thesis 
+			<b>Young Innovators 2025</b> awarded to<br> <b>Eng. Paweł Jędryczka</b>, the thesis supervisor was <b>Dr. habil. Eng. Agnieszka Lazarowska, Prof. UMG</b>,
+			organized by the <b>Industrial Institute for Automation and Measurements PIAP</b> &mdash;
+			<b>Warsaw, 7.06.2025</b></p>
+      </div>
+
+      <div class="newt">
+      <h2><i>„Two grants from the Ministry of Science and Higher Education"</i></h2>
+      </div>
+      <div class="news">
+			<p>Finalists of the ministerial competition titled: 
+			<b>"Student Scientific Circles Create Innovations"</b>, 
+			project title: <b>“Artificial Intelligence in Industrial Applications”</b>, 
+			2021. Title of the second grant: <b>"Digital Twin - Safe Stage Rotor Project"</b>, 
+			currently being implemented in <b>2025</b>.</p>
+      </div>
+
+      <div class="newt">
+      <h2><i>Finalists of awards in the years:</i></h2>
+      </div>
+      <div class="news">
+      <p>
+			&#10148;<b>2024</b> awarded to <b>Eng. Maciej Kazior</b> the II degree award in the XI edition of the competition for the best engineering thesis, 
+			organized by <b>Polish Electrical Engineers Association Gdańsk Branch</b>.<br>
+			&#10148;<b>2023</b> <b>The Minister of Infrastructure</b> awarded to <b>Eng. Piotr Sokół</b> the prize for the best shipboard electro-automatics<br>
+			&#10148;<b>2020</b> nationwide competition <b>“Polish PLC Programmers Championships”</b>: - I – Polish vice-champion in the Expert category for <b>Eng. Dawid Trzciński</b></p>
+      </div>
+    
+      <div class="newt">
+      <h2><i>„Organization of workshops"</i></h2>
+      </div>
+      <div class="news">
+      <p>Organizing popular science workshops on programming controllers for people with disabilities from <b>“House of Dreams”</b> <b>2024</b>
+			and workshops titled <b>“Industry 4.0”</b> in collaboration with <b>Mr. Sasa Simov</b>, international Director of <b>World Skills</b> and Director of <b>FESTO DIDACTIC</b> in <b>2023</b>.</p>
+      </div>
+
+      <div class="newt">
+      <h2><i>„Scientific Activity"</i></h2>
+      </div>
+      <div class="news">
+      <p>Participation in conferences, writing scientific publications since <b>2020</b>, a total of <b>19</b> publications have been written.</p>
+      </div>
+
+      <div class="newt">
+      <h2><i>Collaboration with Industry and Promotion of Alma Mater</i></h2>
+      </div>
+      <div class="news">
+      <p>Collaboration with <b>industry</b> and engaging in the promotion of one's own <b>Alma Mater</b>, including participation in the scientific circles festival <b>Sciencecom 2024</b>. 
+			Additionally, we are facilitating the process of familiarizing students with companies in the <b>land</b> and <b>marine</b> automation industry. 
+			Over the past three years, we have established cooperation with companies: <b>Sii</b>, <b>Automaze</b>, <b>Robotpol</b>, <b>WiRan</b>.</p>
+      </div>
+
+    </section>
+  </main>
+
+   <footer>
+    <div class="footer-content">
+      <div>Email: hmikolo.umg@gmail.com<br><a href="mailto:hmikolo.umg@gmail.com">Write here</a></div>
+      <div>About us<br><a href="index.html">Click here</a></div>
+      <div>Contact<br><a href="Contact.html">Click here</a></div>
+    </div>
+  </footer>
+</body>
+</html>

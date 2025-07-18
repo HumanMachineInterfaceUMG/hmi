@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Ikonka strony -->
+		<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+		<link rel="manifest" href="images/fav/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMI</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  
+    <nav class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/hmilogo.webp" alt="Logo" />
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="menu desktop-menu">
+        <a href="index.html">Strona główna</a>
+        <a href="users.html">Członkowie</a>
+        <a href="news.html">Aktualności</a>
+        <a href="achievements.html">Osiągnięcia</a>
+        <a href="media.html">Social Media</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="en.html"><img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="flaga"></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="menu-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div id="mobile-menu" class="mobile-overlay">
+      <button id="close-btn" class="close-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <a href="index.html">Strona główna</a>
+        <a href="users.html">Członkowie</a>
+        <a href="news.html">Aktualności</a>
+        <a href="achievements.html">Osiągnięcia</a>
+        <a href="media.html">Social Media</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="en.html"><img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="flaga"></a>
+    </div>
+  </nav>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  </script>
+  
+
+  <main>
+    <section class="onas">
+      <h1>Członkowie</h1>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Opiekun Koła:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Monika.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>dr inż. Monika Rybczak</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/monika-rybczak-080b62334/" target="_blank">Kliknij tutaj</a>
+      </div>
+      <div class="social-link">
+        <img src="images/umg.webp" alt="umg">
+        <a href="https://umg.edu.pl/rybczak" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Przewodniczący:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Magda.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Magdalena Borowiec</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/magdalena-borowiec-54759424b/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Zastępca:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Piotr.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Piotr Wieleba</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/piotr-wieleba-699669368/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Redaktor Medialny:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Kacper.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Kacper Falkiewicz</p>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Paweł.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Paweł Jędryczka</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/pawe%C5%82-j%C4%99dryczka-6991a72b6/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Kamil.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Kamil Kaczmarek</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/kamil-kaczmarek-a148502a6/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Bartek.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Batrosz Korycki</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/bartosz-korycki-409172368/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Michał.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Michał Labudda</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/micha%C5%82-labudda-7b34802a5/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Gracjan.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Gracjan Kochanowski-Ossowski</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/gracjan-kochanowski-ossowski-88b41b250/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Mateusz.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Mateusz Zych</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-container"> 
+    <div class="user-img-container"> 
+      <img src="images/users/Jakub.webp" alt="Slide" class="user-img">
+    </div>
+    <div class="user-info">
+      <p>Jakub Lidzbarski</p>
+      <p style="margin: 10px 0 6px 0;">Kontakt:</p>
+      <div class="social-link">
+        <img src="images/linkedin.webp" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/jakub-lidzbarski-04b891368/" target="_blank">Kliknij tutaj</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-info" style="text-align: center;">
+    <p>Dawid Formella</p>
+  </div>
+</div>
+  
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-info" style="text-align: center;">
+    <p>Krzysztof Wilczyński</p>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-info" style="text-align: center;">
+    <p>Artur Zakacz</p>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-info" style="text-align: center;">
+    <p>Katarzyna Jóźwik</p>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-info" style="text-align: center;">
+    <p>Paulina Juretko</p>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-info" style="text-align: center;">
+    <p>Karol Leśniewski</p>
+  </div>
+</div>
+
+<div class="user" style="margin-bottom: 40px;">
+  <h2 style="text-align: center;"><b>Członek:</b></h2>
+  <div class="user-info" style="text-align: center;">
+    <p>Maciej Pakulski</p>
+  </div>
+</div>
+      
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>Email: hmikolo.umg@gmail.com<br><a href="mailto:hmikolo.umg@gmail.com">Napisz tutaj</a></div>
+      <div>O nas<br><a href="index.html">Kliknij tutaj</a></div>
+      <div>Kontakt<br><a href="kontakt.html">Kliknij tutaj</a></div>
+    </div>
+  </footer>
+</body>
+</html>

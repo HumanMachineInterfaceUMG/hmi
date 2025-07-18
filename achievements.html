@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Ikonka strony -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+	<link rel="manifest" href="images/fav/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMI</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  
+    <nav class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/hmilogo.webp" alt="Logo" />
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="menu desktop-menu">
+        <a href="index.html">Strona główna</a>
+        <a href="users.html">Członkowie</a>
+        <a href="news.html">Aktualności</a>
+        <a href="achievements.html">Osiągnięcia</a>
+        <a href="media.html">Social Media</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="en.html"><img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="flaga"></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="menu-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div id="mobile-menu" class="mobile-overlay">
+      <button id="close-btn" class="close-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <a href="index.html">Strona główna</a>
+        <a href="users.html">Członkowie</a>
+        <a href="news.html">Aktualności</a>
+        <a href="achievements.html">Osiągnięcia</a>
+        <a href="media.html">Social Media</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="en.html"><img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="flaga"></a>
+    </div>
+  </nav>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  </script>
+  
+
+  <main>
+    <section class="onas">
+      <h1>Osiągnięcia</h1>
+
+    <div class="newt">
+      <h2><i>„Laureaci SpaceShield Hack 2025 – kategoria Defence”</i></h2>
+      </div>
+      <div class="news">
+			<p>Zdobycie nagród:  <b>ECSS  Navigator</b>, programu dedykowanego branży kosmicznej od <b>firmy Costrum</b> oraz 
+			sesji biznesowej z <b>firmą z Tajwanu</b> od <b>firmy 8FOUNDRY</b>, za najbardziej rozbudowany projekt w kategorii <b>Defence</b> 
+			podczas międzynarodowego hackhatonu <b>SpaceShield Hack</b> w <b>Stalowej Woli </b> przez:
+			<br>&#10148;<b>Gracjana Kochanowskiego - Ossowskiego</b>, 
+			<br>&#10148;<b>Kamila Kaczmarka</b>, 
+			<br>&#10148;<b>Magdaleny Borowiec</b>, 
+			<br>&#10148;<b>Pawła Jędryczki</b>, 
+			<br>&#10148;<b>Piotra Wieleby</b> 
+			<br>&#10148;<b>Bartosza Koryckiego</b></br>
+			</p>
+      </div>
+      
+      <div class="newt">
+      <h2><i>„Laureat I miejsca w ogólnopolskim konkursie "Młodzi innowacyjni 2025"</i></h2>
+      </div>
+      <div class="news">
+			<p>I miejsce w konkursie na najlepszą pracę inżynierską 
+			<b>Młodzi innowacyjni 2025</b> dla<br> <b>inż. Pawła Jędryczki</b>, promotorem pracy była <b>dr hab. inż. Agnieszka Lazarowska prof. UMG</b>,
+			organizowane przez <b>Przemysłowy Instytut Automatyki i Pomiarów PIAP</b> &#8722;
+			<b>Warszawa 7.06.2025</b></p>
+      </div>
+
+      <div class="newt">
+      <h2><i>„Dwa granty Ministerstwa Nauki i Szkolnictwa Wyższego"</i></h2>
+      </div>
+      <div class="news">
+			<p>Finaliści konkursu ministerialnego pt.: 
+			<b>"Studenckie koła naukowe tworzą innowacje"</b>, 
+			tytuł projektu: <b>„Sztuczna inteligencja w zastosowaniach przemysłowych”</b>, 
+			2021. Tytuł drugiego grantu: <b>"Cyfrowy bliźniak - projekt bezpiecznego rotora scenicznego"</b>, 
+			obecnie realizowany w <b>2025</b>.</p>
+      </div>
+      
+      <div class="newt">
+      <h2><i>Finaliści nagród w latach:</i></h2>  
+      </div>
+      <div class="news">
+      &#10148;<b>2024</b> zdobycie przez <b>inż. Macieja Kaziora nagrody</b> II stopnia w XI edycji konkursu na najlepszą pracę dyplomową inżynierską, 
+			organizowanego przez <b>Stowarzyszenie Elektryków Polskich Oddział Gdańsk</b>.<br>
+			&#10148;<b>2023</b> Minister Infrastruktury przyznał nagrodę <b>inż. Piotrowi Sokołowi</b> dla najlepszego elektroautomatyka okrętowego<br>
+			&#10148;<b>2020</b> ogólnopolski konkurs <b>„Mistrzostwa Polski programistów PLC”</b>: - I – wicemistrz polski w kategorii Ekspert dla <b>inż. Dawida Trzcińskiego</b></p>
+			</div>
+
+      <div class="newt">
+      <h2><i>Organizacja warsztatów</i></h2>
+      </div>
+      <div class="news">
+      <p>Organizowanie warsztatów popularnonaukowych z tematyki programowania sterowników dla osób z niepełnosprawnościami z <b>„Domu Marzeń”</b> <b>2024</b>
+			oraz warsztatów pt. <b>„Industry 4.0”</b>.przy współpracy <b>Pana Sasy Simowa</b>, międzynarodowego Dyrektora <b>World Skills</b> oraz Dyrektora <b>FESTO DIDACTIC</b> w <b>2023</b>.</p>
+      </div>
+
+      <div class="newt">
+      <h2><i>Aktywność naukowa</i></h2>
+      </div>
+      <div class="news">
+      <p>Udział w konferencjach, pisanie publikacji naukowych od <b>2020</b> roku napisano <b>19</b> publikacji.</p>
+      </div>
+
+      <div class="newt">
+      <h2><i>Współpraca z przemysłem i promocja Alma Mater</i></h2>
+      </div>
+      <div class="news">
+      <p>Współpraca z <b>przemysłem</b> oraz angażowanie się w promocję własnej <b>Alma Mater</b> min. udział w festiwalu kół naukowych <b>Sciencecom 2024</b>. 
+			Dodatkowo realizujemy proces zapoznania się studentów z firmami z branży automatyki <b>lądowej</b> oraz <b>morskiej</b>. 
+			W przeciągu trzech lat nawiązaliśmy współpracę z firmami: <b>Sii</b>, <b>Automaze</b>, <b>Robotpol</b>, <b>WiRan</b>. </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>Email: hmikolo.umg@gmail.com<br><a href="mailto:hmikolo.umg@gmail.com">Napisz tutaj</a></div>
+      <div>O nas<br><a href="index.html">Kliknij tutaj</a></div>
+      <div>Kontakt<br><a href="kontakt.html">Kliknij tutaj</a></div>
+    </div>
+  </footer>
+</body>
+</html>

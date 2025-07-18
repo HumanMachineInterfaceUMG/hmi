@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Ikonka strony -->
+		<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+		<link rel="manifest" href="images/fav/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMI</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  
+    <nav class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/hmilogo.webp" alt="Logo" />
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="menu desktop-menu">
+      <a href="en.html">Home</a>
+      <a href="users1.html">Members</a>
+      <a href="achievements1.html">Achievements</a>
+      <a href="media1.html">Social Media</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="flaga-container"><img src="https://flagpedia.net/data/flags/w580/pl.webp" alt="UK flag" class="flaga"></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="menu-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div id="mobile-menu" class="mobile-overlay">
+      <button id="close-btn" class="close-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <a href="en.html">Home</a>
+      <a href="users1.html">Members</a>
+      <a href="achievements1.html">Achievements</a>
+      <a href="media1.html">Social Media</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="flaga-container"><img src="https://flagpedia.net/data/flags/w580/pl.webp" alt="UK flag" class="flaga"></a>
+    </div>
+  </nav>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  </script>
+  
+
+  <main>
+    <section class="onas">
+      <h1>About us</h1>
+      <div class="group-photo">
+        <img src="images/group.webp" alt="Zdjęcie grupowe">
+      </div>
+      <div class="home">
+        <p> We are a group of students from Gdynia Maritime University. 
+        We are engaged in expanding our knowledge of PLCs and communication systems with operator panels and real systems.</p>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="project-block">
+        <h3>What we do?</h3>
+        <img src="zdj1.jpg" alt="Projekt 1">
+      </div>
+      <div class="project-block">
+        <img src="zdj2.jpg" alt="Projekt 2">
+        <h3>What we do? cont.</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>Email: hmikolo.umg@gmail.com<br><a href="mailto:hmikolo.umg@gmail.com">Write here</a></div>
+      <div>About us<br><a href="index.html">Click here</a></div>
+      <div>Contact<br><a href="Contact.html">Click here</a></div>
+    </div>
+  </footer>
+</body>
+</html>

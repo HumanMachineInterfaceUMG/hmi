@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Ikonka strony -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+	<link rel="manifest" href="images/fav/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMI</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  
+    <nav class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/hmilogo.webp" alt="Logo" />
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="menu desktop-menu">
+        <a href="index.html">Strona główna</a>
+        <a href="users.html">Członkowie</a>
+        <a href="news.html">Aktualności</a>
+        <a href="achievements.html">Osiągnięcia</a>
+        <a href="media.html">Social Media</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="en.html"><img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="flaga"></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="menu-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div id="mobile-menu" class="mobile-overlay">
+      <button id="close-btn" class="close-btn">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <a href="index.html">Strona główna</a>
+        <a href="users.html">Członkowie</a>
+        <a href="news.html">Aktualności</a>
+        <a href="achievements.html">Osiągnięcia</a>
+        <a href="media.html">Social Media</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="en.html"><img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="flaga"></a>
+    </div>
+  </nav>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  </script>
+
+  <main>
+    <section class="onas">
+      <h1>Aktualności</h1>
+
+      <div class="newt">
+      <h2><i>Artykuły</i></h2>
+      </div>
+
+      <div class="news">
+      <div id="articles-list">
+        Ładowanie listy artykułów...
+      </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+  fetch('articles.json')
+      .then(response => response.json())
+      .then(files => {
+          const container = document.getElementById('articles-list');
+          container.innerHTML = '';
+
+          // Tworzymy tablicę obiektów z datami i nazwami plików
+          const articles = files.map(file => {
+              // Usuwamy ewentualne rozszerzenie .html
+              const fileNameWithoutExt = file.replace('.html', '');
+              const [day, month, year] = fileNameWithoutExt.split('.');
+              
+              // Tworzymy obiekt Date (miesiące są od 0-11)
+              const date = new Date(year, month - 1, day);
+              
+              return {
+                  fileName: file,
+                  date: date
+              };
+          });
+
+          // Sortujemy artykuły od najnowszego do najstarszego
+          articles.sort((a, b) => b.date - a.date);
+
+          // Generujemy linki w posortowanej kolejności
+          articles.forEach(article => {
+              const polishDate = article.date.toLocaleDateString('pl-PL', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+              });
+
+              const link = document.createElement('a');
+              link.href = `ex_art/${article.fileName}`;
+              link.textContent = `Artykuł z dnia ${polishDate}`;
+              link.style.display = 'block';
+              link.style.margin = '10px 0';
+
+              container.appendChild(link);
+          });
+      })
+      .catch(error => {
+          console.error('Błąd:', error);
+          document.getElementById('articles-list').innerHTML = 'Nie udało się załadować artykułów.';
+      });
+  </script>
+
+  <footer>
+    <div class="footer-content">
+      <div>Email: hmikolo.umg@gmail.com<br><a href="mailto:hmikolo.umg@gmail.com">Napisz tutaj</a></div>
+      <div>O nas<br><a href="index.html">Kliknij tutaj</a></div>
+      <div>Kontakt<br><a href="kontakt.html">Kliknij tutaj</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>
