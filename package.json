@@ -1,0 +1,11 @@
+{
+  "name": "article-exporter",
+  "version": "1.0.0",
+  "description": "Export markdown articles to HTML with CSS styling",
+  "scripts": {
+    "export": "node export.js"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}
