@@ -1,0 +1,51 @@
+name: Convert Articles
+
+permissions:
+  contents: write
+
+on:
+  push:
+    paths:
+      - 'articles/**'
+      - 'gallery.css'
+      - 'export.js'
+
+jobs:
+  convert:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Debug environment
+      run: |
+        echo "Node version: $(node -v)"
+        echo "NPM version: $(npm -v)"
+        ls -la
+
+    - name: Convert articles
+      run: node export.js
+
+    - name: Commit and push changes
+      run: |
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "No changes to commit"
+          exit 0
+        fi
+        git config --global user.name 'GitHub Bot'
+        git config --global user.email 'github-bot@users.noreply.github.com'
+        git add ex_art
+        git commit -m "Auto-converted articles [skip ci]"
+        git push
