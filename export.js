@@ -5,7 +5,7 @@ const markdownIt = require('markdown-it')();
 // Configuration
 const ARTICLES_DIR = path.join(__dirname, 'articles');
 const OUTPUT_DIR = path.join(__dirname, 'ex_art');
-const CSS_FILE = path.join(__dirname, 'main.css');
+const CSS_FILE = path.join(__dirname, 'gallery.css');
 
 // Create output directory if not exists
 if (!fs.existsSync(OUTPUT_DIR)) {
