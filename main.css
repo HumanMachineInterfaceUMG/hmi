@@ -156,15 +156,17 @@ main {
     height: auto;
     width: 80%;
     max-width: 100%;
-    margin: 20px auto;
+    margin: 0px auto;
     padding: 0;
     display: block;
-    margin-left: center;
+    text-align: center;
   }
 
   .group-photo img {
+    max-width: 100%;
     height: auto;
-    display: block;
+    display: inline-block;
+    margin: 0 auto;
   }
 
 .onas {
