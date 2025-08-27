@@ -308,12 +308,7 @@ font-family: Arial;
   text-align: center;
 }
 
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-}
+
 
 /* --- RESPONSYWNOŚĆ DLA TELEFONÓW (max-width: 768px) --- */
 @media (max-width: 768px) {
@@ -438,6 +433,13 @@ footer {
     text-align: left;
     width: auto;
   }
+
+  .articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
 }
 
 .flaga {
