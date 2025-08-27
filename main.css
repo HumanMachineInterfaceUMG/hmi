@@ -440,6 +440,18 @@ footer {
   gap: 20px;
   margin-top: 20px;
 }
+
+.article-image {
+  width: 500px;   /* Ustaw preferowaną szerokość */
+  height: 300px;  /* Ustaw preferowaną wysokość */
+  object-fit: cover; /* Zachowuje proporcje, przycina do podanego rozmiaru */
+  cursor: pointer;
+  border-radius: 8px; /* Opcjonalne zaokrąglenie rogów */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcjonalny cień */
+  display: block; /* DODANE: Zmiana na block dla poprawy wyśrodkowania */
+  margin: 0 auto; /* DODANE: Wyśrodkowanie poziome */
+  }
+
 }
 
 .flaga {
