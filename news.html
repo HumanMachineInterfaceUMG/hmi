@@ -91,11 +91,11 @@
       <h1>Aktualności</h1>
 
       <div class="newt">
-      <h2><i>Artykuły</i></h2>
+      <h2><i><b>Artykuły</b></i></h2>
       </div>
 
       <div class="newz">
-      <div id="articles-list">
+      <div id="articles-list" class="articles-grid">
         Ładowanie listy artykułów...
       </div>
       </div>
@@ -104,7 +104,7 @@
   </main>
 
   <script>
-  fetch('articles.json')
+   fetch('articles.json')
       .then(response => response.json())
       .then(files => {
           const container = document.getElementById('articles-list');
@@ -128,21 +128,50 @@
           // Sortujemy artykuły od najnowszego do najstarszego
           articles.sort((a, b) => b.date - a.date);
 
+          // Pobierz listę dostępnych obrazków
+          const imageNumbers = [];
+          for (let i = 1; i <= articles.length; i++) {
+              imageNumbers.push(i);
+          }
+          
+          // Sortuj numery obrazków od największego do najmniejszego
+          imageNumbers.sort((a, b) => b - a);
+
           // Generujemy linki w posortowanej kolejności
-          articles.forEach(article => {
+          articles.forEach((article, index) => {
               const polishDate = article.date.toLocaleDateString('pl-PL', {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric'
               });
 
+              // Tworzymy kontener dla artykułu
+              const articleContainer = document.createElement('div');
+              articleContainer.className = 'article-container';
+              
+              // Tworzymy link do artykułu (dla tekstu)
               const link = document.createElement('a');
               link.href = `ex_art/${article.fileName}`;
-              link.textContent = `Artykuł z dnia ${polishDate}`;
-              link.style.display = 'block';
-              link.style.margin = '10px 0';
-
-              container.appendChild(link);
+              link.textContent = `Artykuł z dnia ${polishDate} Kliknij tutaj`;
+              link.className = 'article-link';
+              
+              // Tworzymy obrazek dla artykułu (używamy posortowanych numerów)
+              const image = document.createElement('img');
+              image.src = `images/articles/a${imageNumbers[index]}.png`;
+              image.alt = `Ilustracja do artykułu z dnia ${polishDate}`;
+              image.className = 'article-image';
+              
+              // Dodajemy obsługę kliknięcia na obrazek - przekierowanie do artykułu
+              image.addEventListener('click', () => {
+                  window.location.href = `ex_art/${article.fileName}`;
+              });
+              
+              // Dodajemy elementy do kontenera
+              articleContainer.appendChild(link);
+              articleContainer.appendChild(image);
+              
+              // Dodajemy kontener do listy artykułów
+              container.appendChild(articleContainer);
           });
       })
       .catch(error => {
