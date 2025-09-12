@@ -51,6 +51,11 @@ a:active {
   transform: scale(0.98);
 }
 
+video {
+  display: block;
+  margin: 0 auto;
+}
+
 /* Responsywność */
 @media (min-width: 768px) {
   img {
