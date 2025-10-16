@@ -13,14 +13,12 @@ if (!fs.existsSync(OUTPUT_DIR)) {
   console.log(`Created directory: ${OUTPUT_DIR}`);
 }
 
-// Read and embed CSS
-let cssContent = '';
+// Copy gallery.css to output directory
 try {
-  cssContent = fs.readFileSync(CSS_FILE, 'utf8');
-  console.log(`Using CSS from: ${CSS_FILE}`);
+  fs.copyFileSync(CSS_FILE, path.join(OUTPUT_DIR, 'gallery.css'));
+  console.log(`Copied gallery.css to output directory`);
 } catch (err) {
-  console.error(`Error reading CSS file: ${err.message}`);
-  process.exit(1);
+  console.error(`Error copying CSS file: ${err.message}`);
 }
 
 // Process markdown files
@@ -51,7 +49,7 @@ fs.readdir(ARTICLES_DIR, (err, files) => {
 <head>
   <meta charset="UTF-8">
   <title>${file.slice(0, -3)}</title>
-  <style>${cssContent}</style>
+  <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
 ${htmlContent}
