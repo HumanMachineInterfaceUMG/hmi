@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
   <url>
     <loc>https://knhmi.pl/index.html</loc>
     <lastmod>2025-08-10</lastmod>
@@ -8,63 +7,31 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://knhmi.pl/en.html</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://knhmi.pl/kontakt.html</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://knhmi.pl/contact.html</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Content Pages -->
-  <url>
-    <loc>https://knhmi.pl/users.html</loc>
+    <loc>https://knhmi.pl/Sekcje_zespolow.html</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://knhmi.pl/users1.html</loc>
+    <loc>https://knhmi.pl/czlonkowie.html</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://knhmi.pl/news.html</loc>
+    <loc>https://knhmi.pl/osiagniecia.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://knhmi.pl/Wydarzenia.html</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://knhmi.pl/achievements.html</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://knhmi.pl/achievements1.html</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://knhmi.pl/media.html</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://knhmi.pl/media1.html</loc>
+    <loc>https://knhmi.pl/social_media.html</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
