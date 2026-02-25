@@ -191,24 +191,64 @@ body.dark-bg {
 
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 60px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px 30px;
   justify-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .achievement-card {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 20px;
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: transform 0.28s ease, box-shadow 0.28s ease;
   text-align: center;
 }
+
+/* poniżej 768 px */
+@media (max-width: 767px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 40px 20px;
+    padding: 0 15px;
+  }
+  
+  .achievement-card {
+    max-width: 100%;
+    padding: 25px 18px;
+    margin: 0 auto;
+  }
+  
+  .achievement-image {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+  .achievement-title {
+    font-size: 1.45rem;
+  }
+  
+  .achievement-description,
+  .achievement-location,
+  .achievement-date {
+    font-size: 1.15rem;
+  }
+  
+  .visit-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 
 
 /*.achievement-card:hover {
@@ -357,4 +397,42 @@ body.dark-bg {
 /* dodatkowa reguła – większy odstęp po pierwszym przycisku */
 .achievement-card .visit-button:first-of-type {
   margin-bottom: 28px;       /* ← tu robimy większą przerwę przed dolnym tekstem */
+}
+
+/* ==================== RESPONSIVE 768 PX ==================== */
+@media (max-width: 420px) {
+  html {
+    font-size: 15px;           
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .top-bar {
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    padding: 0 6px;
+    height: 48px;
+    align-items: center;
+  }
+
+  #hamburger {
+    font-size: 28px !important;
+    padding: 6px 10px !important;
+    line-height: 1;
+  }
+
+  #homeLogo {
+    width: 48px !important;
+    height: 48px !important;
+    margin-left: 4px !important;
+  }
+
+  #homeLogo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 }

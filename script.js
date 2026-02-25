@@ -1,4 +1,4 @@
-// ==================== LOADER ====================
+// ==================== LOADER – TYLKO RAZ NA SESJĘ + KRÓTSZA ANIMACJA ====================
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   const loaderLogo = document.querySelector('.loader-logo');
@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
   }, 1200);
 });
 
-// ==================== MENU BOCZNE ====================
+// ==================== MENU BOCZNE (HAMBURGER) ====================
 const hamburger = document.getElementById('hamburger');
 const sideMenu = document.getElementById('sideMenu');
 const menuOverlay = document.getElementById('menuOverlay');
@@ -133,7 +133,7 @@ const achievementsData = {
       { pl: "Realizacja fizycznych projektów inżynierskich",                en: "Implementation of physical engineering projects" },
       { pl: "Prototypowanie urządzeń",                                      en: "Device prototyping" },
       { pl: "Produkcja materiałów promocyjnych koła oraz uczelni",          en: "Production of promotional materials for the club and university" },
-      { pl: "Organizowanie warsztatów dla wszystkich studentów uczelni",    en: "Organizing workshops for all university students" }
+      { pl: "Organizowanie warsztatów dla wszystkich studentów uczelni",   en: "Organizing workshops for all university students" }
     ]
   },
   elektro: {
