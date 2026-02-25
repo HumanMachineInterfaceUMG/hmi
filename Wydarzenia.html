@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wydarzenia</title>
+  <link rel="stylesheet" href="styles_wydarzenia.css">
+</head>
+
+<body class="dark-bg achievements-page"> <!-- zachowujemy klasę dark-bg -->
+  <!-- LOGO W LEWYM GÓRNYM ROGU – LINK DO STRONY GŁÓWNEJ -->
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <img src="Loga/logo_hmi.png" alt="logo_hmi"> <!-- zamień na swoje logo jeśli inne -->
+    </div>
+  </div>
+    <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
+    <div class="fade-page">
+
+    <!-- Górne menu z hamburgerem logo i jezykiem -->
+     <div class = top-bar>
+      <div class = top-left>
+      <div id="hamburger">☰</div>
+      <a href="index.html" id="homeLogo" aria-label="Strona główna">
+      <img src="Loga/logo_hmi_białe.png" alt="Logo Koła Naukowego HMI">
+      </a>
+      </div>
+
+      <button id="langCorner">
+      <img src="https://flagcdn.com/gb.svg" alt="English"> EN
+      </button>
+
+      </div>
+    
+
+
+    
+
+    <!-- MENU BOCZNE -->
+    <nav id="sideMenu">
+      <ul>
+     <li><a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a></li>
+     <li><a href="Sekcje_zespolow.html" data-pl="Sekcje Koła" data-en="Sections">Sekcje Koła</a></li>
+     <li><a href="czlonkowie.html" data-pl="Członkowie" data-en="Members">Członkowie</a></li>
+     <li><a href="osiagniecia.html" data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</a></li>
+     <li><a href="Wydarzenia.html" data-pl="Wydarzenia" data-en="Events">Wydarzenia</a></li>
+     <li><a href="social_media.html" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+    </nav>
+    <div id="menuOverlay"></div>
+
+    <!-- TREŚĆ PODSTRONY AKTUALNOŚCI -->
+    <main class="news-main">
+      <h1 data-pl="Wydarzenia" data-en="Events">Wydarzenia</h1>
+
+      <!-- wydarzenie	21.02.2026-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/21_02_2026.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="21 lutego 2026" data-en="February 21, 2026">21 lutego 2026</div>
+            <h2 class="news-title" data-pl="Wizyta w firmie Kainos podczas pokazu Projektów Studenckich." data-en="Visit to the Kainos company during the Student Projects show.">firmie Kainos podczas pokazu Projektów Studenckich.</h2>
+            <p class="news-text" data-pl="Świeże pomysły, nowatorskie rozwiązania i mnóstwo inspiracji - tak w skrócie upłynął ostatni czwartek w 
+              firmie Kainos podczas pokazu Projektów Studenckich.Nasze Koło miało przyjemność zaprezentować projekt: 
+              Cyfrowy bliźniak - projekt bezpiecznego rotora scenicznego, który realizujemy w ramach programu 
+              Studenckie koła tworzą innowacje, sfinansowanego ze środków Ministerstwo Nauki i Szkolnictwa Wyższego."
+              data-en="Fresh ideas, innovative solutions, and plenty of inspiration – that's a brief summary of last Thursday's Student Projects showcase at Kainos.
+              Our Student Research Group had the pleasure of presenting the project: Digital Twin - Safe Stage Rotor Design, 
+              which we are implementing as part of the Student Research Groups Create Innovations 
+              program, funded by the Ministry of Science and Higher Education.">
+              Świeże pomysły, nowatorskie rozwiązania i mnóstwo inspiracji - tak w skrócie upłynął ostatni czwartek w 
+              firmie Kainos podczas pokazu Projektów Studenckich.Nasze Koło miało przyjemność zaprezentować projekt: 
+              "Cyfrowy bliźniak - projekt bezpiecznego rotora scenicznego", który realizujemy w ramach programu 
+              ,,Studenckie koła tworzą innowacje", sfinansowanego ze środków Ministerstwo Nauki i Szkolnictwa Wyższego.
+            </p>
+            <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0SN22TZUUQRHa5uarvrWAvKtWMpuUp1EgGgMLDsNXZ9UhL32FQWtBiKmrwMwpwUwHl&id=100049758506515&__cft__[0]=AZZLcYReaSotdrXW87ene1s-nXyK17Lg04K7Wv4PsIDlOjas96hTRAYfpkDnd7ObC36F49KBCGhnSV75lg3Z5tw9W1_C8tjt-xrCwfA829etuH1OMifmHlGF_eO-HLdlVdYYrN_2_MaRCZcKVWOOAvOcj4u377Ngk8DyIbBVCqUln7UPLUkSwiJtPwZD3UOeoEU&__tn__=%2CO%2CP-R" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie	16.02.2026-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/16_02_2026.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="16 lutego 2026" data-en="February 16, 2026">16 lutego 2026</div>
+            <h2 class="news-title" data-pl="Przyspieszamy! Cyfrowy Bliźniak Rotora w kolejnym etapie " data-en="We're accelerating! Rotor's Digital Twin is in its next phase.">Przyspieszamy! Cyfrowy Bliźniak Rotora w kolejnym etapie</h2>
+            <p class="news-text" data-pl="Cyfrowy bliźniak - projekt bezpiecznego rotora scenicznego nabiera coraz większego tempa."
+              data-en="The Digital Twin - Safe Stage Rotor Project is gaining momentum.">
+              "Cyfrowy bliźniak - projekt bezpiecznego rotora scenicznego" nabiera coraz większego tempa.
+            </p>
+            <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02XZsddH2H9ZpibxfPtNhHFsy7vUhs9Spmt9TUKfbrdBAYgEbZ4GiYvfziC5WXk9Rkl&id=100049758506515&__cft__[0]=AZY-Nf-gFjFm6LaZ_PO91K4wb6z8kD088CPne0pPOCIDkIgLwycSrqmNTHXZLI5E0Z8p_0wJMpWL6-4dNqGsjO9H8mtZfLFmePQA75jMM4WeB-SuOLsh0808TcPtD9J-L2iI-not9pxbE5Zo12o5pOua7RfzSDB1ZAUi5Vatn6JxhRzDNzcjIypt1PAE9_btEJ4&__tn__=%2CO%2CP-R" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie	30.01.2026-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/30_01_2026.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="30 stycznia 2026" data-en="January 30, 2026">30 stycznia 2026</div>
+            <h2 class="news-title" data-pl="Odwiedziny gdyńskiego oddziału firmy Tenneco, Federal-Mogul Bimet S.A." data-en="Visit to the Gdynia branch of Tenneco, Federal-Mogul Bimet S.A.">Odwiedziny gdyńskiego oddziału firmy Tenneco, Federal-Mogul Bimet S.A.</h2>
+            <p class="news-text" data-pl="W ostatni wtorek, 27 stycznia mieliśmy przyjemność odwiedzić gdański oddział firmy Tenneco, 
+              Federal-Mogul Bimet S.A. Historia tej placówki jest imponująca i sięga lat powojennych. 
+              Jesteśmy pod wrażeniem nie tylko samego zakładu, po którym nas oprowadzono, ale przede 
+              wszystkim spójności w realizacji misji i wartości firmy. Serdeczne podziękowania kierujemy 
+              do Jeremiasz Bączkowski, za szczegółowe przedstawienie Działu Utrzymania Ruchu oraz pracy w Dziale Elektroenergetyków wraz z ofertą stażu dla studentów."
+              data-en="Last Tuesday, January 27th, we had the pleasure of visiting the Gdańsk branch of Tenneco,
+              Federal-Mogul Bimet S.A. The history of this facility is impressive and dates back to the post-war years.
+              We were impressed not only by the facility itself, which we were shown around, but above all by the consistency in implementing the company's mission and values. We extend our sincere thanks
+              to Jeremiasz Bączkowski for his detailed presentation of the Maintenance Department and work in the Electrical Power Department, along with the internship offer for students.">
+              W ostatni wtorek, 27 stycznia mieliśmy przyjemność odwiedzić gdański oddział firmy Tenneco, 
+              Federal-Mogul Bimet S.A. Historia tej placówki jest imponująca i sięga lat powojennych. 
+              Jesteśmy pod wrażeniem nie tylko samego zakładu, po którym nas oprowadzono, ale przede 
+              wszystkim spójności w realizacji misji i wartości firmy. Serdeczne podziękowania kierujemy 
+              do Jeremiasz Bączkowski, za szczegółowe przedstawienie Działu Utrzymania Ruchu oraz pracy w Dziale Elektroenergetyków wraz z ofertą stażu dla studentów.
+            </p>
+            <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0YkME7a98ffcKwce5rfn3NzKrbK7xk3cZ5U8fWjGCzzTqjA9cvjo1Dfj8oXKLN4xNl&id=100049758506515&__cft__[0]=AZZZ4WW7cKZJuvKL5LTcsgXRt7LRjwmzaF4NL6HBUrH_GO_nO_wfJaNI77bAX4RR3HDhWs22CsxN2ALOG30ToO3V1bzBGti5Xiszn78n26_CjAT6uuTaVgGWaE1IFORU1yJ_JOXuEG3vALn_K9KOo8XCZnWxKk_Y1DpXIKI5G05JP_Dntar3uQd3blU8BwALs74&__tn__=%2CO%2CP-R" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie	19.12.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/19_12_2025.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="19 grudnia 2025" data-en="December 19, 2025">19 grudnia 2025</div>
+            <h2 class="news-title" data-pl="Warsztaty z Projektowania 3D" data-en="3D Design Workshop">Warsztaty z Projektowania 3D</h2>
+            <p class="news-text" data-pl="W piątek, 19 grudnia 2025 roku, odbyły się warsztaty z Projektowania 3D, 
+            które poprowadził Paweł Jędryczka. Podczas spotkania poznaliśmy różne technologie i metody druku 3D, rodzaje 
+              drukarek oraz mogliśmy zobaczyć jedną z nich w akcji. To była niezwykle praktyczna i inspirująca lekcja"
+              data-en="On Friday, December 19, 2025, a workshop on 3D Design took place, led by Paweł Jędryczka. 
+              During the meeting, we learned about various 3D printing technologies and methods, types of printers, 
+              and had the opportunity to see one in action. It was an extremely practical and inspiring lesson.">
+              W piątek, 19 grudnia 2025 roku, odbyły się warsztaty z "Projektowania 3D", które poprowadził Paweł Jędryczka. Podczas spotkania poznaliśmy różne technologie i metody druku 3D, rodzaje 
+              drukarek oraz mogliśmy zobaczyć jedną z nich w akcji. To była niezwykle praktyczna i inspirująca lekcja
+            </p>
+            <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0Q3FceEVUxUxqRcy2E7C8CPNwaTD9U1w9Ki1YHcCqwToK5RDpS4yWD3TzArxFJAVzl&id=100049758506515&__cft__[0]=AZb0qD5-iNK7p8DwYRlJMqW7Jvl8FomDcSpawl8GP3EeNLnNQCTVgp-DX9yf6lPY8JhwV2cvsN5d3Wr-ZOgmG9kcHQvCcRO2xlWAIxZvCgtjieZNkko6RApb3DEpYPtYO3t2cVPM3ACNN15fBRSsUbFQ8k1hZiRxa5zEqE39D0AvuVH2LGweI2RWONZV09GdJVs&__tn__=%2CO%2CP-R" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie	09.12.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/09_12_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="8 grudnia 2025" data-en="December 9, 2025">9 grudnia 2025</div>
+            <h2 class="news-title" data-pl="Udział w Międzyuczelnianym Seminarium Naukowe „Akademia Innowacji” połączone ze spotkaniem technicznym Instytutu Inżynierów Elektryków i Elektroników" data-en="Participation in the Inter-University Scientific Seminar Academy of Innovation combined with a technical meeting of the Institute of Electrical and Electronics Engineers">Udział w Międzyuczelnianym Seminarium Naukowe „Akademia Innowacji” połączone ze spotkaniem technicznym Instytutu Inżynierów Elektryków i Elektroników</h2>
+            <p class="news-text" data-pl="W ostatnich dniach mieliśmy okazję odwiedzić Politechnika Rzeszowska im. Ignacego Łukasiewicza, gdzie wzięliśmy udział w inspirujących prelekcjach oraz prezentacjach działalności tamtejszych kół naukowych. Była to świetna okazja, aby wymienić się doświadczeniami, poznać nowe kierunki badań i zobaczyć, jak funkcjonują inne zespoły studenckie. 
+              Podczas wizyty zaprezentowaliśmy również nasze własne projekty, osiągnięcia i obszary działalności Koła HMI."
+              data-en="Recently, we had the opportunity to visit the Ignacy Łukasiewicz Rzeszów University of Technology, where we attended inspiring lectures and presentations on the activities of the local student research groups. It was a great opportunity to exchange experiences, learn about new research directions, and see how other student groups operate. 
+              During the visit, we also presented our own projects, achievements, and the activities of the HMI Student Research Group.">
+              W ostatnich dniach mieliśmy okazję odwiedzić Politechnika Rzeszowska im. Ignacego Łukasiewicza, gdzie wzięliśmy udział w inspirujących prelekcjach oraz prezentacjach działalności tamtejszych kół naukowych. Była to świetna okazja, aby wymienić się doświadczeniami, poznać nowe kierunki badań i zobaczyć, jak funkcjonują inne zespoły studenckie. 
+              Podczas wizyty zaprezentowaliśmy również nasze własne projekty, osiągnięcia i obszary działalności Koła HMI.
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7403697403243036672" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie	28.11.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/28_11_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="28 listopada 2025" data-en="November 28, 2025">28 listopada 2025</div>
+            <h2 class="news-title" data-pl="VI Seminarium Rady Kół Naukowych - prezentacje projektów studenckich" data-en="6th Seminar of the Council of Scientific Circles - presentations of student projects">VI Seminarium Rady Kół Naukowych - prezentacje projektów studenckich</h2>
+            <p class="news-text" data-pl="W piątek 28.11.2025 r. odbyło się VI Seminarium Rady Kół Naukowych, podczas którego członkowie naszego koła w składzie: 
+              Paulina Juretko, Katarzyna Jóźwik, Juliusz Kubiak, Karol Leśniewski oraz Maciej Pakulski przedstawili postery naukowe. 
+              Dziękujemy za opiekę merytoryczną pani dr inż. Monice Rybczak."
+              data-en="On Friday, November 28, 2025, the 6th Seminar of the Council of Scientific Circles took place, during which members of our circle, Paulina Juretko, Katarzyna Jóźwik, Juliusz Kubiak, Karol Leśniewski, and Maciej Pakulski, presented scientific posters.
+              We would like to thank Dr. Monika Rybczak for her substantive guidance.">
+              W piątek 28.11.2025 r. odbyło się "VI Seminarium Rady Kół Naukowych", podczas którego członkowie naszego koła w składzie: 
+              Paulina Juretko, Katarzyna Jóźwik, Juliusz Kubiak, Karol Leśniewski oraz Maciej Pakulski przedstawili postery naukowe. 
+              Dziękujemy za opiekę merytoryczną pani dr inż. Monice Rybczak.
+
+            </p>
+            <a href="https://www.facebook.com/share/p/19fMisV63J/" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 24.11.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/24_11_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="24 listopada 2025" data-en="November 24, 2025">24 listopada 2025</div>
+            <h2 class="news-title" data-pl="Space Tech Expo Europe 2025: Nasze koło w sercu europejskiej branży kosmicznej w Bremie" data-en="Space Tech Expo Europe 2025: Our hub at the heart of the European space industry in Bremen">Space Tech Expo Europe 2025: Nasze koło w sercu europejskiej branży kosmicznej w Bremie</h2>
+            <p class="news-text" data-pl="Jako Koło Naukowe HMI mieliśmy wyjątkową okazję uczestniczyć w targach Space Tech Expo Europe 2025 w Bremie. Było to dla nas niezapomniane przeżycie, które pozwoliło nam zanurzyć się w świat najnowszych 
+              technologii kosmicznych i zobaczyć z bliska rozwiązania, o których wcześniej mogliśmy jedynie czytać"
+              data-en="As the HMI Science Club, we had the unique opportunity to participate in the Space Tech Expo Europe 2025 trade fair in Bremen. It was an unforgettable experience, allowing us to 
+              immerse ourselves in the world of cutting-edge space technologies and see firsthand solutions we had previously only read about.">
+              Jako Koło Naukowe HMI mieliśmy wyjątkową okazję uczestniczyć w targach Space Tech Expo Europe 2025 w Bremie. Było to dla nas niezapomniane przeżycie, które pozwoliło nam zanurzyć 
+              się w świat najnowszych technologii kosmicznych i zobaczyć z bliska rozwiązania, o których wcześniej mogliśmy jedynie czytać
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7398280887198453760" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 08.10.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/08_10_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="2 października 2025" data-en="October 2, 2025">2 października 2025</div>
+            <h2 class="news-title" data-pl="Podwójny triumf! Nasi członkowie zdobywają I i II nagrodę w konkursie SEP na najlepszą pracę dyplomową" data-en="A double triumph! Our members win first and second place in the SEP competition for the best thesis.">Podwójny triumf! Nasi członkowie zdobywają I i II nagrodę w konkursie SEP na najlepszą pracę dyplomową</h2>
+            <p class="news-text" data-pl="W XII edycji Konkursu na najlepszą pracę dyplomową inżynierską 2025 organizowaną przez Stowarzyszenie Elektryków Polskich (SEP) laureatami zostali członkowie naszego koła: Paweł Jędryczka oraz Kamil Kaczmarek.
+              Ponadto Paweł Jędryczka otrzymał nagrodę Ministra Infrastruktury dla najlepszego elektroautomatyka okrętowego Uniwersytetu Morskiego w Gdyni. Serdecznie gratulujemy i życzymy dalszych sukcesów‼!"
+              data-en="In the 12th edition of the Competition for the Best Engineering Thesis 2025, organized by the Association of Polish Electrical Engineers (SEP), our members Paweł Jędryczka and Kamil Kaczmarek were the winners. 
+              Additionally, Paweł Jędryczka received the Minister of Infrastructure Award for the Best Ship Electrical Automation Engineer at the Gdynia Maritime University. Congratulations and we wish you continued success!">
+              W XII edycji "Konkursu na najlepszą pracę dyplomową inżynierską 2025"organizowaną przez Stowarzyszenie Elektryków Polskich (SEP) laureatami zostali członkowie naszego koła: Paweł Jędryczka oraz Kamil Kaczmarek.
+              Ponadto Paweł Jędryczka otrzymał nagrodę Ministra Infrastruktury dla najlepszego elektroautomatyka okrętowego Uniwersytetu Morskiego w Gdyni. Serdecznie gratulujemy i życzymy dalszych sukcesów‼!
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7381927650325344257" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 02.10.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/02_10_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="2 października 2025" data-en="October 2, 2025">2 października 2025</div>
+            <h2 class="news-title" data-pl="Dziękujemy za niezapomnianą Noc Naukowców 2025! Wasze zainteresowanie przeszło nasze oczekiwania" data-en="Thank you for an unforgettable Researchers' Night 2025! Your interest exceeded our expectations.">Dziękujemy za niezapomnianą Noc Naukowców 2025! Wasze zainteresowanie przeszło nasze oczekiwania</h2>
+            <p class="news-text" data-pl="Dziękujemy za tak liczne odwiedziny naszych stanowisk podczas Pomorskiej Nocy Naukowców 2025, zarówno w Centrum Nauki Experyment, jak i na Uniwersytecie Morskim w Gdyni. 
+            To była doskonała okazja, by podzielić się wiedzą i zainspirować młodych pasjonatów nauki"
+              data-en="Thank you for visiting our stands during the Pomeranian Researchers' Night 2025, both at the Experyment Science Centre and at Gdynia Maritime University. 
+              It was a great opportunity to share knowledge and inspire young science enthusiasts.">
+              Dziękujemy za tak liczne odwiedziny naszych stanowisk podczas Pomorskiej Nocy Naukowców 2025, zarówno w Centrum Nauki Experyment, jak i na Uniwersytecie Morskim w Gdyni. 
+              To była doskonała okazja, by podzielić się wiedzą i zainspirować młodych pasjonatów nauki
+            </p>
+            <a href="https://www.instagram.com/p/DPUfpfyDVC4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+
+<!-- wydarzenie 17.09.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/17_09_2025.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="17 września 2025" data-en="September 17, 2025">17 września 2025</div>
+            <h2 class="news-title" data-pl="Wakacje z technologią kwantową! Nasz członek na Q-Con Quantum Conference" data-en="A quantum vacation! Our member at the Q-Con Quantum Conference">Wakacje z technologią kwantową! Nasz członek na Q-Con Quantum Conference</h2>
+            <p class="news-text" data-pl="Podczas wakacji również działamy. Członek naszego koła Jakub Lidzbarski uczestniczył 29.08.2025 w konferencji Q-Con Quantum Conference 
+              organizowanej w gmachu Uniwersytetu Gdańskiego. Dziękujemy za ciekawe i inspirujące dyskusje na temat technologii kwantowej, 
+              a także szczegółowe przedstawienie drugiego (po Bieliku) polskiego zaawansowanego modelu sztucznej inteligencji - Sójki, 
+              który wykrywa i blokuje szkodliwe treści w komunikacji cyfrowej."
+              data-en="We're also active during the summer holidays. Our group member, Jakub Lidzbarski, participated in the Q-Con Quantum Conference
+              held at the University of Gdańsk on August 29, 2025. Thank you for the interesting and inspiring discussions about quantum technology,
+              as well as for the detailed presentation of Poland's second advanced artificial intelligence model (after Bielik), Sójka,
+              which detects and blocks harmful content in digital communications.">
+              Podczas wakacji również działamy. Członek naszego koła Jakub Lidzbarski uczestniczył 29.08.2025 w konferencji Q-Con Quantum Conference 
+              organizowanej w gmachu Uniwersytetu Gdańskiego. Dziękujemy za ciekawe i inspirujące dyskusje na temat technologii kwantowej, 
+              a także szczegółowe przedstawienie drugiego (po Bieliku) polskiego zaawansowanego modelu sztucznej inteligencji - Sójki, 
+              który wykrywa i blokuje szkodliwe treści w komunikacji cyfrowej.
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7373962675363577856" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 10.09.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/10_09_2025.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="10 września 2025" data-en="September 10, 2025">10 września 2025</div>
+            <h2 class="news-title" data-pl="Sukces koła HMI! Przyznano nam prawie 39 tys. zł na innowacyjny projekt." data-en="HMI Circle Success! We were awarded nearly PLN 39,000 for an innovative project.">Sukces koła HMI! Przyznano nam prawie 39 tys. zł na innowacyjny projekt.</h2>
+            <p class="news-text" data-pl="Sukces koła HMI! Przyznano nam prawie 39 tys. zł na innowacyjny projekt. Koło naukowe HMI otrzymało finansowanie w V edycji programu 
+              Studenckie koła naukowe tworzą innowacje. Tytuł projektu: Cyfrowy bliźniak - projekt bezpiecznego rotora scenicznego. Przyznano środki na kwotę 38720zł.
+              Projekt jest zaplanowany na jeden rok, rozpoczął się w maju 2025 i trwa do maja 2026.
+              Poniżej podajemy część treści decyzji: Tematyka projektu dotyczy aktualnych zagadnień z obszaru mechatroniki, automatyki i systemów sterowania. Prace projektowe będą wspomagane za pomocą cyfrowego bliźniaka co wskazuje na innowacyjne podejście do osiągnięcia celu projektu.
+              Cieszymy się, że udało nam się otrzymać dofinansowanie. Trzymajcie za nas kciuki!"
+              data-en="HMI Student Research Group Success! We have been awarded nearly PLN 39,000 for an innovative project.
+              The HMI Student Research Group received funding in the 5th edition of the Student Student Research Groups Create Innovation program. 
+              The project title is: Digital Twin - Safe Stage Rotator Design. Funding totaled PLN 38,720.
+              The project is planned for one year, beginning in May 2025 and continuing until May 2026.
+              Below is part of the decision: The project's topic concerns current issues in the field of mechatronics, automation, and control systems. Design work will be supported by a digital twin, demonstrating an innovative approach to achieving the project's goal.
+              We are delighted to have received funding. Keep your fingers crossed for us!">
+              Sukces koła HMI! Przyznano nam prawie 39 tys. zł na innowacyjny projekt. Koło naukowe HMI otrzymało finansowanie w V edycji programu 
+              "Studenckie koła naukowe tworzą innowacje". Tytuł projektu: "Cyfrowy bliźniak - projekt bezpiecznego rotora scenicznego". Przyznano środki na kwotę 38720zł.
+              Projekt jest zaplanowany na jeden rok, rozpoczął się w maju 2025 i trwa do maja 2026.
+              Poniżej podajemy część treści decyzji: "Tematyka projektu dotyczy aktualnych zagadnień z obszaru mechatroniki, automatyki i systemów sterowania. Prace projektowe będą wspomagane za pomocą cyfrowego bliźniaka co wskazuje na innowacyjne podejście do osiągnięcia celu projektu".
+              Cieszymy się, że udało nam się otrzymać dofinansowanie. Trzymajcie za nas kciuki! 
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7341362860553293825" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 22.06.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/22_06_2025.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="22 czerwca 2025" data-en="June 22, 2025">22 czerwca 2025</div>
+            <h2 class="news-title" data-pl="Mistrzostwa Polski Programistów PLC – Wspomnienia i Wrażenia" data-en="Polish Championship of PLC Programmers – Memories and Impressions">Mistrzostwa Polski Programistów PLC – Wspomnienia i Wrażenia</h2>
+            <p class="news-text" data-pl="Na początku czerwca reprezentacja naszego koła w składzie: Paulina Juretko, Katarzyna Jóźwik, Dawid Formella, Krzysztof Wilczyński 
+              wzięła udział w ogólnopolskim konkursie programowania sterowników PLC. Konkurs składa się z 3 poziomów, co pozwala na rywalizację 
+              uczestników na zbliżonym poziomie. Nasza drużyna zgłosiła się do kategorii EKSPERT – przeznaczonej dla studentów uczelni wyższych."
+              data-en="In early June, our club's team, consisting of Paulina Juretko, Katarzyna Jóźwik, Dawid Formella, and Krzysztof Wilczyński, 
+              participated in the national PLC programming competition. The competition consists of three levels, allowing participants to compete 
+              at similar levels. Our team entered the EXPERT category, intended for university students..">
+              Na początku czerwca reprezentacja naszego koła w składzie: Paulina Juretko, Katarzyna Jóźwik, Dawid Formella, Krzysztof Wilczyński 
+              wzięła udział w ogólnopolskim konkursie programowania sterowników PLC. Konkurs składa się z 3 poziomów, co pozwala na rywalizację 
+              uczestników na zbliżonym poziomie. Nasza drużyna zgłosiła się do kategorii EKSPERT – przeznaczonej dla studentów uczelni wyższych.
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7341362860553293825" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+
+<!-- wydarzenie 05.06.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/05_06_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="5 czerwca 2025" data-en="June 5, 2025">5 czerwca 2025</div>
+            <h2 class="news-title" data-pl="V Seminarium Rady Kół Naukowych - prezentacje projektów studenckich" data-en="5th Seminar of the Council of Scientific Circles - presentations of student projects">V Seminarium Rady Kół Naukowych - prezentacje projektów studenckich</h2>
+            <p class="news-text" data-pl="We wtorek 3.06.2025r. odbyło się V Seminarium Rady Kół Naukowych, 
+            podczas którego przedstawione zostały prezentacje i postery, przygotowane przez uczestników różnych kół, w tym nasze.
+            Dziękujemy za opiekę merytoryczną pani dr inż. Monice Rybczak."
+              data-en="On Tuesday, June 3, 2025, the 5th Seminar of the Council of Scientific Circles took place, during which presentations 
+              and posters prepared by participants from various circles, including ours, were presented. We would like to thank 
+              Dr. Monika Rybczak for her substantive guidance.">
+              We wtorek 3.06.2025r. odbyło się "V Seminarium Rady Kół Naukowych", podczas którego przedstawione zostały prezentacje i postery, 
+              przygotowane przez uczestników różnych kół, w tym nasze.Dziękujemy za opiekę merytoryczną pani dr inż. Monice Rybczak.
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7336470628629110786" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+
+<!-- wydarzenie 29.05.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/29_05_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="29 maja 2025" data-en="May 29, 2025">29 maja 2025</div>
+            <h2 class="news-title" data-pl="Wyróżnienie prac inżynierskich członków naszego koła" data-en="Recognition of the engineering works of our club members">Wyróżnienie prac inżynierskich członków naszego koła</h2>
+            <p class="news-text" data-pl="Podczas dzisiejszej uroczystości w imieniu Dziekana Wydziału Elektrycznego pani Prodziekan ds. Nauki i Promocji 
+            dr hab. inż. Kalina Detka, prof. UMG przyznała listy gratulacyjne za wyróżniającą się pracę inżynierską. Wśród wyróżnionych znaleźli się członkowie naszego koła: 
+            Bartosz Korycki, Paweł Jędryczka, Kamil Kaczmarek, Piotr Wieleba, Kacper Falkiewicz. Serdecznie gratulujemy!"
+              data-en="During today's ceremony, on behalf of the Dean of the Faculty of Electrical Engineering, Ms. Kalina Detka, 
+              Vice-Dean for Research and Promotion, PhD, DSc, Eng., prof. of the Medical University of Gdańsk, awarded letters of 
+              commendation for outstanding engineering work. Among the honorees were members of our group: Bartosz Korycki, Paweł Jędryczka, 
+              Kamil Kaczmarek, Piotr Wieleba, and Kacper Falkiewicz. Congratulations!">
+              Podczas dzisiejszej uroczystości w imieniu Dziekana Wydziału Elektrycznego pani Prodziekan ds. Nauki i Promocji dr hab. inż. Kalina Detka, 
+              prof. UMG przyznała listy gratulacyjne za wyróżniającą się pracę inżynierską. Wśród wyróżnionych znaleźli się członkowie naszego koła: 
+              Bartosz Korycki, Paweł Jędryczka, Kamil Kaczmarek, Piotr Wieleba, Kacper Falkiewicz. Serdecznie gratulujemy!
+
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7333947452162547713" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 27.05.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/27_05_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="27 maja 2025" data-en="May 27, 2025">27 maja 2025</div>
+            <h2 class="news-title" data-pl="Zwycięstwo na SpaceShield Hack! Nasz zespół zdobywa dwie nagrody specjalne w Stalowej Woli" data-en="Victory at SpaceShield Hack! Our team wins two special awards in Stalowa Wola">Zwycięstwo na SpaceShield Hack! Nasz zespół zdobywa dwie nagrody specjalne w Stalowej Woli</h2>
+            <p class="news-text" data-pl="Ekipa w składzie: Gracjan Kochanowski-Ossowski, Kamil Kaczmarek, Magdalena Borowiec, Paweł Jędryczka, Piotr Wieleba, Bartosz Korycki przedstawiła rozwiązanie w kategorii Defence, które ma solidną podstawę techniczną i biznesową, co docenili jurorzy w postaci dwóch nagród specjalnych: ECSS Navigator, programu dedykowanego branży kosmicznej 
+            od firmy Costrum oraz sesji biznesowej z firmą z Tajwanu od firmy 8FOUNDRY, które może dać nam szansę na urzeczywistnienie naszego projektu."
+              data-en="The team consisting of Gracjan Kochanowski-Ossowski, Kamil Kaczmarek, Magdalena Borowiec, Paweł Jędryczka, Piotr Wieleba, Bartosz Korycki presented a solution in the Defence category that has a solid technical and business foundation, which was appreciated by the jury in the form of two special awards: ECSS Navigator, a program dedicated to the space industry 
+              from Costrum and a business session with a company from Taiwan from 8FOUNDRY, which may give us a chance to implement our project.">
+              Ekipa w składzie: Gracjan Kochanowski-Ossowski, Kamil Kaczmarek, Magdalena Borowiec, Paweł Jędryczka, Piotr Wieleba, Bartosz Korycki przedstawiła rozwiązanie w kategorii Defence, które ma solidną podstawę techniczną i biznesową, co docenili jurorzy w postaci dwóch nagród specjalnych: ECSS Navigator, programu dedykowanego branży kosmicznej od firmy Costrum oraz sesji 
+              biznesowej z firmą z Tajwanu od firmy 8FOUNDRY, które może dać nam szansę na urzeczywistnienie naszego projektu.
+
+            </p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7333209136068726787" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 17.05.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/17_05_2025.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="17 maja 2025" data-en="May 17, 2025">17 maja 2025</div>
+            <h2 class="news-title" data-pl="SpaceShield Hack: przed nami 24-godzinna walka z wyzwaniami kosmiczno-obronnymi" data-en="SpaceShield Hack: A 24-hour battle against space and defense challenges awaits">SpaceShield Hack: przed nami 24-godzinna walka z wyzwaniami kosmiczno-obronnymi</h2>
+            <p class="news-text" data-pl="Już za tydzień wyruszamy do Stalowej Woli, by zmierzyć się z wyzwaniami na SPACESHIELD Hack, jednego z największych w Europie hackhatonu łączącego sektor kosmiczny i obronny. 
+            Eksperci z branży przygotowali dla uczestników wyzwania z czterech kategorii: space, defence, dual use oraz open. Pełne założenia misji poznamy dopiero podczas samego wydarzenia – już nie możemy się doczekać!
+            Hackathon organizowany jest w ramach projektu Space 4 Talents współfinansowanego przez Unię Europejską w ramach Europejskiej Inicjatywy Miejskiej."
+              data-en="In just one week, we'll be heading to Stalowa Wola to tackle challenges at SPACESHIELD Hack, one of Europe's largest hackathons combining the space and defense sectors. Industry experts have prepared challenges for participants in four categories: space, defense, dual use, and open. The full mission brief will be revealed during the event itself – we can't wait!
+              The hackathon is organized as part of the Space 4 Talents project, co-financed by the European Union as part of the European Urban Initiative.">
+              Już za tydzień wyruszamy do Stalowej Woli, by zmierzyć się z wyzwaniami na "SPACESHIELD Hack", jednego z największych w Europie hackhatonu łączącego sektor kosmiczny i obronny. Eksperci z branży 
+              przygotowali dla uczestników wyzwania z czterech kategorii: space, defence, dual use oraz open. Pełne założenia misji poznamy dopiero podczas samego wydarzenia – już nie możemy się doczekać!Hackathon organizowany jest w ramach projektu Space 4 Talents współfinansowanego przez Unię Europejską w ramach Europejskiej Inicjatywy Miejskiej
+
+            </p>
+            <a href="https://www.linkedin.com/posts/mamstartup_spaceshield-hack-hackathon-kt%C3%B3ry-zmieni-activity-7318324805554847745-X-up?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3YIwcB8xSFdClsscQCnz6j6bLpuC0Uow0" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 08.05.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/08_05_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="8 maja 2025" data-en="May 8, 2025">8 maja 2025</div>
+            <h2 class="news-title" data-pl="Sukces naszego kolegi: nagroda PIAP dla najlepszej pracy inżynierskiej" data-en="Our colleague's success: PIAP award for the best engineering thesis">Sukces naszego kolegi: nagroda PIAP dla najlepszej pracy inżynierskiej</h2>
+            <p class="news-text" data-pl="Pragniemy przekazać, że nasz kolega inż. Paweł Jędryczka w dniu 7.05.2025r. otrzymał I miejsce w konkursie na najlepszą pracę inżynierską Młodzi innowacyjni 2025, organizowane przez Przemysłowy Instytut 
+            Automatyki i Pomiarów PIAP w Warszawie. Gratulujemy naszemu koledze i życzymy dalszych sukcesów"
+              data-en="We are pleased to announce that our colleague, Paweł Jędryczka, received first place in the Young Innovators 2025 competition for the best engineering thesis on May 7, 2025, organized by the Industrial Institute of Automation 
+              and Measurements (PIAP) in Warsaw. We congratulate our colleague and wish him continued success.">
+              Pragniemy przekazać, że nasz kolega inż. Paweł Jędryczka w dniu 7.05.2025r. otrzymał I miejsce w konkursie na najlepszą pracę inżynierską Młodzi innowacyjni 2025,
+               organizowane przez Przemysłowy Instytut Automatyki i Pomiarów PIAP w Warszawie. Gratulujemy naszemu koledze i życzymy dalszych sukcesów
+            </p>
+            <a href="https://www.instagram.com/p/DJer5QIqPvU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie •	07.05.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/07.05.2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="7 maja 2025" data-en="May 7, 2025">7 maja 2025</div>
+            <h2 class="news-title" data-pl="Przemysł 4.0 na lądzie i morzu - wykład dr inż. Moniki Rybczak" data-en="Industry 4.0 on land and sea - lecture by Dr. Monika Rybczak">Przemysł 4.0 na lądzie i morzu - wykład dr inż. Moniki Rybczak</h2>
+            <p class="news-text" data-pl="Uniwersytet Morski w Gdyni organizuje Naukowe wieczory, czyli otwarte spotkania dla wszystkich zainteresowanych 
+            chcących rozwijać i poznawać swoją wiedzę z różnych obszarów nauki. 7 maja w ramach tego wydarzenia wzięliśmy udział w wykładzie naszej opiekunki koła, 
+            pani dr inż. Moniki Rybczak. Poniżej można zapoznać się z wideorelacji z tego spotkania."
+              data-en="Gdynia Maritime University is organizing Scientific Evenings, open meetings for anyone interested in expanding and exploring their 
+              knowledge in various fields of science. On May 7th, as part of this event, we attended a lecture by our student group supervisor, 
+              Dr. Monika Rybczak. You can watch a video of the meeting below.">
+              Uniwersytet Morski w Gdyni organizuje Naukowe wieczory, czyli otwarte spotkania dla wszystkich zainteresowanych chcących rozwijać i 
+              poznawać swoją wiedzę z różnych obszarów nauki. 7 maja w ramach tego wydarzenia wzięliśmy udział w wykładzie naszej opiekunki koła, 
+              pani dr inż. Moniki Rybczak. Poniżej można zapoznać się z wideorelacji z tego spotkania.
+            </p>
+            <a href="https://youtu.be/_zZ8m4w-vNI" target="_blank" class="more-btn" data-pl="WIDEO" data-en="VIDEO">WIDEO</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 10.04.2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/10_04_2025.png" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="10 kwietnia 2025" data-en="April 10, 2025">10 kwietnia 2025</div>
+            <h2 class="news-title" data-pl="Dzień Elektryka 2025" data-en="Electrician's Day 2025">Dzień Elektryka 2025</h2>
+            <p class="news-text" data-pl="W czwartek odbył się Dzień Elektryka zorganizowany przez dziekana i studentów Wydziału Elektrycznego. 
+            W wydarzeniu udział wzięło ponad 300 osób, w tym uczniowie sześciu szkół średnich, a także przedstawiciele firm branży energetycznej, 
+            elektronicznej, informatycznej i autonomicznej zainteresowani podjęciem współpracy ze studentami.Nie zabrakło też naszego stanowiska oraz 
+            Escape Roomu przygotowanego przez naszych kolegów i koleżanki z koła."
+              data-en="On Thursday, Electrician's Day took place, organized by the Dean and students of the Faculty of Electrical Engineering. 
+              Over 300 people attended the event, including students from six high schools, as well as representatives of companies in the energy, 
+              electronics, IT, and home automation sectors interested in collaborating with students. Our booth and an escape room prepared by our 
+              colleagues from the group were also on hand.">
+              W czwartek odbył się Dzień Elektryka zorganizowany przez dziekana i studentów Wydziału Elektrycznego. W wydarzeniu udział wzięło ponad 300 osób, 
+              w tym uczniowie sześciu szkół średnich, a także przedstawiciele firm branży energetycznej, elektronicznej, informatycznej i autonomicznej zainteresowani 
+              podjęciem współpracy ze studentami.Nie zabrakło też naszego stanowiska oraz Escape Roomu przygotowanego przez naszych kolegów i koleżanki z koła.
+            </p>
+            <a href="https://www.instagram.com/reel/DIZZbr1oKFD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 02.04. 2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/02_04_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="2 kwietnia 2025" data-en="April 2, 2025">2 kwietnia 2025</div>
+            <h2 class="news-title" data-pl="Rewolucja w automatyce: czego nauczyliśmy się na konferencji Siemens?" data-en="The Automation Revolution: What Did We Learn at the Siemens Conference?">Rewolucja w automatyce: czego nauczyliśmy się na konferencji Siemens?</h2>
+            <p class="news-text" data-pl="Uczestniczyliśmy w konferencji firmy Siemens w ramach cyklu ,,SIMATIC Innovation Tour 2025”. Podczas wydarzenia mieliśmy okazję zapoznać się ze szczegółową prezentacją nowego sterownika SIMATIC S7-1200 G2 – jego rozszerzonymi 
+            możliwościami komunikacyjnymi, zwiększoną wydajnością oraz nowymi funkcjami z zakresu automatyzacji."
+              data-en="We attended the Siemens conference as part of the SIMATIC Innovation Tour 2025 series. 
+              During the event, we had the opportunity to see a detailed presentation of the new SIMATIC S7-1200 G2 controller – its 
+              expanded communication capabilities, increased performance, and new automation features.">
+              Uczestniczyliśmy w konferencji firmy Siemens w ramach cyklu ,,SIMATIC Innovation Tour 2025”. 
+              Podczas wydarzenia mieliśmy okazję zapoznać się ze szczegółową prezentacją nowego sterownika SIMATIC S7-1200 G2 – 
+              jego rozszerzonymi możliwościami komunikacyjnymi, zwiększoną wydajnością oraz nowymi funkcjami z zakresu automatyzacji.
+            </p>
+            <a href="https://www.facebook.com/share/p/182VVNeTAi/" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+
+<!-- wydarzenie 26.03. 2025-->
+      <section class="news-grid">
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/26_03_2025.jpg" alt="Łazik DISTOBEE"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="26 marca 2025" data-en="March 26, 2025">26 marca 2025</div>
+            <h2 class="news-title" data-pl="Przygotowania do Dnia Elektryka oraz konkursu Czerwonej Róży" data-en="Preparations for Electrician's Day and the Red Rose competition">Przygotowania do Dnia Elektryka oraz konkursu Czerwonej Róży</h2>
+            <p class="news-text" data-pl="W ostatnim czasie pracujemy w kole na najwyższych obrotach. Już 10 kwietnia odbędzie się pierwszy w historii uczelni Dzień Elektryka. 
+            Serdecznie zapraszamy na nasze stanowisko, gdzie poznacie projekty jakie obecnie realizujemy, a także zagracie w ciekawą grę zręcznościową z nagrodami dla każdego.
+            Ponadto bierzemy udział w eliminacjach na poziomie uczelni do konkursu Czerwonej Róży."
+              data-en="We've been working at full speed lately. The first-ever Electrician's Day will take place on April 10th.
+              We cordially invite you to our booth, where you can learn about the projects we're currently working on and play a fun arcade game with prizes for everyone. 
+              We're also participating in the university-level qualifying rounds for the Czerwona Róża (Red Rose) competition.">
+              W ostatnim czasie pracujemy w kole na najwyższych obrotach. Już 10 kwietnia odbędzie się pierwszy w historii uczelni Dzień Elektryka. 
+              Serdecznie zapraszamy na nasze stanowisko, gdzie poznacie projekty jakie obecnie realizujemy, a także zagracie w ciekawą grę zręcznościową 
+              z nagrodami dla każdego.Ponadto bierzemy udział w eliminacjach na poziomie uczelni do konkursu Czerwonej Róży.
+
+            </p>
+            <a href="https://www.youtube.com/watch?v=YfcJdWnh05k" target="_blank" class="more-btn" data-pl="WIDEO" data-en="VIDEO">WIDEO</a>
+          </div>
+        </article>
+
+<!-- Wydarzenie 05.02.2025-->
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/05_02_2025.jpg" alt="Rekrutacja"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="5 lutego 2025" data-en="February 5, 2025">5 lutego 2025</div>
+            <h2 class="news-title" data-pl="Zmiany, zmiany, zmiany!" data-en="Changes, changes, changes!">Zmiany, zmiany, zmiany!</h2>
+            <p class="news-text" data-pl="Na pierwszym spotkaniu w 2025 podsumowaliśmy zeszły rok, przegłosowaliśmy zmiany w statucie oraz ustaliliśmy plany na obecny rok. Na pokładzie koła powitaliśmy również nowych członków." 
+            data-en="At our first meeting of 2025, we reviewed the past year, approved changes to the bylaws, and established plans for the current year. We also welcomed new members to the chapter.">
+              Na pierwszym spotkaniu w 2025 podsumowaliśmy zeszły rok, przegłosowaliśmy zmiany w statucie oraz ustaliliśmy plany na obecny rok. Na pokładzie koła powitaliśmy również nowych członków.
+            </p>
+            <a href="https://www.facebook.com/share/p/1HBG7EBxY1/" target="_blank" class="more-btn"data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+<!-- Wydarzenie 22.01.2025-->
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/22_01_2025.jpg" alt="Rekrutacja"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="22 syucznia 2025" data-en="January 22, 2025">22 syucznia 2025</div>
+            <h2 class="news-title" data-pl="Gramy razem dla WOŚP" data-en="We play together for the Great Orchestra of Christmas Charity">Gramy razem dla WOŚP</h2>
+            <p class="news-text" data-pl="W poniedziałek, 20 stycznia członkowie naszego koła wzięli udział w organizowanym na Wydziale Elektrycznym wspólnym malowaniu kubków, 
+            które następnie zostaną przeznaczone na aukcje. Całość wylicytowanej kwoty zostanie przekazana na wsparcie tegorocznej edycji WOŚP."
+              data-en="On Monday, January 20th, members of our group participated in a group painting of mugs organized at the Faculty of Electrical Engineering. 
+              The mugs will then be auctioned off. All proceeds will be donated to support this year's Great Orchestra of Christmas Charity.">
+              W poniedziałek, 20 stycznia członkowie naszego koła wzięli udział w organizowanym na Wydziale Elektrycznym wspólnym malowaniu kubków, które następnie zostaną 
+              przeznaczone na aukcje. Całość wylicytowanej kwoty zostanie przekazana na wsparcie tegorocznej edycji WOŚP.
+            </p>
+            <a href="https://www.facebook.com/share/r/1AXMrfyC7d/" target="_blank" class="more-btn"data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+<!-- Wydarzenie 19.12.2024-->
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/19_12_2024.jpg" alt="Rekrutacja"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="19 grudnia 2024" data-en="December 19, 2024">19 grudnia 2024</div>
+            <h2 class="news-title" data-pl="Świąteczne spotkania: podsumowanie roku na wigiliach UMG" data-en="Christmas gatherings: summing up the year at UMG Christmas Eve">
+              Świąteczne spotkania: podsumowanie roku na wigiliach UMG</h2>
+            <p class="news-text" data-pl="Koniec ubiegłego tygodnia był dla Nas czasem spotkań. W czwartek odbyła się wigilia Pracowników oraz przedstawicieli 
+            Kół Naukowych Uniwersytetu Morskiego w Gdyni, natomiast w piątek braliśmy udział w wigilii Wydziału Elektrycznego Uniwersytetu Morskiego w Gdyni." 
+            data-en="The end of last week was a time for gatherings. On Thursday, we hosted a Christmas Eve party for employees and representatives of the Gdynia Maritime 
+            University's Student Research Groups, and on Friday, we attended the Christmas Eve party for the Faculty of Electrical Engineering at Gdynia Maritime University.">
+              Koniec ubiegłego tygodnia był dla Nas czasem spotkań. W czwartek odbyła się wigilia Pracowników oraz przedstawicieli Kół Naukowych Uniwersytetu Morskiego w Gdyni,
+              natomiast w piątek braliśmy udział w wigilii Wydziału Elektrycznego Uniwersytetu Morskiego w Gdyni. 
+            </p>
+            <a href="https://www.facebook.com/share/p/14S9jwXqvQP/" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+<!-- Wydarzenie 13.12.2024r-->
+        <article class="news-item">
+          <div class="news-image">
+            <img src="Zdjęcia_wydarzenia/13_12_2024.jpg" alt="Rekrutacja"> <!-- dostosuj ścieżkę -->
+          </div>
+          <div class="news-content">
+            <div class="news-date" data-pl="24 listopad 2024" data-en="November 24, 2024">24 listopad 2024</div>
+            <h2 class="news-title" data-pl="I nagroda za najlepsze stanowisko podczas Dnia Otwartego UMG" data-en="1st prize for the best stand during the UMG Open Day">I nagroda za najlepsze stanowisko podczas Dnia Otwartego UMG</h2>
+            <p class="news-text" data-pl="Prezentacja dorobku kół naukowych to stały i niezwykle istotny punkt Dni Otwartych Uniwersytetu Morskiego w Gdyni. Podczas ostatniej edycji wydarzenia, w Auli im. Tadeusza Meissnera, 
+              rozegrano konkurs na najciekawsze stanowisko. Kapituła oceniała nie tylko kreatywność i zaangażowanie w promocję uczelni, ale przede wszystkim wysoki poziom naukowy prezentowanych stanowisk. Miło nam poinformować, 
+              że dzięki pasji i merytorycznemu przygotowaniu członków naszego koła, zdobyliśmy w tej rywalizacji I miejsce."
+              data-en="The presentation of the achievements of student research groups is a permanent and crucial part of the Gdynia Maritime University Open Days. During the last edition of the event, a competition 
+               for the most interesting presentation was held in the Tadeusz Meissner Auditorium. The jury assessed not only creativity and commitment to promoting the university, but above all, the high scientific level 
+               of the presentations. We are pleased to announce that thanks to the passion and professionalism of our student research group members, we won first place in this competition.">
+              Prezentacja dorobku kół naukowych to stały i niezwykle istotny punkt Dni Otwartych Uniwersytetu Morskiego w Gdyni. Podczas ostatniej edycji wydarzenia, w Auli im. Tadeusza Meissnera, rozegrano konkurs 
+              na najciekawsze stanowisko. Kapituła oceniała nie tylko kreatywność i zaangażowanie w promocję uczelni, ale przede wszystkim wysoki poziom naukowy prezentowanych stanowisk. Miło nam poinformować, 
+              że dzięki pasji i merytorycznemu przygotowaniu członków naszego koła, zdobyliśmy w tej rywalizacji I miejsce.
+            </p>
+            <a href="https://www.facebook.com/share/p/1BCUYcLJK7/" target="_blank" class="more-btn" data-pl="WIĘCEJ" data-en="MORE">WIĘCEJ</a>
+          </div>
+        </article>
+        <!-- Dodawaj kolejne newsy tutaj -->
+      </section>
+    </main>
+
+  </div> <!-- koniec .fade-page -->
+
+  <script src="script.js"></script> <!-- Twój istniejący script z loaderem i menu -->
+</body>
+</html>

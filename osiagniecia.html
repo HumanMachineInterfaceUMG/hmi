@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osiągnięcia Koła HMI</title>
+  <link rel="stylesheet" href="styles_osiagniecia.css">
+</head>
+
+<body class="dark-bg achievements-page"> <!-- zachowujemy klasę dark-bg -->
+  <!-- LOGO W LEWYM GÓRNYM ROGU – LINK DO STRONY GŁÓWNEJ -->
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <img src="Loga/logo_hmi.png" alt="logo_hmi"> <!-- zamień na swoje logo jeśli inne -->
+    </div>
+  </div>
+    <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
+    <div class="fade-page">
+
+    <!-- Górne menu z hamburgerem logo i jezykiem -->
+     <div class = top-bar>
+      <div class = top-left>
+      <div id="hamburger">☰</div>
+      <a href="index.html" id="homeLogo" aria-label="Strona główna">
+      <img src="Loga/logo_hmi_białe.png" alt="Logo Koła Naukowego HMI">
+      </a>
+      </div>
+
+      <button id="langCorner">
+      <img src="https://flagcdn.com/gb.svg" alt="English"> EN
+      </button>
+
+      </div>
+
+  <!-- MENU -->
+  <nav id="sideMenu">
+    <ul>
+     <li><a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a></li>
+     <li><a href="Sekcje_zespolow.html" data-pl="Sekcje Koła" data-en="Sections">Sekcje Koła</a></li>
+     <li><a href="czlonkowie.html" data-pl="Członkowie" data-en="Members">Członkowie</a></li>
+     <li><a href="osiagniecia.html" data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</a></li>
+     <li><a href="Wydarzenia.html" data-pl="Wydarzenia" data-en="Events">Wydarzenia</a></li>
+     <li><a href="social_media.html" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+  </nav>
+  <div id="menuOverlay"></div>
+    <!-- TREŚĆ STRONY OSIĄGNIĘĆ -->
+  <h1 data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</h1>
+  <div class="achievements-grid">
+
+  <!-- Osiągnięcie 1 -->
+  <div class="achievement-card">
+    <img 
+      class="achievement-image" 
+      src="Osiagniecia/hackhaton.jpg" 
+      alt="Międzynarodowy hackathon SpaceShield Hack 2025"
+    >
+    <h3 class="achievement-title" data-pl="Międzynarodowy hackathon SpaceShield Hack 2025" data-en="International hackathon SpaceShield Hack 2025">
+      Międzynarodowy hackathon SpaceShield Hack 2025
+    </h3>
+    <div class="achievement-description" data-pl="Otrzymanie dwóch nagród specjalnych" data-en="Receiving two special awards">
+      Otrzymanie dwóch nagród specjalnych
+    </div>
+    <div class="achievement-location" data-pl="Stalowa Wola" data-en="Stalowa Wola" >Stalowa Wola</div>
+    <div class="achievement-date">24–25.05.2025</div>
+
+    <a 
+      href="https://www.linkedin.com/feed/update/urn:li:activity:7333209136068726787"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+  </div>
+
+  <!-- Osiągnięcie 2 -->
+  <div class="achievement-card">
+    <img 
+      class="achievement-image" 
+      src="Osiagniecia/Dofinasowanie_bliźniak.png" 
+      alt="Cyfrowy bliźniak – projekt bezpiecznego rotora"
+    >
+    <h3 class="achievement-title" data-pl="Studenckie Koła Naukowe Tworzą Innowacje" data-en="Student Science Clubs Create Innovations">
+      Studenckie Koła Naukowe Tworzą Innowacje
+    </h3>
+    <div class="achievement-description" data-pl="2025 - Cyfrowy bliźniak – projekt bezpiecznego rotora ścigającego" data-en="2025 - Digital Twin - Safe Chaser Rotor Design">
+      2025 - Cyfrowy bliźniak – projekt bezpiecznego rotora ścigającego
+    </div>
+
+        <a 
+      href="https://www.linkedin.com/feed/update/urn:li:activity:7371504037701050368" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+
+    <div class="achievement-description" data-pl="2021 - ,,Sztuczna inteligencja w zastosowaniach przemysłowych”" data-en="2021 - Artificial Intelligence in Industrial Applications">
+      2021 - ,,Sztuczna inteligencja w zastosowaniach przemysłowych”
+    </div>
+
+    <a 
+      href="https://www.facebook.com/share/p/1DRu7c9Mby/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+  </div>
+
+  <!-- Osiągnięcie 3 -->
+  <div class="achievement-card">
+    <img 
+      class="achievement-image" 
+      src="Osiagniecia/Mistrzostwa_PLC.jpg" 
+      alt="Mistrzostwa Polski programistów PLC"
+    >
+    <h3 class="achievement-title" data-pl="Mistrzostwa Polski programistów PLC" data-en="Polish Championship of PLC Programmers">
+      Mistrzostwa Polski programistów PLC
+    </h3>
+    <div class="achievement-description" data-pl="2025 – udział" data-en="2025 – participation">
+      2025 – udział
+    <div class="achievement-description" data-pl="2020 – II miejsce w kategorii Ekspert dla Dawida Trzcińskiego" data-en="2020 – 2nd place in the Expert category for Dawid Trzcińskiego">
+      2020 – II miejsce w kategorii Ekspert dla Dawida Trzcińskiego
+    </div>
+      
+    </div>
+    <div class="achievement-date">2025</div>
+
+    <a 
+      href="https://www.linkedin.com/feed/update/urn:li:activity:7341362860553293825" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+  </div>
+
+  <!-- Osiągnięcie 4 -->
+  <div class="achievement-card">
+    <img 
+      class="achievement-image" 
+      src="Osiagniecia/Czerwona_roza.jpg" 
+      alt="Cyfrowy bliźniak – projekt bezpiecznego rotora"
+    >
+    <h3 class="achievement-title" data-pl="Konkurs Czerwonej Róży na ,,Najlepsze koło naukowe" data-en="Red Rose Competition for the Best Science Club">
+      Konkurs Czerwonej Róży na ,,Najlepsze koło naukowe”
+    </h3>
+    <div class="achievement-description" data-pl="2021 – reprezentowanie Uniwersytetu Morskiego w Gdyni" data-en="2021 – representing the Gdynia Maritime University">
+      2021 – reprezentowanie Uniwersytetu Morskiego w Gdyni
+    </div>
+
+    <a 
+      href="https://www.facebook.com/share/p/1C8Cu4z8rz/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+  </div>
+
+
+  <!-- Osiągnięcie 5 -->
+  <div class="achievement-card">
+    <img 
+      class="achievement-image" 
+      src="Osiagniecia/Konkurs_SEP.jpg" 
+      alt="Cyfrowy bliźniak – projekt bezpiecznego rotora"
+    >
+    <h3 class="achievement-title" data-pl="Konkurs SEP na najlepsze prace inżynierskie" data-en="SEP competition for the best engineering works">
+      Konkurs SEP na najlepsze prace inżynierskie
+    </h3>
+    <div class="achievement-description" data-pl="2025 – I nagrodę ex aequo otrzymał Paweł Jędryczka oraz II nagrodę ex aequo otrzymał Kamil Kaczmarek" data-en="2025 – The first prize ex aequo was awarded to Paweł Jędryczka and the second prize ex aequo was awarded to Kamil Kaczmarek">
+      2025 – I nagrodę ex aequo otrzymał Paweł Jędryczka oraz II nagrodę ex aequo otrzymał Kamil Kaczmarek
+    </div>
+   
+    <a 
+      href="https://we.umg.edu.pl/aktualnosci/2025/nagrody-sep-dla-absolwentow-we" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+
+    <div class="achievement-description" data-pl="2024 – II nagrodę otrzymał Maciej Kazior" data-en="2024 – The second prize was awarded to Maciej Kazior">
+      2024 – II nagrodę otrzymał Maciej Kazior
+    </div>
+
+    <a 
+      href="https://we.umg.edu.pl/aktualnosci/2024/nagroda-sep-dla-absolwenta-we" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+  </div>
+
+
+  <!-- Osiągnięcie 6 -->
+  <div class="achievement-card">
+    <img 
+      class="achievement-image" 
+      src="Osiagniecia/Ogólnopolski_Akcelerator.jpg" 
+      alt="Cyfrowy bliźniak – projekt bezpiecznego rotora"
+    >
+    <h3 class="achievement-title" data-pl="Ogólnopolski Akcelerator Innovatorium dla zespołów" data-en="Innovatorium National Accelerator for Teams">
+      Ogólnopolski Akcelerator Innovatorium dla zespołów
+    </h3>
+    <div class="achievement-description" data-pl="2022 – koło naukowe HMI zakwalifikowane do projektu" data-en="2022 – HMI research group qualified for the project">
+      2022 – koło naukowe HMI zakwalifikowane do projektu
+    </div>
+
+    <a 
+      href="https://akcelerator2022.innovatorium.eu/?p=485" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="visit-button" data-pl="Przejdź do wydarzenia" data-en="Go to the event"
+    >
+      Przejdź do wydarzenia
+    </a>
+  </div>
+
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

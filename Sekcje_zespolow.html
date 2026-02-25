@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sekcje Koła Naukowego</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-bg">
+
+  <div id="loader">
+    <div class="loader-logo">
+      <img src="Loga/logo_hmi.png" alt="logo_hmi">
+    </div>
+  </div>
+
+  <div class="fade-page">
+
+
+     <!-- Górne menu z hamburgerem logo i jezykiem -->
+     <div class = top-bar>
+      <div class = top-left>
+      <div id="hamburger">☰</div>
+      <a href="index.html" id="homeLogo" aria-label="Strona główna">
+      <img src="Loga/logo_hmi_białe.png" alt="Logo Koła Naukowego HMI">
+      </a>
+      </div>
+
+      <button id="langCorner">
+      <img src="https://flagcdn.com/gb.svg" alt="English"> EN
+      </button>
+
+      </div>
+
+    <nav id="sideMenu">
+      <ul>
+     <li><a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a></li>
+     <li><a href="Sekcje_zespolow.html" data-pl="Sekcje Koła" data-en="Sections">Sekcje Koła</a></li>
+     <li><a href="czlonkowie.html" data-pl="Członkowie" data-en="Members">Członkowie</a></li>
+     <li><a href="osiagniecia.html" data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</a></li>
+     <li><a href="Wydarzenia.html" data-pl="Wydarzenia" data-en="Events">Wydarzenia</a></li>
+     <li><a href="social_media.html" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+    </nav>
+    <div id="menuOverlay"></div>
+
+    <!-- SEKCJA 1 -->
+    <div class="section" id="section1">
+      <div class="parallax-layer">
+        <div class="parallax-bg">
+          <img src="Sekcje/Sekcja_druku.jfif" alt="tło">
+        </div>
+      </div>
+      <div class="content">
+        <h1 data-pl="Sekcja Druku i Modelowania" data-en="3D Printing & Modeling Section">Sekcja Druku i Modelowania 3D</h1>
+        <p data-pl="To tutaj wizja staje się materią. Przeprowadzamy projekty przez pełen cykl życia: od zamysłu, przez cyfrowy model, 
+        aż po gotowy wydruk. Nasza praca to fundament prototypowania projektów koła oraz produkcja kreatywnych gadżetów promocyjnych.  
+        Ponadto organizujemy warsztaty dla wszystkich studentów naszej uczelni." data-en="This is where vision becomes reality. 
+        We guide projects through their entire lifecycle: from concept, through digital model, to finished print. 
+        Our work lays the foundation for prototyping wheel designs and producing creative promotional items. 
+        We also organize workshops for all students at our university.">To tutaj wizja staje się materią. 
+        Przeprowadzamy projekty przez pełen cykl życia: od zamysłu, przez cyfrowy model, aż po gotowy wydruk. 
+        Nasza praca to fundament prototypowania projektów koła oraz produkcja kreatywnych gadżetów promocyjnych.  
+        Ponadto organizujemy warsztaty dla wszystkich studentów naszej uczelni.</p>
+        <a href="#" class="achievements-btn" data-section="druk3d" data-pl="Zobacz osiągnięcia sekcji" data-en="See the section's achievements">Zobacz osiągnięcia sekcji</a>
+      </div>
+    </div>
+
+    <!-- SEKCJA 2 -->
+    <div class="section" id="section2">
+      <div class="parallax-layer">
+        <div class="parallax-bg">
+          <img src="Zdjecia/8.jpg" alt="tło">
+        </div>
+      </div>
+      <div class="content">
+        <h1 data-pl="Sekcja Elektroautomatyki" data-en="Electroautomatics Section">Sekcja Elektroautomatyki</h1>
+        <p data-pl="Specjalizujemy się w architekturze systemów sterowania, naszą codziennością jest programowanie sterowników PLC oraz tworzenie przejrzystej
+        wizualizacji interfejsów HMI, które pozwalają na pełną kontrolę nad maszyną. Skupiamy się na pełnej automatyzacji procesów oraz wdrażaniu 
+        nowoczesnych rozwiązań, tj. cyfrowy bliźniak, który pozwala nam testować systemy wirtualnie przed ich fizycznym uruchomieniem. 
+        W naszej sekcji powstają nowoczesne urządzenia, które są odpowiedzią na wyzwania Przemysłu 4.0." 
+        data-en="We specialize in control system architecture. Our daily work involves programming PLCs and creating clear visualizations of HMI 
+        that allow for complete machine control. We focus on full process automation and implementing modern solutions, such as digital twins,
+        which allow us to virtually test systems before they are physically launched. Our department develops modern devices that address the challenges of Industry 4.0." >
+        Specjalizujemy się w architekturze systemów sterowania, naszą codziennością jest programowanie sterowników PLC oraz tworzenie przejrzystej
+        wizualizacji interfejsów HMI, które pozwalają na pełną kontrolę nad maszyną. Skupiamy się na pełnej automatyzacji procesów oraz wdrażaniu 
+        nowoczesnych rozwiązań, tj. cyfrowy bliźniak, który pozwala nam testować systemy wirtualnie przed ich fizycznym uruchomieniem. 
+        W naszej sekcji powstają nowoczesne urządzenia, które są odpowiedzią na wyzwania Przemysłu 4.0.</p>
+        <a href="#" class="achievements-btn" data-section="elektro" data-pl="Zobacz osiągnięcia sekcji" data-en="See the section's achievements" >Zobacz osiągnięcia sekcji</a>
+      </div>
+    </div>
+
+    <!-- SEKCJA 3 -->
+    <div class="section" id="section3">
+      <div class="parallax-layer">
+        <div class="parallax-bg">
+          <img src="Sekcje/Sekcje_elektroniki.jpg" alt="tło">
+        </div>
+      </div>
+      <div class="content">
+        <h1 data-pl="Sekcja Programowania i Elektroniki" data-en="Programming and Electronics Section" >Sekcja Programowania i Elektroniki</h1>
+        <p data-pl="To właśnie tutaj podejmowane są najważniejsze decyzje projektowe i logiczne dotyczące realizowanych projektów. 
+        Odpowiadamy za projektowanie nowoczesnych układów elektronicznych oraz tworzenie dedykowanego oprogramowania, 
+        które nadaje naszym konstrukcjom pełną funkcjonalność i inteligencję. Przeprowadzamy testy inżynierskie z nowymi 
+        technologiami, dzięki którym weryfikujemy i rozwijamy innowacyjne rozwiązania." 
+        data-en="This is where the most important design and logical decisions regarding our projects are made.
+        We are responsible for designing modern electronic systems and creating dedicated software that gives 
+        our designs full functionality and intelligence. We conduct engineering tests using new technologies, 
+        allowing us to verify and develop innovative solutions.">
+        To właśnie tutaj podejmowane są najważniejsze decyzje projektowe i logiczne dotyczące realizowanych projektów. 
+        Odpowiadamy za projektowanie nowoczesnych układów elektronicznych oraz tworzenie dedykowanego oprogramowania, 
+        które nadaje naszym konstrukcjom pełną funkcjonalność i inteligencję. Przeprowadzamy testy inżynierskie z nowymi 
+        technologiami, dzięki którym weryfikujemy i rozwijamy innowacyjne rozwiązania.</p>
+        <a href="#" class="achievements-btn" data-section="programowanie" data-pl="Zobacz osiągnięcia sekcji" data-en="See the section's achievements" >Zobacz osiągnięcia sekcji</a>
+      </div>
+    </div>
+
+    <!-- SEKCJA 4 -->
+    <div class="section" id="section4">
+      <div class="parallax-layer">
+        <div class="parallax-bg">
+          <img src="Zdjecia/sekcja_marketing.png" alt="tło">
+        </div>
+      </div>
+      <div class="content">
+        <h1 data-pl="Sekcja Marketing" data-en="Marketing Section">Sekcja Marketing</h1>
+        <p data-pl="Dla nas marketing to znacznie więcej niż ,,ładne zdjęcia” - to przemyślana strategia budowania rozpoznawalności, która sprawia, 
+        że o naszych projektach mówi się nie tylko na uczelni. Zarządzamy pełnym obiegiem informacji – od komunikacji wewnętrznej po relacje z otoczeniem. 
+        Naszą specjalnością jest przekładanie technicznych zawiłości na język, który zrozumie każdy – od studenta pierwszego roku po inwestora. 
+        W ten sposób wiedzą i kreatywnością wzmacniamy fundamenty naszego koła." 
+        data-en="For us, marketing is much more than just pretty photos —it's a well-thought-out strategy for building recognition that ensures our 
+        projects are talked about beyond the university. We manage the entire information flow—from internal communications to relationships 
+        with the community. Our specialty is translating technical complexities into a language everyone can understand—from first-year students 
+        to investors. In this way, we strengthen the foundations of our club with knowledge and creativity.">Dla nas marketing to znacznie więcej niż ,,ładne zdjęcia” - to przemyślana strategia budowania rozpoznawalności, która sprawia, 
+        że o naszych projektach mówi się nie tylko na uczelni. Zarządzamy pełnym obiegiem informacji – od komunikacji wewnętrznej po relacje z otoczeniem. 
+        Naszą specjalnością jest przekładanie technicznych zawiłości na język, który zrozumie każdy – od studenta pierwszego roku po inwestora. 
+        W ten sposób wiedzą i kreatywnością wzmacniamy fundamenty naszego koła.”</p>
+        <a href="#" class="achievements-btn" data-section="marketing" data-pl="Zobacz osiągnięcia sekcji" data-en="See the section's achievements">Zobacz osiągnięcia sekcji</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL Z OSIĄGNIĘCIAMI -->
+  <div class="achievements-modal" id="achievementsModal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2 class="modal-title" id="modalTitle">Osiągnięcia sekcji</h2>
+      <ul class="achievements-list" id="modalList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

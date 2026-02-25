@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Członkowie Koła HMI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="members-page">
+
+  <!-- LOGO W LEWYM GÓRNYM ROGU -->
+
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <img src="Loga/logo_hmi.png" alt="logo_hmi">
+    </div>
+  </div>
+
+  <!-- ANIMOWANE TŁO Z GWIAZDKAMI – NA CAŁYM EKRANIE -->
+  <div class="stars-background">
+    <canvas id="starsCanvas"></canvas>
+  </div>
+
+  <div class="fade-page">
+
+    <!-- Górne menu z hamburgerem logo i jezykiem -->
+     <div class = top-bar>
+      <div class = top-left>
+      <div id="hamburger">☰</div>
+      <a href="index.html" id="homeLogo" aria-label="Strona główna">
+      <img src="Loga/logo_hmi_białe.png" alt="Logo Koła Naukowego HMI">
+      </a>
+      </div>
+
+      <button id="langCorner">
+      <img src="https://flagcdn.com/gb.svg" alt="English"> EN
+      </button>
+
+      </div>
+
+    <!-- MENU BOCZNE -->
+    <nav id="sideMenu">
+    <ul>
+     <li><a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a></li>
+     <li><a href="Sekcje_zespolow.html" data-pl="Sekcje Koła" data-en="Sections">Sekcje Koła</a></li>
+     <li><a href="czlonkowie.html" data-pl="Członkowie" data-en="Members">Członkowie</a></li>
+     <li><a href="osiagniecia.html" data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</a></li>
+     <li><a href="Wydarzenia.html" data-pl="Wydarzenia" data-en="Events">Wydarzenia</a></li>
+     <li><a href="social_media.html" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+    </nav>
+    <div id="menuOverlay"></div>
+
+    <!-- TREŚĆ STRONY CZŁONKOWIE – BEZ ZMIAN W UKŁADZIE -->
+    <div class="members-page">
+      <!-- OPIEKUN -->
+      <section class="single-section">
+        <h2 data-pl="Opiekun Koła" data-en="Supervisor">Opiekun Koła</h2>
+        <div class="person-single">
+            <a href="https://www.linkedin.com/in/monika-rybczak-080b62334" target="_blank">
+            <img src="Czlonkowie/dr_inż_Monika_Rybczak.webp" alt="dr_inż_Monika_Rybczak">
+            </a>
+          <p class="name">dr inż. Monika Rybczak</p>
+          </a>
+          <a href="https://umg.edu.pl/rybczak" class="supervisor-link" target="_blank">
+            <span>Uniwersytet Morski w Gdyni</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ZARZĄD -->
+      <section class="grid-section">
+        <h2 data-pl="Zarząd" data-en="Board">Zarząd</h2>
+        <div class="members-grid-zarzad">
+          <div class="person-single">
+            <a href="https://www.linkedin.com/in/piotr-wieleba-699669368" target="_blank">
+              <img src="Czlonkowie/Piotr.webp" alt="Piotr Wieleba">
+            </a>
+            <p class="role" data-pl="Przewodniczący" data-en="Chairman">Przewodniczący</p>
+            <p class="name">Piotr Wieleba</p>
+          </div>
+          <div class="person-single">
+            <a href="https://www.linkedin.com/in/dawid-formella-8b022136b/" target="_blank">
+              <img src="Czlonkowie/Dawid.png" alt="Dawid Formella">
+            </a>
+            <p class="role" data-pl="Zastępca" data-en="Vice Chairman">Zastępca</p>
+            <p class="name">Dawid Formella</p>
+          </div>
+          <div class="person-single">
+            <a href="https://www.linkedin.com/in/micha%C5%82-labudda-7b34802a5/" target="_blank">
+              <img src="Czlonkowie/Micha.webp" alt="Michał Labudda">
+            </a>
+            <p class="role" data-pl="Redaktor Medialny" data-en="Media Redactor">Redaktor Medialny</p>
+            <p class="name">Michał Labudda</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM LIDERZY -->
+      <section class="grid-section">
+        <h2 data-pl="Liderzy Zespołów" data-en="Team Leaders">Liderzy Zespołów</h2>
+        <div class="members-grid">
+          <div class="person">
+            <a href="https://www.linkedin.com/in/pawe%C5%82-j%C4%99dryczka-6991a72b6/" target="_blank">
+              <img src="Czlonkowie/Pawe.webp" alt="Paweł">
+            </a>
+            <p class="role" data-pl="Sekcja Druku i Modelowania 3D" data-en="3D Printing and Modeling Section">Sekcja Druku i Modelowania 3D</p>
+            <p class="name">Paweł Jędryczka</p>
+          </div>
+          <div class="person">
+            <a href="https://www.linkedin.com/in/mateusz-zych-1749b6369/" target="_blank">
+            <img src="Czlonkowie/Mateusz.webp" alt="Mateusz">
+            </a>
+            <p class="role" data-pl="Sekcja Elektroautomatyki" data-en="Electroautomatics Section">Sekcja Elektroautomatyki</p>
+            <p class="name">Mateusz Zych</p>
+          </div>
+          <div class="person">
+            <a href="https://www.linkedin.com/in/kamil-kaczmarek-a148502a6/" target="_blank">
+              <img src="Czlonkowie/Kamil.webp" alt="Kamil">
+            </a>
+            <p class="role" data-pl="Sekcja Programowania i Elektroniki" data-en="Programming and Electronics Section">Sekcja Programowania i Elektroniki</p>
+            <p class="name">Kamil Kaczmarek</p>
+          </div>
+          <div class="person">
+            <a href="https://www.linkedin.com/in/magdalena-borowiec-54759424b/" target="_blank">
+              <img src="Czlonkowie/Magda.webp" alt="Magdalena Borowiec">
+            </a>
+            <p class="role" data-pl="Sekcja Marketingu" data-en="Marketing Section">Sekcja Marketingu</p>
+            <p class="name">Magdalena Borowiec</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CZŁONKOWIE -->
+      <section class="grid-section">
+        <h2 data-pl="Członkowie" data-en="Members">Członkowie</h2>
+        <div class="members-grid">
+          <div class="person"><a href="https://www.linkedin.com/in/bartosz-korycki-409172368/" target="_blank"><img src="Czlonkowie/Bartek.webp" alt="Bartek"></a><p class="name">Bartosz Korycki</p></div>
+          <div class="person"><a href="https://www.linkedin.com/in/gracjan-kochanowski-ossowski-88b41b250/" target="_blank"><img src="Czlonkowie/Gracjan.webp" alt="Gracjan"></a><p class="name">Gracjan Kochanowski-Ossowski</p></div>
+          <div class="person"><a href="https://www.linkedin.com/in/jakub-lidzbarski-04b891368/" target="_blank"><img src="Czlonkowie/Jakub.webp" alt="Jakub"></a><p class="name">Jakub Lidzbarski</p></div>
+          <div class="person"><a href="https://www.linkedin.com/in/krzysztof-wilczy%C5%84ski-42885536a/" target="_blank"><img src="Czlonkowie/ikona 1.png" alt=""></a><p class="name">Krzysztof Wilczyński</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Artur Zakacz</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Katarzyna Jóźwik</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Paulina Juretko</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Karol Leśniewski</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Maciej Pakulski</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Daria Skrzypkowska</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Grzegorz Cichosz</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Juliusz Kubiak</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Maja Muzolf</p></div>
+          <div class="person"><img src="Czlonkowie/ikona 1.png" alt=""><p class="name">Paweł Matwiszyn</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
