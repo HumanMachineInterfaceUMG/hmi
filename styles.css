@@ -37,19 +37,17 @@
 /* ===================== PRZEWIJANIE STRON ===================== */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;     /* KLUCZOWE – sekcje „przyklejają się” do ekranu */
-  height: 100%;
+  scroll-snap-type: y proximity;     /* KLUCZOWE – sekcje „przyklejają się” do ekranu */
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
-  height: 100%;
 }
 
 .section {
-  height: 100vh;
-  height: 100dvh; /* idealne na telefonach */
+  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   position: relative;
   display: flex;
@@ -277,8 +275,6 @@ body.dark-bg {
   font-family: 'Segoe UI', sans-serif;
 }*/
 
-/* ===================== POPRAWKA: TŁO Z GWIAZDKAMI NA CAŁEJ STRONIE – CZŁONKOWIE ===================== */
-
 /* Usuwamy niebieskie tło strony członków */
 .members-page {
   background: #021F42;
@@ -480,7 +476,7 @@ body.dark-bg {
 .social-page {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 120px 20px 100px;
+  padding: 40px 20px 100px;
   text-align: center;
   background:#021F42;
   font-family: 'Segoe UI', sans-serif;
@@ -753,9 +749,36 @@ body.dark-bg {
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       cursor: pointer;
       display: inline-block;
+      margin-left: 40px;
     }
 
     .achievements-btn:hover {
+      background: #bbeeff;
+      color: #021F42;
+      border-color: #bbeeff;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(187, 238, 255, 0.4);
+    }
+
+    .achievements-btS {
+      margin-top: 40px;
+      padding: 16px 36px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 500;
+      border: 2px solid #ffffff44;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 40px;
+    }
+
+    .achievements-btS:hover {
       background: #bbeeff;
       color: #021F42;
       border-color: #bbeeff;
@@ -1029,3 +1052,8 @@ body.dark-bg {
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  .section {
+    min-height: -webkit-fill-available;
+  }
+}
