@@ -735,6 +735,7 @@ body.dark-bg {
 
 /* ===================== NOWE: PRZYCISK OSIĄGNIĘĆ ===================== */
     .achievements-btn {
+      position: relative;
       margin-top: 40px;
       padding: 16px 36px;
       background: rgba(255, 255, 255, 0.1);
@@ -1052,3 +1053,17 @@ body.dark-bg {
   }
 }
 
+@media (max-width: 768px) {
+
+  .section {
+    height: auto;
+    min-height: 100svh;
+    padding-bottom: 60px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .section {
+    min-height: -webkit-fill-available;
+  }
+}
