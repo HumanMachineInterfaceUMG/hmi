@@ -1067,3 +1067,16 @@ body.dark-bg {
     min-height: -webkit-fill-available;
   }
 }
+
+@media (max-width: 768px) {
+
+  html {
+    scroll-snap-type: none;
+  }
+
+  .section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+}
