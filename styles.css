@@ -37,7 +37,7 @@
 /* ===================== PRZEWIJANIE STRON ===================== */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;     /* KLUCZOWE – sekcje „przyklejają się” do ekranu */
+  scroll-snap-type: y mandatory;     /* KLUCZOWE – sekcje „przyklejają się” do ekranu */
 }
 
 body {
@@ -1052,8 +1052,3 @@ body.dark-bg {
   }
 }
 
-@supports (-webkit-touch-callout: none) {
-  .section {
-    min-height: -webkit-fill-available;
-  }
-}
