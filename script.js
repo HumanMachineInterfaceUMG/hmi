@@ -163,6 +163,19 @@ const achievementsData = {
         en: "Participation in international fairs in the electronics and space industry" }
     ]
   },
+  robotyka: {
+    title: {
+      pl: "Osiągnięcia Sekcji Robotyka",
+      en: "Achievements of the Robotics Section"
+    },
+    items: [
+      { pl: "Uruchomienie robota TurtleBot3 Burger w systemie ROS 2 Humble",                            en: "Running the TurtleBot3 Burger on ROS 2 Humble" },
+      { pl: "Stworzenie prostych programów sterujących robotem i jego czujnikami",                       en: "Creating simple programs to control the robot and its sensors" },
+      { pl: "Integracja Arduino z ROS 2 do obsługi dodatkowych modułów",                                 en: "Integrating Arduino with ROS 2 to support additional modules" },
+      { pl: "Konfiguracja i wykorzystanie Raspberry Pi 4 jako jednostki sterującej robota",              en: "Configuring and using the Raspberry Pi 4 as a robot control unit" },
+      { pl: "Przygotowanie pierwszych map i testów nawigacji robota w pomieszczeniu",                    en: "Preparation of the first maps and tests of the robot's navigation in the room" }
+    ]
+  },
   marketing: {
     title: {
       pl: "Osiągnięcia Sekcji Marketing",
