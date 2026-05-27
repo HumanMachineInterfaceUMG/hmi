@@ -340,3 +340,874 @@ body.dark-bg {
     object-fit: contain;
   }
 }
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V2 — WYDARZENIA
+   ========================================================= */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: clamp(10px, 2.4vw, 20px) !important;
+  left: clamp(10px, 2.4vw, 20px) !important;
+  right: clamp(10px, 2.4vw, 20px) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(8px, 2vw, 18px);
+  min-width: 0;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 12px);
+  min-width: 0;
+}
+
+#hamburger {
+  position: static !important;
+  flex: 0 0 auto;
+  font-size: clamp(28px, 6.5vw, 38px) !important;
+  line-height: 1 !important;
+  padding: clamp(6px, 1.8vw, 8px) clamp(10px, 2.8vw, 14px) !important;
+}
+
+#homeLogo {
+  position: static !important;
+  flex: 0 0 auto;
+  width: clamp(46px, 10vw, 65px) !important;
+  height: clamp(46px, 10vw, 65px) !important;
+  margin-left: 0 !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  position: static !important;
+  flex: 0 0 auto;
+  max-width: 38vw;
+  white-space: nowrap;
+  font-size: clamp(0.82rem, 2.7vw, 1.1rem) !important;
+  line-height: 1 !important;
+  padding: clamp(7px, 1.8vw, 10px) clamp(10px, 2.8vw, 18px) !important;
+  gap: clamp(6px, 1.6vw, 10px) !important;
+}
+
+#langCorner img {
+  width: clamp(20px, 5vw, 26px) !important;
+  height: auto !important;
+}
+
+#sideMenu {
+  width: min(260px, 82vw) !important;
+  max-width: 82vw !important;
+  left: -82vw;
+}
+
+#sideMenu a {
+  font-size: clamp(1rem, 3.8vw, 1.2rem) !important;
+  padding-left: clamp(20px, 7vw, 30px) !important;
+  padding-right: clamp(20px, 7vw, 30px) !important;
+  overflow-wrap: anywhere;
+}
+
+.news-main {
+  width: min(100%, 1400px);
+  padding: clamp(104px, 12vw, 130px) clamp(16px, 5vw, 80px) clamp(56px, 8vw, 80px) !important;
+  margin-inline: auto;
+}
+
+.news-main h1 {
+  font-size: clamp(2.2rem, 8vw, 3.8rem) !important;
+  margin-bottom: clamp(38px, 8vw, 80px) !important;
+  overflow-wrap: anywhere;
+}
+
+.news-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 5vw, 60px) !important;
+}
+
+.news-item {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 40px) !important;
+  align-items: center;
+  padding: clamp(22px, 4vw, 40px) !important;
+  min-width: 0;
+}
+
+.news-image {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 19 / 12;
+  min-width: 0;
+}
+
+.news-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.news-content {
+  min-width: 0;
+}
+
+.news-title {
+  font-size: clamp(1.45rem, 3.5vw, 2rem) !important;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.news-text {
+  font-size: clamp(0.98rem, 2.2vw, 1.0625rem) !important;
+  line-height: 1.65 !important;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.news-date {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.more-btn {
+  width: fit-content;
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .news-date,
+  .more-btn {
+    align-self: center;
+  }
+
+  .news-image {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .top-bar {
+    height: auto !important;
+    padding: 0 !important;
+  }
+
+  #langCorner {
+    max-width: 34vw;
+  }
+
+  .news-item {
+    border-radius: 18px;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V3 — RÓWNE MENU, SAFE AREA, BRAK NACHODZENIA
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(50px, 10vw, 64px);
+  --nav-gap: clamp(8px, 2vw, 14px);
+  --page-safe-top: calc(env(safe-area-inset-top, 0px) + clamp(14px, 2.4vw, 22px));
+  --page-side-space: clamp(12px, 3vw, 24px);
+  --snap-breathing-space: calc(env(safe-area-inset-top, 0px) + clamp(14px, 3svh, 28px));
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--snap-breathing-space) !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: var(--page-safe-top) !important;
+  left: var(--page-side-space) !important;
+  right: var(--page-side-space) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: none;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--nav-gap) !important;
+  min-width: 0;
+  pointer-events: auto;
+}
+
+#hamburger,
+#homeLogo,
+#langCorner {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 var(--nav-control-size) !important;
+  line-height: 1 !important;
+  pointer-events: auto;
+}
+
+#hamburger {
+  font-size: calc(var(--nav-control-size) * 0.52) !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  gap: 4px !important;
+  white-space: nowrap !important;
+  font-size: clamp(0.74rem, 2.2vw, 0.98rem) !important;
+  overflow: hidden;
+}
+
+#langCorner img {
+  width: calc(var(--nav-control-size) * 0.34) !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu {
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 26px) !important;
+}
+
+#sideMenu a {
+  line-height: 1.25 !important;
+}
+
+@media (max-width: 420px) {
+  :root {
+    --nav-control-size: clamp(46px, 13vw, 54px);
+    --nav-gap: 8px;
+    --page-side-space: 10px;
+  }
+
+  #langCorner {
+    font-size: 0.72rem !important;
+    gap: 3px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V3 — WYDARZENIA: ODSTĘP OD GÓRY I STABILNY UKŁAD
+   ========================================================= */
+.news-main {
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 48px) !important;
+}
+
+.news-item {
+  overflow: hidden;
+}
+
+.news-content,
+.news-title,
+.news-text {
+  min-width: 0;
+}
+
+.more-btn {
+  min-height: 46px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V4 — STABILNY UKŁAD I SZERSZY JĘZYK
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(52px, 8vw, 64px);
+  --lang-control-width: clamp(96px, 15vw, 122px);
+  --nav-gap: clamp(8px, 1.8vw, 14px);
+  --page-safe-top: calc(env(safe-area-inset-top, 0px) + clamp(12px, 2.2vw, 20px));
+  --page-side-space: clamp(12px, 3vw, 24px);
+  --snap-offset-top: calc(var(--page-safe-top) + var(--nav-control-size) + clamp(16px, 2.8svh, 34px));
+}
+
+html { scroll-padding-top: var(--snap-offset-top) !important; overflow-x: hidden !important; }
+body { overflow-x: hidden !important; }
+
+.top-bar {
+  top: var(--page-safe-top) !important;
+  left: var(--page-side-space) !important;
+  right: var(--page-side-space) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: none;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: auto;
+}
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 var(--nav-control-size) !important;
+  line-height: 1 !important;
+  pointer-events: auto;
+}
+
+#hamburger { font-size: calc(var(--nav-control-size) * 0.52) !important; }
+#homeLogo img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 clamp(12px, 2vw, 16px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(7px, 1.4vw, 10px) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  font-size: clamp(0.92rem, 2vw, 1.08rem) !important;
+  pointer-events: auto;
+}
+
+#langCorner img {
+  width: clamp(25px, 3.8vw, 29px) !important;
+  height: clamp(17px, 2.6vw, 20px) !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu { padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 28px) !important; }
+
+.news-main {
+  padding-top: calc(var(--snap-offset-top) + 18px) !important;
+}
+
+.news-grid {
+  align-items: stretch !important;
+}
+
+.news-item {
+  align-items: stretch !important;
+  overflow: hidden !important;
+}
+
+.news-content {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.news-title {
+  min-height: 2.8em;
+  display: flex;
+  align-items: center;
+}
+
+.news-text {
+  min-height: 8.5em;
+}
+
+.more-btn {
+  margin-top: auto !important;
+  min-height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 11vw, 56px);
+    --lang-control-width: clamp(92px, 23vw, 106px);
+    --page-side-space: clamp(10px, 3vw, 16px);
+  }
+
+  .news-title,
+  .news-text {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --nav-control-size: clamp(46px, 13vw, 52px);
+    --lang-control-width: clamp(88px, 28vw, 98px);
+    --nav-gap: 8px;
+    --page-side-space: 10px;
+  }
+
+  #langCorner {
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important;
+    gap: 6px !important;
+    padding-inline: 9px !important;
+  }
+
+  #langCorner img {
+    width: 23px !important;
+    height: 16px !important;
+  }
+}
+
+
+
+/* =========================================================
+   V5 — równe menu i stabilny przycisk języka na tej podstronie.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 7vw, 64px);
+  --lang-control-width: clamp(124px, 14vw, 146px);
+  --nav-gap: clamp(9px, 1.4vw, 14px);
+  --page-edge: clamp(12px, 2.4vw, 22px);
+}
+
+.top-bar {
+  top: var(--page-edge) !important;
+  left: var(--page-edge) !important;
+  right: var(--page-edge) !important;
+  min-height: var(--nav-control-size) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--nav-gap) !important;
+  min-width: 0 !important;
+}
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  margin: 0 !important;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  flex: 0 0 var(--nav-control-size) !important;
+}
+
+#hamburger {
+  padding: 0 !important;
+  font-size: calc(var(--nav-control-size) * 0.54) !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 clamp(14px, 2vw, 18px) !important;
+  margin: 0 !important;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(8px, 1.2vw, 12px) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem) !important;
+}
+
+#langCorner img {
+  width: clamp(28px, 3.5vw, 32px) !important;
+  height: clamp(19px, 2.3vw, 22px) !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu {
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + 30px) !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 12vw, 56px);
+    --lang-control-width: clamp(112px, 29vw, 128px);
+    --page-edge: clamp(9px, 2.8vw, 14px);
+    --nav-gap: clamp(7px, 2vw, 10px);
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --nav-control-size: clamp(44px, 13vw, 50px);
+    --lang-control-width: clamp(104px, 31vw, 118px);
+    --page-edge: 9px;
+    --nav-gap: 7px;
+  }
+
+  #langCorner {
+    padding-inline: 10px !important;
+    gap: 7px !important;
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important;
+  }
+
+  #langCorner img {
+    width: 25px !important;
+    height: 17px !important;
+  }
+}
+
+
+/* =========================================================
+   V7 — Wydarzenia jak w V5 + mniejszy przycisk języka i brak kursora tekstowego.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 5.6vw, 64px);
+  --lang-control-width: clamp(132px, 10.5vw, 160px);
+  --page-edge: clamp(12px, 1.55vw, 22px);
+  --nav-gap: clamp(10px, 1.1vw, 15px);
+}
+
+body,
+body *:not(input):not(textarea):not(select) {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  caret-color: transparent !important;
+}
+body { cursor: default !important; -webkit-tap-highlight-color: transparent; }
+a, button, #hamburger, #homeLogo, #langCorner, .more-btn { cursor: pointer !important; }
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--nav-control-size) !important;
+}
+#hamburger { padding: 0 !important; font-size: calc(var(--nav-control-size) * 0.52) !important; }
+#homeLogo img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  padding: 0 clamp(12px, 1.2vw, 16px) !important;
+  gap: clamp(8px, 0.8vw, 11px) !important;
+  font-size: clamp(0.92rem, 1.05vw, 1.05rem) !important;
+}
+#langCorner img {
+  width: clamp(26px, 2.1vw, 32px) !important;
+  height: clamp(18px, 1.42vw, 22px) !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 11.5vw, 56px);
+    --lang-control-width: clamp(108px, 30vw, 132px);
+    --page-edge: clamp(9px, 2.6vw, 14px);
+  }
+  #langCorner { padding-inline: 9px !important; gap: 7px !important; font-size: clamp(0.82rem, 2.9vw, 0.95rem) !important; }
+  #langCorner img { width: clamp(23px, 6vw, 29px) !important; height: clamp(16px, 4vw, 20px) !important; }
+}
+
+
+/* =========================================================
+   V8 — Wydarzenia jak w V5, tylko lekko podciągnięte do góry.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 5.4vw, 62px);
+  --lang-control-width: clamp(124px, 9.4vw, 148px);
+  --page-edge: clamp(12px, 1.45vw, 20px);
+  --nav-gap: clamp(10px, 1vw, 14px);
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  padding: 0 clamp(10px, 1vw, 14px) !important;
+  gap: clamp(7px, 0.75vw, 10px) !important;
+  font-size: clamp(0.88rem, 0.98vw, 1rem) !important;
+}
+#langCorner img {
+  width: clamp(24px, 1.85vw, 29px) !important;
+  height: clamp(17px, 1.25vw, 20px) !important;
+}
+
+.news-main {
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + clamp(6px, 1.4svh, 18px)) !important;
+  padding-left: clamp(28px, 4.5vw, 80px) !important;
+  padding-right: clamp(28px, 4.5vw, 80px) !important;
+}
+
+.news-main h1 {
+  margin-top: 0 !important;
+  margin-bottom: clamp(42px, 6.5svh, 68px) !important;
+  line-height: 1.02 !important;
+}
+
+.news-grid { gap: clamp(42px, 5.5svh, 60px) !important; }
+
+.news-item {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(46px, 11vw, 54px);
+    --lang-control-width: clamp(100px, 28vw, 122px);
+    --page-edge: clamp(9px, 2.5vw, 14px);
+  }
+  #langCorner { padding-inline: 8px !important; gap: 6px !important; font-size: clamp(0.78rem, 2.7vw, 0.9rem) !important; }
+  #langCorner img { width: clamp(21px, 5.2vw, 26px) !important; height: clamp(15px, 3.7vw, 18px) !important; }
+  .news-main {
+    padding-top: calc(var(--page-edge) + var(--nav-control-size) + 12px) !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  .news-main h1 { margin-bottom: 26px !important; }
+}
+
+
+/* =========================================================
+   V9 — szybkie, dynamiczne przewijanie sekcjami.
+   Poprawka: scroll-snap działa TYLKO na stronach z .section.
+   Inne podstrony mają normalne przewijanie.
+   ========================================================= */
+html {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  scroll-padding-top: 0 !important;
+  overscroll-behavior-y: auto !important;
+}
+
+html.snap-page {
+  scroll-snap-type: y mandatory !important;
+  scroll-behavior: auto !important;
+  scroll-padding-top: 0 !important;
+  overscroll-behavior-y: contain !important;
+}
+
+html.snap-page body {
+  overflow-x: hidden !important;
+  overscroll-behavior-y: contain !important;
+}
+
+html.snap-page .section {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+  overflow: hidden !important;
+}
+
+html.snap-page .content {
+  max-height: calc(100svh - (var(--nav-control-size, 62px) + var(--page-edge, 20px) * 2 + 18px)) !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 760px), (hover: none), (pointer: coarse) {
+  html.snap-page {
+    scroll-snap-type: y mandatory !important;
+    overscroll-behavior-y: contain !important;
+  }
+  html.snap-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.snap-page { scroll-behavior: auto !important; }
+}
+
+/* V19 — magiczny pył tylko w tle, nie na blokach wydarzeń */
+.news-item {
+  background: #092b50 !important;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+.news-item > * {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* =========================================================
+   V22 — prestiżowy loader: szybsze wyłanianie logo + gwiezdne tło.
+   Efekt jest tylko w tle loadera i nie zmienia kolorów strony.
+   ========================================================= */
+#loader {
+  isolation: isolate !important;
+}
+
+#loader::before {
+  z-index: 0 !important;
+}
+
+#loader::after {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.98) 0 1.25px, transparent 2.45px),
+    radial-gradient(circle at 76% 28%, rgba(176,220,255,0.92) 0 1.08px, transparent 2.25px),
+    radial-gradient(circle at 38% 64%, rgba(255,255,255,0.78) 0 1px, transparent 2.12px),
+    radial-gradient(circle at 88% 78%, rgba(255,236,150,0.74) 0 1.12px, transparent 2.2px),
+    radial-gradient(circle at 48% 12%, rgba(210,245,255,0.70) 0 0.95px, transparent 1.9px),
+    radial-gradient(circle at 22% 74%, rgba(255,255,255,0.74) 0 1px, transparent 2px);
+  background-size: 190px 190px, 260px 260px, 330px 330px, 410px 410px, 520px 520px, 280px 280px;
+  filter: drop-shadow(0 0 7px rgba(255,255,255,0.78)) drop-shadow(0 0 14px rgba(140,205,255,0.42));
+  opacity: 0.78;
+  animation: loaderMagicTwinkle 2.9s ease-in-out infinite alternate,
+             loaderMagicDrift 24s ease-in-out infinite alternate;
+  transform: translate3d(0, 0, 0);
+}
+
+.loader-logo {
+  position: relative !important;
+  z-index: 1 !important;
+  transition: opacity 0.85s ease-out, transform 0.85s cubic-bezier(.2,.8,.25,1) !important;
+}
+
+.loader-logo img {
+  transition: filter 0.95s ease-out !important;
+}
+
+.loader-logo.fade-out {
+  opacity: 0.18 !important;
+  transform: scale(0.94) !important;
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out !important;
+}
+
+#loader {
+  transition: opacity 0.35s ease-out, visibility 0.35s ease-out !important;
+}
+
+.fade-page {
+  transition: opacity 0.35s ease-in !important;
+}
+
+@keyframes loaderMagicTwinkle {
+  0%   { opacity: 0.46; filter: drop-shadow(0 0 6px rgba(255,255,255,0.62)) drop-shadow(0 0 12px rgba(130,195,255,0.28)); }
+  45%  { opacity: 0.95; filter: drop-shadow(0 0 9px rgba(255,255,255,0.88)) drop-shadow(0 0 18px rgba(175,220,255,0.48)); }
+  100% { opacity: 0.64; filter: drop-shadow(0 0 7px rgba(255,246,196,0.76)) drop-shadow(0 0 15px rgba(255,226,140,0.34)); }
+}
+
+@keyframes loaderMagicDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-42px, 34px, 0) scale(1.02); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #loader::after { animation: none !important; }
+}
+
+
+/* =========================================================
+   V23 — loader: prędkość wyłaniania logo wraca do czasu z V21.
+   Gwieździste tło loadera zostaje, zmieniony jest tylko czas animacji logo.
+   ========================================================= */
+.loader-logo {
+  transition: opacity 1.4s ease-out, transform 1.4s ease-out !important;
+}
+.loader-logo img {
+  transition: filter 1.6s ease-out !important;
+}
+.loader-logo.fade-out {
+  opacity: 0.25 !important;
+  transform: scale(0.92) !important;
+  transition: opacity 1s ease-out, transform 1s ease-out !important;
+}
+#loader {
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out !important;
+}
+.fade-page {
+  transition: opacity 0.5s ease-in !important;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4THQ0L21T3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4THQ0L21T3');
+  </script>
+  <link rel="canonical" href="https://www.knhmi.pl/" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="Loga/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Loga/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Loga/icon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Współprace Koła HMI</title>
+
+  <!-- Style wspólne strony + style tej podstrony -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_wspolprace.css">
+</head>
+
+<body class="dark-bg cooperation-page">
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <img src="Loga/logo_hmi.png" alt="logo_hmi">
+    </div>
+  </div>
+
+  <div class="fade-page">
+
+    <!-- Górne menu z hamburgerem, logo i językiem -->
+    <div class="top-bar">
+      <div class="top-left">
+        <div id="hamburger" aria-label="Otwórz menu">☰</div>
+        <a href="index.html" id="homeLogo" aria-label="Strona główna">
+          <img src="Loga/logo_hmi_białe.png" alt="Logo Koła Naukowego HMI">
+        </a>
+      </div>
+
+      <button id="langCorner" type="button" aria-label="Zmień język">
+        <img src="https://flagcdn.com/gb.svg" alt="English"> EN
+      </button>
+    </div>
+
+    <!-- MENU BOCZNE -->
+    <nav id="sideMenu">
+      <ul>
+        <li><a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a></li>
+        <li><a href="Sekcje_zespolow.html" data-pl="Sekcje Koła" data-en="Sections">Sekcje Koła</a></li>
+        <li><a href="czlonkowie.html" data-pl="Członkowie" data-en="Members">Członkowie</a></li>
+        <li><a href="osiagniecia.html" data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</a></li>
+        <li><a href="Wydarzenia.html" data-pl="Wydarzenia" data-en="Events">Wydarzenia</a></li>
+        <li><a href="wspolprace.html" data-pl="Współpraca" data-en="Cooperation">Współpraca</a></li>
+        <li><a href="social_media.html" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div id="menuOverlay"></div>
+
+    <!-- TREŚĆ PODSTRONY WSPÓŁPRACE -->
+    <main class="cooperation-main">
+      <header class="cooperation-header">
+        <h1 data-pl="Współpraca" data-en="Cooperation">Współpraca</h1>
+      </header>
+
+      <section class="partners-grid" aria-label="Lista współprac">
+
+        <!-- KARTA 1 -->
+        <article class="partner-card">
+          <div class="partner-logo-box">
+            <img src="Loga/Botland_v2.png" alt="Botland">
+          </div>
+
+          <p class="partner-type" data-pl="Współpraca" data-en="Cooperation">Współpraca</p>
+
+          <div class="partner-content">
+            <h2 data-pl="Botland" data-en="Botland">Botland</h2>
+            <a href="https://botland.com.pl/" class="partner-button" target="_blank" rel="noopener noreferrer" data-pl="Przejdź do strony" data-en="Visit website">Przejdź do strony</a>
+          </div>
+        </article>
+
+        <!-- KARTA 2 -->
+        <article class="partner-card">
+          <div class="partner-logo-box">
+            <img src="Loga/3D_connection.png" alt="3D_connection">
+          </div>
+
+          <p class="partner-type" data-pl="Współpraca" data-en="Cooperation">Współpraca</p>
+
+          <div class="partner-content">
+            <h2 data-pl="3Dconnexion" data-en="3Dconnexion">3Dconnexion</h2>
+            <a href="https://3dconnexion.com/pl/" class="partner-button" target="_blank" rel="noopener noreferrer" data-pl="Przejdź do strony" data-en="Visit website">Przejdź do strony</a>
+          </div>
+        </article>
+
+        <!-- KARTA 3 -->
+        <article class="partner-card">
+          <div class="partner-logo-box">
+            <img src="Loga/Wiran.png" alt="Wiran">
+          </div>
+
+          <p class="partner-type" data-pl="Współpraca" data-en="Cooperation">Współpraca</p>
+
+          <div class="partner-content">
+            <h2 data-pl="Wiran" data-en="Wiran">Wiran</h2>
+            <a href="https://www.wiran.pl/en/home" class="partner-button" target="_blank" rel="noopener noreferrer" data-pl="Przejdź do strony" data-en="Visit website">Przejdź do strony</a>
+          </div>
+        </article>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

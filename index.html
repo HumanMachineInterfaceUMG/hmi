@@ -19,11 +19,12 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koło naukowe Human Machine Interface</title>
+  <link rel="preload" as="image" href="Zdjecia/Strona_glowna.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-bg">
+<body class="dark-bg home-page">
 
 
   <!-- LOADER -->
@@ -36,8 +37,8 @@
   <div class="fade-page">
 
     <!-- Górne menu z logo i jezykiem -->
-     <div class = top-bar>
-      <div class = top-left>
+     <div class="top-bar">
+      <div class="top-left">
       <div id="hamburger">☰</div>
       <a href="index.html" id="homeLogo" aria-label="Strona główna">
       <img src="Loga/logo_hmi_białe.png" alt="Logo Koła Naukowego HMI">
@@ -58,6 +59,7 @@
      <li><a href="czlonkowie.html" data-pl="Członkowie" data-en="Members">Członkowie</a></li>
      <li><a href="osiagniecia.html" data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</a></li>
      <li><a href="Wydarzenia.html" data-pl="Wydarzenia" data-en="Events">Wydarzenia</a></li>
+     <li><a href="wspolprace.html" data-pl="Współpraca" data-en="Cooperation">Współpraca</a></li>
      <li><a href="social_media.html" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
     </ul>
     </nav>
@@ -134,13 +136,27 @@
       </div>
       <div class="content">
         <h1 data-pl="Skontaktuj się z nami" data-en="Contact us">Skontaktuj się z nami</h1>
-        <div class="contact-buttons-vertical">
-          <a href="mailto:hmikolo.umg@gmail.com" class="contact-btn big">
-            ✉ hmikolo.umg@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/company/ko%C5%82o-naukowe-hmi/" target="_blank" class="contact-btn big">
-            🔗 LinkedIn – Koło HMI
-          </a>
+        <div class="contact-section-layout">
+          <div class="contact-qr-panel contact-qr-left" aria-label="Miejsce na kod QR LinkedIn">
+            <div class="qr-frame">
+              <img src="kod_QR/Linkdin_QR.png" alt="Linkdin_QR">
+            </div>
+          </div>
+
+          <div class="contact-buttons-vertical">
+            <a href="mailto:hmikolo.umg@gmail.com" class="contact-btn big">
+              ✉ hmikolo.umg@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/company/ko%C5%82o-naukowe-hmi/" target="_blank" class="contact-btn big">
+              🔗 LinkedIn – Koło HMI
+            </a>
+          </div>
+
+          <div class="contact-qr-panel contact-qr-right" aria-label="Miejsce na drugi kod QR">
+            <div class="qr-frame">
+              <img src="kod_QR/Facebook_QR.png" alt="Facebook_QR">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -148,31 +164,5 @@
   </div> 
 
   <script src="script.js"></script>
-
-  <!-- PARALLAX -->
-  <script>
-    const parallaxImages = document.querySelectorAll('.parallax-bg img');
-    const parallaxSpeed = 0.55;
-
-    function updateParallax() {
-      const scrolled = window.pageYOffset;
-      const viewportHeight = window.innerHeight;
-
-      parallaxImages.forEach(img => {
-        const section = img.closest('.section');
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionCenter = sectionTop + sectionHeight / 2;
-        const distanceFromCenter = (scrolled + viewportHeight / 2) - sectionCenter;
-        const yPos = distanceFromCenter * parallaxSpeed;
-
-        img.style.transform = `translate(-50%, -50%) translateY(${yPos}px)`;
-      });
-    }
-
-    window.addEventListener('scroll', updateParallax);
-    window.addEventListener('resize', updateParallax);
-    updateParallax();
-  </script>
 </body>
 </html>

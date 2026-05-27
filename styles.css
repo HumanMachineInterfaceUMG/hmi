@@ -116,6 +116,7 @@ body {
   text-align: center;
   padding: 0 20px;
   max-width: 1000px;
+
 }
 .content h1 {
   font-size: clamp(2.8rem, 8vw, 5.5rem);
@@ -1051,3 +1052,3608 @@ body.dark-bg {
   }
 }
 
+/* ===================== PRZYCISKI OSIĄGNIĘCIA + KONTAKT ===================== */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;               /* odstęp między przyciskami na desktopie */
+  margin-top: 2.2rem;
+}
+
+.achievements-btn,
+.achievements-btS {
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.09);
+  color: white;
+  font-size: 1.35rem;
+  font-weight: 500;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 240px;        /* minimalna szerokość, żeby nie były za wąskie */
+}
+
+.achievements-btn:hover,
+.achievements-btS:hover {
+  background: #bbeeff;
+  color: #021F42;
+  border-color: #bbeeff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(187,238,255,0.45);
+}
+
+/* --------------------------------------------------------------- */
+/* NA TELEFONACH – przyciski jeden pod drugim                     */
+/* --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .buttons-container {
+    flex-direction: column;
+    gap: 16px;               /* mniejszy odstęp na małych ekranach */
+    margin-top: 1.6rem;
+    padding: 0 16px;         /* ← ważne – dodaje marginesy boczne */
+    width: 100%;
+  }
+
+  .achievements-btn,
+  .achievements-btS {
+    font-size: 1.15rem;      /* ← mniejszy tekst */
+    padding: 12px 24px;      /* ← mniejszy padding */
+    min-width: unset;        /* ← usuwa sztywny minimalny rozmiar */
+    max-width: 100%;         /* ← zmusza do zmieszczenia się */
+    width: 100%;             /* ← zajmuje całą dostępną szerokość */
+    box-sizing: border-box;
+  }
+}
+
+/* Bardzo ważne – łapiemy wcześniej i mocniej */
+@media (max-width: 480px) {
+  .buttons-container {
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 1.4rem;
+    padding: 0 14px;               /* ← boczne powietrze – kluczowe! */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .achievements-btn,
+  .achievements-btS {
+    /* usuń wszelkie sztywne ograniczenia szerokości */
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: calc(100% - 28px) !important;  /* viewport minus 2×padding */
+
+    /* tekst i padding – mniejsze, elastyczne */
+    font-size: 1.05rem !important;
+    line-height: 1.38 !important;
+    padding: 10px 18px !important;
+
+    /* pozwalamy na zawijanie tekstu – to ratuje na 375–420 px */
+    white-space: normal !important;
+    word-break: break-word !important;
+    hyphens: auto;
+
+    text-align: center;
+    border-radius: 32px;           /* mniejsze zaokrąglenie = mniej "wystających" pikseli */
+    box-sizing: border-box;
+  }
+}
+
+/* Dodatkowe zabezpieczenie dla najwęższych ekranów (np. 360–375 px) */
+@media (max-width: 768px) {
+  .achievements-btn,
+  .achievements-btS {
+    max-width: calc(100vw - 24px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis;           /* na wszelki wypadek skraca tekst */
+  }
+
+  .buttons-container {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  body, html {
+    overflow-x: hidden !important;
+  }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V2
+   Cel: przywrócić scroll-snap, zapobiec nachodzeniu elementów,
+   wyrównać przyciski i skalować zdjęcia tła bez zmiany kolorów.
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory !important;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden !important;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+.top-bar {
+  top: clamp(10px, 2.4vw, 20px) !important;
+  left: clamp(10px, 2.4vw, 20px) !important;
+  right: clamp(10px, 2.4vw, 20px) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(8px, 2vw, 18px);
+  min-width: 0;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 12px);
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+#hamburger {
+  position: static !important;
+  flex: 0 0 auto;
+  font-size: clamp(28px, 6.5vw, 38px) !important;
+  line-height: 1 !important;
+  padding: clamp(6px, 1.8vw, 8px) clamp(10px, 2.8vw, 14px) !important;
+}
+
+#homeLogo {
+  position: static !important;
+  flex: 0 0 auto;
+  width: clamp(46px, 10vw, 65px) !important;
+  height: clamp(46px, 10vw, 65px) !important;
+  margin-left: 0 !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  position: static !important;
+  flex: 0 0 auto;
+  max-width: 38vw;
+  white-space: nowrap;
+  font-size: clamp(0.82rem, 2.7vw, 1.1rem) !important;
+  line-height: 1 !important;
+  padding: clamp(7px, 1.8vw, 10px) clamp(10px, 2.8vw, 18px) !important;
+  gap: clamp(6px, 1.6vw, 10px) !important;
+}
+
+#langCorner img {
+  width: clamp(20px, 5vw, 26px) !important;
+  height: auto !important;
+  flex: 0 0 auto;
+}
+
+#sideMenu {
+  width: min(260px, 82vw) !important;
+  max-width: 82vw !important;
+  left: -82vw;
+}
+
+#sideMenu a {
+  font-size: clamp(1rem, 3.8vw, 1.2rem) !important;
+  padding-left: clamp(20px, 7vw, 30px) !important;
+  padding-right: clamp(20px, 7vw, 30px) !important;
+  overflow-wrap: anywhere;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  height: auto;
+  padding: clamp(96px, 13svh, 140px) clamp(14px, 4vw, 28px) clamp(46px, 8svh, 90px);
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+}
+
+.parallax-layer,
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+}
+
+.parallax-bg img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100% !important;
+  height: 120% !important;
+  min-width: 100% !important;
+  min-height: 120% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  width: min(100%, 1000px);
+  max-width: min(1000px, calc(100vw - 28px));
+  padding-inline: clamp(12px, 3.5vw, 30px) !important;
+  margin-inline: auto;
+}
+
+.content h1 {
+  font-size: clamp(2rem, 7.2vw, 5.5rem) !important;
+  line-height: 1.08 !important;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.content p {
+  font-size: clamp(1rem, 3vw, 1.65rem) !important;
+  line-height: clamp(1.42, 1.8vw, 1.7) !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.stats-bar {
+  gap: clamp(22px, 5vw, 60px) !important;
+  margin-top: clamp(28px, 6vw, 50px) !important;
+}
+
+.stat-item {
+  min-width: min(160px, 100%);
+}
+
+/* Przyciski w sekcjach: jednakowy rozmiar i symetria */
+.buttons-container {
+  width: min(100%, 780px);
+  margin: clamp(26px, 5vw, 40px) auto 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 3vw, 24px) !important;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.achievements-btn,
+.achievements-btS {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 54px;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  line-height: 1.25;
+  padding: clamp(11px, 2.5vw, 16px) clamp(16px, 4vw, 36px) !important;
+  font-size: clamp(1rem, 3.1vw, 1.4rem) !important;
+}
+
+.contact-buttons-vertical {
+  width: 100%;
+  padding-inline: clamp(8px, 3vw, 20px);
+}
+
+.contact-btn,
+.contact-btn.big {
+  min-width: 0 !important;
+  width: min(100%, 430px) !important;
+  max-width: 100% !important;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+  font-size: clamp(1rem, 3.4vw, 1.6rem) !important;
+}
+
+/* Członkowie i social: osobno ciało strony, osobno wewnętrzny kontener */
+body.members-page,
+body.social-page {
+  width: 100%;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: initial;
+}
+
+body.members-page > .fade-page > .members-page,
+body.social-page > .fade-page {
+  width: min(100%, 1100px);
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: clamp(96px, 12vw, 130px) clamp(16px, 4vw, 24px) clamp(56px, 8vw, 100px) !important;
+  text-align: center;
+}
+
+.members-page > h1,
+.social-page > h1 {
+  font-size: clamp(2.1rem, 8vw, 3.6rem) !important;
+  margin-bottom: clamp(34px, 7vw, 80px) !important;
+  overflow-wrap: anywhere;
+}
+
+.single-section h2,
+.grid-section h2 {
+  font-size: clamp(1.75rem, 6vw, 2.6rem) !important;
+  margin-bottom: clamp(30px, 7vw, 70px) !important;
+  overflow-wrap: anywhere;
+}
+
+.members-grid,
+.members-grid-zarzad,
+.members-grid-zarzad2,
+.social-grid,
+.social-grid2,
+.social-grid4,
+.social-grid5 {
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)) !important;
+  gap: clamp(34px, 7vw, 70px) clamp(18px, 4vw, 50px) !important;
+  align-items: start;
+}
+
+.members-grid-zarzad2,
+.social-grid2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)) !important;
+}
+
+.social-grid4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)) !important;
+}
+
+.social-grid5 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 115px), 1fr)) !important;
+}
+
+.person-single,
+.members-grid .person,
+.members-grid-zarzad .person1,
+.members-grid-zarzad2 .person2,
+.social-grid .person,
+.social-grid2 .person2,
+.social-grid4 .person2,
+.social-grid5 .person2 {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.person-single img {
+  width: clamp(160px, 42vw, 210px) !important;
+  height: clamp(160px, 42vw, 210px) !important;
+}
+
+.members-grid .person img,
+.members-grid-zarzad .person1 img,
+.members-grid-zarzad2 .person2 img,
+.social-grid .person img {
+  width: clamp(145px, 35vw, 180px) !important;
+  height: clamp(145px, 35vw, 180px) !important;
+}
+
+.social-grid2 .person2 img,
+.social-grid4 .person2 img,
+.social-grid5 .person2 img {
+  width: clamp(68px, 18vw, 80px) !important;
+  height: clamp(68px, 18vw, 80px) !important;
+}
+
+.name {
+  font-size: clamp(1.02rem, 4vw, 1.5rem) !important;
+  overflow-wrap: anywhere;
+}
+
+.role,
+.supervisor-link span,
+.contact-text {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-snap-type: y mandatory !important;
+  }
+
+  .section {
+    min-height: 100svh;
+    padding-top: clamp(92px, 15svh, 124px);
+    padding-bottom: clamp(42px, 8svh, 72px);
+  }
+
+  .buttons-container {
+    grid-template-columns: 1fr;
+    width: min(100%, 430px);
+  }
+
+  .content {
+    max-width: calc(100vw - 24px);
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 15px;
+    scroll-snap-type: y mandatory !important;
+  }
+
+  .top-bar {
+    height: auto !important;
+    padding: 0 !important;
+    align-items: center !important;
+  }
+
+  #langCorner {
+    max-width: 34vw;
+  }
+
+  .parallax-bg img {
+    width: 100% !important;
+    height: 125% !important;
+    min-width: 100% !important;
+    min-height: 125% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+  }
+
+  .content h1 {
+    font-size: clamp(1.85rem, 9vw, 2.35rem) !important;
+  }
+
+  .content p {
+    font-size: clamp(0.95rem, 4.2vw, 1.05rem) !important;
+  }
+
+  .members-grid,
+  .members-grid-zarzad,
+  .members-grid-zarzad2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .social-grid2,
+  .social-grid4,
+  .social-grid5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V3 — RÓWNE MENU, SAFE AREA, BRAK NACHODZENIA
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(50px, 10vw, 64px);
+  --nav-gap: clamp(8px, 2vw, 14px);
+  --page-safe-top: calc(env(safe-area-inset-top, 0px) + clamp(14px, 2.4vw, 22px));
+  --page-side-space: clamp(12px, 3vw, 24px);
+  --snap-breathing-space: calc(env(safe-area-inset-top, 0px) + clamp(14px, 3svh, 28px));
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--snap-breathing-space) !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: var(--page-safe-top) !important;
+  left: var(--page-side-space) !important;
+  right: var(--page-side-space) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: none;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--nav-gap) !important;
+  min-width: 0;
+  pointer-events: auto;
+}
+
+#hamburger,
+#homeLogo,
+#langCorner {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 var(--nav-control-size) !important;
+  line-height: 1 !important;
+  pointer-events: auto;
+}
+
+#hamburger {
+  font-size: calc(var(--nav-control-size) * 0.52) !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  gap: 4px !important;
+  white-space: nowrap !important;
+  font-size: clamp(0.74rem, 2.2vw, 0.98rem) !important;
+  overflow: hidden;
+}
+
+#langCorner img {
+  width: calc(var(--nav-control-size) * 0.34) !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu {
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 26px) !important;
+}
+
+#sideMenu a {
+  line-height: 1.25 !important;
+}
+
+@media (max-width: 420px) {
+  :root {
+    --nav-control-size: clamp(46px, 13vw, 54px);
+    --nav-gap: 8px;
+    --page-side-space: 10px;
+  }
+
+  #langCorner {
+    font-size: 0.72rem !important;
+    gap: 3px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V3 — SCROLL SNAP + PARALLAX + UKŁAD GŁÓWNY
+   ========================================================= */
+html {
+  scroll-snap-type: y mandatory !important;
+}
+
+.section {
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + clamp(28px, 5svh, 58px)) !important;
+  padding-bottom: clamp(58px, 9svh, 110px) !important;
+  padding-left: clamp(16px, 4vw, 32px) !important;
+  padding-right: clamp(16px, 4vw, 32px) !important;
+  overflow: hidden;
+}
+
+.parallax-layer,
+.parallax-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.parallax-bg {
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+}
+
+.parallax-bg img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100% !important;
+  height: 118% !important;
+  min-width: 100% !important;
+  min-height: 118% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.content {
+  width: min(100%, 1000px) !important;
+  max-width: min(1000px, calc(100vw - 32px)) !important;
+  margin-inline: auto !important;
+  padding-inline: clamp(12px, 3vw, 28px) !important;
+  position: relative;
+}
+
+.content h1,
+.content p,
+.name,
+.role,
+.contact-text,
+.supervisor-link span {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.content h1 {
+  margin-bottom: clamp(1rem, 3vw, 1.5rem) !important;
+}
+
+.content p {
+  max-width: 100% !important;
+}
+
+.buttons-container {
+  width: min(100%, 800px) !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 3vw, 24px) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.achievements-btn,
+.achievements-btS {
+  width: 100% !important;
+  min-height: clamp(64px, 8vw, 78px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  hyphens: auto;
+}
+
+/* Sekcja kontaktu na stronie głównej — bardziej czytelna na zdjęciu, bez zmiany kolorystyki strony */
+#section4 .content {
+  max-width: min(760px, calc(100vw - 32px)) !important;
+  padding: clamp(24px, 5vw, 44px) clamp(18px, 5vw, 48px) !important;
+  border-radius: 28px;
+  background: rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+#section4 .contact-buttons-vertical {
+  width: min(100%, 520px) !important;
+  margin-inline: auto !important;
+}
+
+#section4 .contact-btn,
+#section4 .contact-btn.big {
+  width: 100% !important;
+  min-height: 62px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Strona kontakt — cała zawartość wyśrodkowana */
+body.social-page > .fade-page {
+  width: min(100%, 1100px) !important;
+  min-height: 100svh;
+  margin-inline: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 38px) !important;
+}
+
+body.social-page .grid-section {
+  width: 100% !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+body.social-page .social-grid,
+body.social-page .social-grid2,
+body.social-page .social-grid4,
+body.social-page .social-grid5 {
+  justify-content: center !important;
+  justify-items: center !important;
+  align-items: start !important;
+  margin-inline: auto !important;
+}
+
+body.social-page .person2,
+body.social-page .person {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + clamp(24px, 5svh, 42px)) !important;
+    padding-bottom: clamp(46px, 8svh, 80px) !important;
+  }
+
+  .buttons-container {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 440px) !important;
+  }
+
+  .parallax-bg img {
+    height: 112% !important;
+    min-height: 112% !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .content {
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  #section4 .content {
+    max-width: calc(100vw - 24px) !important;
+  }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V4
+   - poprzedni wygląd kontaktu
+   - szerszy przycisk języka
+   - stabilny układ po zmianie PL/EN
+   - oryginalny efekt scroll-snap + parallax
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(52px, 8vw, 64px);
+  --lang-control-width: clamp(96px, 15vw, 122px);
+  --nav-gap: clamp(8px, 1.8vw, 14px);
+  --page-safe-top: calc(env(safe-area-inset-top, 0px) + clamp(12px, 2.2vw, 20px));
+  --page-side-space: clamp(12px, 3vw, 24px);
+  --snap-offset-top: calc(var(--page-safe-top) + var(--nav-control-size) + clamp(16px, 2.8svh, 34px));
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scroll-snap-type: y mandatory !important;
+  scroll-padding-top: var(--snap-offset-top) !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: var(--page-safe-top) !important;
+  left: var(--page-side-space) !important;
+  right: var(--page-side-space) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: none;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--nav-gap) !important;
+  min-width: 0;
+  pointer-events: auto;
+}
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 var(--nav-control-size) !important;
+  line-height: 1 !important;
+  pointer-events: auto;
+}
+
+#hamburger {
+  font-size: calc(var(--nav-control-size) * 0.52) !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 clamp(12px, 2vw, 16px) !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(7px, 1.4vw, 10px) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  font-size: clamp(0.92rem, 2vw, 1.08rem) !important;
+  pointer-events: auto;
+}
+
+#langCorner img {
+  width: clamp(25px, 3.8vw, 29px) !important;
+  height: clamp(17px, 2.6vw, 20px) !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu {
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 28px) !important;
+}
+
+.section {
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  width: 100% !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+  scroll-margin-top: var(--snap-offset-top) !important;
+  padding-top: calc(var(--snap-offset-top) + clamp(8px, 1.4svh, 20px)) !important;
+  padding-bottom: clamp(56px, 8svh, 100px) !important;
+  padding-left: clamp(14px, 4vw, 32px) !important;
+  padding-right: clamp(14px, 4vw, 32px) !important;
+  overflow: hidden !important;
+}
+
+.parallax-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  z-index: -2 !important;
+}
+
+.parallax-bg {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: translate(-50%, -50%) !important;
+  overflow: hidden !important;
+  z-index: -2 !important;
+}
+
+.parallax-bg img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100% !important;
+  height: 128% !important;
+  min-width: 100% !important;
+  min-height: 128% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: translate3d(-50%, -50%, 0) !important;
+  transition: none !important;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.content {
+  width: min(100%, 1000px) !important;
+  max-width: min(1000px, calc(100vw - 32px)) !important;
+  margin-inline: auto !important;
+  padding-inline: clamp(12px, 3vw, 28px) !important;
+}
+
+.content h1,
+.content p,
+.achievements-btn,
+.achievements-btS,
+.contact-btn,
+.name,
+.role,
+.supervisor-link span {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+/* Rezerwa miejsca pod dłuższe tłumaczenia — tło/ramki nie skaczą po PL/EN. */
+.section .content p {
+  min-height: min(30svh, 11.5em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#section1 .content p,
+#section4 .content p {
+  min-height: 0;
+  display: block;
+}
+
+.buttons-container {
+  width: min(100%, 800px) !important;
+  margin: clamp(26px, 5vw, 40px) auto 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 3vw, 24px) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.achievements-btn,
+.achievements-btS {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: clamp(64px, 7.5vw, 78px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: normal !important;
+  line-height: 1.25 !important;
+}
+
+/* Kontakt na stronie głównej wraca do poprzedniego, czystego wyglądu. */
+#section4 .content {
+  max-width: min(1000px, calc(100vw - 32px)) !important;
+  padding: 0 clamp(12px, 3vw, 28px) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+#section4 .contact-buttons-vertical {
+  width: 100% !important;
+  margin-inline: auto !important;
+  align-items: center !important;
+}
+
+#section4 .contact-btn,
+#section4 .contact-btn.big {
+  width: min(100%, 430px) !important;
+  min-width: 0 !important;
+  min-height: 62px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: normal !important;
+}
+
+/* Kontakt jako osobna podstrona zostaje wyśrodkowany. */
+body.social-page > .fade-page {
+  width: min(100%, 1100px) !important;
+  min-height: 100svh !important;
+  margin-inline: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 40px) !important;
+}
+
+body.social-page .grid-section,
+body.social-page .social-grid,
+body.social-page .social-grid2,
+body.social-page .social-grid4,
+body.social-page .social-grid5 {
+  margin-inline: auto !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 11vw, 56px);
+    --lang-control-width: clamp(92px, 23vw, 106px);
+    --page-side-space: clamp(10px, 3vw, 16px);
+  }
+
+  .section {
+    padding-top: calc(var(--snap-offset-top) + clamp(4px, 1svh, 14px)) !important;
+    padding-bottom: clamp(46px, 8svh, 82px) !important;
+  }
+
+  .section .content p {
+    min-height: min(36svh, 14em);
+  }
+
+  .buttons-container {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 440px) !important;
+  }
+
+  .parallax-bg img {
+    height: 122% !important;
+    min-height: 122% !important;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --nav-control-size: clamp(46px, 13vw, 52px);
+    --lang-control-width: clamp(88px, 28vw, 98px);
+    --nav-gap: 8px;
+    --page-side-space: 10px;
+  }
+
+  #langCorner {
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important;
+    gap: 6px !important;
+    padding-inline: 9px !important;
+  }
+
+  #langCorner img {
+    width: 23px !important;
+    height: 16px !important;
+  }
+
+  .section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .content {
+    max-width: calc(100vw - 24px) !important;
+  }
+}
+
+
+
+/* =========================================================
+   V5 — finalne poprawki: scroll-snap jak w oryginale,
+   prawdziwy parallax, równe menu i stabilny układ PL/EN.
+   Nie zmienia kolorów ani stylu wizualnego strony.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 7vw, 64px);
+  --lang-control-width: clamp(124px, 14vw, 146px);
+  --nav-gap: clamp(9px, 1.4vw, 14px);
+  --page-edge: clamp(12px, 2.4vw, 22px);
+  --top-safe-space: calc(var(--page-edge) + var(--nav-control-size) + clamp(20px, 3.2svh, 38px));
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scroll-snap-type: y mandatory !important;
+  scroll-padding-top: 0 !important;
+  overflow-y: auto !important;
+  overscroll-behavior-y: contain;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: var(--page-edge) !important;
+  left: var(--page-edge) !important;
+  right: var(--page-edge) !important;
+  min-height: var(--nav-control-size) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--nav-gap) !important;
+  min-width: 0 !important;
+}
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  margin: 0 !important;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  flex: 0 0 var(--nav-control-size) !important;
+}
+
+#hamburger {
+  padding: 0 !important;
+  font-size: calc(var(--nav-control-size) * 0.54) !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 clamp(14px, 2vw, 18px) !important;
+  margin: 0 !important;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(8px, 1.2vw, 12px) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem) !important;
+}
+
+#langCorner img {
+  width: clamp(28px, 3.5vw, 32px) !important;
+  height: clamp(19px, 2.3vw, 22px) !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu {
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + 30px) !important;
+}
+
+.section {
+  height: 100vh !important;
+  height: 100svh !important;
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+  scroll-margin-top: 0 !important;
+  overflow: hidden !important;
+}
+
+.parallax-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  z-index: -2 !important;
+}
+
+.parallax-bg {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: translate(-50%, -50%) !important;
+  overflow: hidden !important;
+  z-index: -2 !important;
+}
+
+.parallax-bg img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100% !important;
+  height: 130% !important;
+  min-width: 100% !important;
+  min-height: 130% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: translate(-50%, -50%) translateY(0) !important;
+  transition: none !important;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.content {
+  width: min(100%, 1000px) !important;
+  max-width: min(1000px, calc(100vw - 32px)) !important;
+  max-height: calc(100svh - clamp(12px, 3svh, 34px)) !important;
+  padding: var(--top-safe-space) clamp(16px, 4vw, 28px) clamp(22px, 5svh, 50px) !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.content h1 {
+  font-size: clamp(2.05rem, 7.2vw, 5.5rem) !important;
+  line-height: 1.05 !important;
+  margin-bottom: clamp(0.75rem, 2.3svh, 1.5rem) !important;
+  max-width: 100% !important;
+  overflow-wrap: anywhere !important;
+  hyphens: auto !important;
+}
+
+.content p {
+  font-size: clamp(1rem, 2.25vw, 1.65rem) !important;
+  line-height: 1.55 !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  display: block !important;
+  overflow-wrap: anywhere !important;
+  hyphens: auto !important;
+}
+
+.stats-bar {
+  max-width: min(100%, 760px) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: clamp(12px, 2.4vw, 28px) !important;
+  margin-top: clamp(18px, 3.2svh, 34px) !important;
+}
+
+.stat-item {
+  min-width: clamp(90px, 20vw, 150px) !important;
+}
+
+.buttons-container {
+  width: min(100%, 820px) !important;
+  margin: clamp(22px, 4svh, 38px) auto 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 2.2vw, 24px) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.achievements-btn,
+.achievements-btS,
+.contact-btn,
+.contact-btn.big {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: normal !important;
+  line-height: 1.22 !important;
+  overflow-wrap: anywhere !important;
+  hyphens: auto !important;
+}
+
+.achievements-btn,
+.achievements-btS {
+  min-height: clamp(58px, 7vw, 76px) !important;
+  padding-inline: clamp(12px, 2.4vw, 22px) !important;
+}
+
+/* Strona główna — kontakt bez dodatkowej ramki, czyli poprzedni wygląd. */
+#section4 .content {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+#section4 .contact-buttons-vertical {
+  width: min(100%, 460px) !important;
+  margin-inline: auto !important;
+  align-items: center !important;
+}
+
+#section4 .contact-btn,
+#section4 .contact-btn.big {
+  width: min(100%, 460px) !important;
+  min-height: clamp(58px, 7vw, 70px) !important;
+}
+
+/* Osobna podstrona kontaktu — wszystko na środku ekranu. */
+body.social-page > .fade-page {
+  width: min(100%, 1100px) !important;
+  min-height: 100svh !important;
+  margin-inline: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + 34px) !important;
+}
+
+body.social-page .grid-section,
+body.social-page .social-grid,
+body.social-page .social-grid2,
+body.social-page .social-grid4,
+body.social-page .social-grid5 {
+  margin-inline: auto !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 12vw, 56px);
+    --lang-control-width: clamp(112px, 29vw, 128px);
+    --page-edge: clamp(9px, 2.8vw, 14px);
+    --nav-gap: clamp(7px, 2vw, 10px);
+    --top-safe-space: calc(var(--page-edge) + var(--nav-control-size) + clamp(16px, 2.4svh, 26px));
+  }
+
+  .content {
+    max-width: calc(100vw - 22px) !important;
+    max-height: calc(100svh - 8px) !important;
+    padding: var(--top-safe-space) 12px clamp(16px, 3.5svh, 28px) !important;
+  }
+
+  .content h1 {
+    font-size: clamp(1.62rem, 7.7vw, 2.9rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: clamp(0.55rem, 1.6svh, 1rem) !important;
+  }
+
+  .content p {
+    font-size: clamp(0.86rem, 3.35vw, 1.04rem) !important;
+    line-height: 1.38 !important;
+  }
+
+  .stats-bar {
+    gap: 10px !important;
+    margin-top: clamp(12px, 2.2svh, 22px) !important;
+  }
+
+  .stat-item {
+    min-width: 82px !important;
+  }
+
+  .stat-number {
+    font-size: clamp(1.55rem, 7vw, 2.25rem) !important;
+  }
+
+  .stat-label {
+    font-size: clamp(0.78rem, 3vw, 0.95rem) !important;
+  }
+
+  .buttons-container {
+    width: min(100%, 460px) !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: clamp(12px, 2.2svh, 20px) !important;
+  }
+
+  .achievements-btn,
+  .achievements-btS {
+    min-height: clamp(46px, 9vw, 56px) !important;
+    padding: 9px 12px !important;
+    font-size: clamp(0.82rem, 3.15vw, 0.98rem) !important;
+  }
+
+  .parallax-bg img {
+    height: 124% !important;
+    min-height: 124% !important;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --nav-control-size: clamp(44px, 13vw, 50px);
+    --lang-control-width: clamp(104px, 31vw, 118px);
+    --page-edge: 9px;
+    --nav-gap: 7px;
+  }
+
+  #langCorner {
+    padding-inline: 10px !important;
+    gap: 7px !important;
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important;
+  }
+
+  #langCorner img {
+    width: 25px !important;
+    height: 17px !important;
+  }
+
+  .content h1 {
+    font-size: clamp(1.45rem, 7.8vw, 2.2rem) !important;
+  }
+
+  .content p {
+    font-size: clamp(0.78rem, 3.45vw, 0.94rem) !important;
+    line-height: 1.34 !important;
+  }
+}
+
+
+/* =========================================================
+   V6 — poprawki: brak kursora tekstowego, płynniejsze przewijanie,
+   szerszy język i stabilny układ bez nachodzenia elementów.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(58px, 6.4vw, 70px);
+  --lang-control-width: clamp(154px, 12vw, 190px);
+  --nav-gap: clamp(10px, 1.2vw, 16px);
+  --page-edge: clamp(14px, 1.8vw, 24px);
+  --top-safe-space: calc(env(safe-area-inset-top, 0px) + var(--page-edge) + var(--nav-control-size) + clamp(18px, 3svh, 34px));
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scroll-snap-type: y proximity !important;
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge)) !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body,
+body *:not(input):not(textarea):not(select) {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  caret-color: transparent !important;
+}
+
+body {
+  cursor: default !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a, button, #hamburger, #homeLogo, #langCorner, .achievements-btn, .achievements-btS,
+.contact-btn, .visit-button, .more-btn {
+  cursor: pointer !important;
+}
+
+.top-bar {
+  top: var(--page-edge) !important;
+  left: var(--page-edge) !important;
+  right: var(--page-edge) !important;
+  min-height: var(--nav-control-size) !important;
+}
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--nav-control-size) !important;
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  padding: 0 clamp(16px, 1.5vw, 22px) !important;
+  gap: clamp(10px, 1vw, 14px) !important;
+  font-size: clamp(1rem, 1.25vw, 1.16rem) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+#langCorner img {
+  width: clamp(32px, 2.7vw, 39px) !important;
+  height: clamp(22px, 1.8vw, 27px) !important;
+  object-fit: cover !important;
+}
+
+.section {
+  scroll-snap-align: start !important;
+  scroll-snap-stop: normal !important;
+  min-height: 100svh !important;
+  height: auto !important;
+  overflow: hidden !important;
+}
+
+.content {
+  padding-top: var(--top-safe-space) !important;
+  padding-bottom: clamp(24px, 5svh, 56px) !important;
+  gap: clamp(10px, 1.8svh, 18px) !important;
+  overflow: visible !important;
+}
+
+.content h1 { margin-bottom: clamp(0.45rem, 1.4svh, 1.1rem) !important; }
+.content p { margin-bottom: 0 !important; }
+
+.parallax-bg img {
+  height: 132% !important;
+  min-height: 132% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.buttons-container {
+  margin-top: clamp(14px, 2.5svh, 28px) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Sekcja elektroautomatyki — dłuższy tekst PL/EN nie może nachodzić na przyciski. */
+#section2 .content p,
+.section .content p {
+  flex: 0 1 auto !important;
+}
+
+#section2 .buttons-container,
+.section .buttons-container {
+  flex: 0 0 auto !important;
+}
+
+@media (max-height: 820px) {
+  .content p {
+    font-size: clamp(0.86rem, 1.85vw, 1.24rem) !important;
+    line-height: 1.34 !important;
+  }
+  .content h1 {
+    font-size: clamp(1.9rem, 6.4vw, 4.8rem) !important;
+  }
+  .achievements-btn,
+  .achievements-btS {
+    min-height: clamp(46px, 6.2vw, 62px) !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 12vw, 56px);
+    --lang-control-width: clamp(124px, 34vw, 148px);
+    --page-edge: clamp(9px, 2.6vw, 14px);
+    --nav-gap: clamp(7px, 2vw, 10px);
+    --top-safe-space: calc(env(safe-area-inset-top, 0px) + var(--page-edge) + var(--nav-control-size) + clamp(12px, 2.2svh, 22px));
+  }
+
+  html {
+    scroll-snap-type: y proximity !important;
+  }
+
+  #langCorner {
+    padding-inline: 11px !important;
+    gap: 8px !important;
+    font-size: clamp(0.88rem, 3vw, 1rem) !important;
+  }
+
+  #langCorner img {
+    width: clamp(27px, 7vw, 33px) !important;
+    height: clamp(18px, 4.6vw, 22px) !important;
+  }
+
+  .section {
+    min-height: 100svh !important;
+  }
+
+  .content {
+    padding-top: var(--top-safe-space) !important;
+    padding-bottom: clamp(16px, 3svh, 28px) !important;
+    gap: clamp(8px, 1.4svh, 12px) !important;
+  }
+
+  .content p {
+    font-size: clamp(0.78rem, 3.05vw, 0.98rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  .buttons-container {
+    margin-top: clamp(10px, 1.6svh, 16px) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --nav-control-size: clamp(44px, 13vw, 50px);
+    --lang-control-width: clamp(112px, 34vw, 132px);
+  }
+
+  #langCorner {
+    padding-inline: 9px !important;
+    gap: 7px !important;
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important;
+  }
+}
+
+
+/* =========================================================
+   V6 — Członkowie i Kontakt wyżej / widoczne bez niepotrzebnego przewijania.
+   ========================================================= */
+body.members-page > .fade-page > .members-page {
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + clamp(18px, 3svh, 34px)) !important;
+}
+
+body.members-page .single-section,
+body.members-page .grid-section {
+  margin-bottom: clamp(24px, 4vw, 44px) !important;
+}
+
+body.members-page .single-section h2,
+body.members-page .grid-section h2 {
+  margin-bottom: clamp(22px, 4vw, 46px) !important;
+}
+
+body.members-page .person-single {
+  margin-top: clamp(18px, 3vw, 34px) !important;
+  margin-bottom: clamp(18px, 3vw, 34px) !important;
+}
+
+body.social-page > .fade-page {
+  min-height: 100svh !important;
+  width: min(100%, 1120px) !important;
+  padding: calc(var(--page-edge) + var(--nav-control-size) + clamp(10px, 2svh, 22px)) clamp(10px, 3vw, 20px) clamp(12px, 2svh, 24px) !important;
+  justify-content: center !important;
+  gap: clamp(8px, 1.6svh, 18px) !important;
+}
+
+body.social-page .grid-section {
+  margin: 0 auto clamp(8px, 1.6svh, 16px) !important;
+  width: 100% !important;
+}
+
+body.social-page .social-grid,
+body.social-page .social-grid2,
+body.social-page .social-grid4,
+body.social-page .social-grid5 {
+  width: min(100%, 980px) !important;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(72px, 10vw, 118px), 1fr)) !important;
+  gap: clamp(10px, 1.6svh, 20px) clamp(12px, 2.4vw, 28px) !important;
+  margin: 0 auto !important;
+  align-items: start !important;
+}
+
+body.social-page .person2,
+body.social-page .person {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+body.social-page .person2 img,
+body.social-page .person img,
+body.social-page .social-grid2 .person2 img,
+body.social-page .social-grid4 .person2 img,
+body.social-page .social-grid5 .person2 img {
+  width: clamp(54px, 7.2svh, 80px) !important;
+  height: clamp(54px, 7.2svh, 80px) !important;
+  margin-bottom: clamp(6px, 0.8svh, 10px) !important;
+}
+
+body.social-page .name,
+body.social-page .person2 p,
+body.social-page .person p {
+  font-size: clamp(0.74rem, 1.5vw, 0.96rem) !important;
+  line-height: 1.15 !important;
+  margin: 0 !important;
+}
+
+@media (max-height: 720px) {
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(46px, 6.4svh, 64px) !important;
+    height: clamp(46px, 6.4svh, 64px) !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p {
+    font-size: clamp(0.66rem, 1.35vw, 0.82rem) !important;
+  }
+}
+
+
+/* =========================================================
+   V7 — poprawki według uwag:
+   - kontakt większy i dalej w środku ekranu,
+   - przycisk języka mniejszy/schludniejszy,
+   - sekcje koła stabilnie wycentrowane,
+   - scroll-snap płynny bez sztucznego blokowania,
+   - brak kursora tekstowego po kliknięciu elementów.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 5.6vw, 64px);
+  --lang-control-width: clamp(132px, 10.5vw, 160px);
+  --page-edge: clamp(12px, 1.55vw, 22px);
+  --nav-gap: clamp(10px, 1.1vw, 15px);
+  --top-safe-space: calc(env(safe-area-inset-top, 0px) + var(--page-edge) + var(--nav-control-size) + clamp(10px, 1.6svh, 18px));
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scroll-snap-type: y mandatory !important;
+  scroll-padding-top: 0 !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body,
+body *:not(input):not(textarea):not(select) {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  caret-color: transparent !important;
+}
+
+body { cursor: default !important; -webkit-tap-highlight-color: transparent; }
+a, button, #hamburger, #homeLogo, #langCorner, .achievements-btn, .achievements-btS,
+.contact-btn, .visit-button, .more-btn { cursor: pointer !important; }
+
+.top-bar {
+  top: var(--page-edge) !important;
+  left: var(--page-edge) !important;
+  right: var(--page-edge) !important;
+  min-height: var(--nav-control-size) !important;
+}
+
+.top-left { gap: var(--nav-gap) !important; align-items: center !important; }
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--nav-control-size) !important;
+}
+
+#hamburger { padding: 0 !important; font-size: calc(var(--nav-control-size) * 0.52) !important; }
+#homeLogo img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  padding: 0 clamp(12px, 1.2vw, 16px) !important;
+  gap: clamp(8px, 0.8vw, 11px) !important;
+  font-size: clamp(0.92rem, 1.05vw, 1.05rem) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  line-height: 1 !important;
+}
+
+#langCorner img {
+  width: clamp(26px, 2.1vw, 32px) !important;
+  height: clamp(18px, 1.42vw, 22px) !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu { padding-top: calc(var(--page-edge) + var(--nav-control-size) + 30px) !important; }
+
+.section {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: normal !important;
+  overflow: hidden !important;
+}
+
+.content {
+  min-height: 100svh !important;
+  width: min(100%, 1100px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: var(--top-safe-space) clamp(16px, 4vw, 28px) clamp(28px, 5svh, 60px) !important;
+  gap: clamp(10px, 1.8svh, 18px) !important;
+  overflow: visible !important;
+}
+
+/* Sekcja Druku w podstronie sekcji — bardziej naturalnie na środku ekranu. */
+#section1 .content {
+  justify-content: center !important;
+  transform: translateY(clamp(6px, 1.2svh, 16px));
+}
+
+.content h1 { margin-bottom: clamp(0.45rem, 1.5svh, 1rem) !important; }
+.content p {
+  margin-bottom: 0 !important;
+  max-width: min(100%, 980px) !important;
+  flex: 0 1 auto !important;
+}
+
+.buttons-container {
+  margin-top: clamp(14px, 2.3svh, 26px) !important;
+  flex: 0 0 auto !important;
+  align-items: stretch !important;
+}
+
+.achievements-btn,
+.achievements-btS {
+  min-height: clamp(48px, 5svh, 62px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+/* Dłuższe opisy, np. Elektroautomatyka po PL/EN, nie mogą wchodzić na przyciski. */
+@media (max-height: 860px) {
+  .content p {
+    font-size: clamp(0.9rem, 1.55vw, 1.25rem) !important;
+    line-height: 1.36 !important;
+  }
+  .content h1 { font-size: clamp(2rem, 6.2vw, 5rem) !important; }
+  .buttons-container { margin-top: clamp(10px, 1.6svh, 18px) !important; }
+}
+
+.parallax-bg img {
+  min-width: 100% !important;
+  min-height: 132% !important;
+  height: 132% !important;
+  width: auto !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  backface-visibility: hidden;
+  transform: translate(-50%, -50%) translate3d(0,0,0);
+}
+
+/* Członkowie trochę wyżej, ale bez nachodzenia pod górne ikony. */
+body.members-page > .fade-page > .members-page {
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + clamp(10px, 1.8svh, 24px)) !important;
+}
+
+body.members-page .single-section h2,
+body.members-page .grid-section h2 {
+  margin-bottom: clamp(18px, 3vw, 36px) !important;
+}
+
+body.members-page .person-single {
+  margin-top: clamp(10px, 2vw, 24px) !important;
+  margin-bottom: clamp(16px, 2.4vw, 30px) !important;
+}
+
+/* Kontakt — większe ikony, nadal wyśrodkowane i możliwie widoczne bez przewijania. */
+body.social-page > .fade-page {
+  min-height: 100svh !important;
+  width: min(100%, 1240px) !important;
+  max-width: 1240px !important;
+  padding: calc(var(--page-edge) + var(--nav-control-size) + clamp(12px, 2svh, 24px)) clamp(14px, 3vw, 30px) clamp(18px, 3svh, 34px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: clamp(18px, 2.5svh, 30px) !important;
+}
+
+body.social-page .grid-section { width: 100% !important; margin: 0 auto !important; }
+
+body.social-page .social-grid,
+body.social-page .social-grid2,
+body.social-page .social-grid4,
+body.social-page .social-grid5 {
+  width: min(100%, 1120px) !important;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(135px, 12vw, 170px), 1fr)) !important;
+  gap: clamp(22px, 3.1svh, 36px) clamp(28px, 4vw, 58px) !important;
+  margin: 0 auto !important;
+  align-items: start !important;
+  justify-items: center !important;
+}
+
+body.social-page .person2,
+body.social-page .person {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+body.social-page .person2 img,
+body.social-page .person img,
+body.social-page .social-grid2 .person2 img,
+body.social-page .social-grid4 .person2 img,
+body.social-page .social-grid5 .person2 img {
+  width: clamp(84px, 10.8svh, 118px) !important;
+  height: clamp(84px, 10.8svh, 118px) !important;
+  margin-bottom: clamp(8px, 1svh, 13px) !important;
+}
+
+body.social-page .name,
+body.social-page .person2 p,
+body.social-page .person p {
+  font-size: clamp(0.95rem, 1.35vw, 1.15rem) !important;
+  line-height: 1.18 !important;
+  margin: 0 !important;
+  max-width: 180px !important;
+}
+
+@media (max-height: 760px) {
+  body.social-page .social-grid,
+  body.social-page .social-grid2,
+  body.social-page .social-grid4,
+  body.social-page .social-grid5 {
+    gap: clamp(14px, 2svh, 24px) clamp(20px, 3vw, 42px) !important;
+  }
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(70px, 9.2svh, 94px) !important;
+    height: clamp(70px, 9.2svh, 94px) !important;
+  }
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p { font-size: clamp(0.84rem, 1.2vw, 1rem) !important; }
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 760px) {
+  html { scroll-snap-type: y proximity !important; }
+  .section { scroll-snap-stop: normal !important; }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 11.5vw, 56px);
+    --lang-control-width: clamp(108px, 30vw, 132px);
+    --page-edge: clamp(9px, 2.6vw, 14px);
+    --nav-gap: clamp(7px, 2vw, 10px);
+    --top-safe-space: calc(env(safe-area-inset-top, 0px) + var(--page-edge) + var(--nav-control-size) + clamp(10px, 2svh, 18px));
+  }
+  #langCorner { padding-inline: 9px !important; gap: 7px !important; font-size: clamp(0.82rem, 2.9vw, 0.95rem) !important; }
+  #langCorner img { width: clamp(23px, 6vw, 29px) !important; height: clamp(16px, 4vw, 20px) !important; }
+  .section { min-height: 100svh !important; height: auto !important; overflow: visible !important; }
+  .content { min-height: 100svh !important; padding-bottom: clamp(18px, 3svh, 30px) !important; }
+  .content p { font-size: clamp(0.82rem, 3vw, 1rem) !important; line-height: 1.32 !important; }
+  #section1 .content { transform: none; }
+  .buttons-container { margin-top: clamp(10px, 1.6svh, 16px) !important; }
+  body.social-page .social-grid,
+  body.social-page .social-grid2,
+  body.social-page .social-grid4,
+  body.social-page .social-grid5 {
+    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)) !important;
+    gap: 18px 20px !important;
+  }
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(68px, 17vw, 92px) !important;
+    height: clamp(68px, 17vw, 92px) !important;
+  }
+}
+
+
+/* =========================================================
+   V8 — szybkie, natywne przewijanie sekcjami bez spowalniającego JS.
+   ========================================================= */
+html {
+  scroll-snap-type: y mandatory !important;
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 0 !important;
+}
+
+body {
+  overscroll-behavior-y: contain;
+}
+
+.section {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: normal !important;
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 760px) {
+  html { scroll-snap-type: y mandatory !important; }
+  .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: normal !important;
+  }
+}
+
+
+/* =========================================================
+   V8 — poprawki: kontakt większy, sekcje bardziej wyśrodkowane,
+   mniejszy przycisk języka, bez wolnego snapowania JS.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 5.4vw, 62px);
+  --lang-control-width: clamp(124px, 9.4vw, 148px);
+  --page-edge: clamp(12px, 1.45vw, 20px);
+  --nav-gap: clamp(10px, 1vw, 14px);
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  padding: 0 clamp(10px, 1vw, 14px) !important;
+  gap: clamp(7px, 0.75vw, 10px) !important;
+  font-size: clamp(0.88rem, 0.98vw, 1rem) !important;
+}
+
+#langCorner img {
+  width: clamp(24px, 1.85vw, 29px) !important;
+  height: clamp(17px, 1.25vw, 20px) !important;
+}
+
+#section1 .content {
+  justify-content: center !important;
+  transform: none !important;
+}
+
+/* Sekcje z dłuższym tekstem: tekst i przyciski zachowują odstęp. */
+.content {
+  justify-content: center !important;
+  gap: clamp(10px, 1.55svh, 18px) !important;
+}
+
+.content p {
+  max-width: min(100%, 960px) !important;
+}
+
+.buttons-container {
+  margin-top: clamp(12px, 2svh, 24px) !important;
+}
+
+/* Kontakt — możliwie duże ikony, nadal w całości na środku ekranu. */
+body.social-page > .fade-page {
+  min-height: 100svh !important;
+  width: min(100%, 1500px) !important;
+  max-width: 1500px !important;
+  padding: calc(var(--page-edge) + var(--nav-control-size) + clamp(6px, 1.2svh, 16px)) clamp(18px, 3vw, 42px) clamp(18px, 2.5svh, 34px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: clamp(18px, 2.2svh, 28px) !important;
+}
+
+body.social-page .grid-section {
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+body.social-page .social-grid4 {
+  grid-template-columns: repeat(4, minmax(150px, 1fr)) !important;
+}
+body.social-page .social-grid5 {
+  grid-template-columns: repeat(5, minmax(135px, 1fr)) !important;
+}
+body.social-page .social-grid2 {
+  grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+  width: min(100%, 760px) !important;
+}
+
+body.social-page .social-grid,
+body.social-page .social-grid2,
+body.social-page .social-grid4,
+body.social-page .social-grid5 {
+  width: min(100%, 1320px) !important;
+  gap: clamp(18px, 2.1svh, 28px) clamp(34px, 4vw, 76px) !important;
+  margin: 0 auto !important;
+  align-items: start !important;
+  justify-items: center !important;
+}
+
+body.social-page .person2,
+body.social-page .person {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-width: 0 !important;
+}
+
+body.social-page .person2 img,
+body.social-page .person img,
+body.social-page .social-grid2 .person2 img,
+body.social-page .social-grid4 .person2 img,
+body.social-page .social-grid5 .person2 img {
+  width: clamp(112px, 15.5svh, 170px) !important;
+  height: clamp(112px, 15.5svh, 170px) !important;
+  margin-bottom: clamp(8px, 1svh, 14px) !important;
+}
+
+body.social-page .name,
+body.social-page .person2 p,
+body.social-page .person p {
+  font-size: clamp(1rem, 1.25vw, 1.25rem) !important;
+  line-height: 1.16 !important;
+  max-width: 230px !important;
+  margin: 0 !important;
+}
+
+@media (max-height: 820px) {
+  body.social-page > .fade-page { gap: clamp(12px, 1.5svh, 20px) !important; }
+  body.social-page .social-grid,
+  body.social-page .social-grid2,
+  body.social-page .social-grid4,
+  body.social-page .social-grid5 {
+    gap: clamp(12px, 1.45svh, 20px) clamp(24px, 3vw, 52px) !important;
+  }
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(95px, 13.2svh, 136px) !important;
+    height: clamp(95px, 13.2svh, 136px) !important;
+  }
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p {
+    font-size: clamp(0.92rem, 1.1vw, 1.08rem) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(46px, 11vw, 54px);
+    --lang-control-width: clamp(100px, 28vw, 122px);
+    --page-edge: clamp(9px, 2.5vw, 14px);
+  }
+
+  #langCorner {
+    padding-inline: 8px !important;
+    gap: 6px !important;
+    font-size: clamp(0.78rem, 2.7vw, 0.9rem) !important;
+  }
+  #langCorner img {
+    width: clamp(21px, 5.2vw, 26px) !important;
+    height: clamp(15px, 3.7vw, 18px) !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    grid-template-columns: repeat(2, minmax(130px, 1fr)) !important;
+    width: min(100%, 620px) !important;
+  }
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(82px, 20vw, 112px) !important;
+    height: clamp(82px, 20vw, 112px) !important;
+  }
+}
+
+
+/* =========================================================
+   V9 — szybkie, dynamiczne przewijanie sekcjami.
+   Poprawka: scroll-snap działa TYLKO na stronach z .section.
+   Inne podstrony mają normalne przewijanie.
+   ========================================================= */
+html {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  scroll-padding-top: 0 !important;
+  overscroll-behavior-y: auto !important;
+}
+
+html.snap-page {
+  scroll-snap-type: y mandatory !important;
+  scroll-behavior: auto !important;
+  scroll-padding-top: 0 !important;
+  overscroll-behavior-y: contain !important;
+}
+
+html.snap-page body {
+  overflow-x: hidden !important;
+  overscroll-behavior-y: contain !important;
+}
+
+html.snap-page .section {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+  overflow: hidden !important;
+}
+
+html.snap-page .content {
+  max-height: calc(100svh - (var(--nav-control-size, 62px) + var(--page-edge, 20px) * 2 + 18px)) !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 760px), (hover: none), (pointer: coarse) {
+  html.snap-page {
+    scroll-snap-type: y mandatory !important;
+    overscroll-behavior-y: contain !important;
+  }
+  html.snap-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.snap-page { scroll-behavior: auto !important; }
+}
+
+/* =========================================================
+   V11 — przewijanie touchpadem na podstronie Członkowie.
+   Strona Członkowie nie używa klas .section, więc scroll sekcjami
+   obsługuje JavaScript. Tutaj wyłączamy natywne scroll-snap dla tej
+   konkretnej podstrony, żeby nie blokował przewijania touchpadem.
+   ========================================================= */
+html.snap-members-page {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  overscroll-behavior-y: auto !important;
+}
+
+html.snap-members-page body {
+  overscroll-behavior-y: auto !important;
+}
+
+html.snap-members-page body.members-page .single-section,
+html.snap-members-page body.members-page .grid-section {
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+}
+
+
+/* =========================================================
+   V12 — Członkowie: normalne przewijanie bez zatrzymywania sekcji.
+   ========================================================= */
+html:has(body.members-page),
+html.snap-members-page:has(body.members-page) {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body.members-page {
+  overflow-y: auto !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body.members-page .single-section,
+body.members-page .grid-section,
+body.members-page .members-page,
+body.members-page .person-single {
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+}
+
+/* =========================================================
+   V13 — Członkowie: delikatne podniesienie początku strony.
+   Cel: Opiekun Koła ma być wyżej i bardziej estetycznie na ekranie,
+   ale bez przywracania zatrzymywania scrolla na tej podstronie.
+   ========================================================= */
+body.members-page > .fade-page > .members-page {
+  padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 64px) + clamp(2px, 0.8svh, 12px)) !important;
+}
+
+body.members-page .single-section:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: clamp(34px, 5.2svh, 62px) !important;
+}
+
+body.members-page .single-section:first-of-type h2 {
+  margin-top: 0 !important;
+  margin-bottom: clamp(18px, 2.8svh, 32px) !important;
+}
+
+body.members-page .single-section:first-of-type .person-single {
+  margin-top: 0 !important;
+  margin-bottom: clamp(18px, 2.8svh, 32px) !important;
+}
+
+@media (max-height: 820px) {
+  body.members-page > .fade-page > .members-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 56px) + 6px) !important;
+  }
+
+  body.members-page .single-section:first-of-type h2 {
+    margin-bottom: clamp(14px, 2.2svh, 24px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.members-page > .fade-page > .members-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 8px) !important;
+  }
+}
+
+/* V19 — magiczny pył tylko w tle, nie na blokach treści */
+.members-page .single-section,
+.members-page .grid-section,
+.social-page .grid-section,
+.social-page .person2,
+.social-page .person,
+.person-single,
+.person,
+.person2 {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+
+/* =========================================================
+   V21 — Członkowie: magiczny pył widoczny w tle między ikonami.
+   Efekt zostaje z tyłu strony: nie nachodzi na zdjęcia, teksty ani ikony.
+   ========================================================= */
+body.members-page > .page-magic-dust {
+  z-index: 0 !important;
+  opacity: 0.94 !important;
+}
+
+body.members-page > .fade-page {
+  position: relative !important;
+  z-index: 1 !important;
+  background: transparent !important;
+}
+
+body.members-page > .fade-page > .members-page {
+  background: transparent !important;
+  position: relative !important;
+  z-index: 1 !important;
+  isolation: isolate !important;
+}
+
+body.members-page .single-section,
+body.members-page .grid-section,
+body.members-page .person-single,
+body.members-page .person,
+body.members-page .person1 {
+  background: transparent !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body.members-page .person-single img,
+body.members-page .person img,
+body.members-page .person1 img,
+body.members-page h1,
+body.members-page h2,
+body.members-page p,
+body.members-page a {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+
+/* =========================================================
+   V22 — prestiżowy loader: szybsze wyłanianie logo + gwiezdne tło.
+   Efekt jest tylko w tle loadera i nie zmienia kolorów strony.
+   ========================================================= */
+#loader {
+  isolation: isolate !important;
+}
+
+#loader::before {
+  z-index: 0 !important;
+}
+
+#loader::after {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.98) 0 1.25px, transparent 2.45px),
+    radial-gradient(circle at 76% 28%, rgba(176,220,255,0.92) 0 1.08px, transparent 2.25px),
+    radial-gradient(circle at 38% 64%, rgba(255,255,255,0.78) 0 1px, transparent 2.12px),
+    radial-gradient(circle at 88% 78%, rgba(255,236,150,0.74) 0 1.12px, transparent 2.2px),
+    radial-gradient(circle at 48% 12%, rgba(210,245,255,0.70) 0 0.95px, transparent 1.9px),
+    radial-gradient(circle at 22% 74%, rgba(255,255,255,0.74) 0 1px, transparent 2px);
+  background-size: 190px 190px, 260px 260px, 330px 330px, 410px 410px, 520px 520px, 280px 280px;
+  filter: drop-shadow(0 0 7px rgba(255,255,255,0.78)) drop-shadow(0 0 14px rgba(140,205,255,0.42));
+  opacity: 0.78;
+  animation: loaderMagicTwinkle 2.9s ease-in-out infinite alternate,
+             loaderMagicDrift 24s ease-in-out infinite alternate;
+  transform: translate3d(0, 0, 0);
+}
+
+.loader-logo {
+  position: relative !important;
+  z-index: 1 !important;
+  transition: opacity 0.85s ease-out, transform 0.85s cubic-bezier(.2,.8,.25,1) !important;
+}
+
+.loader-logo img {
+  transition: filter 0.95s ease-out !important;
+}
+
+.loader-logo.fade-out {
+  opacity: 0.18 !important;
+  transform: scale(0.94) !important;
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out !important;
+}
+
+#loader {
+  transition: opacity 0.35s ease-out, visibility 0.35s ease-out !important;
+}
+
+.fade-page {
+  transition: opacity 0.35s ease-in !important;
+}
+
+@keyframes loaderMagicTwinkle {
+  0%   { opacity: 0.46; filter: drop-shadow(0 0 6px rgba(255,255,255,0.62)) drop-shadow(0 0 12px rgba(130,195,255,0.28)); }
+  45%  { opacity: 0.95; filter: drop-shadow(0 0 9px rgba(255,255,255,0.88)) drop-shadow(0 0 18px rgba(175,220,255,0.48)); }
+  100% { opacity: 0.64; filter: drop-shadow(0 0 7px rgba(255,246,196,0.76)) drop-shadow(0 0 15px rgba(255,226,140,0.34)); }
+}
+
+@keyframes loaderMagicDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-42px, 34px, 0) scale(1.02); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #loader::after { animation: none !important; }
+}
+
+
+/* =========================================================
+   V23 — loader: prędkość wyłaniania logo wraca do czasu z V21.
+   Gwieździste tło loadera zostaje, zmieniony jest tylko czas animacji logo.
+   ========================================================= */
+.loader-logo {
+  transition: opacity 1.4s ease-out, transform 1.4s ease-out !important;
+}
+.loader-logo img {
+  transition: filter 1.6s ease-out !important;
+}
+.loader-logo.fade-out {
+  opacity: 0.25 !important;
+  transform: scale(0.92) !important;
+  transition: opacity 1s ease-out, transform 1s ease-out !important;
+}
+#loader {
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out !important;
+}
+.fade-page {
+  transition: opacity 0.5s ease-in !important;
+}
+
+/* =========================================================
+   V25 — Członkowie: po wejściu na stronę Opiekun Koła jest
+   estetycznie wyśrodkowany na pierwszym ekranie. Scroll dalej
+   pozostaje normalny, bez zatrzymywania sekcji.
+   ========================================================= */
+body.members-page > .fade-page > .members-page {
+  padding-top: 0 !important;
+}
+
+body.members-page .single-section:first-of-type {
+  min-height: 100svh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  padding-top: calc(var(--nav-control-size, 62px) + var(--page-edge, 20px)) !important;
+  padding-bottom: clamp(34px, 6svh, 78px) !important;
+  margin-top: 0 !important;
+  margin-bottom: clamp(44px, 7svh, 84px) !important;
+}
+
+body.members-page .single-section:first-of-type h2 {
+  margin-top: 0 !important;
+  margin-bottom: clamp(20px, 3svh, 34px) !important;
+}
+
+body.members-page .single-section:first-of-type .person-single {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-height: 820px) {
+  body.members-page .single-section:first-of-type {
+    min-height: 100svh !important;
+    padding-top: calc(var(--nav-control-size, 56px) + var(--page-edge, 14px)) !important;
+    padding-bottom: clamp(24px, 4svh, 52px) !important;
+  }
+
+  body.members-page .single-section:first-of-type h2 {
+    margin-bottom: clamp(14px, 2.1svh, 24px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.members-page .single-section:first-of-type {
+    min-height: 100svh !important;
+    padding-top: calc(var(--nav-control-size, 52px) + var(--page-edge, 10px) + 4px) !important;
+    padding-bottom: 34px !important;
+  }
+}
+
+/* =========================================================
+   V26 — Członkowie: profesjonalne ustawienie pierwszego ekranu.
+   Cel: po wejściu na podstronę opiekun koła jest widoczny od razu,
+   wyśrodkowany poziomo i ustawiony w eleganckim centrum pierwszego widoku,
+   bez chowania imienia pod dolną krawędzią ekranu.
+   ========================================================= */
+body.members-page > .fade-page > .members-page {
+  padding-top: 0 !important;
+}
+
+body.members-page .single-section:first-of-type {
+  min-height: 100svh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  padding-top: calc(var(--page-edge, 20px) + var(--nav-control-size, 62px) + clamp(14px, 2.2svh, 28px)) !important;
+  padding-bottom: clamp(118px, 17svh, 178px) !important;
+  margin-top: 0 !important;
+  margin-bottom: clamp(36px, 6svh, 72px) !important;
+}
+
+body.members-page .single-section:first-of-type h2 {
+  margin: 0 0 clamp(18px, 2.7svh, 30px) 0 !important;
+  line-height: 1.12 !important;
+  text-align: center !important;
+}
+
+body.members-page .single-section:first-of-type .person-single {
+  margin: 0 auto !important;
+  width: min(100%, 320px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.members-page .single-section:first-of-type .person-single img {
+  width: clamp(190px, 15vw, 230px) !important;
+  height: clamp(190px, 15vw, 230px) !important;
+  margin-bottom: clamp(18px, 2.4svh, 28px) !important;
+}
+
+body.members-page .single-section:first-of-type .person-single .name {
+  margin-top: 0 !important;
+  margin-bottom: clamp(8px, 1.2svh, 14px) !important;
+  line-height: 1.25 !important;
+}
+
+body.members-page .single-section:first-of-type .supervisor-link {
+  display: inline-block !important;
+  line-height: 1.25 !important;
+}
+
+@media (max-height: 820px) {
+  body.members-page .single-section:first-of-type {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 56px) + clamp(8px, 1.4svh, 16px)) !important;
+    padding-bottom: clamp(80px, 12svh, 122px) !important;
+  }
+
+  body.members-page .single-section:first-of-type .person-single img {
+    width: clamp(170px, 13.5vw, 205px) !important;
+    height: clamp(170px, 13.5vw, 205px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.members-page .single-section:first-of-type {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 14px) !important;
+    padding-bottom: clamp(64px, 10svh, 98px) !important;
+  }
+
+  body.members-page .single-section:first-of-type .person-single {
+    width: min(100%, 290px) !important;
+  }
+}
+
+/* =========================================================
+   V27 — Członkowie: wysokości i rozstawy jak w oryginalnej wersji.
+   Zachowuje aktualny styl wizualny, tło i menu, ale przywraca oryginalne
+   proporcje: padding strony, odstępy sekcji, wielkości zdjęć, siatki i napisy.
+   ========================================================= */
+body.members-page > .fade-page > .members-page {
+  width: min(100%, 1100px) !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 40px 20px 60px !important;
+  text-align: center !important;
+  background: transparent !important;
+}
+
+body.members-page .single-section,
+body.members-page .grid-section {
+  min-height: auto !important;
+  display: block !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 60px !important;
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+}
+
+body.members-page .single-section:first-of-type {
+  min-height: auto !important;
+  display: block !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 60px !important;
+}
+
+body.members-page .single-section h2,
+body.members-page .grid-section h2,
+body.members-page .single-section:first-of-type h2 {
+  font-size: 2.6rem !important;
+  color: #ffffff !important;
+  margin: 0 0 40px 0 !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+
+body.members-page .person-single,
+body.members-page .single-section:first-of-type .person-single {
+  margin: 60px auto !important;
+  width: 280px !important;
+  max-width: 100% !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+body.members-page .person-single img,
+body.members-page .single-section:first-of-type .person-single img {
+  width: 210px !important;
+  height: 210px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 5px solid #ffffff44 !important;
+  margin-bottom: 25px !important;
+}
+
+body.members-page .members-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 70px 50px !important;
+  justify-items: center !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+body.members-page .members-grid-zarzad {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 70px 50px !important;
+  justify-items: center !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+body.members-page .members-grid .person {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+body.members-page .members-grid .person img,
+body.members-page .members-grid-zarzad .person-single img {
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 4px solid #ffffff44 !important;
+  margin-bottom: 20px !important;
+}
+
+body.members-page .name {
+  font-size: 1.5rem !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  margin: 12px 0 6px !important;
+  line-height: 1.22 !important;
+  overflow-wrap: normal !important;
+}
+
+body.members-page .role {
+  font-size: 1.2rem !important;
+  color: #cce5ff !important;
+  font-weight: 300 !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+body.members-page .supervisor-link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin-top: 8px !important;
+  text-decoration: none !important;
+}
+
+body.members-page .supervisor-link span {
+  font-size: 1.2rem !important;
+  color: #ffffff !important;
+  font-weight: 300 !important;
+  line-height: 1.25 !important;
+}
+
+@media (max-width: 1100px) {
+  body.members-page .members-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 850px) {
+  body.members-page .members-grid,
+  body.members-page .members-grid-zarzad {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body.members-page > .fade-page > .members-page {
+    padding: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 20px) 16px 54px !important;
+  }
+
+  body.members-page .members-grid,
+  body.members-page .members-grid-zarzad {
+    grid-template-columns: 1fr !important;
+    gap: 44px 20px !important;
+  }
+
+  body.members-page .single-section h2,
+  body.members-page .grid-section h2,
+  body.members-page .single-section:first-of-type h2 {
+    font-size: 2.3rem !important;
+    margin-bottom: 34px !important;
+  }
+
+  body.members-page .person-single,
+  body.members-page .single-section:first-of-type .person-single {
+    margin: 48px auto !important;
+  }
+
+  body.members-page .person-single img,
+  body.members-page .single-section:first-of-type .person-single img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  body.members-page .members-grid .person img,
+  body.members-page .members-grid-zarzad .person-single img {
+    width: 160px !important;
+    height: 160px !important;
+  }
+}
+
+/* =========================================================
+   V28 — Profesjonalna typografia opisów: strona główna + Sekcje Koła.
+   Cel: czytelniejszy, bardziej prestiżowy tekst opisów oraz stabilny
+   rozmiar po przełączaniu PL/EN, bez zmiany kolorów i układu stylistycznego.
+   ========================================================= */
+.section .content {
+  width: min(100%, 1120px) !important;
+  padding-left: clamp(18px, 4vw, 44px) !important;
+  padding-right: clamp(18px, 4vw, 44px) !important;
+}
+
+.section .content p[data-pl][data-en] {
+  font-family: "Segoe UI", "Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: clamp(1.18rem, 1.42vw, 1.44rem) !important;
+  line-height: 1.66 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.012em !important;
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  text-wrap: balance;
+  overflow-wrap: break-word !important;
+  hyphens: auto;
+}
+
+/* Stała przestrzeń dla opisów na stronie głównej — po zmianie języka
+   tekst nie przesuwa agresywnie pozostałych elementów. */
+body.dark-bg .section .content p[data-pl][data-en] {
+  min-height: clamp(7.2rem, 14svh, 10.5rem) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Sekcje Koła mają dłuższe opisy, więc dostają większy stabilny obszar.
+   Dzięki temu przyciski zostają w przewidywalnym miejscu po PL/EN. */
+body.dark-bg .section .content .buttons-container {
+  margin-top: clamp(18px, 2.4svh, 28px) !important;
+}
+
+body.dark-bg .section .content p[data-pl][data-en]:has(+ .buttons-container),
+body.dark-bg .section .content p[data-pl][data-en] + .buttons-container {
+  flex-shrink: 0 !important;
+}
+
+/* Fallback dla przeglądarek bez pełnego :has — działa na aktualnej strukturze Sekcji Koła. */
+body.dark-bg .section .content p[data-pl][data-en] + .buttons-container,
+body.dark-bg .section .content:has(.buttons-container) p[data-pl][data-en] {
+  min-height: clamp(13rem, 26svh, 17.2rem) !important;
+}
+
+/* Lepsza stabilność dłuższych nagłówków przy zmianie języka. */
+.section .content h1[data-pl][data-en] {
+  max-width: 1050px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  line-height: 1.08 !important;
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .section .content p[data-pl][data-en] {
+    font-size: clamp(1.02rem, 2.7vw, 1.18rem) !important;
+    line-height: 1.55 !important;
+    max-width: 760px !important;
+  }
+
+  body.dark-bg .section .content p[data-pl][data-en],
+  body.dark-bg .section .content:has(.buttons-container) p[data-pl][data-en] {
+    min-height: auto !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .section .content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .section .content p[data-pl][data-en] {
+    font-size: clamp(0.92rem, 3.35vw, 1.05rem) !important;
+    line-height: 1.46 !important;
+    letter-spacing: 0.004em !important;
+    text-wrap: pretty;
+  }
+}
+
+
+/* =========================================================
+   V29 — Sekcje Koła: rozmiary przycisków przywrócone jak w V27.
+   Typografia opisów z V28 zostaje, ale przyciski mają dawną wysokość,
+   padding i symetryczny układ tylko na podstronie Sekcje Koła.
+   ========================================================= */
+body.sections-page .section .buttons-container {
+  width: min(100%, 820px) !important;
+  margin: clamp(14px, 2.3svh, 26px) auto 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 2.2vw, 24px) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+}
+
+body.sections-page .section .achievements-btn,
+body.sections-page .section .achievements-btS {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: clamp(48px, 5svh, 62px) !important;
+  padding: clamp(11px, 2.5vw, 16px) clamp(12px, 2.4vw, 22px) !important;
+  font-size: clamp(1rem, 3.1vw, 1.4rem) !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  hyphens: auto !important;
+  border-radius: 50px !important;
+}
+
+@media (max-height: 860px) {
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(10px, 1.6svh, 18px) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-height: clamp(46px, 6.2vw, 62px) !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body.sections-page .section .buttons-container {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 360px) !important;
+    gap: 14px !important;
+    margin-top: 1.4rem !important;
+    padding: 0 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-height: auto !important;
+    width: 100% !important;
+    max-width: calc(100vw - 24px) !important;
+    font-size: 1.05rem !important;
+    line-height: 1.38 !important;
+    padding: 10px 18px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-radius: 32px !important;
+  }
+}
+
+/* =========================================================
+   V30 — Sekcje Koła: rozmiar przycisków jak w przesłanym pliku.
+   Zachowana zostaje typografia opisów, ale przyciski wracają do
+   oryginalnego rozmiaru: padding 16px 36px, font 1.4rem.
+   ========================================================= */
+body.sections-page .section .buttons-container {
+  width: auto !important;
+  max-width: 1000px !important;
+  margin: 2.2rem auto 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 24px !important;
+}
+
+body.sections-page .section .achievements-btn,
+body.sections-page .section .achievements-btS {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 16px 36px !important;
+  font-size: 1.4rem !important;
+  line-height: 1.2 !important;
+  font-weight: 500 !important;
+  display: inline-block !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  border-radius: 50px !important;
+}
+
+body.sections-page .section .achievements-btS {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  body.sections-page .section .buttons-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-top: 1.6rem !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    width: 100% !important;
+    max-width: 300px !important;
+    padding: 12px 24px !important;
+    font-size: 1.15rem !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.sections-page .section .buttons-container {
+    gap: 14px !important;
+    margin-top: 1.4rem !important;
+    padding: 0 14px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    max-width: calc(100% - 28px) !important;
+    padding: 10px 18px !important;
+    font-size: 1.05rem !important;
+    line-height: 1.38 !important;
+    border-radius: 32px !important;
+  }
+}
+
+
+/* =========================================================
+   V31 — Strona główna i Sekcje Koła: bez gwiazdek w loaderze.
+   Dzięki temu podczas przełączania nie widać niebieskiego tła
+   z magicznym pyłem przed pojawieniem się zdjęcia w sekcji.
+   ========================================================= */
+body.no-transition-stars #loader::before,
+body.no-transition-stars #loader::after {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  animation: none !important;
+  background: none !important;
+}
+
+body.no-transition-stars #loader {
+  background: radial-gradient(circle at center, #0a2d5c 0%, #021F42 70%, #000000 100%) !important;
+}
+
+
+/* =========================================================
+   V32 — loader z gwiazdkami, ale od razu na tle zdjęcia
+   dla strony głównej i Sekcji Koła + QR w kontakcie.
+   ========================================================= */
+body.home-page #loader {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)),
+    url('Zdjecia/Strona_glowna.jpg') center center / cover no-repeat !important;
+}
+
+body.sections-page #loader {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)),
+    url('Sekcje/Sekcja_druku.jfif') center center / cover no-repeat !important;
+}
+
+/* Przywrócenie gwiazdek w loaderze, nawet jeśli gdzieś została stara klasa. */
+body.home-page #loader::after,
+body.sections-page #loader::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -14% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.98) 0 1.25px, transparent 2.45px),
+    radial-gradient(circle at 76% 28%, rgba(176,220,255,0.92) 0 1.08px, transparent 2.25px),
+    radial-gradient(circle at 38% 64%, rgba(255,255,255,0.78) 0 1px, transparent 2.12px),
+    radial-gradient(circle at 88% 78%, rgba(255,236,150,0.74) 0 1.12px, transparent 2.2px),
+    radial-gradient(circle at 48% 12%, rgba(210,245,255,0.70) 0 0.95px, transparent 1.9px),
+    radial-gradient(circle at 22% 74%, rgba(255,255,255,0.74) 0 1px, transparent 2px) !important;
+  background-size: 190px 190px, 260px 260px, 330px 330px, 410px 410px, 520px 520px, 280px 280px !important;
+  filter: drop-shadow(0 0 7px rgba(255,255,255,0.78)) drop-shadow(0 0 14px rgba(140,205,255,0.42)) !important;
+  opacity: 0.78 !important;
+  animation: loaderMagicTwinkle 2.9s ease-in-out infinite alternate,
+             loaderMagicDrift 24s ease-in-out infinite alternate !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+body.home-page #loader::before,
+body.sections-page #loader::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  opacity: 0.20 !important;
+  pointer-events: none !important;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.10), transparent 58%) !important;
+}
+
+/* Sekcja Druku — opis i przyciski równo na środku. */
+body.sections-page #section1 .content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.sections-page #section1 .content p {
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  text-wrap: pretty;
+}
+
+body.sections-page #section1 .buttons-container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Strona główna — profesjonalne miejsce na kody QR w sekcji kontaktu. */
+#section4 .qr-showcase {
+  width: min(100%, 760px);
+  margin: clamp(22px, 4svh, 42px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  align-items: stretch;
+  justify-items: center;
+}
+
+#section4 .qr-card {
+  width: 100%;
+  max-width: 185px;
+  padding: clamp(12px, 1.6vw, 18px);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.24);
+  background: rgba(255,255,255,0.085);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+#section4 .qr-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(187,238,255,0.72);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.42), 0 0 22px rgba(187,238,255,0.18);
+}
+
+#section4 .qr-frame {
+  width: clamp(92px, 10.5vw, 128px);
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.45);
+  box-shadow: inset 0 0 0 7px rgba(2,31,66,0.05), 0 10px 24px rgba(0,0,0,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#section4 .qr-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+#section4 .qr-placeholder {
+  color: #003d7a;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0.86;
+}
+
+#section4 .qr-card p {
+  margin: 0 !important;
+  min-height: 0 !important;
+  color: #ffffff;
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem) !important;
+  line-height: 1.2 !important;
+  font-weight: 650;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.66);
+}
+
+@media (max-height: 780px) and (min-width: 769px) {
+  #section4 .content h1 {
+    margin-bottom: 1rem !important;
+  }
+
+  #section4 .contact-buttons-vertical {
+    gap: 14px !important;
+    margin-top: 18px !important;
+  }
+
+  #section4 .qr-showcase {
+    margin-top: 20px !important;
+  }
+
+  #section4 .qr-card {
+    padding: 12px !important;
+  }
+
+  #section4 .qr-frame {
+    width: 92px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #section4 .qr-showcase {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(100%, 430px);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  #section4 .qr-card {
+    max-width: none;
+    padding: 10px 8px;
+    border-radius: 18px;
+  }
+
+  #section4 .qr-frame {
+    width: clamp(72px, 22vw, 96px);
+    border-radius: 14px;
+  }
+
+  #section4 .qr-card p {
+    font-size: 0.88rem !important;
+  }
+}
+
+@media (max-width: 430px) {
+  #section4 .qr-showcase {
+    grid-template-columns: 1fr;
+    width: min(100%, 220px);
+  }
+
+  #section4 .qr-frame {
+    width: 96px;
+  }
+}
+
+/* V32 — zabezpieczenie: podpisy pod QR nie dziedziczą wysokości opisów sekcji. */
+#section4 .qr-card p[data-pl][data-en] {
+  display: block !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+/* =========================================================
+   V33 — przejścia między podstronami wracają do zwykłego stylu,
+   a gwiazdki zostają tylko w loaderze podczas pierwszego uruchomienia.
+   Usunięcie tła zdjęciowego z loadera strony głównej i Sekcji Koła.
+   ========================================================= */
+body.home-page #loader,
+body.sections-page #loader {
+  background: radial-gradient(circle at center, #0a2d5c 0%, #021F42 70%, #000000 100%) !important;
+}
+
+body.home-page #loader::before,
+body.sections-page #loader::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="%23021433"/><rect x="0" y="0" width="1" height="1" fill="%23ffffff08"/><rect x="2" y="2" width="1" height="1" fill="%23ffffff08"/></svg>') repeat !important;
+}
+
+body.home-page #loader::after,
+body.sections-page #loader::after,
+#loader::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -14% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.98) 0 1.25px, transparent 2.45px),
+    radial-gradient(circle at 76% 28%, rgba(176,220,255,0.92) 0 1.08px, transparent 2.25px),
+    radial-gradient(circle at 38% 64%, rgba(255,255,255,0.78) 0 1px, transparent 2.12px),
+    radial-gradient(circle at 88% 78%, rgba(255,236,150,0.74) 0 1.12px, transparent 2.2px),
+    radial-gradient(circle at 48% 12%, rgba(210,245,255,0.70) 0 0.95px, transparent 1.9px),
+    radial-gradient(circle at 22% 74%, rgba(255,255,255,0.74) 0 1px, transparent 2px) !important;
+  background-size: 190px 190px, 260px 260px, 330px 330px, 410px 410px, 520px 520px, 280px 280px !important;
+  filter: drop-shadow(0 0 7px rgba(255,255,255,0.78)) drop-shadow(0 0 14px rgba(140,205,255,0.42)) !important;
+  opacity: 0.78 !important;
+  animation: loaderMagicTwinkle 2.9s ease-in-out infinite alternate,
+             loaderMagicDrift 24s ease-in-out infinite alternate !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.loader-logo {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
+/* =========================================================
+   V34 — Kontakt na stronie głównej: dwa profesjonalne miejsca
+   na kody QR po lewej i prawej stronie oraz stabilne centrum.
+   ========================================================= */
+body.home-page #section4 .content {
+  width: min(100%, 1680px) !important;
+  max-width: min(1680px, calc(100vw - 48px)) !important;
+  padding: clamp(20px, 3.4vw, 44px) clamp(18px, 4vw, 56px) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body.home-page #section4 .content h1 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: clamp(26px, 4.2svh, 46px) !important;
+}
+
+body.home-page #section4 .contact-section-layout {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(260px, 1fr) minmax(340px, 520px) minmax(260px, 1fr) !important;
+  gap: clamp(28px, 5vw, 96px) !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.home-page #section4 .contact-buttons-vertical {
+  width: min(100%, 520px) !important;
+  margin: 0 auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  z-index: 2 !important;
+}
+
+body.home-page #section4 .contact-qr-panel {
+  width: 100% !important;
+  min-height: clamp(240px, 34svh, 390px) !important;
+  border-radius: clamp(22px, 2vw, 34px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  background: rgba(0, 0, 0, 0.24) !important;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(4px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(12px, 2svh, 20px) !important;
+  padding: clamp(18px, 2.5vw, 34px) !important;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease !important;
+}
+
+body.home-page #section4 .contact-qr-panel:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(187, 238, 255, 0.62) !important;
+  box-shadow: 0 22px 62px rgba(0, 0, 0, 0.40), 0 0 26px rgba(187, 238, 255, 0.14) !important;
+}
+
+body.home-page #section4 .qr-frame {
+  width: clamp(132px, 13vw, 190px) !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 22px !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: inset 0 0 0 9px rgba(2, 31, 66, 0.05), 0 14px 30px rgba(0, 0, 0, 0.26) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+body.home-page #section4 .qr-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+body.home-page #section4 .qr-placeholder {
+  color: #003d7a !important;
+  font-size: clamp(1.7rem, 2.8vw, 2.6rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+}
+
+body.home-page #section4 .contact-qr-panel p {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-size: clamp(1rem, 1.25vw, 1.25rem) !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8) !important;
+}
+
+/* Stary układ QR z wcześniejszych wersji nie jest już używany. */
+body.home-page #section4 .qr-showcase {
+  display: none !important;
+}
+
+@media (max-width: 1180px) {
+  body.home-page #section4 .contact-section-layout {
+    grid-template-columns: 1fr !important;
+    max-width: 620px !important;
+    margin-inline: auto !important;
+    gap: 20px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(120px, 28vw, 170px) !important;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 1181px) {
+  body.home-page #section4 .contact-qr-panel {
+    min-height: clamp(210px, 30svh, 320px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(112px, 10vw, 160px) !important;
+  }
+}
+
+/* =========================================================
+   V34 — Sekcja Druku: opis dokładnie na środku sekcji.
+   ========================================================= */
+body.sections-page #section1 .content {
+  width: min(100%, 1120px) !important;
+  max-width: min(1120px, calc(100vw - 36px)) !important;
+  margin-inline: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.sections-page #section1 .content p {
+  width: min(100%, 1000px) !important;
+  max-width: 1000px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  text-align-last: center !important;
+}
+
+
+/* =========================================================
+   V35 — QR: bez podpisów, grafika idealnie wyśrodkowana.
+   ========================================================= */
+body.home-page #section4 .contact-qr-panel p {
+  display: none !important;
+}
+
+body.home-page #section4 .contact-qr-panel {
+  justify-content: center !important;
+}
+
+body.home-page #section4 .qr-frame {
+  margin: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.home-page #section4 .qr-frame img {
+  width: 88% !important;
+  height: 88% !important;
+  max-width: 88% !important;
+  max-height: 88% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  margin: auto !important;
+}
+
+body.home-page #section4 .qr-placeholder {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-align: center !important;
+}
+
+/* =========================================================
+   V36 — QR static: bez podświetlenia i ruchu po najechaniu.
+   ========================================================= */
+body.home-page #section4 .contact-qr-panel,
+body.home-page #section4 .contact-qr-panel:hover {
+  transform: none !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  transition: none !important;
+}
+
+body.home-page #section4 .contact-qr-panel:hover .qr-frame,
+body.home-page #section4 .qr-frame:hover {
+  transform: none !important;
+  filter: none !important;
+  box-shadow: inset 0 0 0 9px rgba(2, 31, 66, 0.05), 0 14px 30px rgba(0, 0, 0, 0.26) !important;
+}

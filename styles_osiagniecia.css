@@ -436,3 +436,1207 @@ body.dark-bg {
     object-fit: contain;
   }
 }
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V2 — OSIĄGNIĘCIA
+   ========================================================= */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: clamp(10px, 2.4vw, 20px) !important;
+  left: clamp(10px, 2.4vw, 20px) !important;
+  right: clamp(10px, 2.4vw, 20px) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(8px, 2vw, 18px);
+  min-width: 0;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 12px);
+  min-width: 0;
+}
+
+#hamburger {
+  position: static !important;
+  flex: 0 0 auto;
+  font-size: clamp(28px, 6.5vw, 38px) !important;
+  line-height: 1 !important;
+  padding: clamp(6px, 1.8vw, 8px) clamp(10px, 2.8vw, 14px) !important;
+}
+
+#homeLogo {
+  position: static !important;
+  flex: 0 0 auto;
+  width: clamp(46px, 10vw, 65px) !important;
+  height: clamp(46px, 10vw, 65px) !important;
+  margin-left: 0 !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  position: static !important;
+  flex: 0 0 auto;
+  max-width: 38vw;
+  white-space: nowrap;
+  font-size: clamp(0.82rem, 2.7vw, 1.1rem) !important;
+  line-height: 1 !important;
+  padding: clamp(7px, 1.8vw, 10px) clamp(10px, 2.8vw, 18px) !important;
+  gap: clamp(6px, 1.6vw, 10px) !important;
+}
+
+#langCorner img {
+  width: clamp(20px, 5vw, 26px) !important;
+  height: auto !important;
+}
+
+#sideMenu {
+  width: min(260px, 82vw) !important;
+  max-width: 82vw !important;
+  left: -82vw;
+}
+
+#sideMenu a {
+  font-size: clamp(1rem, 3.8vw, 1.2rem) !important;
+  padding-left: clamp(20px, 7vw, 30px) !important;
+  padding-right: clamp(20px, 7vw, 30px) !important;
+  overflow-wrap: anywhere;
+}
+
+body.achievements-page {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+body.achievements-page > .fade-page {
+  width: min(100%, 1400px);
+  margin-inline: auto;
+  padding: clamp(104px, 12vw, 130px) clamp(16px, 4vw, 24px) clamp(60px, 8vw, 100px) !important;
+}
+
+.achievements-page h1 {
+  font-size: clamp(2.2rem, 8vw, 3.8rem) !important;
+  margin-bottom: clamp(40px, 8vw, 80px) !important;
+  overflow-wrap: anywhere;
+}
+
+.achievements-grid {
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)) !important;
+  gap: clamp(34px, 5vw, 50px) clamp(18px, 3vw, 30px) !important;
+  padding-inline: 0 !important;
+}
+
+.achievement-card {
+  width: 100% !important;
+  max-width: 360px !important;
+  min-width: 0;
+  padding: clamp(22px, 4vw, 30px) clamp(16px, 3vw, 20px) !important;
+  overflow-wrap: anywhere;
+}
+
+.achievement-image {
+  width: min(100%, 280px) !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3;
+  object-fit: cover !important;
+}
+
+.achievement-title {
+  font-size: clamp(1.25rem, 4vw, 1.65rem) !important;
+  line-height: 1.25 !important;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.achievement-description,
+.achievement-location,
+.achievement-date {
+  font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
+  overflow-wrap: anywhere;
+}
+
+.visit-button,
+.achievement-card .visit-button {
+  width: min(100%, 280px) !important;
+  min-height: 46px;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 420px) {
+  .top-bar {
+    height: auto !important;
+    padding: 0 !important;
+  }
+
+  #langCorner {
+    max-width: 34vw;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .achievement-card {
+    max-width: 100% !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V3 — RÓWNE MENU, SAFE AREA, BRAK NACHODZENIA
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(50px, 10vw, 64px);
+  --nav-gap: clamp(8px, 2vw, 14px);
+  --page-safe-top: calc(env(safe-area-inset-top, 0px) + clamp(14px, 2.4vw, 22px));
+  --page-side-space: clamp(12px, 3vw, 24px);
+  --snap-breathing-space: calc(env(safe-area-inset-top, 0px) + clamp(14px, 3svh, 28px));
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--snap-breathing-space) !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: var(--page-safe-top) !important;
+  left: var(--page-side-space) !important;
+  right: var(--page-side-space) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: none;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--nav-gap) !important;
+  min-width: 0;
+  pointer-events: auto;
+}
+
+#hamburger,
+#homeLogo,
+#langCorner {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 var(--nav-control-size) !important;
+  line-height: 1 !important;
+  pointer-events: auto;
+}
+
+#hamburger {
+  font-size: calc(var(--nav-control-size) * 0.52) !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  gap: 4px !important;
+  white-space: nowrap !important;
+  font-size: clamp(0.74rem, 2.2vw, 0.98rem) !important;
+  overflow: hidden;
+}
+
+#langCorner img {
+  width: calc(var(--nav-control-size) * 0.34) !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu {
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 26px) !important;
+}
+
+#sideMenu a {
+  line-height: 1.25 !important;
+}
+
+@media (max-width: 420px) {
+  :root {
+    --nav-control-size: clamp(46px, 13vw, 54px);
+    --nav-gap: 8px;
+    --page-side-space: 10px;
+  }
+
+  #langCorner {
+    font-size: 0.72rem !important;
+    gap: 3px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V3 — OSIĄGNIĘCIA: ODSTĘP OD GÓRY
+   ========================================================= */
+body.achievements-page > .fade-page {
+  padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 48px) !important;
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V3 — STABILNE RAMKI PO ZMIANIE JĘZYKA
+   ========================================================= */
+.achievements-grid {
+  align-items: stretch !important;
+}
+
+.achievement-card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.achievement-title {
+  min-height: 3.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-description {
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visit-button,
+.achievement-card .visit-button {
+  margin-top: auto !important;
+  min-height: 52px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 520px) {
+  .achievement-title,
+  .achievement-description {
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE PATCH V4 — STABILNY UKŁAD I SZERSZY JĘZYK
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(52px, 8vw, 64px);
+  --lang-control-width: clamp(96px, 15vw, 122px);
+  --nav-gap: clamp(8px, 1.8vw, 14px);
+  --page-safe-top: calc(env(safe-area-inset-top, 0px) + clamp(12px, 2.2vw, 20px));
+  --page-side-space: clamp(12px, 3vw, 24px);
+  --snap-offset-top: calc(var(--page-safe-top) + var(--nav-control-size) + clamp(16px, 2.8svh, 34px));
+}
+
+html {
+  scroll-padding-top: var(--snap-offset-top) !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.top-bar {
+  top: var(--page-safe-top) !important;
+  left: var(--page-side-space) !important;
+  right: var(--page-side-space) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: none;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--nav-gap) !important;
+  pointer-events: auto;
+}
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 var(--nav-control-size) !important;
+  line-height: 1 !important;
+  pointer-events: auto;
+}
+
+#hamburger { font-size: calc(var(--nav-control-size) * 0.52) !important; }
+#homeLogo img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 clamp(12px, 2vw, 16px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(7px, 1.4vw, 10px) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  font-size: clamp(0.92rem, 2vw, 1.08rem) !important;
+  pointer-events: auto;
+}
+
+#langCorner img {
+  width: clamp(25px, 3.8vw, 29px) !important;
+  height: clamp(17px, 2.6vw, 20px) !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu { padding-top: calc(var(--page-safe-top) + var(--nav-control-size) + 28px) !important; }
+
+body.achievements-page {
+  padding-top: calc(var(--snap-offset-top) + 18px) !important;
+}
+
+.achievements-grid {
+  align-items: stretch !important;
+}
+
+.achievement-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.achievement-title {
+  min-height: 3.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-description {
+  min-height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-location,
+.achievement-date {
+  min-height: 1.6em;
+}
+
+.achievement-card .visit-button {
+  margin-top: auto !important;
+  min-height: 52px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 11vw, 56px);
+    --lang-control-width: clamp(92px, 23vw, 106px);
+    --page-side-space: clamp(10px, 3vw, 16px);
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --nav-control-size: clamp(46px, 13vw, 52px);
+    --lang-control-width: clamp(88px, 28vw, 98px);
+    --nav-gap: 8px;
+    --page-side-space: 10px;
+  }
+
+  #langCorner {
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important;
+    gap: 6px !important;
+    padding-inline: 9px !important;
+  }
+
+  #langCorner img {
+    width: 23px !important;
+    height: 16px !important;
+  }
+}
+
+
+
+/* =========================================================
+   V5 — równe menu i stabilny przycisk języka na tej podstronie.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 7vw, 64px);
+  --lang-control-width: clamp(124px, 14vw, 146px);
+  --nav-gap: clamp(9px, 1.4vw, 14px);
+  --page-edge: clamp(12px, 2.4vw, 22px);
+}
+
+.top-bar {
+  top: var(--page-edge) !important;
+  left: var(--page-edge) !important;
+  right: var(--page-edge) !important;
+  min-height: var(--nav-control-size) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--nav-gap) !important;
+}
+
+.top-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--nav-gap) !important;
+  min-width: 0 !important;
+}
+
+#hamburger,
+#homeLogo {
+  width: var(--nav-control-size) !important;
+  height: var(--nav-control-size) !important;
+  min-width: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-width: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  margin: 0 !important;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  flex: 0 0 var(--nav-control-size) !important;
+}
+
+#hamburger {
+  padding: 0 !important;
+  font-size: calc(var(--nav-control-size) * 0.54) !important;
+}
+
+#homeLogo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  padding: 0 clamp(14px, 2vw, 18px) !important;
+  margin: 0 !important;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(8px, 1.2vw, 12px) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem) !important;
+}
+
+#langCorner img {
+  width: clamp(28px, 3.5vw, 32px) !important;
+  height: clamp(19px, 2.3vw, 22px) !important;
+  object-fit: cover !important;
+  flex: 0 0 auto !important;
+}
+
+#sideMenu {
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + 30px) !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 12vw, 56px);
+    --lang-control-width: clamp(112px, 29vw, 128px);
+    --page-edge: clamp(9px, 2.8vw, 14px);
+    --nav-gap: clamp(7px, 2vw, 10px);
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --nav-control-size: clamp(44px, 13vw, 50px);
+    --lang-control-width: clamp(104px, 31vw, 118px);
+    --page-edge: 9px;
+    --nav-gap: 7px;
+  }
+
+  #langCorner {
+    padding-inline: 10px !important;
+    gap: 7px !important;
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important;
+  }
+
+  #langCorner img {
+    width: 25px !important;
+    height: 17px !important;
+  }
+}
+
+
+/* =========================================================
+   V6 — Osiągnięcia: mniejsza przerwa startowa i widoczniejsze karty.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(58px, 6.4vw, 70px);
+  --lang-control-width: clamp(154px, 12vw, 190px);
+  --page-edge: clamp(14px, 1.8vw, 24px);
+  --nav-gap: clamp(10px, 1.2vw, 16px);
+}
+
+html { scroll-behavior: smooth !important; }
+
+body,
+body *:not(input):not(textarea):not(select) {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  caret-color: transparent !important;
+}
+body { cursor: default !important; -webkit-tap-highlight-color: transparent; }
+a, button, #hamburger, #homeLogo, #langCorner, .visit-button { cursor: pointer !important; }
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  padding: 0 clamp(16px, 1.5vw, 22px) !important;
+  gap: clamp(10px, 1vw, 14px) !important;
+  font-size: clamp(1rem, 1.25vw, 1.16rem) !important;
+}
+#langCorner img {
+  width: clamp(32px, 2.7vw, 39px) !important;
+  height: clamp(22px, 1.8vw, 27px) !important;
+}
+
+body.achievements-page > .fade-page {
+  width: min(100%, 1500px) !important;
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + clamp(18px, 3svh, 34px)) !important;
+  padding-left: clamp(14px, 3vw, 28px) !important;
+  padding-right: clamp(14px, 3vw, 28px) !important;
+  padding-bottom: clamp(40px, 6vw, 80px) !important;
+}
+
+.achievements-page h1 {
+  margin-bottom: clamp(26px, 4svh, 48px) !important;
+  line-height: 1.05 !important;
+}
+
+.achievements-grid {
+  gap: clamp(24px, 3.4vw, 42px) clamp(18px, 2.6vw, 28px) !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)) !important;
+}
+
+.achievement-card {
+  padding: clamp(20px, 2.8vw, 28px) clamp(16px, 2.3vw, 20px) !important;
+}
+
+.achievement-image {
+  width: min(100%, 280px) !important;
+  height: clamp(170px, 16vw, 210px) !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 12vw, 56px);
+    --lang-control-width: clamp(124px, 34vw, 148px);
+    --page-edge: clamp(9px, 2.6vw, 14px);
+  }
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge) + var(--nav-control-size) + 18px) !important;
+  }
+  .achievements-page h1 { margin-bottom: 24px !important; }
+  .achievement-image { height: clamp(150px, 46vw, 210px) !important; }
+}
+
+
+/* =========================================================
+   V7 — Osiągnięcia wyżej + mniejszy przycisk języka.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 5.6vw, 64px);
+  --lang-control-width: clamp(132px, 10.5vw, 160px);
+  --page-edge: clamp(12px, 1.55vw, 22px);
+  --nav-gap: clamp(10px, 1.1vw, 15px);
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  padding: 0 clamp(12px, 1.2vw, 16px) !important;
+  gap: clamp(8px, 0.8vw, 11px) !important;
+  font-size: clamp(0.92rem, 1.05vw, 1.05rem) !important;
+}
+#langCorner img {
+  width: clamp(26px, 2.1vw, 32px) !important;
+  height: clamp(18px, 1.42vw, 22px) !important;
+  object-fit: cover !important;
+}
+
+body.achievements-page > .fade-page {
+  width: min(100%, 1500px) !important;
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + clamp(2px, 0.7svh, 10px)) !important;
+  padding-left: clamp(14px, 3vw, 28px) !important;
+  padding-right: clamp(14px, 3vw, 28px) !important;
+  padding-bottom: clamp(34px, 5vw, 70px) !important;
+}
+
+.achievements-page h1 {
+  margin-top: 0 !important;
+  margin-bottom: clamp(18px, 2.5svh, 32px) !important;
+  line-height: 1.02 !important;
+  font-size: clamp(2.6rem, 5.6vw, 4.1rem) !important;
+}
+
+.achievements-grid {
+  gap: clamp(22px, 3vw, 36px) clamp(18px, 2.6vw, 28px) !important;
+  align-items: stretch !important;
+}
+
+.achievement-card { padding-top: clamp(18px, 2.4vw, 24px) !important; }
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(48px, 11.5vw, 56px);
+    --lang-control-width: clamp(108px, 30vw, 132px);
+    --page-edge: clamp(9px, 2.6vw, 14px);
+  }
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge) + var(--nav-control-size) + 10px) !important;
+  }
+  .achievements-page h1 { margin-bottom: 18px !important; }
+}
+
+
+/* =========================================================
+   V8 — Osiągnięcia ustawione jak górna część strony Wydarzenia:
+   tytuł i karty wyżej, bez dużej pustej przerwy.
+   ========================================================= */
+:root {
+  --nav-control-size: clamp(54px, 5.4vw, 62px);
+  --lang-control-width: clamp(124px, 9.4vw, 148px);
+  --page-edge: clamp(12px, 1.45vw, 20px);
+  --nav-gap: clamp(10px, 1vw, 14px);
+}
+
+#langCorner {
+  width: var(--lang-control-width) !important;
+  min-width: var(--lang-control-width) !important;
+  max-width: var(--lang-control-width) !important;
+  height: var(--nav-control-size) !important;
+  min-height: var(--nav-control-size) !important;
+  max-height: var(--nav-control-size) !important;
+  flex: 0 0 var(--lang-control-width) !important;
+  padding: 0 clamp(10px, 1vw, 14px) !important;
+  gap: clamp(7px, 0.75vw, 10px) !important;
+  font-size: clamp(0.88rem, 0.98vw, 1rem) !important;
+}
+#langCorner img {
+  width: clamp(24px, 1.85vw, 29px) !important;
+  height: clamp(17px, 1.25vw, 20px) !important;
+}
+
+body.achievements-page > .fade-page {
+  width: min(100%, 1540px) !important;
+  max-width: 1540px !important;
+  margin: 0 auto !important;
+  padding-top: calc(var(--page-edge) + var(--nav-control-size) + clamp(4px, 1svh, 14px)) !important;
+  padding-left: clamp(20px, 3.4vw, 52px) !important;
+  padding-right: clamp(20px, 3.4vw, 52px) !important;
+  padding-bottom: clamp(34px, 4vw, 72px) !important;
+}
+
+.achievements-page h1 {
+  font-size: clamp(3.2rem, 5.2vw, 5rem) !important;
+  line-height: 1.02 !important;
+  margin: 0 0 clamp(34px, 5.2svh, 58px) !important;
+  text-align: center !important;
+}
+
+.achievements-grid {
+  width: 100% !important;
+  max-width: 1500px !important;
+  margin: 0 auto !important;
+  grid-template-columns: repeat(4, minmax(250px, 1fr)) !important;
+  gap: clamp(24px, 3.2vw, 42px) clamp(22px, 3vw, 38px) !important;
+  justify-items: stretch !important;
+  align-items: stretch !important;
+}
+
+.achievement-card {
+  max-width: none !important;
+  min-height: clamp(420px, 48svh, 560px) !important;
+  padding: clamp(22px, 2.5vw, 30px) clamp(18px, 2vw, 24px) !important;
+}
+
+.achievement-image {
+  width: 100% !important;
+  max-width: none !important;
+  height: clamp(175px, 15.5vw, 230px) !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 1180px) {
+  .achievements-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)) !important; }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-control-size: clamp(46px, 11vw, 54px);
+    --lang-control-width: clamp(100px, 28vw, 122px);
+    --page-edge: clamp(9px, 2.5vw, 14px);
+  }
+  #langCorner { padding-inline: 8px !important; gap: 6px !important; font-size: clamp(0.78rem, 2.7vw, 0.9rem) !important; }
+  #langCorner img { width: clamp(21px, 5.2vw, 26px) !important; height: clamp(15px, 3.7vw, 18px) !important; }
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge) + var(--nav-control-size) + 10px) !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  .achievements-page h1 {
+    font-size: clamp(2.4rem, 12vw, 3.4rem) !important;
+    margin-bottom: 24px !important;
+  }
+  .achievements-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .achievement-card { min-height: auto !important; }
+  .achievement-image { height: clamp(160px, 46vw, 230px) !important; }
+}
+
+
+/* =========================================================
+   V9 — szybkie, dynamiczne przewijanie sekcjami.
+   Poprawka: scroll-snap działa TYLKO na stronach z .section.
+   Inne podstrony mają normalne przewijanie.
+   ========================================================= */
+html {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  scroll-padding-top: 0 !important;
+  overscroll-behavior-y: auto !important;
+}
+
+html.snap-page {
+  scroll-snap-type: y mandatory !important;
+  scroll-behavior: auto !important;
+  scroll-padding-top: 0 !important;
+  overscroll-behavior-y: contain !important;
+}
+
+html.snap-page body {
+  overflow-x: hidden !important;
+  overscroll-behavior-y: contain !important;
+}
+
+html.snap-page .section {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  scroll-snap-align: start !important;
+  scroll-snap-stop: always !important;
+  overflow: hidden !important;
+}
+
+html.snap-page .content {
+  max-height: calc(100svh - (var(--nav-control-size, 62px) + var(--page-edge, 20px) * 2 + 18px)) !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 760px), (hover: none), (pointer: coarse) {
+  html.snap-page {
+    scroll-snap-type: y mandatory !important;
+    overscroll-behavior-y: contain !important;
+  }
+  html.snap-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.snap-page { scroll-behavior: auto !important; }
+}
+
+/* V19 — magiczny pył tylko w tle, nie na kartach osiągnięć */
+.achievements-page .achievement-card {
+  background: #092b50 !important;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+.achievements-page .achievement-card > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* =========================================================
+   V21 — Osiągnięcia: podciągnięcie całej strony do góry.
+   Usunięcie brzydkiej pustej przerwy nad tytułem i kartami.
+   ========================================================= */
+body.achievements-page > .fade-page {
+  padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) - clamp(8px, 1.6svh, 18px)) !important;
+  padding-bottom: clamp(26px, 3.4vw, 56px) !important;
+}
+
+.achievements-page h1 {
+  margin-top: 0 !important;
+  margin-bottom: clamp(20px, 3.2svh, 34px) !important;
+}
+
+.achievements-grid {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 1181px) and (max-height: 860px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 16px) + var(--nav-control-size, 58px) - 14px) !important;
+  }
+
+  .achievements-page h1 {
+    font-size: clamp(3rem, 4.6vw, 4.35rem) !important;
+    margin-bottom: clamp(18px, 2.4svh, 28px) !important;
+  }
+
+  .achievement-card {
+    min-height: clamp(390px, 45svh, 520px) !important;
+    padding-top: clamp(18px, 2vw, 24px) !important;
+    padding-bottom: clamp(18px, 2vw, 24px) !important;
+  }
+
+  .achievement-image {
+    height: clamp(160px, 14.2vw, 205px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) - 2px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: 18px !important;
+  }
+}
+
+
+/* =========================================================
+   V22 — prestiżowy loader: szybsze wyłanianie logo + gwiezdne tło.
+   Efekt jest tylko w tle loadera i nie zmienia kolorów strony.
+   ========================================================= */
+#loader {
+  isolation: isolate !important;
+}
+
+#loader::before {
+  z-index: 0 !important;
+}
+
+#loader::after {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.98) 0 1.25px, transparent 2.45px),
+    radial-gradient(circle at 76% 28%, rgba(176,220,255,0.92) 0 1.08px, transparent 2.25px),
+    radial-gradient(circle at 38% 64%, rgba(255,255,255,0.78) 0 1px, transparent 2.12px),
+    radial-gradient(circle at 88% 78%, rgba(255,236,150,0.74) 0 1.12px, transparent 2.2px),
+    radial-gradient(circle at 48% 12%, rgba(210,245,255,0.70) 0 0.95px, transparent 1.9px),
+    radial-gradient(circle at 22% 74%, rgba(255,255,255,0.74) 0 1px, transparent 2px);
+  background-size: 190px 190px, 260px 260px, 330px 330px, 410px 410px, 520px 520px, 280px 280px;
+  filter: drop-shadow(0 0 7px rgba(255,255,255,0.78)) drop-shadow(0 0 14px rgba(140,205,255,0.42));
+  opacity: 0.78;
+  animation: loaderMagicTwinkle 2.9s ease-in-out infinite alternate,
+             loaderMagicDrift 24s ease-in-out infinite alternate;
+  transform: translate3d(0, 0, 0);
+}
+
+.loader-logo {
+  position: relative !important;
+  z-index: 1 !important;
+  transition: opacity 0.85s ease-out, transform 0.85s cubic-bezier(.2,.8,.25,1) !important;
+}
+
+.loader-logo img {
+  transition: filter 0.95s ease-out !important;
+}
+
+.loader-logo.fade-out {
+  opacity: 0.18 !important;
+  transform: scale(0.94) !important;
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out !important;
+}
+
+#loader {
+  transition: opacity 0.35s ease-out, visibility 0.35s ease-out !important;
+}
+
+.fade-page {
+  transition: opacity 0.35s ease-in !important;
+}
+
+@keyframes loaderMagicTwinkle {
+  0%   { opacity: 0.46; filter: drop-shadow(0 0 6px rgba(255,255,255,0.62)) drop-shadow(0 0 12px rgba(130,195,255,0.28)); }
+  45%  { opacity: 0.95; filter: drop-shadow(0 0 9px rgba(255,255,255,0.88)) drop-shadow(0 0 18px rgba(175,220,255,0.48)); }
+  100% { opacity: 0.64; filter: drop-shadow(0 0 7px rgba(255,246,196,0.76)) drop-shadow(0 0 15px rgba(255,226,140,0.34)); }
+}
+
+@keyframes loaderMagicDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-42px, 34px, 0) scale(1.02); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #loader::after { animation: none !important; }
+}
+
+
+/* =========================================================
+   V22 — Osiągnięcia: czystszy odstęp między tytułem a kartami.
+   Układ jest podciągnięty, ale bez zderzania z górnym menu.
+   ========================================================= */
+body.achievements-page > .fade-page {
+  padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) - clamp(12px, 1.8svh, 24px)) !important;
+}
+
+.achievements-page h1 {
+  margin-top: 0 !important;
+  margin-bottom: clamp(26px, 3.6svh, 44px) !important;
+}
+
+.achievements-grid {
+  margin-top: 0 !important;
+  gap: clamp(22px, 2.8vw, 36px) clamp(20px, 2.6vw, 34px) !important;
+}
+
+@media (min-width: 1181px) and (max-height: 860px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 16px) + var(--nav-control-size, 58px) - 18px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: clamp(22px, 3svh, 34px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 2px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: 22px !important;
+  }
+}
+
+
+/* =========================================================
+   V23 — loader: prędkość wyłaniania logo wraca do czasu z V21.
+   Gwieździste tło loadera zostaje, zmieniony jest tylko czas animacji logo.
+   ========================================================= */
+.loader-logo {
+  transition: opacity 1.4s ease-out, transform 1.4s ease-out !important;
+}
+.loader-logo img {
+  transition: filter 1.6s ease-out !important;
+}
+.loader-logo.fade-out {
+  opacity: 0.25 !important;
+  transform: scale(0.92) !important;
+  transition: opacity 1s ease-out, transform 1s ease-out !important;
+}
+#loader {
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out !important;
+}
+.fade-page {
+  transition: opacity 0.5s ease-in !important;
+}
+
+
+/* =========================================================
+   V23 — Osiągnięcia: tytuł wyżej, a karty niżej od tytułu.
+   Likwiduje pustą górę, ale zwiększa elegancki odstęp pod nagłówkiem.
+   ========================================================= */
+body.achievements-page > .fade-page {
+  padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) - clamp(26px, 3.2svh, 40px)) !important;
+}
+
+.achievements-page h1 {
+  margin-top: 0 !important;
+  margin-bottom: clamp(54px, 7svh, 92px) !important;
+}
+
+.achievements-grid {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 1181px) and (max-height: 860px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 58px) - 30px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: clamp(42px, 6svh, 70px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) - 4px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: 34px !important;
+  }
+}
+
+
+/* =========================================================
+   V24 — Osiągnięcia: tytuł mocno wyżej, jak na stronie Współprace,
+   ale z elegancko większym odstępem od kart.
+   ========================================================= */
+@media (min-width: 761px) {
+  body.achievements-page > .fade-page {
+    padding-top: clamp(10px, 2.1svh, 28px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-top: 0 !important;
+    margin-bottom: clamp(72px, 8.8svh, 118px) !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 860px) {
+  body.achievements-page > .fade-page {
+    padding-top: clamp(8px, 1.8svh, 22px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: clamp(60px, 7.6svh, 88px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 10px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: 42px !important;
+  }
+}
+
+/* =========================================================
+   V25 — Osiągnięcia: tytuł jeszcze mocniej podciągnięty do góry,
+   przy zachowaniu dużego, estetycznego odstępu od kart.
+   ========================================================= */
+@media (min-width: 761px) {
+  body.achievements-page > .fade-page {
+    padding-top: 0 !important;
+  }
+
+  .achievements-page h1 {
+    margin-top: clamp(4px, 0.8svh, 12px) !important;
+    margin-bottom: clamp(88px, 10.5svh, 145px) !important;
+    transform: translateY(clamp(-34px, -3.8svh, -18px));
+  }
+
+  .achievements-grid {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 860px) {
+  body.achievements-page > .fade-page {
+    padding-top: 0 !important;
+  }
+
+  .achievements-page h1 {
+    margin-bottom: clamp(72px, 9svh, 112px) !important;
+    transform: translateY(clamp(-30px, -3.4svh, -16px));
+  }
+}
+
+@media (max-width: 760px) {
+  body.achievements-page > .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) - 2px) !important;
+  }
+
+  .achievements-page h1 {
+    margin-top: 0 !important;
+    margin-bottom: 52px !important;
+    transform: translateY(-10px);
+  }
+}

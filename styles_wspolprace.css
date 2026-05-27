@@ -1,0 +1,1118 @@
+/* ===================== PODSTRONA WSPÓŁPRACE ===================== */
+/* Ten plik jest dodatkiem do styles.css. Nie zmienia globalnie kolorów strony. */
+
+html:has(body.cooperation-page),
+html.snap-page:has(body.cooperation-page) {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body.cooperation-page {
+  background: #021F42;
+  color: white;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  caret-color: transparent;
+}
+
+body.cooperation-page *,
+body.cooperation-page *::before,
+body.cooperation-page *::after {
+  box-sizing: border-box;
+}
+
+body.cooperation-page .fade-page {
+  width: min(100%, 1520px);
+  margin: 0 auto;
+  padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(18px, 3svh, 38px))
+           clamp(18px, 4vw, 56px)
+           clamp(42px, 6vw, 90px);
+}
+
+.cooperation-main {
+  width: 100%;
+}
+
+.cooperation-header {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto clamp(34px, 5svh, 62px);
+}
+
+.cooperation-header h1 {
+  font-size: clamp(3rem, 6.2vw, 5rem);
+  line-height: 1.05;
+  margin: 0 0 clamp(14px, 2svh, 24px);
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.5);
+}
+
+.cooperation-header p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  line-height: 1.55;
+  color: #cfdfff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.partners-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 42px);
+  align-items: stretch;
+}
+
+.partner-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+  gap: clamp(20px, 2.6vw, 34px);
+  align-items: center;
+  background: rgba(9, 45, 82, 0.82);
+  border-radius: clamp(22px, 2vw, 30px);
+  padding: clamp(22px, 3vw, 36px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.partner-logo-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 220px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #003d7a;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.partner-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: clamp(14px, 2vw, 24px);
+  border-radius: inherit;
+}
+
+.partner-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.partner-type {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 18px;
+  margin: 0 0 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cfdfff;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.partner-card h2 {
+  margin: 0 0 14px;
+  color: white;
+  font-size: clamp(1.65rem, 2.35vw, 2.35rem);
+  line-height: 1.15;
+  font-weight: 700;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+.partner-description {
+  margin: 0 0 18px;
+  color: white;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.55;
+}
+
+.partner-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 2px 0 22px;
+}
+
+.partner-info span {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 8px 13px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cfdfff;
+  font-size: clamp(0.88rem, 1vw, 0.98rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.partner-button {
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  background: transparent;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.15;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+}
+
+.partner-button:hover {
+  background: #ffd700;
+  color: #021F42;
+  transform: translateY(-2px);
+}
+
+.partner-button:focus-visible {
+  outline: 3px solid rgba(255, 215, 0, 0.45);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1180px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 12px) + var(--nav-control-size, 54px) + 18px);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .cooperation-header {
+    margin-bottom: 26px;
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .partner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 22px 18px;
+  }
+
+  .partner-logo-box {
+    width: min(100%, 190px);
+    margin: 0 auto;
+  }
+
+  .partner-content {
+    align-items: center;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+
+  .partner-button {
+    width: min(100%, 270px);
+  }
+}
+
+@media (max-width: 420px) {
+  .partner-card {
+    border-radius: 20px;
+  }
+
+  .partner-logo-box {
+    width: min(100%, 160px);
+  }
+}
+
+/* ===================== WSPÓŁPRACE — WERSJA JEDNOEKRANOWA ===================== */
+/* Usuwa duży opis pod tytułem i zagęszcza układ tak, aby na typowym ekranie desktopowym całość była widoczna bez przewijania. */
+body.cooperation-page {
+  min-height: 100svh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+body.cooperation-page .fade-page {
+  width: min(100%, 1740px);
+  height: 100svh;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(4px, 1.2svh, 14px))
+           clamp(18px, 3.2vw, 48px)
+           clamp(14px, 2.2svh, 28px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cooperation-main {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cooperation-header {
+  flex: 0 0 auto;
+  margin: 0 auto clamp(18px, 2.5svh, 28px);
+  max-width: 1000px;
+}
+
+.cooperation-header h1 {
+  margin: 0;
+  font-size: clamp(3.2rem, 5.6vw, 5rem);
+  line-height: 1;
+}
+
+.cooperation-header p {
+  display: none !important;
+}
+
+.partners-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 26px);
+  align-items: stretch;
+}
+
+.partner-card {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(112px, 158px) minmax(0, 1fr);
+  gap: clamp(14px, 1.8vw, 24px);
+  align-items: center;
+  padding: clamp(14px, 1.7vw, 24px);
+  border-radius: clamp(20px, 1.7vw, 28px);
+}
+
+.partner-logo-box {
+  max-width: 158px;
+  border-radius: 20px;
+  font-size: clamp(1.15rem, 1.65vw, 1.75rem);
+}
+
+.partner-type {
+  padding: 6px 14px;
+  margin: 0 0 10px;
+  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
+}
+
+.partner-card h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.08;
+}
+
+.partner-description {
+  margin: 0 0 10px;
+  font-size: clamp(0.88rem, 1vw, 1.06rem);
+  line-height: 1.34;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.partner-info {
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.partner-info span {
+  padding: 6px 10px;
+  font-size: clamp(0.74rem, 0.86vw, 0.9rem);
+  line-height: 1.15;
+}
+
+.partner-button {
+  min-height: 40px;
+  padding: 8px 24px;
+  font-size: clamp(0.86rem, 0.95vw, 1rem);
+}
+
+@media (max-height: 780px) and (min-width: 900px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 58px) + 2px);
+    padding-bottom: 12px;
+  }
+
+  .cooperation-header {
+    margin-bottom: 14px;
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(2.85rem, 5vw, 4.35rem);
+  }
+
+  .partners-grid {
+    gap: 12px 18px;
+  }
+
+  .partner-card {
+    grid-template-columns: minmax(92px, 132px) minmax(0, 1fr);
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .partner-logo-box {
+    max-width: 132px;
+    border-radius: 18px;
+  }
+
+  .partner-description {
+    -webkit-line-clamp: 2;
+  }
+
+  .partner-info span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+
+  .partner-card {
+    grid-template-columns: minmax(90px, 130px) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body.cooperation-page .fade-page {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+    padding-top: calc(var(--page-edge, 12px) + var(--nav-control-size, 54px) + 12px);
+    padding-bottom: 28px;
+  }
+
+  .cooperation-header {
+    margin-bottom: 18px;
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(2.5rem, 11vw, 3.45rem);
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 16px;
+  }
+
+  .partner-card {
+    grid-template-columns: minmax(78px, 110px) minmax(0, 1fr);
+    text-align: left;
+    padding: 14px;
+  }
+
+  .partner-logo-box {
+    width: 100%;
+    max-width: 110px;
+    margin: 0;
+  }
+
+  .partner-content {
+    align-items: flex-start;
+  }
+
+  .partner-info {
+    justify-content: flex-start;
+  }
+
+  .partner-button {
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .partner-logo-box {
+    margin: 0 auto;
+    max-width: 128px;
+  }
+
+  .partner-content {
+    align-items: center;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+
+  .partner-button {
+    width: min(100%, 240px);
+  }
+}
+
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V16 ===================== */
+/* 3 firmy w jednym rzędzie, tytuł wyżej i większy odstęp między tytułem a kartami. */
+@media (min-width: 1181px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) - clamp(8px, 1.2svh, 16px));
+    padding-left: clamp(18px, 2.6vw, 42px);
+    padding-right: clamp(18px, 2.6vw, 42px);
+  }
+
+  .cooperation-main {
+    justify-content: flex-start;
+  }
+
+  .cooperation-header {
+    margin-bottom: clamp(42px, 6svh, 74px);
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(3.3rem, 5.4vw, 5.1rem);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: clamp(18px, 2.1vw, 34px);
+    align-items: stretch;
+  }
+
+  .partner-card {
+    grid-template-columns: 1fr;
+    align-content: start;
+    justify-items: center;
+    text-align: center;
+    gap: clamp(14px, 1.8svh, 22px);
+    padding: clamp(18px, 2.1vw, 30px);
+  }
+
+  .partner-logo-box {
+    width: min(44%, 190px);
+    max-width: 190px;
+  }
+
+  .partner-content {
+    align-items: center;
+    width: 100%;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+
+  .partner-button {
+    align-self: center;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 58px) - 8px);
+  }
+
+  .cooperation-header {
+    margin-bottom: clamp(32px, 5svh, 54px);
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(3rem, 5vw, 4.45rem);
+  }
+
+  .partner-card {
+    padding: clamp(14px, 1.6vw, 24px);
+    gap: 12px;
+  }
+
+  .partner-logo-box {
+    width: min(38%, 150px);
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  .cooperation-header {
+    margin-bottom: clamp(30px, 4svh, 48px);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .partner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .partner-logo-box {
+    width: min(48%, 150px);
+    max-width: 150px;
+    margin: 0 auto;
+  }
+
+  .partner-content {
+    align-items: center;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+}
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V17 ===================== */
+/* 3 konkretne firmy, pod logo tylko napis „Partner”, bez sekcji Zakres/Status. */
+body.cooperation-page .partner-info {
+  display: none !important;
+}
+
+body.cooperation-page .partner-card {
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto auto 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+body.cooperation-page .partner-logo-box span {
+  display: block;
+  max-width: 100%;
+  padding: 0 8px;
+  text-align: center;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+body.cooperation-page .partner-type {
+  margin: 0 0 clamp(8px, 1.2svh, 14px);
+  padding: 6px 18px;
+  align-self: center;
+}
+
+body.cooperation-page .partner-content {
+  width: 100%;
+  align-items: center;
+}
+
+body.cooperation-page .partner-description {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-line-clamp: 4;
+}
+
+@media (min-width: 1181px) {
+  body.cooperation-page .partner-card {
+    align-content: start;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(46%, 190px);
+    max-width: 190px;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .partner-description {
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .partner-card {
+    text-align: center;
+    padding: 18px;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(100%, 145px);
+    max-width: 145px;
+    margin: 0 auto;
+  }
+
+  body.cooperation-page .partner-content {
+    align-items: center;
+  }
+}
+
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V18 ===================== */
+/* Wyśrodkowanie napisów i krótkich opisów w kartach firm. */
+body.cooperation-page .partners-grid {
+  align-items: stretch;
+}
+
+body.cooperation-page .partner-card {
+  align-content: center !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+  grid-template-rows: auto auto auto !important;
+  row-gap: clamp(10px, 1.45svh, 18px) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.cooperation-page .partner-type {
+  align-self: center !important;
+  justify-self: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+body.cooperation-page .partner-content {
+  width: min(100%, 460px) !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.cooperation-page .partner-card h2 {
+  width: 100% !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: clamp(8px, 1.1svh, 14px) !important;
+}
+
+body.cooperation-page .partner-description {
+  width: 100% !important;
+  max-width: 430px !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: clamp(12px, 1.4svh, 18px) !important;
+}
+
+body.cooperation-page .partner-button {
+  align-self: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 1181px) {
+  body.cooperation-page .partner-card {
+    padding-top: clamp(20px, 2vw, 34px) !important;
+    padding-bottom: clamp(20px, 2vw, 34px) !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(44%, 182px) !important;
+    max-width: 182px !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .partner-card {
+    row-gap: 10px !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(38%, 146px) !important;
+    max-width: 146px !important;
+  }
+}
+
+/* V19 — magiczny pył tylko w tle, nie w kartach */
+body.cooperation-page .partner-card {
+  background: #082b4f !important;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+body.cooperation-page .partner-logo-box,
+body.cooperation-page .partner-content,
+body.cooperation-page .partner-button {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V20 ===================== */
+/* Tytuł wyżej, większa przerwa do kart partnerów. */
+@media (min-width: 761px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) - clamp(18px, 2.4svh, 34px)) !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(58px, 7.5svh, 98px) !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 58px) - 20px) !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(42px, 6svh, 70px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .cooperation-header {
+    margin-bottom: 28px !important;
+  }
+}
+
+
+/* =========================================================
+   V22 — Współprace: mniejsze, bardziej dopracowane karty partnerów.
+   Zachowane kolory i styl strony; zmiana dotyczy proporcji i układu.
+   ========================================================= */
+body.cooperation-page .fade-page {
+  max-width: 1420px !important;
+}
+
+body.cooperation-page .cooperation-main {
+  justify-content: flex-start !important;
+}
+
+body.cooperation-page .cooperation-header {
+  margin-bottom: clamp(44px, 6svh, 76px) !important;
+}
+
+body.cooperation-page .cooperation-header h1 {
+  font-size: clamp(3.15rem, 5vw, 4.7rem) !important;
+}
+
+body.cooperation-page .partners-grid {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  gap: clamp(18px, 2.1vw, 30px) !important;
+}
+
+body.cooperation-page .partner-card {
+  min-height: clamp(330px, 42svh, 430px) !important;
+  height: auto !important;
+  padding: clamp(18px, 1.8vw, 26px) clamp(16px, 1.7vw, 24px) !important;
+  border-radius: clamp(20px, 1.6vw, 26px) !important;
+  row-gap: clamp(11px, 1.4svh, 17px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  width: clamp(112px, 10vw, 150px) !important;
+  max-width: 150px !important;
+  border-radius: 18px !important;
+  font-size: clamp(1rem, 1.45vw, 1.55rem) !important;
+}
+
+body.cooperation-page .partner-logo-box img {
+  padding: clamp(10px, 1.4vw, 18px) !important;
+}
+
+body.cooperation-page .partner-type {
+  padding: 5px 16px !important;
+  font-size: clamp(0.78rem, 0.9vw, 0.92rem) !important;
+}
+
+body.cooperation-page .partner-card h2 {
+  font-size: clamp(1.45rem, 1.9vw, 1.9rem) !important;
+  margin-bottom: 8px !important;
+}
+
+body.cooperation-page .partner-description {
+  max-width: 340px !important;
+  font-size: clamp(0.88rem, 0.98vw, 1rem) !important;
+  line-height: 1.38 !important;
+  margin-bottom: clamp(12px, 1.35svh, 18px) !important;
+}
+
+body.cooperation-page .partner-button {
+  min-height: 40px !important;
+  padding: 8px 24px !important;
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem) !important;
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(34px, 5svh, 56px) !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(285px, 40svh, 365px) !important;
+    padding: 14px 18px !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: clamp(96px, 8vw, 124px) !important;
+    max-width: 124px !important;
+  }
+
+  body.cooperation-page .partner-description {
+    -webkit-line-clamp: 3 !important;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  body.cooperation-page .partners-grid {
+    max-width: 980px !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(320px, 42svh, 420px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .cooperation-header {
+    margin-bottom: 26px !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    max-width: 520px !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(100%, 132px) !important;
+    max-width: 132px !important;
+  }
+}
+
+
+/* =========================================================
+   V23 — loader: prędkość wyłaniania logo wraca do czasu z V21.
+   Gwieździste tło loadera zostaje, zmieniony jest tylko czas animacji logo.
+   ========================================================= */
+.loader-logo {
+  transition: opacity 1.4s ease-out, transform 1.4s ease-out !important;
+}
+.loader-logo img {
+  transition: filter 1.6s ease-out !important;
+}
+.loader-logo.fade-out {
+  opacity: 0.25 !important;
+  transform: scale(0.92) !important;
+  transition: opacity 1s ease-out, transform 1s ease-out !important;
+}
+#loader {
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out !important;
+}
+.fade-page {
+  transition: opacity 0.5s ease-in !important;
+}
+
+
+/* =========================================================
+   V23 — Współprace: estetyczny odstęp kart od dołu strony.
+   Karty są odrobinę niższe i nie „siedzą” na samym dole ekranu.
+   ========================================================= */
+body.cooperation-page .fade-page {
+  padding-bottom: clamp(42px, 6.5svh, 86px) !important;
+}
+
+body.cooperation-page .cooperation-main {
+  justify-content: flex-start !important;
+}
+
+body.cooperation-page .cooperation-header {
+  margin-bottom: clamp(50px, 6.8svh, 88px) !important;
+}
+
+body.cooperation-page .partners-grid {
+  flex: 0 1 auto !important;
+  align-items: stretch !important;
+}
+
+body.cooperation-page .partner-card {
+  min-height: clamp(300px, 36svh, 382px) !important;
+  padding-top: clamp(16px, 1.7vw, 24px) !important;
+  padding-bottom: clamp(18px, 2vw, 28px) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  width: clamp(104px, 9vw, 138px) !important;
+  max-width: 138px !important;
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .fade-page {
+    padding-bottom: clamp(30px, 5svh, 58px) !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(40px, 5.6svh, 62px) !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(270px, 34svh, 335px) !important;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  body.cooperation-page .fade-page {
+    height: auto !important;
+    min-height: 100svh !important;
+    overflow-y: auto !important;
+    padding-bottom: clamp(40px, 6svh, 72px) !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(285px, 35svh, 360px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .fade-page {
+    padding-bottom: 42px !important;
+  }
+}
+
+
+/* =========================================================
+   V34 — Współpraca: cała sekcja i karty wyśrodkowane jak ekran startowy.
+   ========================================================= */
+body.cooperation-page .fade-page {
+  height: 100svh !important;
+  min-height: 100svh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(8px, 2svh, 28px)) !important;
+  padding-bottom: clamp(28px, 5svh, 70px) !important;
+}
+
+body.cooperation-page .cooperation-main {
+  flex: 0 1 auto !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+body.cooperation-page .cooperation-header {
+  width: 100% !important;
+  margin: 0 auto clamp(40px, 6svh, 72px) !important;
+  text-align: center !important;
+}
+
+body.cooperation-page .cooperation-header h1 {
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+body.cooperation-page .partners-grid {
+  width: min(100%, 1420px) !important;
+  max-width: 1420px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: none !important;
+  gap: clamp(24px, 3.2vw, 48px) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+body.cooperation-page .partner-card {
+  height: auto !important;
+  min-height: clamp(330px, 42svh, 430px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: clamp(24px, 2.6vw, 36px) !important;
+  gap: clamp(12px, 1.7svh, 20px) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  width: clamp(122px, 10vw, 162px) !important;
+  max-width: 162px !important;
+  margin: 0 auto !important;
+}
+
+body.cooperation-page .partner-type {
+  margin: clamp(8px, 1.3svh, 14px) auto 0 !important;
+}
+
+body.cooperation-page .partner-content {
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+body.cooperation-page .partner-card h2 {
+  text-align: center !important;
+  margin: clamp(4px, 0.8svh, 10px) 0 clamp(8px, 1.2svh, 14px) !important;
+}
+
+body.cooperation-page .partner-button {
+  margin-top: 0 !important;
+  align-self: center !important;
+}
+
+@media (max-width: 1180px) {
+  body.cooperation-page .fade-page {
+    height: auto !important;
+    min-height: 100svh !important;
+    overflow-y: auto !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 560px !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: auto !important;
+  }
+}
