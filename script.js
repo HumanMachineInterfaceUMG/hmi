@@ -56,6 +56,20 @@ function closeMenu() {
   menuOverlay.style.pointerEvents = 'none';
 }
 
+
+// ==================== V40 — NORMALNY SCROLL NA DŁUGICH PODSTRONACH MOBILNYCH ====================
+// Kontakt/Social Media i Współpraca nie są stronami sekcyjnymi, więc muszą mieć zwykłe przewijanie.
+(() => {
+  const body = document.body;
+  const root = document.documentElement;
+  if (!body || !root) return;
+  if (body.classList.contains('social-page') || body.classList.contains('cooperation-page')) {
+    root.classList.add('normal-scroll-page');
+    root.classList.remove('snap-page');
+    root.classList.remove('snap-members-page');
+  }
+})();
+
 // ==================== WCZESNA DEKLARACJA ELEMENTÓW MODALA ====================
 const modal       = document.getElementById('achievementsModal');
 const modalTitle  = document.getElementById('modalTitle');
@@ -362,9 +376,10 @@ if (document.getElementById('particles-js')) {
   // Podstrona Członkowie ma przewijać się normalnie, bez zatrzymywania
   // i bez dzielenia na sekcje. Dlatego nie uruchamiamy tutaj mechanizmu
   // scrollowania sekcja-po-sekcji.
-  if (body.classList.contains('members-page')) {
+  if (body.classList.contains('members-page') || body.classList.contains('social-page') || body.classList.contains('cooperation-page')) {
     root.classList.remove('snap-page');
     root.classList.remove('snap-members-page');
+    root.classList.add('normal-scroll-page');
     return;
   }
 

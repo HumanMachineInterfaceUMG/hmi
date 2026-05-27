@@ -1116,3 +1116,100 @@ body.cooperation-page .partner-button {
     min-height: auto !important;
   }
 }
+
+
+/* =========================================================
+   V40 — Współpraca: na telefonie i wąskich ekranach musi dać się normalnie przewijać.
+   ========================================================= */
+html.normal-scroll-page:has(body.cooperation-page),
+html:has(body.cooperation-page) {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100dvh !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+}
+
+body.cooperation-page,
+body.cooperation-page .fade-page,
+body.cooperation-page .cooperation-main {
+  overflow-y: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+body.cooperation-page {
+  min-height: 100dvh !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+}
+
+@media (max-width: 1180px) {
+  body.cooperation-page .fade-page {
+    display: block !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 64px !important;
+  }
+
+  body.cooperation-page .cooperation-main {
+    display: block !important;
+    min-height: 0 !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 560px !important;
+    margin-inline: auto !important;
+    padding-bottom: 28px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 22px) !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 70px !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: 28px !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    gap: 22px !important;
+  }
+}
+
+/* =========================================================
+   V42 — Współpraca: na telefonie zawsze normalny scroll.
+   ========================================================= */
+@media (max-width: 760px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 64px !important;
+  }
+}

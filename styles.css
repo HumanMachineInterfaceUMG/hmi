@@ -2765,13 +2765,14 @@ body.members-page .person-single {
 body.social-page > .fade-page {
   min-height: 100svh !important;
   width: min(100%, 1120px) !important;
-  padding: calc(var(--page-edge) + var(--nav-control-size) + clamp(10px, 2svh, 22px)) clamp(10px, 3vw, 20px) clamp(12px, 2svh, 24px) !important;
+  padding: calc(var(--page-edge) + var(--nav-control-size) + clamp(45px, 6svh, 80px)) clamp(10px, 3vw, 20px) clamp(12px, 2svh, 24px) !important;
   justify-content: center !important;
   gap: clamp(8px, 1.6svh, 18px) !important;
 }
 
 body.social-page .grid-section {
   margin: 0 auto clamp(8px, 1.6svh, 16px) !important;
+  transform: translateY(75px);
   width: 100% !important;
 }
 
@@ -4656,4 +4657,879 @@ body.home-page #section4 .qr-frame:hover {
   transform: none !important;
   filter: none !important;
   box-shadow: inset 0 0 0 9px rgba(2, 31, 66, 0.05), 0 14px 30px rgba(0, 0, 0, 0.26) !important;
+}
+
+
+/* =========================================================
+   V39 — poprawka mobile: Social Media + estetyczne QR.
+   1) Pojedyncza ikona UMG jest na samym dole i wyśrodkowana.
+   2) Na telefonie sekcja Kontakt z QR jest bardziej kompaktowa i elegancka.
+   ========================================================= */
+
+/* Finalny, pojedynczy kafelek w social mediach */
+body.social-page .social-final-section {
+  width: 100% !important;
+  margin: clamp(6px, 1.4svh, 14px) auto 0 !important;
+  padding: 0 !important;
+}
+
+body.social-page .social-grid-single {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+  align-items: start !important;
+  margin: 0 auto !important;
+}
+
+body.social-page .social-final-single {
+  width: min(100%, 260px) !important;
+  justify-self: center !important;
+}
+
+@media (max-width: 760px) {
+  /* Social Media: normalny scroll, bez obcinania góry i bez pustych luk */
+  html:has(body.social-page),
+  html.snap-page:has(body.social-page) {
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+  }
+
+  body.social-page {
+    overflow-y: auto !important;
+    min-height: 100svh !important;
+  }
+
+  body.social-page > .fade-page {
+    min-height: auto !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 28px) !important;
+    padding-bottom: 34px !important;
+    gap: 18px !important;
+  }
+
+  body.social-page .grid-section {
+    margin: 0 auto 6px !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2,
+  body.social-page .social-grid-single {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(100%, 340px) !important;
+    gap: 24px 28px !important;
+    justify-items: center !important;
+    align-items: start !important;
+  }
+
+  body.social-page .social-grid-single {
+    grid-template-columns: 1fr !important;
+    margin-top: 8px !important;
+  }
+
+  body.social-page .social-final-section {
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img,
+  body.social-page .social-grid-single .person2 img {
+    width: clamp(74px, 23vw, 96px) !important;
+    height: clamp(74px, 23vw, 96px) !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p {
+    font-size: clamp(0.76rem, 3.4vw, 0.92rem) !important;
+    line-height: 1.18 !important;
+    max-width: 142px !important;
+    margin: 0 !important;
+  }
+
+  /* Kontakt na stronie głównej: QR jako dwa małe, równe kafelki pod przyciskami */
+  body.home-page #section4 .content {
+    max-width: calc(100vw - 20px) !important;
+    padding: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 18px) 12px 22px !important;
+    gap: 0 !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    font-size: clamp(2rem, 8.2vw, 2.55rem) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 18px !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    width: min(100%, 342px) !important;
+    max-width: 342px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-areas:
+      "buttons buttons"
+      "qrleft qrright" !important;
+    gap: 14px 12px !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  body.home-page #section4 .contact-buttons-vertical {
+    grid-area: buttons !important;
+    width: 100% !important;
+    gap: 12px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  body.home-page #section4 .contact-qr-left { grid-area: qrleft !important; }
+  body.home-page #section4 .contact-qr-right { grid-area: qrright !important; }
+
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    width: 100% !important;
+    min-height: 52px !important;
+    padding: 10px 14px !important;
+    font-size: clamp(0.86rem, 3.4vw, 1rem) !important;
+    line-height: 1.2 !important;
+    border-radius: 999px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    padding: 10px !important;
+    border-radius: 18px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transform: none !important;
+    transition: none !important;
+    backdrop-filter: blur(5px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: min(100%, 108px) !important;
+    max-width: 108px !important;
+    border-radius: 15px !important;
+    margin: auto !important;
+  }
+
+  body.home-page #section4 .qr-frame img {
+    width: 90% !important;
+    height: 90% !important;
+    max-width: 90% !important;
+    max-height: 90% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+}
+
+@media (max-width: 380px) {
+  body.home-page #section4 .content h1 {
+    font-size: clamp(1.8rem, 8vw, 2.15rem) !important;
+    margin-bottom: 14px !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    width: min(100%, 318px) !important;
+    gap: 12px 10px !important;
+  }
+
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    min-height: 48px !important;
+    font-size: 0.84rem !important;
+    padding: 8px 12px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel {
+    padding: 8px !important;
+    border-radius: 16px !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    max-width: 96px !important;
+  }
+}
+
+
+/* =========================================================
+   V40 — naprawa scrolla na telefonie: Social Media + Współpraca.
+   Strony nie-sekcyjne mają zwykłe przewijanie, bez snap i bez blokady wysokości.
+   ========================================================= */
+html.normal-scroll-page,
+html.normal-scroll-page body {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  overscroll-behavior-y: auto !important;
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100dvh !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+}
+
+html.normal-scroll-page .section,
+html.normal-scroll-page .grid-section,
+html.normal-scroll-page .single-section {
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+}
+
+body.social-page,
+body.cooperation-page {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100dvh !important;
+  touch-action: pan-y !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+body.social-page > .fade-page {
+  height: auto !important;
+  min-height: 100dvh !important;
+  max-height: none !important;
+  overflow: visible !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+body.social-page .social-final-section {
+  display: block !important;
+  width: 100% !important;
+  margin-top: clamp(14px, 4vw, 28px) !important;
+  margin-bottom: clamp(28px, 8vw, 56px) !important;
+}
+
+body.social-page .social-grid-single {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+  width: 100% !important;
+}
+
+body.social-page .social-final-single {
+  justify-self: center !important;
+  margin-inline: auto !important;
+}
+
+@media (max-width: 760px) {
+  body.social-page > .fade-page {
+    width: 100% !important;
+    max-width: none !important;
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 18px) !important;
+    padding-bottom: 56px !important;
+    gap: 18px !important;
+  }
+
+  body.social-page .grid-section {
+    width: 100% !important;
+    margin: 0 auto 8px !important;
+    padding: 0 !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    width: min(100%, 340px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px 28px !important;
+  }
+
+  body.social-page .social-grid-single {
+    width: min(100%, 340px) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body.social-page .social-final-section {
+    margin-top: 18px !important;
+  }
+}
+
+/* =========================================================
+   V41 — Social Media: przywrócenie układu z 5 ikonami UMG + poprawny scroll.
+   1) Na desktopie układ mieści się statycznie na ekranie — bez zbędnego scrolla.
+   2) Na telefonie zostaje normalne przewijanie, a 5. ikona UMG jest wyśrodkowana.
+   ========================================================= */
+
+/* Desktop / laptop: jeśli układ mieści się w jednym widoku, strona jest statyczna. */
+@media (min-width: 761px) and (min-height: 700px) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: none !important;
+  }
+
+  body.social-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    overflow-y: hidden !important;
+  }
+
+  body.social-page > .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: min(100%, 1540px) !important;
+    max-width: 1540px !important;
+    padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(2px, 0.8svh, 12px))
+             clamp(18px, 3vw, 46px)
+             clamp(16px, 2.2svh, 30px) !important;
+    gap: clamp(14px, 1.9svh, 24px) !important;
+  }
+
+  body.social-page .grid-section {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  body.social-page .social-grid4 {
+    grid-template-columns: repeat(4, minmax(140px, 1fr)) !important;
+    width: min(100%, 1280px) !important;
+  }
+
+  body.social-page .social-grid5 {
+    grid-template-columns: repeat(5, minmax(120px, 1fr)) !important;
+    width: min(100%, 1380px) !important;
+  }
+
+  body.social-page .social-grid2 {
+    grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+    width: min(100%, 760px) !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    gap: clamp(14px, 1.8svh, 24px) clamp(28px, 4vw, 72px) !important;
+    margin: 0 auto !important;
+    justify-items: center !important;
+    align-items: start !important;
+  }
+
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(86px, 12.2svh, 128px) !important;
+    height: clamp(86px, 12.2svh, 128px) !important;
+    margin-bottom: clamp(6px, 0.85svh, 12px) !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p {
+    font-size: clamp(0.86rem, 1vw, 1.12rem) !important;
+    line-height: 1.13 !important;
+    max-width: 210px !important;
+    margin: 0 !important;
+  }
+}
+
+/* Niższe ekrany komputerowe: układ nadal ma być dostępny, więc pozwalamy przewinąć. */
+@media (min-width: 761px) and (max-height: 699px) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  body.social-page {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+  }
+}
+
+/* Telefon: normalny scroll + ostatnia ikona UMG w środku, bez pustej luki. */
+@media (max-width: 760px) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.social-page > .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    justify-content: flex-start !important;
+    padding-bottom: 58px !important;
+  }
+
+  body.social-page .social-grid5 .person2:nth-child(5) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+  }
+}
+
+/* =========================================================
+   V42 — Social Media: stały układ desktop + poprawny układ telefonu.
+   Desktop: 4 / 5 / 2 elementy, bez przewijania gdy mieści się na ekranie.
+   Telefon: 2 kolumny, ostatni samotny element UMG na środku, normalny scroll.
+   ========================================================= */
+
+@media (min-width: 761px) and (min-height: 700px) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: none !important;
+  }
+
+  body.social-page > .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    width: min(100%, 1560px) !important;
+    max-width: 1560px !important;
+    margin-inline: auto !important;
+    padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(8px, 1.3svh, 22px))
+             clamp(20px, 3vw, 52px)
+             clamp(18px, 2.4svh, 34px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(16px, 2.1svh, 30px) !important;
+  }
+
+  body.social-page .grid-section {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  body.social-page .social-grid4 {
+    width: min(100%, 1280px) !important;
+    grid-template-columns: repeat(4, minmax(140px, 1fr)) !important;
+  }
+
+  body.social-page .social-grid5 {
+    width: min(100%, 1380px) !important;
+    grid-template-columns: repeat(5, minmax(120px, 1fr)) !important;
+  }
+
+  body.social-page .social-grid2 {
+    width: min(100%, 760px) !important;
+    grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    gap: clamp(16px, 2svh, 28px) clamp(30px, 4vw, 76px) !important;
+    margin: 0 auto !important;
+    justify-items: center !important;
+    align-items: start !important;
+  }
+
+  body.social-page .social-grid5 .person2:nth-child(5) {
+    grid-column: auto !important;
+    justify-self: center !important;
+  }
+
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(86px, 12svh, 126px) !important;
+    height: clamp(86px, 12svh, 126px) !important;
+    margin-bottom: clamp(7px, 0.9svh, 12px) !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p {
+    font-size: clamp(0.86rem, 1vw, 1.12rem) !important;
+    line-height: 1.14 !important;
+    max-width: 215px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.social-page > .fade-page {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 36px)
+             clamp(10px, 3vw, 16px)
+             60px !important;
+    gap: 26px !important;
+  }
+
+  body.social-page .grid-section {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    width: min(100%, 360px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: start !important;
+    gap: 30px 34px !important;
+    margin: 0 auto !important;
+  }
+
+  body.social-page .social-grid5 .person2:nth-child(5) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: min(100%, 170px) !important;
+    margin-top: 4px !important;
+    margin-bottom: 2px !important;
+  }
+
+  body.social-page .social-grid2 {
+    margin-top: 4px !important;
+  }
+
+  body.social-page .person2,
+  body.social-page .person {
+    width: 100% !important;
+    max-width: 170px !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+  }
+
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(74px, 23vw, 94px) !important;
+    height: clamp(74px, 23vw, 94px) !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p,
+  body.social-page .person2 a,
+  body.social-page .person a {
+    font-size: clamp(0.78rem, 3.25vw, 0.98rem) !important;
+    line-height: 1.16 !important;
+    max-width: 150px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    overflow-wrap: normal !important;
+  }
+}
+
+
+/* =========================================================
+   V43 — Social Media: wyśrodkowanie na desktopie + poprawna kolejność mobile.
+   Desktop: całość dokładnie na środku strony, bez dodatkowego scrolla gdy mieści się na ekranie.
+   Mobile: 2 kolumny, Parlament przed pojedynczym UMG, a ostatnie UMG na samym dole i na środku.
+   ========================================================= */
+
+.social-mobile-umg-single {
+  display: none !important;
+}
+
+@media (min-width: 761px) and (min-height: 700px) {
+  body.social-page > .fade-page {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(6px, 1.2svh, 18px))
+             clamp(20px, 3vw, 52px)
+             clamp(18px, 2.4svh, 34px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(18px, 2.2svh, 32px) !important;
+  }
+
+  body.social-page .grid-section {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: start !important;
+  }
+
+  body.social-page .social-grid4 {
+    width: min(100%, 1220px) !important;
+    grid-template-columns: repeat(4, minmax(150px, 1fr)) !important;
+    gap: clamp(18px, 2.2svh, 30px) clamp(56px, 6vw, 112px) !important;
+  }
+
+  body.social-page .social-grid5 {
+    width: min(100%, 1360px) !important;
+    grid-template-columns: repeat(5, minmax(130px, 1fr)) !important;
+    gap: clamp(18px, 2.2svh, 30px) clamp(44px, 4.8vw, 92px) !important;
+  }
+
+  body.social-page .social-grid2 {
+    width: min(100%, 760px) !important;
+    grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+    gap: clamp(18px, 2.2svh, 30px) clamp(72px, 7vw, 120px) !important;
+  }
+
+  body.social-page .social-grid5 .person2:nth-child(5) {
+    display: flex !important;
+    grid-column: auto !important;
+    justify-self: center !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.social-page > .fade-page {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 34px)
+             clamp(10px, 3vw, 16px)
+             64px !important;
+    gap: 28px !important;
+  }
+
+  body.social-page .grid-section {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2,
+  body.social-page .social-grid-mobile-single {
+    width: min(100%, 350px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: start !important;
+    gap: 30px 34px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Oryginalne pojedyncze UMG chowamy w rzędzie UMG na telefonie,
+     a jego kopię pokazujemy dopiero na samym dole. */
+  body.social-page .social-grid5 .person2:nth-child(5) {
+    display: none !important;
+  }
+
+  body.social-page .social-mobile-umg-single {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    order: 99 !important;
+    margin-top: 0 !important;
+  }
+
+  body.social-page .social-grid-mobile-single {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 170px) !important;
+    gap: 0 !important;
+  }
+
+  body.social-page .social-grid2 {
+    margin-top: 0 !important;
+    order: 3 !important;
+  }
+
+  body.social-page .person2,
+  body.social-page .person {
+    width: 100% !important;
+    max-width: 160px !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+  }
+
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img,
+  body.social-page .social-grid-mobile-single .person2 img {
+    width: clamp(76px, 23vw, 94px) !important;
+    height: clamp(76px, 23vw, 94px) !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p,
+  body.social-page .person2 a,
+  body.social-page .person a {
+    font-size: clamp(0.78rem, 3.2vw, 0.98rem) !important;
+    line-height: 1.16 !important;
+    max-width: 150px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+}
+
+/* =========================================================
+   V44 — Social Media: obniżenie i centralne ustawienie na desktopie
+   + przywrócenie obwódki logo UMG.
+   ========================================================= */
+@media (min-width: 761px) and (min-height: 700px) {
+  body.social-page > .fade-page {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  body.social-page .grid-section {
+    transform: translateY(clamp(18px, 3.2svh, 42px)) !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    width: min(100%, 1280px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    justify-items: center !important;
+  }
+
+  body.social-page .social-grid5 {
+    width: min(100%, 1320px) !important;
+  }
+
+  body.social-page .social-grid2 {
+    width: min(100%, 760px) !important;
+  }
+
+  body.social-page .social-grid5 .person2:nth-child(5) img,
+  body.social-page .social-grid2 .person2:nth-child(2) img,
+  body.social-page .social-grid-mobile-single .person2 img {
+    border: 4px solid #ffffff44 !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.social-page .social-grid5 .person2:nth-child(5) img,
+  body.social-page .social-grid2 .person2:nth-child(2) img,
+  body.social-page .social-grid-mobile-single .person2 img {
+    border: 4px solid #ffffff44 !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+  }
+}
+
+/* =========================================================
+   V45 — Social Media: mocniejsze obniżenie ikon na desktopie
+   Ikony pozostają statyczne, ale cały układ jest niżej, bliżej środka ekranu.
+   ========================================================= */
+@media (min-width: 761px) and (min-height: 700px) {
+  body.social-page > .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  body.social-page .grid-section {
+    transform: translateY(clamp(52px, 7.2svh, 92px)) !important;
+  }
 }
