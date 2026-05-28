@@ -39,6 +39,7 @@ const menuOverlay = document.getElementById('menuOverlay');
 if (hamburger && sideMenu && menuOverlay) {
   hamburger.addEventListener('click', () => {
     sideMenu.style.left = '0';
+    sideMenu.classList.add('menu-open');
     menuOverlay.style.opacity = '1';
     menuOverlay.style.pointerEvents = 'all';
   });
@@ -52,22 +53,35 @@ document.addEventListener('keydown', (e) => {
 function closeMenu() {
   if (!sideMenu || !menuOverlay) return;
   sideMenu.style.left = `-${Math.min(260, Math.round(window.innerWidth * 0.82))}px`;
+  sideMenu.classList.remove('menu-open');
   menuOverlay.style.opacity = '0';
   menuOverlay.style.pointerEvents = 'none';
 }
 
 
-// ==================== V40 — NORMALNY SCROLL NA DŁUGICH PODSTRONACH MOBILNYCH ====================
-// Kontakt/Social Media i Współpraca nie są stronami sekcyjnymi, więc muszą mieć zwykłe przewijanie.
+// V50 — naturalne przewijanie menu hamburgera na telefonie.
+// Zatrzymuje przekazywanie gestów z menu do mechanizmu przewijania sekcji.
 (() => {
-  const body = document.body;
-  const root = document.documentElement;
-  if (!body || !root) return;
-  if (body.classList.contains('social-page') || body.classList.contains('cooperation-page')) {
-    root.classList.add('normal-scroll-page');
-    root.classList.remove('snap-page');
-    root.classList.remove('snap-members-page');
-  }
+  const menu = document.getElementById('sideMenu');
+  if (!menu) return;
+  ['wheel', 'touchmove'].forEach(type => {
+    menu.addEventListener(type, (event) => {
+      event.stopPropagation();
+    }, { passive: true });
+  });
+})();
+
+
+
+// V51 — menu hamburgera: gest przewijania zostaje w menu i nie uruchamia przewijania sekcji.
+(() => {
+  const menu = document.getElementById('sideMenu');
+  if (!menu || menu.dataset.v51ScrollFix === 'true') return;
+  menu.dataset.v51ScrollFix = 'true';
+  const stopForMenu = (event) => event.stopPropagation();
+  ['wheel', 'touchstart', 'touchmove'].forEach(type => {
+    menu.addEventListener(type, stopForMenu, { passive: true });
+  });
 })();
 
 // ==================== WCZESNA DEKLARACJA ELEMENTÓW MODALA ====================
@@ -376,10 +390,9 @@ if (document.getElementById('particles-js')) {
   // Podstrona Członkowie ma przewijać się normalnie, bez zatrzymywania
   // i bez dzielenia na sekcje. Dlatego nie uruchamiamy tutaj mechanizmu
   // scrollowania sekcja-po-sekcji.
-  if (body.classList.contains('members-page') || body.classList.contains('social-page') || body.classList.contains('cooperation-page')) {
+  if (body.classList.contains('members-page')) {
     root.classList.remove('snap-page');
     root.classList.remove('snap-members-page');
-    root.classList.add('normal-scroll-page');
     return;
   }
 
@@ -596,8 +609,9 @@ if (document.getElementById('particles-js')) {
 
 
 // ==================== DELIKATNY MAGICZNY PYŁ / MIGAJĄCE GWIAZDKI ====================
-// Efekt jest wspólny dla wszystkich podstron. Nie zmienia treści ani układu strony.
+// V65: efekt gwiazdek wyłączony, żeby strona wyglądała bardziej poważnie i profesjonalnie.
 (() => {
+  return;
   if (document.getElementById('magicDustStyle')) return;
 
   // V20: bez magicznego pyłu na stronie głównej oraz podstronie Sekcje Koła.
@@ -624,7 +638,7 @@ if (document.getElementById('particles-js')) {
       position: fixed !important;
       inset: 0 !important;
       z-index: 0 !important;
-      opacity: 0.84 !important;
+      opacity: 0.94 !important;
       mix-blend-mode: normal !important;
     }
 
@@ -642,7 +656,7 @@ if (document.getElementById('particles-js')) {
       position: absolute !important;
       inset: 0 !important;
       z-index: 0 !important;
-      opacity: 0.70 !important;
+      opacity: 0.82 !important;
       mix-blend-mode: normal !important;
     }
 
@@ -683,7 +697,7 @@ if (document.getElementById('particles-js')) {
       position: absolute;
       inset: -12%;
       background-repeat: repeat;
-      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.92)) drop-shadow(0 0 14px rgba(128, 203, 255, 0.55));
+      filter: drop-shadow(0 0 9px rgba(255, 255, 255, 1)) drop-shadow(0 0 18px rgba(128, 203, 255, 0.72));
       will-change: opacity, transform;
       transform: translate3d(0, 0, 0);
     }
@@ -717,11 +731,11 @@ if (document.getElementById('particles-js')) {
     }
 
     @keyframes magicDustTwinkle {
-      0%   { opacity: 0.36; }
-      24%  { opacity: 0.82; }
-      52%  { opacity: 0.48; }
+      0%   { opacity: 0.48; }
+      24%  { opacity: 0.94; }
+      52%  { opacity: 0.62; }
       76%  { opacity: 1; }
-      100% { opacity: 0.58; }
+      100% { opacity: 0.70; }
     }
 
     @keyframes magicDustColorShift {
@@ -741,8 +755,8 @@ if (document.getElementById('particles-js')) {
     }
 
     @media (max-width: 760px) {
-      .page-magic-dust { opacity: 0.86 !important; }
-      .section-magic-dust { opacity: 0.72 !important; }
+      .page-magic-dust { opacity: 0.94 !important; }
+      .section-magic-dust { opacity: 0.84 !important; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -772,4 +786,171 @@ if (document.getElementById('particles-js')) {
     dust.setAttribute('aria-hidden', 'true');
     document.body.insertBefore(dust, document.body.firstChild);
   }
+})();
+
+
+// ==================== V52 — płynny scroll menu hamburgera na telefonie ====================
+// Poprawia iOS/Android: przewijanie menu nie wraca do góry i nie uruchamia scrollowania sekcji.
+(() => {
+  const menu = document.getElementById('sideMenu');
+  if (!menu || menu.dataset.v52MenuScroll === 'true') return;
+  menu.dataset.v52MenuScroll = 'true';
+
+  const getScroller = () => menu.querySelector('ul') || menu;
+  const isOpen = () => {
+    const left = window.getComputedStyle(menu).left;
+    return left === '0px' || menu.style.left === '0px';
+  };
+
+  let lastY = 0;
+
+  menu.addEventListener('touchstart', (event) => {
+    if (!event.touches || event.touches.length !== 1) return;
+    lastY = event.touches[0].clientY;
+  }, { passive: true });
+
+  menu.addEventListener('touchmove', (event) => {
+    if (!isOpen() || !event.touches || event.touches.length !== 1) return;
+
+    const scroller = getScroller();
+    if (!scroller || scroller.scrollHeight <= scroller.clientHeight + 1) return;
+
+    const currentY = event.touches[0].clientY;
+    const delta = lastY - currentY;
+    const atTop = scroller.scrollTop <= 0;
+    const atBottom = Math.ceil(scroller.scrollTop + scroller.clientHeight) >= scroller.scrollHeight;
+
+    // Zatrzymaj odbijanie strony za menu, ale pozwól przewijać zawartość menu.
+    if ((delta < 0 && atTop) || (delta > 0 && atBottom)) {
+      event.preventDefault();
+      event.stopPropagation();
+      lastY = currentY;
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    scroller.scrollTop += delta;
+    lastY = currentY;
+  }, { passive: false });
+
+  menu.addEventListener('wheel', (event) => {
+    if (!isOpen()) return;
+    const scroller = getScroller();
+    if (!scroller || scroller.scrollHeight <= scroller.clientHeight + 1) return;
+    event.preventDefault();
+    event.stopPropagation();
+    scroller.scrollTop += event.deltaY;
+  }, { passive: false });
+})();
+
+
+// ==================== V53 — pewne przewijanie menu hamburgera na telefonie ====================
+// Działa w pionie i poziomie. Na dużym ekranie/komputerze niczego nie zmienia.
+(() => {
+  const menu = document.getElementById('sideMenu');
+  if (!menu || menu.dataset.v53MenuScroll === 'true') return;
+  menu.dataset.v53MenuScroll = 'true';
+
+  const mediaMobile = window.matchMedia('(max-width: 980px), (max-height: 620px), (pointer: coarse)');
+  const scroller = () => menu.querySelector('ul') || menu;
+  const isOpen = () => {
+    const left = window.getComputedStyle(menu).left;
+    return left === '0px' || menu.style.left === '0px' || menu.style.left === '0';
+  };
+
+  let lastY = 0;
+
+  menu.addEventListener('touchstart', (event) => {
+    if (!mediaMobile.matches || !isOpen() || !event.touches || event.touches.length !== 1) return;
+    lastY = event.touches[0].clientY;
+  }, { passive: true, capture: true });
+
+  menu.addEventListener('touchmove', (event) => {
+    if (!mediaMobile.matches || !isOpen() || !event.touches || event.touches.length !== 1) return;
+
+    const target = scroller();
+    if (!target) return;
+
+    const maxScroll = Math.max(0, target.scrollHeight - target.clientHeight);
+    if (maxScroll <= 1) return;
+
+    const y = event.touches[0].clientY;
+    const delta = lastY - y;
+    const next = Math.min(maxScroll, Math.max(0, target.scrollTop + delta));
+
+    target.scrollTop = next;
+    lastY = y;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { passive: false, capture: true });
+
+  menu.addEventListener('wheel', (event) => {
+    if (!mediaMobile.matches || !isOpen()) return;
+
+    const target = scroller();
+    if (!target) return;
+
+    const maxScroll = Math.max(0, target.scrollHeight - target.clientHeight);
+    if (maxScroll <= 1) return;
+
+    target.scrollTop = Math.min(maxScroll, Math.max(0, target.scrollTop + event.deltaY));
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { passive: false, capture: true });
+})();
+
+// ==================== V55 — dodatkowe zabezpieczenie scrollowania menu na Współpracy ====================
+// Działa tylko na urządzeniach mobilnych / niskich ekranach. Na komputerze menu zostaje statyczne.
+(() => {
+  const menu = document.getElementById('sideMenu');
+  if (!menu || menu.dataset.v55CooperationMenuScroll === 'true') return;
+  menu.dataset.v55CooperationMenuScroll = 'true';
+
+  const mobileMenu = window.matchMedia('(max-width: 980px), (max-height: 620px), (pointer: coarse)');
+  const scroller = () => menu.querySelector('ul') || menu;
+  const isOpen = () => {
+    const left = window.getComputedStyle(menu).left;
+    return left === '0px' || menu.style.left === '0px' || menu.style.left === '0';
+  };
+
+  let lastY = 0;
+
+  menu.addEventListener('touchstart', (event) => {
+    if (!mobileMenu.matches || !isOpen() || !event.touches || event.touches.length !== 1) return;
+    lastY = event.touches[0].clientY;
+  }, { passive: true, capture: true });
+
+  menu.addEventListener('touchmove', (event) => {
+    if (!mobileMenu.matches || !isOpen() || !event.touches || event.touches.length !== 1) return;
+
+    const target = scroller();
+    if (!target) return;
+
+    const maxScroll = Math.max(0, target.scrollHeight - target.clientHeight);
+    if (maxScroll <= 1) return;
+
+    const y = event.touches[0].clientY;
+    const delta = lastY - y;
+    target.scrollTop = Math.min(maxScroll, Math.max(0, target.scrollTop + delta));
+    lastY = y;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { passive: false, capture: true });
+
+  menu.addEventListener('wheel', (event) => {
+    if (!mobileMenu.matches || !isOpen()) return;
+
+    const target = scroller();
+    if (!target) return;
+
+    const maxScroll = Math.max(0, target.scrollHeight - target.clientHeight);
+    if (maxScroll <= 1) return;
+
+    target.scrollTop = Math.min(maxScroll, Math.max(0, target.scrollTop + event.deltaY));
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { passive: false, capture: true });
 })();

@@ -5533,3 +5533,3369 @@ body.social-page .social-final-single {
     transform: translateY(clamp(52px, 7.2svh, 92px)) !important;
   }
 }
+
+/* =========================================================
+   V46 — poprawki telefon poziomo + menu + skalowanie sekcji
+   ========================================================= */
+
+/* Menu hamburgera musi dać się przewijać na telefonie poziomo,
+   gdy lista linków jest wyższa niż ekran. */
+#sideMenu {
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  touch-action: pan-y !important;
+}
+
+#sideMenu ul {
+  padding-bottom: max(24px, env(safe-area-inset-bottom)) !important;
+}
+
+@media (orientation: landscape) and (max-height: 560px) {
+  #sideMenu {
+    width: min(260px, 84vw) !important;
+    padding-top: clamp(54px, 13svh, 78px) !important;
+  }
+
+  #sideMenu a {
+    padding: 9px 24px !important;
+    font-size: clamp(0.92rem, 2.8svh, 1.05rem) !important;
+    line-height: 1.15 !important;
+  }
+}
+
+/* Członkowie — telefon poziomo: Zarząd w układzie 2 + 1.
+   Przewodniczący i zastępca w jednym rzędzie, redaktor medialny pod spodem na środku. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.members-page .members-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 14px) !important;
+  }
+
+  body.members-page .grid-section {
+    margin-bottom: 34px !important;
+  }
+
+  body.members-page .grid-section h2,
+  body.members-page .single-section h2 {
+    font-size: clamp(1.7rem, 7svh, 2.15rem) !important;
+    margin-bottom: clamp(18px, 5svh, 30px) !important;
+  }
+
+  body.members-page .members-grid-zarzad {
+    width: min(100%, 560px) !important;
+    margin-inline: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-items: center !important;
+    align-items: start !important;
+    gap: clamp(18px, 5svh, 30px) clamp(34px, 8vw, 58px) !important;
+  }
+
+  body.members-page .members-grid-zarzad .person-single {
+    width: min(100%, 190px) !important;
+    margin: 0 auto !important;
+  }
+
+  body.members-page .members-grid-zarzad .person-single:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    margin-top: clamp(4px, 1.5svh, 10px) !important;
+  }
+
+  body.members-page .members-grid-zarzad .person-single img {
+    width: clamp(100px, 22svh, 132px) !important;
+    height: clamp(100px, 22svh, 132px) !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.members-page .members-grid-zarzad .role {
+    font-size: clamp(0.82rem, 2.8svh, 1rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  body.members-page .members-grid-zarzad .name {
+    font-size: clamp(0.95rem, 3.2svh, 1.15rem) !important;
+    line-height: 1.15 !important;
+  }
+}
+
+/* Strona główna i Sekcje Koła — telefon poziomo:
+   mocne zmniejszenie typografii i przycisków, żeby nic nie wchodziło pod menu/logo/język. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.home-page .section,
+  body.sections-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 6px) !important;
+    padding-bottom: max(10px, env(safe-area-inset-bottom)) !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 88vw) !important;
+    max-width: min(860px, 88vw) !important;
+    max-height: calc(100svh - var(--nav-control-size, 52px) - var(--page-edge, 10px) - 22px) !important;
+    padding: 0 clamp(10px, 2vw, 18px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: visible !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.55rem, 8.2svh, 2.45rem) !important;
+    line-height: 1.04 !important;
+    margin-bottom: clamp(8px, 2.3svh, 14px) !important;
+    max-width: 92vw !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.74rem, 3.25svh, 0.98rem) !important;
+    line-height: 1.27 !important;
+    max-width: min(800px, 84vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(10px, 3svh, 16px) !important;
+    gap: clamp(8px, 2.5svh, 14px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 92vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page .contact-btn,
+  body.home-page .contact-btn.big {
+    font-size: clamp(0.78rem, 3.15svh, 0.98rem) !important;
+    line-height: 1.1 !important;
+    padding: clamp(8px, 2.2svh, 11px) clamp(14px, 3vw, 22px) !important;
+    min-height: 34px !important;
+    min-width: clamp(150px, 28vw, 230px) !important;
+    max-width: 42vw !important;
+    white-space: normal !important;
+    margin: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+
+  body.home-page .stats-bar {
+    gap: clamp(10px, 3vw, 28px) !important;
+    margin-top: clamp(12px, 3svh, 20px) !important;
+  }
+
+  body.home-page .stat-number {
+    font-size: clamp(1.9rem, 8svh, 3rem) !important;
+  }
+
+  body.home-page .stat-label {
+    font-size: clamp(0.7rem, 2.8svh, 0.95rem) !important;
+  }
+
+  body.home-page #section4 .content {
+    width: min(100%, 92vw) !important;
+    max-width: 92vw !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    transform: scale(0.82) !important;
+    transform-origin: center center !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    margin-bottom: clamp(6px, 1.8svh, 10px) !important;
+  }
+}
+
+/* Bardzo niskie ekrany poziome — jeszcze ciaśniejsze ustawienie. */
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 980px) {
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.35rem, 7svh, 2rem) !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.68rem, 2.8svh, 0.86rem) !important;
+    line-height: 1.22 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: 8px !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    transform: scale(0.72) !important;
+  }
+}
+
+/* Normalny scroll na telefonach poziomo dla zwykłych podstron, które mogą być wyższe niż ekran. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page,
+  html:has(body.members-page),
+  html.normal-scroll-page:has(body.members-page),
+  html.normal-scroll-page:has(body.members-page) body,
+  body.members-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.social-page > .fade-page,
+  body.members-page > .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body.social-page > .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 18px) !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+/* =========================================================
+   V47 — poprawki końcowe: menu poziomo, scroll mobile, QR landscape, sekcje landscape
+   ========================================================= */
+
+/* Hamburger: na telefonie poziomo menu ma się przewijać, ale wielkość liter
+   zostaje taka jak wcześniej. */
+#sideMenu {
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  touch-action: pan-y !important;
+  padding-top: 100px !important;
+}
+
+#sideMenu ul {
+  padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+}
+
+#sideMenu a {
+  font-size: 1.2rem !important;
+  padding: 15px 30px !important;
+  line-height: normal !important;
+}
+
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  #sideMenu {
+    width: min(260px, 84vw) !important;
+    padding-top: 100px !important;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+/* Social Media: na telefonie zawsze naturalne, płynne przewijanie bez snapów.
+   Desktop zostaje statyczny tak jak był. */
+@media (max-width: 980px) {
+  html:has(body.social-page),
+  html.snap-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.social-page > .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* Na telefonie poziomo social media ma zachować układ mobilny 2 kolumny,
+   bez zatrzymywania i bez sztucznych przeskoków. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.social-page > .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 18px) !important;
+    padding-bottom: 56px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  body.social-page .grid-section {
+    transform: none !important;
+    margin: 0 auto 18px !important;
+  }
+}
+
+/* Strona główna – kontakt z QR na telefonie poziomo:
+   QR wracają po bokach jak na komputerze, pionowy telefon zostaje jak wcześniej. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.home-page #section4 .content {
+    width: min(100%, 96vw) !important;
+    max-width: 96vw !important;
+    padding: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 4px) 12px 12px !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    font-size: clamp(1.55rem, 7svh, 2.2rem) !important;
+    line-height: 1.05 !important;
+    margin-bottom: clamp(8px, 2svh, 14px) !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    transform: none !important;
+    width: min(100%, 94vw) !important;
+    max-width: 94vw !important;
+    display: grid !important;
+    grid-template-columns: minmax(120px, 1fr) minmax(250px, 360px) minmax(120px, 1fr) !important;
+    grid-template-areas: "qrleft buttons qrright" !important;
+    gap: clamp(10px, 2vw, 18px) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  body.home-page #section4 .contact-qr-left { grid-area: qrleft !important; }
+  body.home-page #section4 .contact-qr-right { grid-area: qrright !important; }
+
+  body.home-page #section4 .contact-buttons-vertical {
+    grid-area: buttons !important;
+    width: min(100%, 360px) !important;
+    gap: clamp(8px, 2.2svh, 12px) !important;
+  }
+
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: clamp(36px, 10svh, 48px) !important;
+    font-size: clamp(0.78rem, 3svh, 1rem) !important;
+    line-height: 1.15 !important;
+    padding: clamp(7px, 2svh, 10px) clamp(12px, 2.4vw, 18px) !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: clamp(118px, 32svh, 176px) !important;
+    aspect-ratio: auto !important;
+    padding: clamp(8px, 2svh, 12px) !important;
+    border-radius: clamp(16px, 3vw, 22px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(82px, 20svh, 124px) !important;
+    max-width: 124px !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* Sekcje Koła oraz strona główna na telefonie poziomo:
+   typografia i przyciski mieszczą się w sekcji i nie wchodzą pod górne menu. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.home-page .section,
+  body.sections-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 4px) !important;
+    padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 90vw) !important;
+    max-width: min(900px, 90vw) !important;
+    max-height: calc(100svh - var(--nav-control-size, 52px) - var(--page-edge, 10px) - 16px) !important;
+    padding: 0 clamp(8px, 1.8vw, 16px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.35rem, 6.8svh, 2.2rem) !important;
+    line-height: 1.04 !important;
+    margin-bottom: clamp(6px, 1.8svh, 12px) !important;
+    max-width: 90vw !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.72rem, 2.65svh, 0.92rem) !important;
+    line-height: 1.24 !important;
+    max-width: min(820px, 86vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(8px, 2.1svh, 12px) !important;
+    gap: clamp(7px, 1.8vw, 12px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 90vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 40vw !important;
+    font-size: clamp(0.72rem, 2.75svh, 0.94rem) !important;
+    line-height: 1.12 !important;
+    padding: clamp(7px, 1.8svh, 10px) clamp(12px, 2.6vw, 18px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 980px) {
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.18rem, 6.2svh, 1.85rem) !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.66rem, 2.45svh, 0.82rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    font-size: clamp(0.66rem, 2.5svh, 0.82rem) !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* =========================================================
+   V48 — poprawki: menu scroll na telefonie, zarząd, landscape sekcji
+   ========================================================= */
+
+/* 1) Menu hamburgera: przewijanie ma działać na każdej podstronie i w każdej orientacji.
+   Nie zmieniamy wielkości liter ani wyglądu pozycji menu. */
+#sideMenu {
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain !important;
+  touch-action: pan-y !important;
+}
+
+#sideMenu ul {
+  min-height: max-content !important;
+  padding-bottom: max(42px, env(safe-area-inset-bottom)) !important;
+}
+
+#sideMenu a {
+  font-size: 1.2rem !important;
+  padding: 15px 30px !important;
+  line-height: normal !important;
+}
+
+/* 2) Członkowie — Zarząd: zdjęcia takiej samej wielkości jak pozostałe osoby. */
+body.members-page .members-grid-zarzad .person-single img {
+  width: 180px !important;
+  height: 180px !important;
+  border-width: 4px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Telefon pionowo: zachowujemy proporcje jak u pozostałych ikon. */
+@media (max-width: 600px) and (orientation: portrait) {
+  body.members-page .members-grid-zarzad .person-single img {
+    width: 160px !important;
+    height: 160px !important;
+  }
+}
+
+/* Telefon poziomo: układ 2 + 1 zostaje, ale zdjęcia zarządu nie są już miniaturowe. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.members-page .members-grid-zarzad {
+    width: min(100%, 660px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(12px, 3svh, 22px) clamp(30px, 7vw, 52px) !important;
+  }
+
+  body.members-page .members-grid-zarzad .person-single {
+    width: min(100%, 210px) !important;
+  }
+
+  body.members-page .members-grid-zarzad .person-single img {
+    width: clamp(128px, 31svh, 160px) !important;
+    height: clamp(128px, 31svh, 160px) !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.members-page .members-grid-zarzad .person-single:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+  }
+}
+
+/* 3) Social Media na telefonie: zwykłe, naturalne przewijanie bez snapów i bez zatrzymań. */
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.social-page),
+  html.snap-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.social-page > .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* 4) Strona główna i Sekcje Koła — telefon poziomo.
+   Skalowanie treści i przycisków tak, żeby nie wchodziły pod menu/logo/język
+   i mieściły się w obrębie ekranu. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.home-page .section,
+  body.sections-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 48px) + 4px) !important;
+    padding-bottom: max(6px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 96vw) !important;
+    max-width: min(980px, 96vw) !important;
+    max-height: calc(100svh - var(--nav-control-size, 48px) - var(--page-edge, 8px) - 12px) !important;
+    padding: 0 clamp(6px, 1.4vw, 14px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.12rem, 5.7svh, 1.9rem) !important;
+    line-height: 1.03 !important;
+    margin-bottom: clamp(5px, 1.45svh, 10px) !important;
+    max-width: 96vw !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.58rem, 2.25svh, 0.78rem) !important;
+    line-height: 1.16 !important;
+    max-width: min(940px, 94vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    text-wrap: balance;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(6px, 1.7svh, 10px) !important;
+    gap: clamp(6px, 1.5vw, 10px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 96vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 43vw !important;
+    font-size: clamp(0.58rem, 2.25svh, 0.78rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(5px, 1.35svh, 8px) clamp(9px, 2vw, 15px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 28px !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+
+  body.home-page .stats-bar {
+    gap: clamp(8px, 2.4vw, 22px) !important;
+    margin-top: clamp(8px, 2svh, 14px) !important;
+  }
+
+  body.home-page .stat-number {
+    font-size: clamp(1.45rem, 6svh, 2.35rem) !important;
+  }
+
+  body.home-page .stat-label {
+    font-size: clamp(0.55rem, 2svh, 0.78rem) !important;
+  }
+
+  body.home-page #section4 .content {
+    width: min(100%, 97vw) !important;
+    max-width: 97vw !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    font-size: clamp(1.15rem, 5.8svh, 1.85rem) !important;
+    margin-bottom: clamp(5px, 1.4svh, 9px) !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    width: min(100%, 96vw) !important;
+    max-width: 96vw !important;
+    grid-template-columns: minmax(88px, 0.8fr) minmax(210px, 310px) minmax(88px, 0.8fr) !important;
+    gap: clamp(7px, 1.4vw, 13px) !important;
+  }
+
+  body.home-page #section4 .contact-buttons-vertical {
+    width: min(100%, 310px) !important;
+    gap: clamp(6px, 1.6svh, 10px) !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(94px, 27svh, 142px) !important;
+    padding: clamp(6px, 1.6svh, 10px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(68px, 17svh, 104px) !important;
+  }
+}
+
+/* Ekstremalnie niski telefon poziomo — ostatnie zabezpieczenie przed wychodzeniem treści poza ekran. */
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 980px) {
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(0.98rem, 5.2svh, 1.55rem) !important;
+    margin-bottom: 4px !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.52rem, 2.05svh, 0.68rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: 5px !important;
+    gap: 6px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    font-size: clamp(0.52rem, 2.05svh, 0.68rem) !important;
+    padding: 5px 9px !important;
+    border-width: 1px !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    grid-template-columns: minmax(72px, 0.7fr) minmax(190px, 280px) minmax(72px, 0.7fr) !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(78px, 24svh, 112px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(58px, 15svh, 86px) !important;
+  }
+}
+
+/* =========================================================
+   V49 — poprawki mobilne i menu
+   - menu przewijane poniżej hamburgera/logo
+   - lepsze dopasowanie poziomego telefonu
+   - mocniejszy, ale nadal subtelny efekt gwiazdek
+   ========================================================= */
+
+/* Menu boczne: przewijanie zaczyna się dopiero pod ikonami menu/logo,
+   dzięki temu tekst menu nie nachodzi na hamburger ani logo HMI. */
+#sideMenu {
+  --menu-safe-top: calc(var(--page-edge, 20px) + var(--nav-control-size, 62px) + clamp(16px, 3svh, 28px));
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  padding-top: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#sideMenu ul {
+  list-style: none !important;
+  margin: var(--menu-safe-top) 0 0 0 !important;
+  padding: 0 0 max(44px, env(safe-area-inset-bottom)) 0 !important;
+  max-height: calc(100dvh - var(--menu-safe-top)) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain !important;
+  touch-action: pan-y !important;
+  scrollbar-width: thin;
+}
+
+#sideMenu a {
+  font-size: 1.2rem !important;
+  padding: 15px 30px !important;
+  line-height: normal !important;
+}
+
+@media (max-width: 980px) {
+  #sideMenu {
+    --menu-safe-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + clamp(12px, 3svh, 22px));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  #sideMenu {
+    --menu-safe-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 46px) + 12px);
+  }
+
+  #sideMenu ul {
+    max-height: calc(100svh - var(--menu-safe-top)) !important;
+  }
+}
+
+/* Loader — mocniejszy, bardziej widoczny efekt gwiezdny, ale nadal jako tło. */
+#loader::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -14% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,1) 0 1.35px, transparent 2.65px),
+    radial-gradient(circle at 76% 28%, rgba(182,226,255,0.98) 0 1.18px, transparent 2.45px),
+    radial-gradient(circle at 38% 64%, rgba(255,255,255,0.90) 0 1.1px, transparent 2.25px),
+    radial-gradient(circle at 88% 78%, rgba(255,239,160,0.86) 0 1.2px, transparent 2.38px),
+    radial-gradient(circle at 48% 12%, rgba(210,245,255,0.82) 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 74%, rgba(255,255,255,0.90) 0 1.08px, transparent 2.18px) !important;
+  background-size: 175px 175px, 240px 240px, 310px 310px, 390px 390px, 500px 500px, 260px 260px !important;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.95)) drop-shadow(0 0 18px rgba(140,205,255,0.58)) !important;
+  opacity: 0.9 !important;
+  animation: loaderMagicTwinkle 2.9s ease-in-out infinite alternate,
+             loaderMagicDrift 24s ease-in-out infinite alternate !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+#loader .loader-logo {
+  position: relative;
+  z-index: 2;
+}
+
+/* Strona główna — telefon poziomo: całość ma się mieścić w jednej sekcji.
+   Zmniejszamy głównie odstępy, nie zmieniamy stylu. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.home-page .section,
+  body.sections-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 46px) + 4px) !important;
+    padding-bottom: max(5px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 97vw) !important;
+    max-width: min(980px, 97vw) !important;
+    max-height: calc(100svh - var(--nav-control-size, 46px) - var(--page-edge, 8px) - 10px) !important;
+    padding: 0 clamp(6px, 1.2vw, 12px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.02rem, 5.35svh, 1.72rem) !important;
+    line-height: 1.02 !important;
+    margin-bottom: clamp(3px, 0.9svh, 7px) !important;
+    max-width: 96vw !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.55rem, 2.15svh, 0.76rem) !important;
+    line-height: 1.12 !important;
+    max-width: min(940px, 94vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(4px, 1.1svh, 7px) !important;
+    gap: clamp(5px, 1.2vw, 9px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 96vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 44vw !important;
+    font-size: clamp(0.66rem, 2.45svh, 0.9rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(6px, 1.55svh, 9px) clamp(11px, 2.3vw, 17px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 30px !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+
+  body.home-page #section4 .content {
+    width: min(100%, 98vw) !important;
+    max-width: 98vw !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    font-size: clamp(1rem, 5svh, 1.55rem) !important;
+    line-height: 1.02 !important;
+    margin-bottom: clamp(2px, 0.7svh, 5px) !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    width: min(100%, 97vw) !important;
+    max-width: 97vw !important;
+    grid-template-columns: minmax(86px, 0.78fr) minmax(210px, 310px) minmax(86px, 0.78fr) !important;
+    gap: clamp(5px, 1vw, 10px) !important;
+    align-items: center !important;
+  }
+
+  body.home-page #section4 .contact-buttons-vertical {
+    width: min(100%, 310px) !important;
+    gap: clamp(3px, 0.75svh, 6px) !important;
+    margin-top: 0 !important;
+  }
+
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    font-size: clamp(0.68rem, 2.45svh, 0.9rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(6px, 1.55svh, 9px) clamp(10px, 2vw, 15px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 28px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(86px, 24svh, 124px) !important;
+    padding: clamp(5px, 1.3svh, 8px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(62px, 15svh, 90px) !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 980px) {
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(0.88rem, 4.7svh, 1.42rem) !important;
+    margin-bottom: 3px !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.48rem, 1.88svh, 0.64rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: 4px !important;
+    gap: 5px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    font-size: clamp(0.52rem, 2.02svh, 0.68rem) !important;
+    padding: 5px 9px !important;
+    border-width: 1px !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    grid-template-columns: minmax(70px, 0.68fr) minmax(188px, 276px) minmax(70px, 0.68fr) !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(72px, 22svh, 104px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(54px, 13.5svh, 78px) !important;
+  }
+}
+
+
+/* =========================================================
+   V50 — poprawka menu hamburgera na telefonie poziomo/pionowo
+   Menu zachowuje oryginalny wygląd napisów, ale przewija się płynnie,
+   a lista startuje pod hamburgerem i logo HMI.
+   ========================================================= */
+#sideMenu {
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  padding-top: calc(var(--page-edge, 20px) + var(--nav-control-size, 62px) + 16px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain !important;
+  touch-action: pan-y !important;
+  scroll-behavior: smooth !important;
+}
+
+#sideMenu ul {
+  margin: 0 !important;
+  padding: 0 0 max(54px, env(safe-area-inset-bottom)) 0 !important;
+  min-height: max-content !important;
+  max-height: none !important;
+  overflow: visible !important;
+  list-style: none !important;
+}
+
+#sideMenu a {
+  font-size: 1.2rem !important;
+  padding: 15px 30px !important;
+  line-height: normal !important;
+}
+
+@media (max-width: 980px) {
+  #sideMenu {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 14px) !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  #sideMenu {
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 46px) + 10px) !important;
+  }
+}
+
+
+/* =========================================================
+   V50 — Sekcje Koła i strona główna
+   Przywrócenie bardziej naturalnych rozmiarów tekstów/przycisków,
+   bliżej oryginalnej strony. Na telefonie poziomo treść jest skalowana
+   tylko tyle, żeby nie nachodziła na menu/logo/język.
+   ========================================================= */
+body.home-page .content h1,
+body.sections-page .content h1 {
+  font-size: clamp(2.8rem, 8vw, 5.5rem) !important;
+  line-height: 1.08 !important;
+}
+
+body.home-page .content p,
+body.sections-page .content p {
+  font-size: 1.65rem !important;
+  line-height: 1.7 !important;
+}
+
+body.sections-page .section .achievements-btn,
+body.sections-page .section .achievements-btS {
+  font-size: 1.4rem !important;
+  padding: 16px 36px !important;
+  border-radius: 50px !important;
+  white-space: nowrap !important;
+}
+
+/* Telefon poziomo: rozmiar jest nadal czytelny, ale mieści się w widoku. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.home-page .section,
+  body.sections-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 46px) + 8px) !important;
+    padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 96vw) !important;
+    max-width: min(1040px, 96vw) !important;
+    max-height: calc(100svh - var(--nav-control-size, 46px) - var(--page-edge, 8px) - 18px) !important;
+    padding: 0 clamp(8px, 1.4vw, 16px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.45rem, 6.8svh, 2.45rem) !important;
+    line-height: 1.06 !important;
+    margin-bottom: clamp(6px, 1.4svh, 12px) !important;
+    max-width: 94vw !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.78rem, 2.85svh, 1.05rem) !important;
+    line-height: 1.22 !important;
+    max-width: min(920px, 92vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(8px, 1.8svh, 14px) !important;
+    gap: clamp(8px, 1.6vw, 14px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 94vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 43vw !important;
+    font-size: clamp(0.82rem, 2.9svh, 1.08rem) !important;
+    line-height: 1.12 !important;
+    padding: clamp(8px, 1.7svh, 12px) clamp(14px, 2.6vw, 22px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    font-size: clamp(1.35rem, 6.2svh, 2.1rem) !important;
+    margin-bottom: clamp(5px, 1.1svh, 10px) !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    grid-template-columns: minmax(100px, 0.82fr) minmax(240px, 340px) minmax(100px, 0.82fr) !important;
+    gap: clamp(8px, 1.4vw, 14px) !important;
+  }
+
+  body.home-page #section4 .contact-buttons-vertical {
+    gap: clamp(6px, 1.4svh, 10px) !important;
+  }
+
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    font-size: clamp(0.78rem, 2.65svh, 1rem) !important;
+    padding: clamp(7px, 1.6svh, 11px) clamp(12px, 2vw, 18px) !important;
+    border-radius: 50px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(92px, 25svh, 138px) !important;
+    padding: clamp(6px, 1.4svh, 10px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(66px, 16svh, 100px) !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 980px) {
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.05rem, 5.2svh, 1.65rem) !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.58rem, 2.18svh, 0.76rem) !important;
+    line-height: 1.13 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: 5px !important;
+    gap: 6px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    font-size: clamp(0.58rem, 2.12svh, 0.76rem) !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* Social Media i Współpraca: na telefonie przewijanie naturalne, bez snapów i zatrzymań. */
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.social-page),
+  html:has(body.cooperation-page),
+  html.snap-page:has(body.social-page),
+  html.snap-page:has(body.cooperation-page) {
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body.social-page,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+}
+
+
+/* =========================================================
+   V51 — menu hamburgera na telefonie: scroll bez nachodzenia
+   Linki przewijają się w obszarze pod hamburgerem i logo HMI.
+   Na komputerze układ menu zostaje bez zmian.
+   ========================================================= */
+@media (max-width: 980px), (max-height: 620px) and (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 56px) + 18px);
+    margin: var(--menu-safe-top) 0 0 0 !important;
+    padding: 0 0 max(42px, env(safe-area-inset-bottom)) 0 !important;
+    height: calc(100dvh - var(--menu-safe-top)) !important;
+    max-height: calc(100dvh - var(--menu-safe-top)) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-gutter: stable;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 48px) + 14px);
+  }
+}
+
+
+/* =========================================================
+   V51 — poprawki mobile/landscape: sekcje, kontakt, zarząd,
+   social media i płynne przewijanie zwykłych podstron.
+   ========================================================= */
+
+/* Zarząd ma takie same zdjęcia jak liderzy zespołów. */
+.members-grid-zarzad .person-single img,
+.members-grid-zarzad .person img {
+  width: 180px !important;
+  height: 180px !important;
+  border-width: 4px !important;
+}
+
+@media (max-width: 600px) {
+  .members-grid-zarzad .person-single img,
+  .members-grid-zarzad .person img {
+    width: 160px !important;
+    height: 160px !important;
+  }
+}
+
+/* Telefon poziomo — strona główna i Sekcje Koła muszą mieścić całą treść w sekcji. */
+@media (orientation: landscape) and (max-width: 1024px) {
+  body.home-page .section,
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 50px) + 4px) !important;
+    padding-bottom: max(6px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 96vw) !important;
+    max-width: min(980px, 96vw) !important;
+    max-height: calc(100svh - var(--nav-control-size, 50px) - var(--page-edge, 8px) - 14px) !important;
+    padding: 0 clamp(8px, 1.4vw, 16px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.15rem, 5.8svh, 2rem) !important;
+    line-height: 1.04 !important;
+    margin: 0 0 clamp(4px, 0.9svh, 8px) !important;
+    max-width: 94vw !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.62rem, 2.35svh, 0.88rem) !important;
+    line-height: 1.16 !important;
+    max-width: min(920px, 92vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(5px, 1.05svh, 9px) !important;
+    gap: clamp(6px, 1.2vw, 10px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 94vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 44vw !important;
+    font-size: clamp(0.64rem, 2.35svh, 0.88rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(5px, 1.25svh, 8px) clamp(10px, 2.1vw, 16px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 30px !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+
+  /* Kontakt na stronie głównej — poziomo: QR po bokach, całość na środku jednej sekcji. */
+  body.home-page #section4 .content {
+    width: min(100%, 98vw) !important;
+    max-width: 98vw !important;
+    transform: none !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    font-size: clamp(1.05rem, 5.1svh, 1.7rem) !important;
+    line-height: 1.03 !important;
+    margin: 0 0 clamp(4px, 0.9svh, 7px) !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    width: min(100%, 97vw) !important;
+    max-width: 97vw !important;
+    display: grid !important;
+    grid-template-columns: minmax(78px, 0.8fr) minmax(210px, 330px) minmax(78px, 0.8fr) !important;
+    grid-template-areas: "qrleft buttons qrright" !important;
+    gap: clamp(6px, 1.2vw, 12px) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  body.home-page #section4 .contact-qr-left { grid-area: qrleft !important; }
+  body.home-page #section4 .contact-qr-right { grid-area: qrright !important; }
+  body.home-page #section4 .contact-buttons-vertical { grid-area: buttons !important; }
+
+  body.home-page #section4 .contact-buttons-vertical {
+    width: min(100%, 330px) !important;
+    gap: clamp(4px, 0.9svh, 7px) !important;
+    margin-top: 0 !important;
+  }
+
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    font-size: clamp(0.64rem, 2.25svh, 0.86rem) !important;
+    line-height: 1.06 !important;
+    padding: clamp(5px, 1.25svh, 8px) clamp(10px, 2vw, 16px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 28px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(82px, 23svh, 120px) !important;
+    min-height: 0 !important;
+    padding: clamp(5px, 1.2svh, 8px) !important;
+    transform: none !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(60px, 14.5svh, 88px) !important;
+    margin: auto !important;
+  }
+}
+
+/* Bardzo niskie telefony poziomo — dodatkowe zagęszczenie, bez ucinania tekstu. */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 430px) {
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(0.92rem, 4.6svh, 1.45rem) !important;
+    margin-bottom: 3px !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.46rem, 1.86svh, 0.64rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: 4px !important;
+    gap: 5px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    font-size: clamp(0.52rem, 2.02svh, 0.68rem) !important;
+    padding: 5px 9px !important;
+    border-width: 1px !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    grid-template-columns: minmax(64px, 0.68fr) minmax(188px, 276px) minmax(64px, 0.68fr) !important;
+    gap: 5px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(70px, 21svh, 98px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(52px, 13svh, 74px) !important;
+  }
+}
+
+/* Social Media na telefonie: zwykłe, płynne przewijanie bez zatrzymywania. */
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.social-page),
+  html.snap-page:has(body.social-page),
+  body.social-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: auto !important;
+    touch-action: pan-y !important;
+  }
+
+  body.social-page > .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+
+/* V51 — gwiazdki delikatnie mocniejsze, nadal jako tło. */
+.page-magic-dust::before,
+.page-magic-dust::after,
+.loader-magic-dust::before,
+.loader-magic-dust::after {
+  opacity: 1 !important;
+  filter: brightness(1.18) drop-shadow(0 0 4px rgba(187,238,255,0.34)) !important;
+}
+
+
+/* =========================================================
+   V52 — finalne poprawki: menu mobilne, rozmiary członków,
+   landscape dla strony głównej i Sekcji Koła.
+   ========================================================= */
+
+/* Wszystkie zdjęcia osób w Zarządzie, Liderach i Członkach mają te same parametry.
+   Opiekun zostaje osobnym, większym elementem. */
+body.members-page .members-grid-zarzad .person-single,
+body.members-page .members-grid .person {
+  width: 220px !important;
+  max-width: 100% !important;
+}
+
+body.members-page .members-grid-zarzad .person-single img,
+body.members-page .members-grid .person img,
+body.members-page .members-grid-zarzad .person img,
+body.members-page .members-grid-zarzad .person1 img,
+body.members-page .members-grid-zarzad2 .person2 img {
+  width: 180px !important;
+  height: 180px !important;
+  border-width: 4px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  margin-bottom: 20px !important;
+}
+
+@media (max-width: 600px) {
+  body.members-page .members-grid-zarzad .person-single img,
+  body.members-page .members-grid .person img,
+  body.members-page .members-grid-zarzad .person img,
+  body.members-page .members-grid-zarzad .person1 img,
+  body.members-page .members-grid-zarzad2 .person2 img {
+    width: 160px !important;
+    height: 160px !important;
+  }
+}
+
+/* Menu hamburgera — na komputerze zostaje klasyczne/statyczne,
+   a na telefonie/płytkich ekranach przewija się w osobnym obszarze pod ikonami. */
+@media (max-width: 980px), (max-height: 620px) and (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: none !important;
+  }
+
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 56px) + 22px);
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--menu-safe-top) !important;
+    bottom: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 max(54px, env(safe-area-inset-bottom)) 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-gutter: stable;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 48px) + 18px);
+  }
+}
+
+/* Strona główna i Sekcje Koła — telefon poziomo.
+   Układ ma działać tak samo: treść skaluje się do wysokości ekranu i nie wchodzi pod menu. */
+@media (orientation: landscape) and (max-width: 1024px) {
+  body.home-page .section,
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 50px) + 8px) !important;
+    padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 96vw) !important;
+    max-width: min(980px, 96vw) !important;
+    height: auto !important;
+    max-height: calc(100svh - var(--nav-control-size, 50px) - var(--page-edge, 8px) - 20px) !important;
+    padding: 0 clamp(8px, 1.5vw, 16px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(4px, 1svh, 8px) !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.08rem, 5.2svh, 1.85rem) !important;
+    line-height: 1.04 !important;
+    margin: 0 !important;
+    max-width: 94vw !important;
+    text-wrap: balance;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.56rem, 2.18svh, 0.8rem) !important;
+    line-height: 1.14 !important;
+    max-width: min(920px, 92vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  body.sections-page .section .buttons-container,
+  body.home-page .section .buttons-container {
+    margin-top: clamp(4px, 1svh, 8px) !important;
+    gap: clamp(6px, 1.3vw, 10px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 94vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page .section .achievements-btn,
+  body.home-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 44vw !important;
+    font-size: clamp(0.58rem, 2.1svh, 0.78rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(5px, 1.1svh, 8px) clamp(10px, 2vw, 16px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 30px !important;
+  }
+
+  body.sections-page .section .achievements-btS,
+  body.home-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 430px) {
+  body.home-page .section,
+  body.sections-page .section {
+    padding-top: calc(var(--page-edge, 7px) + var(--nav-control-size, 46px) + 5px) !important;
+    padding-bottom: 5px !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    max-height: calc(100svh - var(--nav-control-size, 46px) - var(--page-edge, 7px) - 10px) !important;
+    gap: 3px !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(0.86rem, 4.25svh, 1.34rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.43rem, 1.78svh, 0.62rem) !important;
+    line-height: 1.07 !important;
+  }
+
+  body.sections-page .section .buttons-container,
+  body.home-page .section .buttons-container {
+    margin-top: 3px !important;
+    gap: 5px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page .section .achievements-btn,
+  body.home-page .section .achievements-btS {
+    font-size: clamp(0.48rem, 1.9svh, 0.64rem) !important;
+    line-height: 1.05 !important;
+    padding: 4px 8px !important;
+    border-width: 1px !important;
+  }
+}
+
+
+/* =========================================================
+   V53 — menu hamburgera: desktop statyczny, telefon poziomo/pionowo przewijalny.
+   Nie zmienia wielkości liter ani wyglądu przycisków.
+   ========================================================= */
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    overflow: visible !important;
+    overscroll-behavior: auto !important;
+    touch-action: auto !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+    list-style: none !important;
+  }
+}
+
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: auto !important;
+  }
+
+  #sideMenu ul {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    bottom: max(14px, env(safe-area-inset-bottom)) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 34px 0 !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-width: thin;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  #sideMenu ul {
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 48px) + 12px) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+
+/* =========================================================
+   V53 — Sekcje Koła: przywrócenie naturalnego rozmieszczenia
+   tekstu i odstępów, z symetrycznym dopasowaniem w poziomie telefonu.
+   ========================================================= */
+body.sections-page .content {
+  text-align: center !important;
+  max-width: 1000px !important;
+}
+
+body.sections-page .content h1 {
+  margin-bottom: 1.5rem !important;
+}
+
+body.sections-page .content p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  body.sections-page .content {
+    width: min(100%, 94vw) !important;
+    max-width: 940px !important;
+    max-height: calc(100svh - var(--page-edge, 8px) - 10px) !important;
+    padding: calc(var(--page-edge, 8px) + var(--nav-control-size, 50px) + 4px) clamp(14px, 2vw, 24px) max(8px, env(safe-area-inset-bottom)) !important;
+    display: block !important;
+    overflow: hidden !important;
+    transform: none !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .content h1 {
+    font-size: clamp(1.35rem, 6.1svh, 2.1rem) !important;
+    line-height: 1.08 !important;
+    margin: 0 0 clamp(8px, 1.9svh, 14px) !important;
+    max-width: 94vw !important;
+    text-align: center !important;
+    text-wrap: balance;
+  }
+
+  body.sections-page .content p {
+    font-size: clamp(0.68rem, 2.65svh, 0.92rem) !important;
+    line-height: 1.28 !important;
+    max-width: min(900px, 91vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(8px, 2svh, 16px) !important;
+    gap: clamp(10px, 2.1vw, 18px) !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 94vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 46vw !important;
+    font-size: clamp(0.68rem, 2.45svh, 0.9rem) !important;
+    line-height: 1.12 !important;
+    padding: clamp(7px, 1.6svh, 10px) clamp(14px, 2.6vw, 24px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 50px !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 390px) {
+  body.sections-page .content {
+    padding-top: calc(var(--page-edge, 7px) + var(--nav-control-size, 46px) + 2px) !important;
+    padding-bottom: 5px !important;
+  }
+
+  body.sections-page .content h1 {
+    font-size: clamp(1.08rem, 5.15svh, 1.58rem) !important;
+    line-height: 1.04 !important;
+    margin-bottom: clamp(5px, 1.2svh, 8px) !important;
+  }
+
+  body.sections-page .content p {
+    font-size: clamp(0.52rem, 2.08svh, 0.72rem) !important;
+    line-height: 1.16 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: 6px !important;
+    gap: 7px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    font-size: clamp(0.54rem, 1.98svh, 0.68rem) !important;
+    line-height: 1.05 !important;
+    padding: 5px 10px !important;
+    border-width: 1px !important;
+  }
+}
+
+/* =========================================================
+   V54 — MENU HAMBURGER: komputer statycznie, telefon poziomo/pionowo z normalnym scrollowaniem
+   Działa na stronach korzystających ze styles.css.
+   ========================================================= */
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    overflow: visible !important;
+    -webkit-overflow-scrolling: auto !important;
+    overscroll-behavior: auto !important;
+    touch-action: auto !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+}
+
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    padding-bottom: max(18px, env(safe-area-inset-bottom)) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 0 24px 0 !important;
+    list-style: none !important;
+    touch-action: pan-y !important;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  #sideMenu {
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 48px) + 12px) !important;
+    padding-bottom: max(14px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* =========================================================
+   V56 — MENU HAMBURGER: płynne przewijanie na telefonie,
+   ukrywanie linków pod górną strefą menu, desktop statycznie.
+   ========================================================= */
+:root {
+  --menu-scroll-top-space: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 12px) + var(--nav-control-size, 56px) + 16px);
+  --menu-scroll-bottom-space: max(18px, env(safe-area-inset-bottom));
+}
+
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+
+  #sideMenu::before {
+    display: none !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    touch-action: auto !important;
+  }
+}
+
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #sideMenu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: var(--menu-scroll-top-space) !important;
+    background: #001a33 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  #sideMenu ul {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--menu-scroll-top-space) !important;
+    bottom: var(--menu-scroll-bottom-space) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 38px 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-width: thin !important;
+    z-index: 1 !important;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  :root {
+    --menu-scroll-top-space: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 10px);
+    --menu-scroll-bottom-space: max(8px, env(safe-area-inset-bottom));
+  }
+
+  #sideMenu ul {
+    padding-bottom: 26px !important;
+  }
+}
+
+/* =========================================================
+   V57 — TYLKO DODANE: scroll menu hamburgera na telefonie poziomo
+   Desktop zostaje bez zmian.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 14px) !important;
+    padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+  }
+
+  #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 0 34px 0 !important;
+    list-style: none !important;
+    touch-action: pan-y !important;
+  }
+}
+
+/* =========================================================
+   V62 — Sekcje Koła: dopasowanie jednej sekcji na telefonie poziomo.
+   Zmiana dotyczy tylko podstrony Sekcje Koła w orientacji poziomej telefonu.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .content {
+    width: min(100%, 95vw) !important;
+    max-width: 960px !important;
+    max-height: 100svh !important;
+    padding: calc(var(--page-safe-top, 8px) + var(--nav-control-size, 52px) + clamp(0px, 0.7svh, 6px))
+             clamp(12px, 2.4vw, 24px)
+             max(5px, env(safe-area-inset-bottom)) !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    display: block !important;
+    text-align: center !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+
+  body.sections-page .content h1 {
+    font-size: clamp(1.1rem, 5.35svh, 2rem) !important;
+    line-height: 1.05 !important;
+    margin: 0 auto clamp(4px, 1svh, 8px) !important;
+    max-width: 94vw !important;
+    text-align: center !important;
+    text-wrap: balance;
+  }
+
+  body.sections-page .content p {
+    font-size: clamp(0.5rem, 2.05svh, 0.78rem) !important;
+    line-height: 1.14 !important;
+    max-width: min(900px, 92vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+    overflow: visible !important;
+    text-wrap: pretty;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(5px, 1.25svh, 10px) !important;
+    gap: clamp(6px, 1.5vw, 12px) !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 95vw !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  body.sections-page .content > .achievements-btn,
+  body.sections-page .content > .achievements-btS {
+    margin-top: clamp(5px, 1.25svh, 10px) !important;
+  }
+
+  body.sections-page .content > .achievements-btn {
+    margin-left: 0 !important;
+    margin-right: clamp(6px, 1.3vw, 12px) !important;
+  }
+
+  body.sections-page .content > .achievements-btS {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 46vw !important;
+    font-size: clamp(0.55rem, 1.95svh, 0.78rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(5px, 1.25svh, 8px) clamp(11px, 2vw, 20px) !important;
+    border-radius: 999px !important;
+    white-space: normal !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 420px) {
+  body.sections-page .content {
+    padding-top: calc(var(--page-safe-top, 7px) + var(--nav-control-size, 48px) + 1px) !important;
+    padding-bottom: 4px !important;
+  }
+
+  body.sections-page .content h1 {
+    font-size: clamp(0.96rem, 4.7svh, 1.55rem) !important;
+    line-height: 1.03 !important;
+    margin-bottom: clamp(3px, 0.75svh, 6px) !important;
+  }
+
+  body.sections-page .content p {
+    font-size: clamp(0.44rem, 1.82svh, 0.66rem) !important;
+    line-height: 1.11 !important;
+    max-width: min(900px, 93vw) !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(4px, 0.9svh, 7px) !important;
+    gap: clamp(5px, 1vw, 9px) !important;
+  }
+
+  body.sections-page .content > .achievements-btn,
+  body.sections-page .content > .achievements-btS {
+    margin-top: clamp(4px, 0.9svh, 7px) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    max-width: 47vw !important;
+    font-size: clamp(0.46rem, 1.65svh, 0.62rem) !important;
+    line-height: 1.05 !important;
+    padding: clamp(4px, 0.9svh, 6px) clamp(9px, 1.55vw, 16px) !important;
+    border-width: 1px !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 900px) and (max-height: 340px) {
+  body.sections-page .content h1 {
+    font-size: clamp(0.82rem, 4.25svh, 1.25rem) !important;
+  }
+
+  body.sections-page .content p {
+    font-size: clamp(0.39rem, 1.58svh, 0.54rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    font-size: clamp(0.4rem, 1.45svh, 0.52rem) !important;
+    padding: 3px 8px !important;
+  }
+}
+
+/* =========================================================
+   V63 — Sekcje Koła: porządne dopasowanie dla telefonu poziomo.
+   Cel: nagłówek, cały opis i dwa przyciski mieszczą się w jednej sekcji,
+   bez wchodzenia pod hamburger, logo HMI i przycisk języka.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  html:has(body.sections-page),
+  html.snap-page:has(body.sections-page),
+  body.sections-page {
+    overflow-x: hidden !important;
+  }
+
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  body.sections-page .section .content {
+    --sections-landscape-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 52px) + clamp(4px, 1.2svh, 10px));
+    --sections-landscape-bottom: max(6px, env(safe-area-inset-bottom));
+
+    width: min(100%, 96vw) !important;
+    max-width: 980px !important;
+    height: calc(100svh - var(--sections-landscape-top) - var(--sections-landscape-bottom)) !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: var(--sections-landscape-top) auto var(--sections-landscape-bottom) !important;
+    padding: 0 clamp(12px, 2.5vw, 24px) !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(4px, 1.05svh, 8px) !important;
+
+    overflow: hidden !important;
+    text-align: center !important;
+    transform: none !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    width: 100% !important;
+    max-width: min(900px, 92vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(1.02rem, 4.35svh, 1.78rem) !important;
+    line-height: 1.03 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    text-wrap: balance;
+    overflow-wrap: break-word !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en],
+  body.sections-page .section .content p[data-pl][data-en] + .buttons-container {
+    min-height: 0 !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    width: 100% !important;
+    max-width: min(920px, 92vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: block !important;
+    align-items: initial !important;
+    justify-content: initial !important;
+    font-size: clamp(0.57rem, 2.45svh, 0.82rem) !important;
+    line-height: 1.16 !important;
+    letter-spacing: 0.002em !important;
+    text-align: center !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.9) !important;
+    overflow: visible !important;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  body.sections-page .section .buttons-container {
+    width: 100% !important;
+    max-width: min(620px, 92vw) !important;
+    margin: clamp(5px, 1.25svh, 9px) auto 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(7px, 1.6vw, 14px) !important;
+    box-sizing: border-box !important;
+  }
+
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    margin-top: clamp(5px, 1.25svh, 9px) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 44vw !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: clamp(4px, 1.08svh, 7px) clamp(12px, 2.2vw, 20px) !important;
+    font-size: clamp(0.52rem, 1.95svh, 0.72rem) !important;
+    line-height: 1.08 !important;
+    border-width: 1px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Bardzo niskie poziome ekrany — dodatkowe zagęszczenie, żeby nic nie ucinało tekstu. */
+@media (orientation: landscape) and (max-width: 920px) and (max-height: 410px) {
+  body.sections-page .section .content {
+    --sections-landscape-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 7px) + var(--nav-control-size, 48px) + 3px);
+    width: min(100%, 97vw) !important;
+    padding-left: clamp(10px, 2vw, 18px) !important;
+    padding-right: clamp(10px, 2vw, 18px) !important;
+    gap: clamp(3px, 0.85svh, 6px) !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(0.84rem, 4.05svh, 1.38rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.47rem, 2.08svh, 0.64rem) !important;
+    line-height: 1.11 !important;
+    max-width: min(920px, 94vw) !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(3px, 0.85svh, 6px) !important;
+    gap: clamp(5px, 1.1vw, 9px) !important;
+    max-width: min(560px, 94vw) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    max-width: 45vw !important;
+    font-size: clamp(0.42rem, 1.72svh, 0.56rem) !important;
+    line-height: 1.05 !important;
+    padding: clamp(3px, 0.8svh, 5px) clamp(8px, 1.7vw, 14px) !important;
+    border-width: 1px !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 860px) and (max-height: 340px) {
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(0.72rem, 3.7svh, 1.08rem) !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.39rem, 1.8svh, 0.52rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    font-size: clamp(0.36rem, 1.45svh, 0.48rem) !important;
+    padding: 3px 7px !important;
+  }
+}
+
+/* =========================================================
+   V64 — Sekcje Koła: czytelniejsze skalowanie telefonu poziomo.
+   Rozkłada nagłówek, opis i przyciski po całej dostępnej wysokości sekcji,
+   zwiększa czytelność tekstu oraz układa dwa przyciski w jednym rzędzie.
+   Dotyczy tylko podstrony Sekcje Koła w orientacji poziomej telefonu.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    overflow: hidden !important;
+  }
+
+  body.sections-page .section .content {
+    --sections-landscape-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 52px) + clamp(4px, 1.2svh, 9px));
+    --sections-landscape-bottom: max(7px, env(safe-area-inset-bottom));
+
+    width: min(100%, 97vw) !important;
+    max-width: 1040px !important;
+    height: calc(100svh - var(--sections-landscape-top) - var(--sections-landscape-bottom)) !important;
+    min-height: 0 !important;
+    margin: var(--sections-landscape-top) auto var(--sections-landscape-bottom) !important;
+    padding: clamp(3px, 1svh, 8px) clamp(14px, 2.8vw, 28px) !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto minmax(0, auto) auto !important;
+    align-content: space-evenly !important;
+    justify-content: center !important;
+    align-items: center !important;
+    justify-items: center !important;
+    column-gap: clamp(10px, 2.2vw, 22px) !important;
+    row-gap: clamp(5px, 1.35svh, 10px) !important;
+
+    overflow: hidden !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: min(960px, 94vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(1.15rem, 6.2svh, 2rem) !important;
+    line-height: 1.04 !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: min(980px, 94vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(0.72rem, 3.95svh, 1rem) !important;
+    line-height: 1.18 !important;
+    letter-spacing: 0.002em !important;
+    text-align: center !important;
+    text-shadow: 0 2px 13px rgba(0,0,0,0.92) !important;
+    overflow: visible !important;
+    text-wrap: pretty !important;
+    hyphens: auto !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: min(700px, 92vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(10px, 2.2vw, 22px) !important;
+  }
+
+  body.sections-page .section .content > .achievements-btn {
+    grid-column: 1 !important;
+    justify-self: end !important;
+  }
+
+  body.sections-page .section .content > .achievements-btS {
+    grid-column: 2 !important;
+    justify-self: start !important;
+  }
+
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    margin: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    width: auto !important;
+    min-width: clamp(150px, 23vw, 230px) !important;
+    max-width: min(43vw, 300px) !important;
+    min-height: clamp(26px, 7.2svh, 42px) !important;
+    padding: clamp(6px, 1.55svh, 10px) clamp(14px, 2.7vw, 26px) !important;
+    font-size: clamp(0.62rem, 2.35svh, 0.92rem) !important;
+    line-height: 1.08 !important;
+    border-width: 1.5px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 920px) and (max-height: 410px) {
+  body.sections-page .section .content {
+    --sections-landscape-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 7px) + var(--nav-control-size, 48px) + 3px);
+    width: min(100%, 98vw) !important;
+    padding: 2px clamp(10px, 2.4vw, 20px) !important;
+    row-gap: clamp(3px, 0.9svh, 6px) !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(1rem, 5.7svh, 1.55rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.62rem, 3.25svh, 0.82rem) !important;
+    line-height: 1.12 !important;
+    max-width: min(980px, 95vw) !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    max-width: min(620px, 94vw) !important;
+    gap: clamp(7px, 1.6vw, 14px) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: clamp(128px, 24vw, 190px) !important;
+    max-width: 44vw !important;
+    min-height: clamp(22px, 6.5svh, 34px) !important;
+    font-size: clamp(0.52rem, 2.35svh, 0.68rem) !important;
+    padding: clamp(4px, 1.15svh, 7px) clamp(10px, 2vw, 18px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 860px) and (max-height: 340px) {
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(0.9rem, 5.35svh, 1.22rem) !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.52rem, 2.82svh, 0.64rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-height: 22px !important;
+    font-size: clamp(0.45rem, 2.05svh, 0.56rem) !important;
+    padding: 3px 9px !important;
+  }
+}
+
+
+/* =========================================================
+   V65 — profesjonalny wygląd: wyłączenie animowanych gwiazdek.
+   ========================================================= */
+.page-magic-dust,
+.section-magic-dust,
+.loader-magic-dust,
+.stars-background,
+#starsCanvas {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+.page-magic-dust::before,
+.page-magic-dust::after,
+.section-magic-dust::before,
+.section-magic-dust::after,
+.loader-magic-dust::before,
+.loader-magic-dust::after {
+  content: none !important;
+  animation: none !important;
+}
+
+
+/* =========================================================
+   V65 — Sekcje Koła: większy, czytelny układ telefonu poziomo.
+   Nagłówek, opis i dwa przyciski wypełniają sekcję równomiernie,
+   ale nadal mieszczą się na jednym ekranie.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    overflow: hidden !important;
+  }
+
+  body.sections-page .section .content {
+    --sections-v65-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 52px) + clamp(2px, 0.9svh, 7px));
+    --sections-v65-bottom: max(6px, env(safe-area-inset-bottom));
+
+    width: min(100%, 96vw) !important;
+    max-width: 1080px !important;
+    height: calc(100svh - var(--sections-v65-top) - var(--sections-v65-bottom)) !important;
+    margin: var(--sections-v65-top) auto var(--sections-v65-bottom) !important;
+    padding: clamp(4px, 1.2svh, 9px) clamp(18px, 3.2vw, 32px) !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto minmax(0, 1fr) auto !important;
+    align-content: stretch !important;
+    align-items: center !important;
+    justify-items: center !important;
+    column-gap: clamp(12px, 2.4vw, 26px) !important;
+    row-gap: clamp(7px, 1.8svh, 14px) !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: min(980px, 94vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(1.32rem, 7.1svh, 2.32rem) !important;
+    line-height: 1.02 !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    grid-column: 1 / -1 !important;
+    align-self: center !important;
+    width: 100% !important;
+    max-width: min(1000px, 94vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(0.82rem, 4.35svh, 1.14rem) !important;
+    line-height: 1.14 !important;
+    letter-spacing: 0.001em !important;
+    text-align: center !important;
+    text-shadow: 0 2px 13px rgba(0,0,0,0.92) !important;
+    overflow: visible !important;
+    text-wrap: pretty !important;
+    hyphens: auto !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: min(760px, 92vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(12px, 2.5vw, 28px) !important;
+  }
+
+  body.sections-page .section .content > .achievements-btn {
+    grid-column: 1 !important;
+    justify-self: end !important;
+  }
+
+  body.sections-page .section .content > .achievements-btS {
+    grid-column: 2 !important;
+    justify-self: start !important;
+  }
+
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    margin: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    width: auto !important;
+    min-width: clamp(168px, 25vw, 250px) !important;
+    max-width: min(44vw, 320px) !important;
+    min-height: clamp(31px, 8.1svh, 48px) !important;
+    padding: clamp(7px, 1.8svh, 12px) clamp(16px, 3vw, 30px) !important;
+    font-size: clamp(0.72rem, 2.65svh, 1.02rem) !important;
+    line-height: 1.08 !important;
+    border-width: 1.5px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 900px) and (max-height: 390px) {
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(1.18rem, 6.2svh, 1.82rem) !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.72rem, 3.7svh, 0.98rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-height: clamp(28px, 7.3svh, 40px) !important;
+    font-size: clamp(0.65rem, 2.35svh, 0.88rem) !important;
+    padding: clamp(6px, 1.55svh, 10px) clamp(13px, 2.5vw, 24px) !important;
+  }
+}
+
+/* =========================================================
+   V66 — Sekcje Koła: równe, symetryczne odstępy w telefonie poziomo.
+   Nagłówek, opis i przyciski są rozłożone tak samo w każdej sekcji.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.sections-page .section .content {
+    --sections-v66-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 52px) + clamp(4px, 1svh, 8px));
+    --sections-v66-bottom: max(8px, env(safe-area-inset-bottom));
+
+    width: min(100%, 96vw) !important;
+    max-width: 1080px !important;
+    height: calc(100svh - var(--sections-v66-top) - var(--sections-v66-bottom)) !important;
+    margin: var(--sections-v66-top) auto var(--sections-v66-bottom) !important;
+    padding: 0 clamp(18px, 3.2vw, 34px) !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto !important;
+    align-content: center !important;
+    align-items: center !important;
+    justify-items: center !important;
+    row-gap: clamp(12px, 3.1svh, 22px) !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: min(980px, 94vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(1.36rem, 7.25svh, 2.38rem) !important;
+    line-height: 1.02 !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: min(1010px, 94vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(0.84rem, 4.28svh, 1.16rem) !important;
+    line-height: 1.13 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-shadow: 0 2px 13px rgba(0,0,0,0.92) !important;
+    text-wrap: pretty !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: min(760px, 92vw) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(14px, 3vw, 30px) !important;
+  }
+
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    grid-column: 1 !important;
+    justify-self: center !important;
+    margin: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    width: auto !important;
+    min-width: clamp(172px, 25vw, 255px) !important;
+    max-width: min(44vw, 320px) !important;
+    min-height: clamp(32px, 8svh, 48px) !important;
+    padding: clamp(7px, 1.8svh, 12px) clamp(17px, 3vw, 30px) !important;
+    font-size: clamp(0.74rem, 2.65svh, 1.02rem) !important;
+    line-height: 1.08 !important;
+    border-width: 1.5px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 900px) and (max-height: 390px) {
+  body.sections-page .section .content {
+    row-gap: clamp(8px, 2.2svh, 14px) !important;
+    padding-left: clamp(14px, 2.6vw, 24px) !important;
+    padding-right: clamp(14px, 2.6vw, 24px) !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(1.22rem, 6.35svh, 1.88rem) !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.74rem, 3.7svh, 0.98rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    gap: clamp(10px, 2.2vw, 20px) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: clamp(150px, 24vw, 218px) !important;
+    min-height: clamp(28px, 7.1svh, 40px) !important;
+    font-size: clamp(0.66rem, 2.35svh, 0.88rem) !important;
+    padding: clamp(6px, 1.45svh, 10px) clamp(13px, 2.4vw, 24px) !important;
+  }
+}
+
+/* =========================================================
+   V67 — PROFESJONALNY WYGLĄD: całkowite usunięcie gwiazdek.
+   Brak magicznego pyłu na stronach, w przejściach i w loaderze.
+   ========================================================= */
+.page-magic-dust,
+.section-magic-dust,
+.stars-background,
+#starsCanvas,
+#particles-js {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.page-magic-dust::before,
+.page-magic-dust::after,
+.section-magic-dust::before,
+.section-magic-dust::after,
+#loader::before,
+#loader::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  animation: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Loader zostaje elegancki i czysty — bez gwiezdnego tła. */
+#loader {
+  background: radial-gradient(circle at center, #0a2d5c 0%, #021F42 72%, #000000 100%) !important;
+}
+
+/* =========================================================
+   V67 — Sekcje Koła: czytelniejsze elementy na telefonie poziomo.
+   Większy nagłówek, opis i przyciski, ale nadal w jednej sekcji.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.sections-page .section .content {
+    row-gap: clamp(10px, 2.8svh, 20px) !important;
+    padding-left: clamp(20px, 3.6vw, 38px) !important;
+    padding-right: clamp(20px, 3.6vw, 38px) !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(1.52rem, 7.9svh, 2.62rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.90rem, 4.55svh, 1.24rem) !important;
+    line-height: 1.11 !important;
+    max-width: min(1040px, 94vw) !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    gap: clamp(14px, 3vw, 30px) !important;
+    max-width: min(820px, 92vw) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: clamp(180px, 26vw, 270px) !important;
+    min-height: clamp(34px, 8.4svh, 50px) !important;
+    padding: clamp(8px, 1.9svh, 13px) clamp(18px, 3vw, 32px) !important;
+    font-size: clamp(0.80rem, 2.88svh, 1.10rem) !important;
+    line-height: 1.08 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 900px) and (max-height: 390px) {
+  body.sections-page .section .content {
+    row-gap: clamp(7px, 1.95svh, 13px) !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(1.30rem, 6.8svh, 2rem) !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.78rem, 3.9svh, 1.04rem) !important;
+    line-height: 1.075 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: clamp(155px, 24vw, 225px) !important;
+    min-height: clamp(29px, 7.35svh, 42px) !important;
+    font-size: clamp(0.70rem, 2.5svh, 0.92rem) !important;
+  }
+}
+
+/* =========================================================
+   V67 — Strona główna: delikatnie większa typografia i przyciski
+   w poziomie telefonu, bez zmiany układu desktopowego.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.home-page .section .content h1 {
+    font-size: clamp(2.1rem, 10.2svh, 3.55rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  body.home-page .section .content p {
+    font-size: clamp(0.92rem, 4.25svh, 1.28rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  body.home-page .stat-number {
+    font-size: clamp(2.35rem, 11svh, 4rem) !important;
+  }
+
+  body.home-page .stat-label {
+    font-size: clamp(0.82rem, 3.4svh, 1.12rem) !important;
+  }
+
+  body.home-page .contact-btn,
+  body.home-page .contact-btn.big {
+    font-size: clamp(0.82rem, 3.2svh, 1.12rem) !important;
+    min-height: clamp(34px, 8.5svh, 48px) !important;
+    padding: clamp(7px, 1.7svh, 12px) clamp(18px, 3.2vw, 32px) !important;
+  }
+}
+
+/* =========================================================
+   V68 — Social Media: profesjonalne ułożenie ikon na dużym ekranie.
+   Dotyczy tylko komputera / szerokiego ekranu. Wersja telefonu zostaje bez zmian.
+   ========================================================= */
+@media (min-width: 1024px) and (min-height: 650px) {
+  body.social-page > .fade-page {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + 18px)
+             clamp(28px, 4vw, 72px)
+             clamp(24px, 4vh, 56px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  body.social-page .grid-section {
+    width: min(92vw, 1480px) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(24px, 3.2vh, 44px) !important;
+    transform: translateY(clamp(28px, 4.4vh, 68px)) !important;
+  }
+
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    display: grid !important;
+    align-items: start !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    margin: 0 auto !important;
+  }
+
+  body.social-page .social-grid4 {
+    width: min(100%, 1260px) !important;
+    grid-template-columns: repeat(4, minmax(150px, 1fr)) !important;
+    gap: 0 clamp(56px, 6vw, 120px) !important;
+  }
+
+  body.social-page .social-grid5 {
+    width: min(100%, 1420px) !important;
+    grid-template-columns: repeat(5, minmax(130px, 1fr)) !important;
+    gap: 0 clamp(38px, 4.5vw, 86px) !important;
+  }
+
+  body.social-page .social-grid2 {
+    width: min(100%, 760px) !important;
+    grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+    gap: 0 clamp(130px, 13vw, 250px) !important;
+  }
+
+  body.social-page .person2,
+  body.social-page .person {
+    width: 100% !important;
+    max-width: 220px !important;
+    min-height: clamp(126px, 14vh, 156px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+  }
+
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(86px, 5.8vw, 112px) !important;
+    height: clamp(86px, 5.8vw, 112px) !important;
+    margin: 0 auto 14px !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p,
+  body.social-page .person2 a,
+  body.social-page .person a {
+    max-width: 220px !important;
+    margin: 0 auto !important;
+    font-size: clamp(1rem, 1.05vw, 1.15rem) !important;
+    line-height: 1.18 !important;
+    text-align: center !important;
+    overflow-wrap: normal !important;
+  }
+
+  body.social-page .social-grid5 .person2:nth-child(5),
+  body.social-page .social-grid2 .person2:nth-child(2) {
+    display: flex !important;
+    justify-self: center !important;
+  }
+
+  body.social-page .social-grid5 .person2:nth-child(5) img,
+  body.social-page .social-grid2 .person2:nth-child(2) img {
+    border: 4px solid #ffffff44 !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+  }
+}
+
+/* =========================================================
+   V69 — Social Media desktop: 4 kolumny x 3 wiersze.
+   Dotyczy tylko dużego ekranu. Wersja telefonu zostaje bez zmian.
+   ========================================================= */
+@media (min-width: 1024px) and (min-height: 650px) {
+  body.social-page > .fade-page {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(20px, 3vh, 54px))
+             clamp(48px, 7vw, 130px)
+             clamp(34px, 5vh, 76px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(3, minmax(132px, auto)) !important;
+    align-content: center !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: start !important;
+    column-gap: clamp(10px, 1.4vw, 24px) !important;
+    row-gap: clamp(24px, 4vh, 54px) !important;
+  }
+
+  body.social-page .grid-section,
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2 {
+    display: contents !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    transform: none !important;
+  }
+
+  body.social-page .social-mobile-umg-single {
+    display: none !important;
+  }
+
+  body.social-page .person2,
+  body.social-page .person {
+    width: clamp(150px, 12vw, 210px) !important;
+    max-width: 210px !important;
+    min-height: clamp(126px, 15vh, 168px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    justify-self: center !important;
+  }
+
+  body.social-page .person2 img,
+  body.social-page .person img,
+  body.social-page .social-grid2 .person2 img,
+  body.social-page .social-grid4 .person2 img,
+  body.social-page .social-grid5 .person2 img {
+    width: clamp(88px, 6vw, 116px) !important;
+    height: clamp(88px, 6vw, 116px) !important;
+    margin: 0 auto 14px !important;
+    border: 4px solid #ffffff44 !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+  }
+
+  body.social-page .name,
+  body.social-page .person2 p,
+  body.social-page .person p,
+  body.social-page .person2 a,
+  body.social-page .person a {
+    max-width: 210px !important;
+    margin: 0 auto !important;
+    font-size: clamp(1rem, 1.02vw, 1.14rem) !important;
+    line-height: 1.16 !important;
+    text-align: center !important;
+    overflow-wrap: normal !important;
+  }
+
+  /* Rząd 1 — Koło HMI */
+  body.social-page .social-grid4 .person2:nth-child(1) { grid-row: 1 !important; grid-column: 1 / span 3 !important; }
+  body.social-page .social-grid4 .person2:nth-child(2) { grid-row: 1 !important; grid-column: 4 / span 3 !important; }
+  body.social-page .social-grid4 .person2:nth-child(3) { grid-row: 1 !important; grid-column: 7 / span 3 !important; }
+  body.social-page .social-grid4 .person2:nth-child(4) { grid-row: 1 !important; grid-column: 10 / span 3 !important; }
+
+  /* Rząd 2 — Uniwersytet Morski w Gdyni */
+  body.social-page .social-grid5 .person2:nth-child(1) { grid-row: 2 !important; grid-column: 1 / span 3 !important; }
+  body.social-page .social-grid5 .person2:nth-child(2) { grid-row: 2 !important; grid-column: 4 / span 3 !important; }
+  body.social-page .social-grid5 .person2:nth-child(3) { grid-row: 2 !important; grid-column: 7 / span 3 !important; }
+  body.social-page .social-grid5 .person2:nth-child(4) { grid-row: 2 !important; grid-column: 10 / span 3 !important; }
+
+  /* Rząd 3 — ostatnie logo UMG + Parlament, wyśrodkowane względem całej siatki */
+  body.social-page .social-grid5 .person2:nth-child(5) { grid-row: 3 !important; grid-column: 2 / span 3 !important; }
+  body.social-page .social-grid2 .person2:nth-child(1) { grid-row: 3 !important; grid-column: 5 / span 3 !important; }
+  body.social-page .social-grid2 .person2:nth-child(2) { grid-row: 3 !important; grid-column: 8 / span 3 !important; }
+}
+
+/* =========================================================
+   V70 — Social Media desktop: ostatni rząd 3 ikon dokładnie wyśrodkowany
+   pomiędzy kolumnami górnych rzędów. Dotyczy tylko dużego ekranu.
+   Wersja telefonu zostaje bez zmian.
+   ========================================================= */
+@media (min-width: 1024px) and (min-height: 650px) {
+  body.social-page > .fade-page {
+    grid-template-columns: repeat(16, minmax(0, 1fr)) !important;
+  }
+
+  /* Rząd 1 — Koło HMI, cztery równe kolumny */
+  body.social-page .social-grid4 .person2:nth-child(1) { grid-row: 1 !important; grid-column: 1 / span 4 !important; }
+  body.social-page .social-grid4 .person2:nth-child(2) { grid-row: 1 !important; grid-column: 5 / span 4 !important; }
+  body.social-page .social-grid4 .person2:nth-child(3) { grid-row: 1 !important; grid-column: 9 / span 4 !important; }
+  body.social-page .social-grid4 .person2:nth-child(4) { grid-row: 1 !important; grid-column: 13 / span 4 !important; }
+
+  /* Rząd 2 — Uniwersytet Morski w Gdyni, cztery równe kolumny */
+  body.social-page .social-grid5 .person2:nth-child(1) { grid-row: 2 !important; grid-column: 1 / span 4 !important; }
+  body.social-page .social-grid5 .person2:nth-child(2) { grid-row: 2 !important; grid-column: 5 / span 4 !important; }
+  body.social-page .social-grid5 .person2:nth-child(3) { grid-row: 2 !important; grid-column: 9 / span 4 !important; }
+  body.social-page .social-grid5 .person2:nth-child(4) { grid-row: 2 !important; grid-column: 13 / span 4 !important; }
+
+  /* Rząd 3 — trzy ostatnie ikony dokładnie pomiędzy kolumnami z góry */
+  body.social-page .social-grid5 .person2:nth-child(5) { grid-row: 3 !important; grid-column: 3 / span 4 !important; }
+  body.social-page .social-grid2 .person2:nth-child(1) { grid-row: 3 !important; grid-column: 7 / span 4 !important; }
+  body.social-page .social-grid2 .person2:nth-child(2) { grid-row: 3 !important; grid-column: 11 / span 4 !important; }
+}
+
+
+/* =========================================================
+   V72 — MASKA MENU MOBILNEGO BEZ ZMIANY SCROLLA Z V70
+   Nie rusza mechanizmu przewijania. Dodaje tylko wizualną osłonę,
+   żeby nazwy podstron podczas scrollowania menu nie były widoczne
+   pod hamburgerem i logo HMI.
+   ========================================================= */
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu.menu-open::before {
+    content: "" !important;
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: min(260px, 82vw) !important;
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    background: linear-gradient(
+      to bottom,
+      #001a33 0%,
+      #001a33 78%,
+      rgba(0, 26, 51, 0.96) 90%,
+      rgba(0, 26, 51, 0) 100%
+    ) !important;
+    z-index: 2601 !important;
+    pointer-events: none !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  #sideMenu.menu-open::before {
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 14px) !important;
+  }
+}
+
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* =========================================================
+   V73 — MASKA MENU MOBILNEGO BEZ ZMIANY SCROLLOWANIA
+   Działa tylko wizualnie: gdy menu jest otwarte na telefonie,
+   nazwy podstron chowają się pod górną osłoną zamiast wchodzić
+   widocznie pod hamburger i logo HMI.
+   ========================================================= */
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu.menu-open::after,
+  #sideMenu[style*="left: 0"]::after,
+  #sideMenu[style*="left:0"]::after {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: min(260px, 82vw) !important;
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 10px) + var(--nav-control-size, 56px) + 24px) !important;
+    background: linear-gradient(
+      to bottom,
+      #001a33 0%,
+      #001a33 76%,
+      rgba(0, 26, 51, 0.98) 88%,
+      rgba(0, 26, 51, 0) 100%
+    ) !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  #sideMenu.menu-open::after,
+  #sideMenu[style*="left: 0"]::after,
+  #sideMenu[style*="left:0"]::after {
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 22px) !important;
+  }
+}
+
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu::after {
+    content: none !important;
+    display: none !important;
+  }
+}
