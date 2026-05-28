@@ -8899,3 +8899,237 @@ body.sections-page .content p {
     display: none !important;
   }
 }
+
+/* =========================================================
+   V74 — drobne poprawki końcowe
+   1) Social Media na telefonie: zwykłe, płynne przewijanie od pierwszego gestu.
+   2) Sekcje Koła poziomo: pełne napisy na przyciskach, bez wielokropków.
+   3) Przejścia między podstronami: strona pokazuje się po DOMContentLoaded,
+      bez czekania na załadowanie wszystkich zdjęć.
+   ========================================================= */
+
+/* Strony bez sekcji otrzymują klasę .normal-scroll-page z JS.
+   Ten blok jest niezależny od :has(), więc działa również tam, gdzie :has() bywa problematyczne. */
+html.normal-scroll-page,
+html.normal-scroll-page body {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  height: auto !important;
+  min-height: 100dvh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page),
+  html.normal-scroll-page:has(body.social-page) body,
+  body.social-page {
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: auto !important;
+  }
+
+  body.social-page > .fade-page,
+  body.social-page .grid-section,
+  body.social-page .social-grid4,
+  body.social-page .social-grid5,
+  body.social-page .social-grid2,
+  body.social-page .social-grid-mobile-single {
+    scroll-snap-align: none !important;
+    scroll-snap-stop: normal !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+  }
+
+  body.social-page a,
+  body.social-page img {
+    -webkit-user-drag: none;
+  }
+}
+
+/* Sekcje Koła — telefon poziomo: pełne teksty w przyciskach, bez ucinania i bez „...”. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.sections-page .section .buttons-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: clamp(8px, 1.8vw, 14px) !important;
+    width: min(100%, 96vw) !important;
+    max-width: 96vw !important;
+    margin-top: clamp(10px, 2.4svh, 16px) !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    hyphens: none !important;
+    min-width: clamp(210px, 31vw, 300px) !important;
+    width: auto !important;
+    max-width: min(44vw, 320px) !important;
+    min-height: clamp(36px, 9.2svh, 52px) !important;
+    padding: clamp(7px, 1.9svh, 12px) clamp(13px, 2.6vw, 24px) !important;
+    font-size: clamp(0.76rem, 2.7svh, 1rem) !important;
+    line-height: 1.12 !important;
+    margin: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btS,
+  body.sections-page .section .content > .achievements-btS {
+    margin-top: 0 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 980px) {
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    min-width: clamp(190px, 30vw, 270px) !important;
+    max-width: min(45vw, 290px) !important;
+    min-height: clamp(32px, 8.5svh, 44px) !important;
+    font-size: clamp(0.68rem, 2.45svh, 0.88rem) !important;
+    padding: clamp(6px, 1.55svh, 9px) clamp(10px, 2.2vw, 18px) !important;
+  }
+}
+
+/* =========================================================
+   V75 — Sekcje Koła: telefon pionowo — pełne napisy na przyciskach.
+   Usuwa ucinanie tekstu i wielokropki w przyciskach „Zobacz osiągnięcia…”
+   oraz „Kontakt do opiekuna…”. Nie zmienia układu innych stron.
+   ========================================================= */
+@media (orientation: portrait) and (max-width: 760px) {
+  body.sections-page .section .buttons-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(10px, 2.6svh, 16px) !important;
+    width: 100% !important;
+    max-width: calc(100vw - 28px) !important;
+    margin: clamp(16px, 3svh, 26px) auto 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    width: min(100%, 330px) !important;
+    max-width: calc(100vw - 44px) !important;
+    min-width: 0 !important;
+    min-height: clamp(46px, 6.5svh, 58px) !important;
+    padding: clamp(10px, 1.7svh, 14px) clamp(16px, 4.5vw, 24px) !important;
+    font-size: clamp(0.95rem, 3.8vw, 1.12rem) !important;
+    line-height: 1.22 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    margin-top: clamp(10px, 2svh, 14px) !important;
+  }
+
+  body.sections-page .section .content > .achievements-btS {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 390px) {
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.sections-page .section .content > .achievements-btn,
+  body.sections-page .section .content > .achievements-btS {
+    width: min(100%, 310px) !important;
+    max-width: calc(100vw - 32px) !important;
+    font-size: clamp(0.88rem, 3.7vw, 1.02rem) !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+/* =========================================================
+   V76 — Sekcje Koła: estetyczne łamanie nagłówków na telefonie.
+   Naprawia sytuację typu „Modelowani / a” — słowa nie są już rozbijane
+   na pojedyncze litery, a tytuł skaluje się tak, aby wyglądał profesjonalnie.
+   ========================================================= */
+body.sections-page .section .content h1,
+body.sections-page .section .content h1[data-pl][data-en] {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+  text-wrap: balance !important;
+}
+
+@media (orientation: portrait) and (max-width: 760px) {
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    width: min(100%, 92vw) !important;
+    max-width: 420px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: clamp(1.72rem, 7.4vw, 2.45rem) !important;
+    line-height: 1.08 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    text-wrap: balance !important;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 390px) {
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    max-width: 330px !important;
+    font-size: clamp(1.58rem, 7.1vw, 2.12rem) !important;
+    line-height: 1.09 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+  }
+}

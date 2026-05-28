@@ -1,35 +1,57 @@
-// ==================== LOADER – TYLKO RAZ NA SESJĘ + KRÓTSZA ANIMACJA ====================
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  const loaderLogo = document.querySelector('.loader-logo');
-  const fadePage = document.querySelector('.fade-page');
+// ==================== LOADER – TYLKO RAZ NA SESJĘ + SZYBSZE PRZEJŚCIA ====================
+// Loader nie czeka już na załadowanie wszystkich zdjęć z podstrony.
+// Dzięki temu przechodzenie między podstronami jest płynniejsze, szczególnie na telefonie.
+(() => {
+  function initLoader() {
+    const loader = document.getElementById('loader');
+    const loaderLogo = document.querySelector('.loader-logo');
+    const fadePage = document.querySelector('.fade-page');
 
-  if (sessionStorage.getItem('loaderShown') === 'true') {
-    loader.classList.add('hidden');
-    fadePage.classList.add('loaded');
-    document.getElementById('hamburger')?.classList.add('visible');
-    document.getElementById('homeLogo')?.classList.add('visible');
-    document.getElementById('langCorner')?.classList.add('visible');
-    return;
-  }
+    // Strony bez klasy .section mają zwykłe przewijanie, bez scroll-snapa.
+    // To poprawia płynność Social Media / Współpraca / Członkowie / Wydarzenia / Osiągnięcia.
+    if (!document.querySelector('.section')) {
+      document.documentElement.classList.add('normal-scroll-page');
+    }
 
-  setTimeout(() => {
-    loaderLogo.classList.add('visible');
-  }, 100);
+    if (!loader || !fadePage) return;
 
-  setTimeout(() => {
-    loaderLogo.classList.add('fade-out');
-    loader.classList.add('hidden');
-
-    setTimeout(() => {
+    const showPage = () => {
+      loader.classList.add('hidden');
       fadePage.classList.add('loaded');
       document.getElementById('hamburger')?.classList.add('visible');
       document.getElementById('homeLogo')?.classList.add('visible');
       document.getElementById('langCorner')?.classList.add('visible');
-      sessionStorage.setItem('loaderShown', 'true');
-    }, 400);
-  }, 1200);
-});
+    };
+
+    if (sessionStorage.getItem('loaderShown') === 'true') {
+      showPage();
+      return;
+    }
+
+    setTimeout(() => {
+      loaderLogo?.classList.add('visible');
+    }, 100);
+
+    setTimeout(() => {
+      loaderLogo?.classList.add('fade-out');
+      loader.classList.add('hidden');
+
+      setTimeout(() => {
+        fadePage.classList.add('loaded');
+        document.getElementById('hamburger')?.classList.add('visible');
+        document.getElementById('homeLogo')?.classList.add('visible');
+        document.getElementById('langCorner')?.classList.add('visible');
+        sessionStorage.setItem('loaderShown', 'true');
+      }, 400);
+    }, 1200);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLoader, { once: true });
+  } else {
+    initLoader();
+  }
+})();
 
 // ==================== MENU BOCZNE (HAMBURGER) ====================
 const hamburger = document.getElementById('hamburger');
