@@ -20,13 +20,13 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Wydarzenia</title>
 <link href="styles_wydarzenia.css" rel="stylesheet"/>
-</head>
+<link as="image" href="Loga/logo_hmi.png" rel="preload"/><link as="image" href="Loga/logo_hmi_białe.png" rel="preload"/><link href="https://flagcdn.com" rel="preconnect"/></head>
 <body class="dark-bg achievements-page"> <!-- zachowujemy klasę dark-bg -->
 <!-- LOGO W LEWYM GÓRNYM ROGU – LINK DO STRONY GŁÓWNEJ -->
 <!-- LOADER -->
 <div id="loader">
 <div class="loader-logo">
-<img alt="logo_hmi" src="Loga/logo_hmi.png"/> <!-- zamień na swoje logo jeśli inne -->
+<img alt="logo_hmi" decoding="async" fetchpriority="high" loading="eager" src="Loga/logo_hmi.png"/> <!-- zamień na swoje logo jeśli inne -->
 </div>
 </div>
 <div id="fb-root"></div>
@@ -37,11 +37,11 @@
 <div class="top-left">
 <div id="hamburger">☰</div>
 <a aria-label="Strona główna" href="index.html" id="homeLogo">
-<img alt="Logo Koła Naukowego HMI" src="Loga/logo_hmi_białe.png"/>
+<img alt="Logo Koła Naukowego HMI" decoding="async" fetchpriority="high" loading="eager" src="Loga/logo_hmi_białe.png"/>
 </a>
 </div>
 <button id="langCorner">
-<img alt="English" src="https://flagcdn.com/gb.svg"/> EN
+<img alt="English" decoding="async" fetchpriority="high" loading="eager" src="https://flagcdn.com/gb.svg"/> EN
       </button>
 </div>
 <!-- MENU BOCZNE -->
@@ -61,8 +61,28 @@
 <main class="news-main">
 <h1 data-en="Events" data-pl="Wydarzenia">Wydarzenia</h1><section class="news-grid"><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/22_05_2026.jfif"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/23-24_05_2026.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
+<div class="news-content">
+<div class="news-date" data-en="May 23-24, 2026" data-pl="23-24 maja 2026">23-24 maja 2026</div>
+<h2 class="news-title" data-en="HMI Science Club at SpaceShield Hack 2026 in Stalowa Wola" data-pl="Koło Naukowe HMI na SpaceShield Hack 2026 w Stalowej Woli">Koło Naukowe HMI na SpaceShield Hack 2026 w Stalowej Woli</h2>
+<p class="news-text" data-en="This year's SpaceShield Hack 2026 was an intense, 24-hour adventure for our 18-person team from the Faculty of Electrical 
+Engineering and the Faculty of Computer Science at the University of Gdańsk. During the hackathon, we created four projects: 
+the HESTIA early warning system, the Wan Hu lightweight rocket, the AREOVIS autonomous drone system, and the VALKYRIE drone fleet management app. 
+We would like to thank our mentors, WiRan, and Space 4 Talents for their support and organizing this unique event." 
+            data-pl="Tegoroczny SpaceShield Hack 2026 był dla naszej 18‑osobowej reprezentacji 
+            z Wydziału Elektrycznego i Wydziału Informatyki UMG intensywną, 24‑godzinną przygodą pełną kreatywności, współpracy i dobrej energii. 
+            W trakcie hackathonu stworzyliśmy cztery projekty: system wczesnego ostrzegania HESTIA, lekką rakietę Wan Hu, autonomiczny system 
+            dronowy AREOVIS oraz aplikację VALKYRIE do zarządzania flotą dronów.
+            Dziękujemy mentorom, WiRan oraz Space 4 Talents za wsparcie i organizację tego wyjątkowego wydarzenia.">
+            Tegoroczny SpaceShield Hack 2026 był dla naszej 18‑osobowej reprezentacji z Wydziału Elektrycznego i Wydziału Informatyki UMG intensywną, 
+            24‑godzinną przygodą pełną kreatywności, współpracy i dobrej energii. W trakcie hackathonu stworzyliśmy cztery projekty: system wczesnego 
+            ostrzegania HESTIA, lekką rakietę Wan Hu, autonomiczny system dronowy AREOVIS oraz aplikację VALKYRIE do zarządzania flotą dronów.Dziękujemy mentorom, 
+            WiRan oraz Space 4 Talents za wsparcie i organizację tego wyjątkowego wydarzenia.
+            </p>
+<a class="more-btn" data-en="MORE" data-pl="WIĘCEJ" href="https://www.linkedin.com/posts/ko%C5%82o-naukowe-hmi_tegoroczny-spaceshield-hack-2026-w-stalowej-activity-7466039592501198848-BORK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuw9cQBJzLJwpyNcuInALq29VATEWzAEVM" target="_blank">WIĘCEJ</a>
+</div>
+</article><article class="news-item">
 <div class="news-content">
 <div class="news-date" data-en="May 22, 2026" data-pl="22 maja 2026">22 maja 2026</div>
 <h2 class="news-title" data-en="Scholarship of the Minister of Infrastructure for Kamil Kaczmarek" data-pl="Stypendium Ministra Infrastruktury dla Kamila Kaczmarka">Stypendium Ministra Infrastruktury dla Kamila Kaczmarka</h2>
@@ -78,7 +98,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/20-21_05_2026.jfif"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/20-21_05_2026.jfif"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="May 20-21, 2026" data-pl="20-21 maja 2026">20-21 maja 2026</div>
@@ -87,8 +107,7 @@
           a digital twin, a PMSM motor on a PCB, and test a 3D mouse from 3Dconnexion.
           The event was supported by WiRan Sp. z o.o., and our participation was 
           made possible by Karolina Nawrocka-Mucha and Invest in Pomerania—thank you!
-          We thank all visitors and hope to see you at future events."
-          data-pl="20–21 maja zaprezentowaliśmy nasze projekty na Infoshare. 
+          We thank all visitors and hope to see you at future events." data-pl="20–21 maja zaprezentowaliśmy nasze projekty na Infoshare. 
           Na stoisku można było zobaczyć bezpieczny rotor sceniczny z cyfrowym bliźniakiem, silnik PMSM na PCB oraz przetestować 
           myszkę 3D od 3Dconnexion.Wydarzenie wsparła firma WiRan Sp. z o.o., a udział umożliwili nam Karolina Nawrocka‑Mucha 
           i Invest in Pomerania — dziękujemy! Dziękujemy wszystkim odwiedzającym i do zobaczenia na kolejnych wydarzeniach.">
@@ -97,11 +116,11 @@
           myszkę 3D od 3Dconnexion.Wydarzenie wsparła firma WiRan Sp. z o.o., a udział umożliwili nam Karolina Nawrocka‑Mucha 
           i Invest in Pomerania — dziękujemy! Dziękujemy wszystkim odwiedzającym i do zobaczenia na kolejnych wydarzeniach.
 </p>
-<a class="more-btn" data-en="MORE" data-pl="WIĘCEJ" href="https://www.linkedin.com/posts/ko%C5%82o-naukowe-hmi_20-2105-mieli%C5%9Bmy-ogromn%C4%85-przyjemno%C5%9B%C4%87-wystawia%C4%87-activity-7465303312607760385-JwWw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFuw9cQBJzLJwpyNcuInALq29VATEWzAEVM" target="_blank">WIĘCEJ</a>
+<a class="more-btn" data-en="MORE" data-pl="WIĘCEJ" href="https://www.linkedin.com/posts/ko%C5%82o-naukowe-hmi_20-2105-mieli%C5%9Bmy-ogromn%C4%85-przyjemno%C5%9B%C4%87-wystawia%C4%87-activity-7465303312607760385-JwWw?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAFuw9cQBJzLJwpyNcuInALq29VATEWzAEVM" target="_blank">WIĘCEJ</a>
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/17_04_2026_PJATK.jfif"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/17_04_2026_PJATK.jfif"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="April 17, 2026" data-pl="17 kwietnia 2026">17 kwietnia 2026</div>
@@ -122,7 +141,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/17_04_2026_Rotor.jfif"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/17_04_2026_Rotor.jfif"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="April 17, 2026" data-pl="17 kwietnia 2026">17 kwietnia 2026</div>
@@ -149,7 +168,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/15_04_2026.jfif"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/15_04_2026.jfif"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="April 15, 2026" data-pl="15 kwietnia 2026">15 kwietnia 2026</div>
@@ -170,7 +189,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/27_03_2026.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/27_03_2026.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="March 27, 2026" data-pl="27 marca 2026">27 marca 2026</div>
@@ -200,7 +219,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/20_03_2026.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/20_03_2026.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="March 20, 2026" data-pl="20 marca 2026">20 marca 2026</div>
@@ -221,7 +240,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/21_02_2026.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/21_02_2026.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="February 21, 2026" data-pl="21 lutego 2026">21 lutego 2026</div>
@@ -242,7 +261,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/16_02_2026.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/16_02_2026.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="February 16, 2026" data-pl="16 lutego 2026">16 lutego 2026</div>
@@ -265,7 +284,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/30_01_2026.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/30_01_2026.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="January 30, 2026" data-pl="30 stycznia 2026">30 stycznia 2026</div>
@@ -288,7 +307,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/19_12_2025.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/19_12_2025.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="December 19, 2025" data-pl="19 grudnia 2025">19 grudnia 2025</div>
@@ -305,7 +324,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/09_12_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/09_12_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="December 9, 2025" data-pl="8 grudnia 2025">9 grudnia 2025</div>
@@ -320,7 +339,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/28_11_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/28_11_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="November 28, 2025" data-pl="28 listopada 2025">28 listopada 2025</div>
@@ -338,7 +357,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/24_11_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/24_11_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="November 24, 2025" data-pl="24 listopada 2025">24 listopada 2025</div>
@@ -353,7 +372,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/08_10_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/08_10_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="October 2, 2025" data-pl="2 października 2025">2 października 2025</div>
@@ -368,7 +387,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/02_10_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/02_10_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="October 2, 2025" data-pl="2 października 2025">2 października 2025</div>
@@ -383,7 +402,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/17_09_2025.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/17_09_2025.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="September 17, 2025" data-pl="17 września 2025">17 września 2025</div>
@@ -404,7 +423,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/10_09_2025.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/10_09_2025.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="September 10, 2025" data-pl="10 września 2025">10 września 2025</div>
@@ -441,7 +460,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/22_06_2025.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/22_06_2025.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="June 22, 2025" data-pl="22 czerwca 2025">22 czerwca 2025</div>
@@ -459,7 +478,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/05_06_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/05_06_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="June 5, 2025" data-pl="5 czerwca 2025">5 czerwca 2025</div>
@@ -476,7 +495,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/29_05_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/29_05_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="May 29, 2025" data-pl="29 maja 2025">29 maja 2025</div>
@@ -496,7 +515,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/27_05_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/27_05_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="May 27, 2025" data-pl="27 maja 2025">27 maja 2025</div>
@@ -512,7 +531,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/17_05_2025.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/17_05_2025.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="May 17, 2025" data-pl="17 maja 2025">17 maja 2025</div>
@@ -529,7 +548,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/08_05_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/08_05_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="May 8, 2025" data-pl="8 maja 2025">8 maja 2025</div>
@@ -544,7 +563,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/07.05.2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/07.05.2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="May 7, 2025" data-pl="7 maja 2025">7 maja 2025</div>
@@ -562,7 +581,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/10_04_2025.png"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/10_04_2025.png"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="April 10, 2025" data-pl="10 kwietnia 2025">10 kwietnia 2025</div>
@@ -582,7 +601,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/02_04_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/02_04_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="April 2, 2025" data-pl="2 kwietnia 2025">2 kwietnia 2025</div>
@@ -599,7 +618,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Łazik DISTOBEE" src="Zdjęcia_wydarzenia/26_03_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Łazik DISTOBEE" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/26_03_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="March 26, 2025" data-pl="26 marca 2025">26 marca 2025</div>
@@ -618,7 +637,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Rekrutacja" src="Zdjęcia_wydarzenia/05_02_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Rekrutacja" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/05_02_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="February 5, 2025" data-pl="5 lutego 2025">5 lutego 2025</div>
@@ -630,7 +649,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Rekrutacja" src="Zdjęcia_wydarzenia/22_01_2025.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Rekrutacja" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/22_01_2025.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="January 22, 2025" data-pl="22 syucznia 2025">22 syucznia 2025</div>
@@ -645,7 +664,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Rekrutacja" src="Zdjęcia_wydarzenia/19_12_2024.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Rekrutacja" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/19_12_2024.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="December 19, 2024" data-pl="19 grudnia 2024">19 grudnia 2024</div>
@@ -661,7 +680,7 @@
 </div>
 </article><article class="news-item">
 <div class="news-image">
-<img alt="Rekrutacja" src="Zdjęcia_wydarzenia/13_12_2024.jpg"/> <!-- dostosuj ścieżkę -->
+<img alt="Rekrutacja" decoding="async" fetchpriority="low" loading="lazy" src="Zdjęcia_wydarzenia/13_12_2024.jpg"/> <!-- dostosuj ścieżkę -->
 </div>
 <div class="news-content">
 <div class="news-date" data-en="November 24, 2024" data-pl="24 listopad 2024">24 listopad 2024</div>
