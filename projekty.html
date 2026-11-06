@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pl" class="normal-scroll-page">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4THQ0L21T3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4THQ0L21T3');
+  </script>
+
+  <link rel="canonical" href="https://www.knhmi.pl/projekty.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="Loga/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Loga/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Loga/icon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projekty realizowane przez Koło Naukowe HMI – automatyka, elektronika, napędy, druk 3D i systemy pomiarowe.">
+  <title>Nasze projekty – Koło HMI</title>
+
+  <link rel="preload" as="image" href="Loga/logo_hmi.png">
+  <link rel="preload" as="image" href="Loga/logo_hmi_białe.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_projekty.css">
+</head>
+
+<body class="dark-bg projects-page">
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <img src="Loga/logo_hmi.png" alt="logo_hmi" loading="eager" decoding="async" fetchpriority="high">
+    </div>
+  </div>
+
+  <div class="fade-page">
+
+    <!-- Górne menu z hamburgerem, logo i językiem -->
+    <div class="top-bar">
+      <div class="top-left">
+        <div id="hamburger" aria-label="Otwórz menu">☰</div>
+        <a href="index.html" id="homeLogo" aria-label="Strona główna">
+          <img src="Loga/logo_hmi_białe.png" alt="Logo Koła Naukowego HMI" loading="eager" decoding="async" fetchpriority="high">
+        </a>
+      </div>
+
+      <button id="langCorner" type="button" aria-label="Zmień język">
+        <img src="https://flagcdn.com/gb.svg" alt="English"> EN
+      </button>
+    </div>
+
+    <!-- MENU BOCZNE -->
+    <nav id="sideMenu">
+      <ul>
+        <li><a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a></li>
+        <li><a href="Sekcje_zespolow.html" data-pl="Sekcje Koła" data-en="Sections">Sekcje Koła</a></li>
+        <li><a href="czlonkowie.html" data-pl="Członkowie" data-en="Members">Członkowie</a></li>
+        <li><a href="projekty.html" data-pl="Nasze projekty" data-en="Our projects">Nasze projekty</a></li>
+        <li><a href="osiagniecia.html" data-pl="Osiągnięcia" data-en="Achievements">Osiągnięcia</a></li>
+        <li><a href="Wydarzenia.html" data-pl="Wydarzenia" data-en="Events">Wydarzenia</a></li>
+        <li><a href="wspolprace.html" data-pl="Współpraca" data-en="Cooperation">Współpraca</a></li>
+        <li><a href="social_media.html" data-pl="Kontakt" data-en="Contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div id="menuOverlay"></div>
+
+    <main class="projects-main">
+      <header class="projects-header">
+        <h1 data-pl="Nasze projekty" data-en="Our projects">Nasze projekty</h1>
+      </header>
+
+      <section class="projects-grid" aria-label="Lista projektów">
+        <article class="project-card project-open" tabindex="0" role="button" data-project="digitalTwin">
+          <div class="project-cover">
+            <img src="Zdjecia_Projekty/Cyfrowy_Blizniak/Cyfrowy_blizniak_3.jpg" alt="Projekt Bezpiecznego Rotora Scenicznego" loading="lazy" decoding="async">
+          </div>
+          <div class="project-card-title">
+            <span data-pl="Cyfrowy bliźniak" data-en="Digital twin">Cyfrowy bliźniak</span>
+            <h2 data-pl="Projekt Bezpiecznego Rotora Scenicznego" data-en="Safe Stage Rotor Project">Projekt Bezpiecznego Rotora Scenicznego</h2>
+          </div>
+        </article>
+
+        <article class="project-card project-open" tabindex="0" role="button" data-project="pmsmMotor">
+          <div class="project-cover">
+            <img src="Zdjecia_Projekty/PMSM/PMSM_2.png" alt="Silnik PMSM" loading="lazy" decoding="async">
+          </div>
+          <div class="project-card-title">
+            <span data-pl="Napęd elektryczny" data-en="Electric drive">Napęd elektryczny</span>
+            <h2 data-pl="Projekt silnika PMSM" data-en="PMSM Motor Project">Projekt silnika PMSM</h2>
+          </div>
+        </article>
+
+        <article class="project-card project-open" tabindex="0" role="button" data-project="spectrumAnalyzer">
+          <div class="project-cover project-cover-contain">
+            <img src="Zdjecia_Projekty/Spectrum_Analyzer/Spectrum_2.png" alt="Spectrum Analyzer na ESP32" loading="lazy" decoding="async">
+          </div>
+          <div class="project-card-title">
+            <span data-pl="Elektronika i ESP32" data-en="Electronics and ESP32">Elektronika i ESP32</span>
+            <h2 data-pl="Analizator dźwięku" data-en="Spectrum Analyzer">Analizator dźwięku</h2>
+          </div>
+        </article>
+
+        <article class="project-card project-open" tabindex="0" role="button" data-project="flettnerRotor">
+          <div class="project-cover">
+            <img src="Zdjecia_Projekty/Rotor_Flettnera/Flettner_1.png" alt="Rotor Flettnera" loading="lazy" decoding="async">
+          </div>
+          <div class="project-card-title">
+            <span data-pl="Mechanika i automatyka" data-en="Mechanics and automation">Mechanika i automatyka</span>
+            <h2 data-pl="Rotor Flettnera" data-en="Flettner Rotor">Rotor Flettnera</h2>
+          </div>
+        </article>
+
+        <article class="project-card project-open" tabindex="0" role="button" data-project="bottleFilament">
+          <div class="project-cover">
+            <img src="Zdjecia_Projekty/Filament_PET/Filament_1.png" alt="Filament z butelek PET" loading="lazy" decoding="async">
+          </div>
+          <div class="project-card-title">
+            <span data-pl="Druk 3D i recykling" data-en="3D printing and recycling">Druk 3D i recykling</span>
+            <h2 data-pl="Filament z butelek PET" data-en="Filament from PET bottles">Filament z butelek PET</h2>
+          </div>
+        </article>
+
+        <article class="project-card project-open" tabindex="0" role="button" data-project="vitalSignsDevice">
+          <div class="project-cover">
+            <img src="Zdjecia_Projekty/Parametry_Zyciowe/Parametry_Zyciowe_1.png" alt="Pomiar parametrów życiowych" loading="lazy" decoding="async">
+          </div>
+          <div class="project-card-title">
+            <span data-pl="Elektronika pomiarowa" data-en="Measurement electronics">Elektronika pomiarowa</span>
+            <h2 data-pl="System monitorowania parametrów życiowych" data-en="Vital Signs Measurement">System monitorowania parametrów życiowych</h2>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL PROJEKTU -->
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="project-modal-backdrop" data-close-project></div>
+
+    <div class="project-modal-content" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+      <button class="project-modal-close" id="projectModalClose" type="button" aria-label="Zamknij" data-close-project>&times;</button>
+
+      <div class="project-gallery" id="projectGallery">
+        <button class="project-gallery-btn project-gallery-prev" type="button" aria-label="Poprzednie zdjęcie">&#10094;</button>
+
+        <img id="projectModalImage" src="" alt="" decoding="async">
+
+        <div class="project-gallery-empty" id="projectGalleryEmpty" hidden>
+          <span data-pl="Zdjęcia w przygotowaniu" data-en="Photos coming soon">Zdjęcia w przygotowaniu</span>
+        </div>
+
+        <button class="project-gallery-btn project-gallery-next" type="button" aria-label="Następne zdjęcie">&#10095;</button>
+        <div class="project-gallery-counter" id="projectGalleryCounter" aria-live="polite">1 / 1</div>
+      </div>
+
+      <div class="project-gallery-dots" id="projectGalleryDots" aria-label="Wybór zdjęcia"></div>
+
+      <div class="project-modal-text">
+        <span class="project-modal-section" id="projectModalSection"></span>
+        <h2 id="projectModalTitle"></h2>
+        <p id="projectModalDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    (() => {
+      const projectData = {
+        digitalTwin: {
+          section: { pl: "Cyfrowy bliźniak", en: "Digital twin" },
+          title: { pl: "Projekt Bezpiecznego Rotora Scenicznego", en: "Safe Stage Rotor Project" },
+          description: {
+            pl: "Projekt Koła Naukowego HMI Uniwersytetu Morskiego w Gdyni łączy świat wirtualnej symulacji z rzeczywistą automatyką. Jego celem jest stworzenie mobilnej platformy obrotowej z napędem elektrycznym, której działanie można wcześniej analizować i testować w środowisku cyfrowym. Do realizacji projektu wykorzystano Python, MATLAB/Simulink, TIA Portal, PLCSIM, WinCC oraz Unreal Engine, dzięki czemu możliwe jest połączenie modelowania, symulacji, wizualizacji 3D i sterowania w jednym projekcie. Cyfrowy bliźniak pozwala sprawdzać zachowanie układu jeszcze przed uruchomieniem rzeczywistego stanowiska, ułatwiając rozwój konstrukcji oraz bezpieczne testowanie kolejnych rozwiązań.",
+            en: "The digital twin of the Safe Stage Rotor is developed as a technical representation of the real system. The project combines modelling, simulation, data analysis and control-system testing in one environment. This makes it possible to verify system behaviour before full physical tests are carried out. Club members can work on technical documentation, parameter selection, result analysis and safety assessment, combining automation, electronics, programming and practical engineering."
+          },
+          images: [
+            "Zdjecia_Projekty/Cyfrowy_Blizniak/Cyfrowy_blizniak_1.png",
+            "Zdjecia_Projekty/Cyfrowy_Blizniak/Cyfrowy_blizniak_2.png",
+            "Zdjecia_Projekty/Cyfrowy_Blizniak/Cyfrowy_blizniak_3.jpg",
+            "Zdjecia_Projekty/Cyfrowy_Blizniak/Cyfrowy_blizniak_4.jpg",
+            "Zdjecia_Projekty/Cyfrowy_Blizniak/Cyfrowy_blizniak_5.png"
+          ]
+        },
+
+        pmsmMotor: {
+          section: { pl: "Napęd elektryczny", en: "Electric drive" },
+          title: { pl: "Projekt silnika PMSM", en: "PMSM Motor Project" },
+          description: {
+            pl: "Projekt silnika PMSM obejmował zaprojektowanie i wykonanie silnika od podstaw. Samodzielnie opracowano jego konstrukcję oraz wykonano dedykowaną płytkę elektroniczną. W projekcie wykorzystano również druk 3D, który posłużył do wykonania wybranych elementów konstrukcyjnych i odpowiedniego dopasowania ich do całego układu. Prace nad silnikiem połączyły zagadnienia z zakresu elektroniki, projektowania mechanicznego oraz nowoczesnych metod wytwarzania. Dzięki temu projekt obejmował cały proces tworzenia urządzenia — od koncepcji i projektu aż po wykonanie i uruchomienie gotowego układu.",
+            en: "The PMSM motor project focuses on the analysis and use of a permanent-magnet synchronous motor. These motors are used in modern electric drives, automation, robotics and electric vehicles due to their high efficiency, dynamic performance and precise control. The project can include operating-principle studies, control methods, speed and torque measurements and analysis of how drive parameters affect behaviour."
+          },
+          images: [
+            "Zdjecia_Projekty/PMSM/PMSM_1.png",
+            "Zdjecia_Projekty/PMSM/PMSM_2.png",
+            "Zdjecia_Projekty/PMSM/PMSM_3.png"
+          ]
+        },
+
+        spectrumAnalyzer: {
+          section: { pl: "Elektronika i ESP32", en: "Electronics and ESP32" },
+          title: { pl: "Analizator dźwięku na ESP32", en: "ESP32 Spectrum Analyzer" },
+          description: {
+            pl: "Analizator widma dźwięku LED to urządzenie, które przekształca muzykę w dynamiczne efekty świetlne. Dzięki zastosowaniu mikrokontrolera ESP32 oraz analizy częstotliwości FFT zapewnia płynną i precyzyjną synchronizację oświetlenia z rytmem muzyki. Urządzenie umożliwia odbiór dźwięku za pomocą wbudowanego mikrofonu lub wejścia AUX, oferując szeroki wybór efektów świetlnych, które można dostosować do własnych preferencji.",
+            en: "An LED audio spectrum analyzer is a device that transforms music into dynamic light effects. Powered by an ESP32 microcontroller and utilizing Fast Fourier Transform (FFT) frequency analysis, it ensures smooth and precise synchronization of the lighting with the rhythm of the music. The device can capture audio via a built-in microphone or an AUX input, offering a wide range of light effects that can be customized to suit individual preferences."
+          },
+          images: [
+            "Zdjecia_Projekty/Spectrum_Analyzer/Spectrum_4.png",
+            "Zdjecia_Projekty/Spectrum_Analyzer/Spectrum_2.png",
+            "Zdjecia_Projekty/Spectrum_Analyzer/Spectrum_3.png",
+            "Zdjecia_Projekty/Spectrum_Analyzer/Spectrum_1.png",
+            "Zdjecia_Projekty/Spectrum_Analyzer/Spectrum_5.png"
+          ]
+        },
+
+        flettnerRotor: {
+          section: { pl: "Mechanika i automatyka", en: "Mechanics and automation" },
+          title: { pl: "Rotor Flettnera", en: "Flettner Rotor" },
+          description: {
+            pl: "Projekt Rotora Flettnera obejmuje model statku zaprojektowany i wykonany z wykorzystaniem druku 3D. Układ sterowania opiera się na mikrokontrolerze ESP32, który komunikuje się z pilotem i umożliwia zdalne sterowanie modelem. Głównym celem projektu jest prezentacja zjawisk fizycznych zachodzących na jednostkach wykorzystujących rotor Flettnera, w szczególności wpływu obracającego się cylindra na zachowanie statku. Model pozwala w praktyczny i czytelny sposób zobrazować działanie tego rozwiązania oraz lepiej zrozumieć jego zastosowanie w napędzie jednostek pływających.",
+            en: "The Flettner Rotor project concerns a structure that uses the Magnus effect to generate aerodynamic force. Such solutions can support vessel propulsion and reduce energy use. The project combines a mechanical model, rotor drive, rotational-speed measurements and experimental analysis of how operating parameters affect performance."
+          },
+          images: [
+            "Zdjecia_Projekty/Rotor_Flettnera/Flettner_1.png",
+            "Zdjecia_Projekty/Rotor_Flettnera/Flettner_2.png"
+          ]
+        },
+
+        bottleFilament: {
+          section: { pl: "Druk 3D i recykling", en: "3D printing and recycling" },
+          title: { pl: "Filament z butelek PET", en: "Filament from PET Bottles" },
+          description: {
+            pl: "Projekt obejmuje zaprojektowanie i wykonanie urządzenia umożliwiającego przetwarzanie zużytych butelek PET na filament przeznaczony do druku 3D w technologii FDM. Konstrukcja łączy część mechaniczną i elektroniczną, a układ sterowania oparto na mikrokontrolerze RP2040 oraz automatycznej regulacji temperatury PID. Urządzenie posiada samodzielnie zaprojektowaną płytkę PCB, sterowanie grzałką poprzez PWM, napęd silnikiem DC, wyświetlacz OLED oraz układ aktywnego chłodzenia filamentu. Do realizacji projektu wykorzystano Fusion 360 do projektowania konstrukcji 3D, KiCad do przygotowania elektroniki oraz MicroPython do programowania układu sterującego. Całość została zaprojektowana tak, aby w kompaktowej formie połączyć recykling, druk 3D, mechanikę, elektronikę i automatykę.",
+            en: "The PET-bottle filament project uses discarded bottles as material for 3D-printing filament. It demonstrates a practical connection between recycling, mechanical design and additive manufacturing, including material cutting, filament-diameter control, process-temperature selection and print-quality testing."
+          },
+          images: [
+            "Zdjecia_Projekty/Filament_PET/Filament_1.png",
+            "Zdjecia_Projekty/Filament_PET/Filament_2.png",
+            "Zdjecia_Projekty/Filament_PET/Filament_3.png",
+            "Zdjecia_Projekty/Filament_PET/Filament_4.png"
+          ]
+        },
+
+        vitalSignsDevice: {
+          section: { pl: "Elektronika pomiarowa", en: "Measurement electronics" },
+          title: { pl: "System monitorowania parametrów życiowych", en: "Vital Signs Measurement" },
+          description: {
+            pl: "Projekt obejmuje wykonanie systemu monitorowania podstawowych parametrów życiowych z wykorzystaniem mikrokontrolera ESP32. Układ wykorzystuje czujniki MAX30102 oraz MAX30205, które umożliwiają pomiar tętna, saturacji krwi SpO₂ oraz temperatury ciała. Wyniki są prezentowane na lokalnym wyświetlaczu OLED, a dodatkowo przesyłane za pomocą Bluetooth do aplikacji mobilnej. Dzięki temu urządzenie pozwala na wygodne monitorowanie najważniejszych parametrów organizmu zarówno bezpośrednio na ekranie, jak i z poziomu telefonu.",
+            en: "The vital-signs measurement project involves building a simple measurement system capable of recording selected physiological signals. Depending on the sensors used, the device may measure heart rate, temperature, oxygen saturation or other basic parameters. The project develops skills in electronics, sensors, microcontroller programming, data filtering and clear presentation of results."
+          },
+          images: [
+            "Zdjecia_Projekty/Parametry_Zyciowe/Parametry_Zyciowe_1.png",
+            "Zdjecia_Projekty/Parametry_Zyciowe/Parametry_Zyciowe_2.jpg",
+            "Zdjecia_Projekty/Parametry_Zyciowe/Parametry_Zyciowe_4.png",
+            "Zdjecia_Projekty/Parametry_Zyciowe/Parametry_Zyciowe_5.png"
+          ]
+        }
+      };
+
+      const projectModal = document.getElementById("projectModal");
+      const projectModalContent = projectModal.querySelector(".project-modal-content");
+      const projectModalClose = document.getElementById("projectModalClose");
+      const projectGallery = document.getElementById("projectGallery");
+      const projectModalImage = document.getElementById("projectModalImage");
+      const projectGalleryEmpty = document.getElementById("projectGalleryEmpty");
+      const projectModalSection = document.getElementById("projectModalSection");
+      const projectModalTitle = document.getElementById("projectModalTitle");
+      const projectModalDescription = document.getElementById("projectModalDescription");
+      const projectGalleryCounter = document.getElementById("projectGalleryCounter");
+      const projectGalleryDots = document.getElementById("projectGalleryDots");
+      const prevProjectImage = document.querySelector(".project-gallery-prev");
+      const nextProjectImage = document.querySelector(".project-gallery-next");
+
+      let activeProject = null;
+      let activeImageIndex = 0;
+      let projectScrollY = 0;
+      let lastFocusedElement = null;
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      const getProjectLang = () => localStorage.getItem("lang") || "pl";
+
+      function setGalleryEmpty(messageKey = "empty") {
+        const lang = getProjectLang();
+        const messages = {
+          empty: {
+            pl: "Zdjęcia w przygotowaniu",
+            en: "Photos coming soon"
+          },
+          error: {
+            pl: "Nie udało się wczytać tego zdjęcia",
+            en: "This photo could not be loaded"
+          }
+        };
+
+        projectGalleryEmpty.querySelector("span").textContent = messages[messageKey][lang];
+        projectGalleryEmpty.hidden = false;
+        projectModalImage.hidden = true;
+      }
+
+      function preloadNeighbours(images) {
+        if (images.length < 2) return;
+        const indexes = [
+          (activeImageIndex + 1) % images.length,
+          (activeImageIndex - 1 + images.length) % images.length
+        ];
+        [...new Set(indexes)].forEach(index => {
+          const preload = new Image();
+          preload.src = images[index];
+        });
+      }
+
+      function renderProjectModal() {
+        if (!activeProject || !projectData[activeProject]) return;
+
+        const lang = getProjectLang();
+        const data = projectData[activeProject];
+        const images = data.images || [];
+        const hasImages = images.length > 0;
+
+        projectModalSection.textContent = data.section[lang] || data.section.pl;
+        projectModalTitle.textContent = data.title[lang] || data.title.pl;
+        projectModalDescription.textContent = data.description[lang] || data.description.pl;
+
+        prevProjectImage.hidden = images.length <= 1;
+        nextProjectImage.hidden = images.length <= 1;
+        projectGalleryCounter.hidden = !hasImages;
+        projectGalleryDots.hidden = images.length <= 1;
+        projectGalleryEmpty.hidden = true;
+
+        if (!hasImages) {
+          projectModalImage.removeAttribute("src");
+          setGalleryEmpty("empty");
+        } else {
+          activeImageIndex = Math.max(0, Math.min(activeImageIndex, images.length - 1));
+          projectModalImage.hidden = false;
+          projectModalImage.alt = `${data.title[lang] || data.title.pl} — ${activeImageIndex + 1}`;
+          projectGalleryCounter.textContent = `${activeImageIndex + 1} / ${images.length}`;
+
+          projectModalImage.onload = () => {
+            projectGalleryEmpty.hidden = true;
+            projectModalImage.hidden = false;
+          };
+          projectModalImage.onerror = () => setGalleryEmpty("error");
+          projectModalImage.src = images[activeImageIndex];
+          preloadNeighbours(images);
+        }
+
+        projectGalleryDots.innerHTML = "";
+        images.forEach((_, index) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = index === activeImageIndex ? "active" : "";
+          dot.setAttribute("aria-label", `${lang === "pl" ? "Zdjęcie" : "Photo"} ${index + 1}`);
+          dot.setAttribute("aria-current", index === activeImageIndex ? "true" : "false");
+          dot.addEventListener("click", () => {
+            activeImageIndex = index;
+            renderProjectModal();
+          });
+          projectGalleryDots.appendChild(dot);
+        });
+      }
+
+      function lockProjectsPage() {
+        projectScrollY = window.scrollY || window.pageYOffset || 0;
+        document.documentElement.classList.add("project-scroll-lock");
+        document.body.classList.add("project-scroll-lock");
+        document.body.style.top = `-${projectScrollY}px`;
+      }
+
+      function unlockProjectsPage() {
+        document.documentElement.classList.remove("project-scroll-lock");
+        document.body.classList.remove("project-scroll-lock");
+        document.body.style.top = "";
+        window.scrollTo(0, projectScrollY);
+      }
+
+      function openProjectModal(projectKey) {
+        if (!projectData[projectKey]) return;
+
+        lastFocusedElement = document.activeElement;
+        activeProject = projectKey;
+        activeImageIndex = 0;
+
+        /* Za każdym otwarciem projektu zaczynamy od samej góry modalu. */
+        projectModalContent.scrollTop = 0;
+
+        renderProjectModal();
+        projectModal.classList.add("active");
+        projectModal.setAttribute("aria-hidden", "false");
+        lockProjectsPage();
+
+        requestAnimationFrame(() => {
+          projectModalContent.scrollTop = 0;
+          projectModalClose.focus({ preventScroll: true });
+        });
+      }
+
+      function closeProjectModal() {
+        if (!projectModal.classList.contains("active")) return;
+
+        projectModal.classList.remove("active");
+        projectModal.setAttribute("aria-hidden", "true");
+        unlockProjectsPage();
+
+        /* Czyścimy pozycję przewinięcia zamykanego projektu. */
+        projectModalContent.scrollTop = 0;
+
+        activeProject = null;
+        activeImageIndex = 0;
+
+        if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+          requestAnimationFrame(() => lastFocusedElement.focus({ preventScroll: true }));
+        }
+      }
+
+      function changeProjectImage(direction) {
+        if (!activeProject) return;
+        const images = projectData[activeProject].images || [];
+        if (images.length <= 1) return;
+        activeImageIndex = (activeImageIndex + direction + images.length) % images.length;
+        renderProjectModal();
+      }
+
+      document.querySelectorAll(".project-open").forEach(card => {
+        card.addEventListener("click", () => openProjectModal(card.dataset.project));
+        card.addEventListener("keydown", event => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openProjectModal(card.dataset.project);
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-close-project]").forEach(element => {
+        element.addEventListener("click", closeProjectModal);
+      });
+
+      prevProjectImage.addEventListener("click", () => changeProjectImage(-1));
+      nextProjectImage.addEventListener("click", () => changeProjectImage(1));
+
+      document.addEventListener("keydown", event => {
+        if (!projectModal.classList.contains("active")) return;
+
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeProjectModal();
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          changeProjectImage(-1);
+        } else if (event.key === "ArrowRight") {
+          event.preventDefault();
+          changeProjectImage(1);
+        } else if (event.key === "Tab") {
+          const focusable = Array.from(projectModalContent.querySelectorAll(
+            'button:not([hidden]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )).filter(el => !el.disabled && el.offsetParent !== null);
+
+          if (!focusable.length) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
+
+      projectGallery.addEventListener("touchstart", event => {
+        if (!event.touches.length) return;
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+      }, { passive: true });
+
+      projectGallery.addEventListener("touchend", event => {
+        if (!event.changedTouches.length || !activeProject) return;
+        const dx = event.changedTouches[0].clientX - touchStartX;
+        const dy = event.changedTouches[0].clientY - touchStartY;
+
+        if (Math.abs(dx) < 45 || Math.abs(dx) <= Math.abs(dy)) return;
+        changeProjectImage(dx < 0 ? 1 : -1);
+      }, { passive: true });
+
+      document.getElementById("langCorner")?.addEventListener("click", () => {
+        if (activeProject) renderProjectModal();
+      });
+    })();
+  </script>
+</body>
+</html>
