@@ -1,0 +1,22 @@
+media:
+  input: assets/wydarzenia
+  output: /assets/wydarzenia
+content:
+  - name: wydarzenia
+    label: Wydarzenia
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+    fields:
+      - { name: title, label: Tytuł, type: string, required: true }
+      - { name: date, label: Data, type: date, required: true }
+      - { name: image, label: Zdjęcie, type: image }
+      - { name: body, label: Opis, type: text }
+      - { name: link, label: Link do posta/wideo, type: string }
+      - name: link_label
+        label: Rodzaj linku
+        type: select
+        options:
+          values: [WIĘCEJ, WIDEO]
